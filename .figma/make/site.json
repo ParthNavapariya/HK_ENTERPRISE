@@ -1,0 +1,18 @@
+{
+  "title": "HK Enterprise | Precision Architectural Hardware & Furniture Fittings",
+  "description": "Manufacturer of precision cold-rolled steel lockpatti, 4-corner bed clamps, architectural hinges, knock-down bed sockets, and furniture fittings in Rajkot, Gujarat.",
+  "language": "en",
+  "robots": {
+    "index": true
+  },
+  "icons": {
+    "icon": "/hk-diamond.svg"
+  },
+  "openGraph": {
+    "image": "/hk-logo-horizontal.png"
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

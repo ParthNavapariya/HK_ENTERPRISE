@@ -1,0 +1,42 @@
+export type Page = "home" | "about" | "products" | "industries" | "contact" | "detail"
+export type Category =
+  | "All"
+  | "Lockpatti"
+  | "Hinges"
+  | "Bed Clamp"
+  | "Bed Socket"
+  | "L Corner"
+  | "Bed Fittings"
+
+export interface ProductItem {
+  id: string
+  code?: string
+  name: string
+  nameGu?: string
+  category: Exclude<Category, "All">
+  categoryName?: string
+  note: string
+  description?: string
+  descriptionGu?: string
+  material?: string
+  finish?: string
+  thickness?: string
+  loadCapacity?: string
+  dimensions?: string
+  features?: string[]
+  image: string
+  images?: string[]
+  badge?: string
+}
+
+export interface CompanyInfo {
+  name: string
+  tagline: string
+  subTagline: string
+  phone: string
+  phoneDisplay: string
+  whatsappUrl: string
+  email: string
+  address: string
+  hours: string
+}
