@@ -36,7 +36,7 @@ export interface CompanyInfo {
   phone: string
   phoneDisplay: string
   whatsappUrl: string
-  email: string
+  email?: string
   address: string
   hours: string
 }

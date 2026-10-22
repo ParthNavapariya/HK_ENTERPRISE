@@ -97,23 +97,23 @@ export default function CinematicSequence() {
   const chapters = [
     [
       "01 / FORM",
-      "Made to meet.",
-      "Engineered from heavy cold-rolled steel with precise right-angle alignment and deburred edges.",
+      "Solid 90° Joint.",
+      "Hydraulic stamped 3.0mm cold-rolled steel with reinforced gusset bend for zero-flex structural stability.",
     ],
     [
       "02 / DETAIL",
-      "Move closer.",
-      "Hydraulic stamped mounting holes and countersunk slots ensure a flush, rattle-free fit.",
+      "5 Aani Capsule Slot.",
+      "Engineered capsule hole with precision bolt alignment allows smooth micro-adjustment and rattle-free lockup.",
     ],
     [
-      "03 / FUNCTION",
-      "Every point matters.",
-      "White zinc electroplated and passivated to resist corrosion, humidity, and heavy daily wear.",
+      "03 / ENDURANCE",
+      "Built for 300+ kg.",
+      "Deep zinc passivated finish resists corrosion, wear, and heavy dynamic loads on bed and modular frames.",
     ],
     [
-      "04 / RANGE",
-      "One connected system.",
-      "Seamlessly integrated into the complete HK Enterprise architectural hardware line.",
+      "04 / SYSTEM",
+      "Modular Integration.",
+      "Engineered for rapid knock-down assembly across commercial furniture and heavy architectural joinery.",
     ],
   ]
 
@@ -124,7 +124,11 @@ export default function CinematicSequence() {
         <span>01 — 04</span>
       </div>
       <div className="sequence-product">
-        <ProductVisual category="Lockpatti" />
+        <ProductVisual
+          category="Bed Clamp"
+          image="/products/bed-clamp/bed-clamp-2-clean.jpg"
+          productCode="HK-BC-102"
+        />
       </div>
       <div className="sequence-copies">
         {chapters.map(([number, title, copy]) => (

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { products } from "../../data/products"
+import { showcaseProducts } from "../../data/products"
 import { navigate } from "../../utils/navigation"
 import Eyebrow from "../ui/Eyebrow"
 import Icon from "../ui/Icon"
@@ -12,6 +12,12 @@ export default function ScrollCategories() {
   const sectionRef = useRef<HTMLElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
+
+  // Guarantee active index is always within valid bounds [0, 4]
+  const safeActive = Math.max(
+    0,
+    Math.min(showcaseProducts.length - 1, active),
+  )
 
   useLayoutEffect(() => {
     const reduced = window.matchMedia(
@@ -24,14 +30,19 @@ export default function ScrollCategories() {
       ScrollTrigger.create({
         trigger: stageRef.current,
         start: "top top",
-        end: () => `+=${isDesktop ? 3400 : 1700}`,
+        end: () => `+=${isDesktop ? 2400 : 1400}`,
         pin: true,
         scrub: true,
         anticipatePin: 1,
+        onEnter: () => setActive(0),
+        onLeaveBack: () => setActive(0),
         onUpdate: (self) => {
-          const next = Math.min(
-            products.length - 1,
-            Math.floor(self.progress * products.length),
+          const next = Math.max(
+            0,
+            Math.min(
+              showcaseProducts.length - 1,
+              Math.floor(self.progress * showcaseProducts.length),
+            ),
           )
           setActive((current) => (current === next ? current : next))
         },
@@ -41,16 +52,16 @@ export default function ScrollCategories() {
     return () => ctx.revert()
   }, [])
 
-  const current = products[active] || products[0]
+  const current = showcaseProducts[safeActive] || showcaseProducts[0]
 
   return (
     <section
-      className={`category-story dark-section category-tone-${(active % 5) + 1}`}
+      className={`category-story dark-section category-tone-${(safeActive % 5) + 1}`}
       ref={sectionRef}
     >
       <div className="section-head">
         <div>
-          <Eyebrow light>PRODUCT SERIES / 06</Eyebrow>
+          <Eyebrow light>PRODUCT SERIES / 05</Eyebrow>
           <h2>
             Engineered for
             <br />
@@ -66,35 +77,44 @@ export default function ScrollCategories() {
           <div className="story-visual">
             <div className="category-aura" />
             <div className="category-image-stack">
-              {products.map((product, index) => (
+              {showcaseProducts.map((product, index) => (
                 <div
                   className={`category-image ${
-                    active === index ? "is-active" : ""
+                    safeActive === index ? "is-active" : ""
                   }`}
                   key={product.id}
                 >
                   <img
                     src={product.image}
                     alt={`${product.name} - HK Enterprise`}
+                    loading="eager"
                   />
                 </div>
               ))}
             </div>
-            <div className="story-number">{current.id}</div>
+            <div className="story-number">
+              {String(safeActive + 1).padStart(2, "0")}
+            </div>
             <div className="active-product-meta">
-              <span>{current.code || "ACTIVE SERIES"}</span>
+              <span>{current.code || `SERIES 0${safeActive + 1}`}</span>
               <strong>{current.name}</strong>
               <p>{current.note}</p>
             </div>
           </div>
           <div className="category-list">
-            {products.map((product, index) => (
+            {showcaseProducts.map((product, index) => (
               <button
-                className={active === index ? "selected" : ""}
-                onClick={() => navigate("detail", product.category)}
+                className={safeActive === index ? "selected" : ""}
+                onClick={() => {
+                  if (safeActive === index) {
+                    navigate("detail", product.id)
+                  } else {
+                    setActive(index)
+                  }
+                }}
                 key={product.id}
               >
-                <span>{product.id}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{product.category}</strong>
                 <small>{product.note}</small>
                 <Icon name="arrow" />
@@ -104,7 +124,9 @@ export default function ScrollCategories() {
         </div>
         <div className="category-scroll-progress">
           <i
-            style={{ transform: `scaleX(${(active + 1) / products.length})` }}
+            style={{
+              transform: `scaleX(${(safeActive + 1) / showcaseProducts.length})`,
+            }}
           />
         </div>
         <span className="category-scroll-label">

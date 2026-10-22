@@ -67,17 +67,6 @@ export default function Contact() {
         <aside>
           <Eyebrow>OFFICIAL CONTACT</Eyebrow>
           <div>
-            <span>EMAIL</span>
-            <p>
-              <a
-                href={`mailto:${COMPANY_INFO.email}`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                {COMPANY_INFO.email}
-              </a>
-            </p>
-          </div>
-          <div>
             <span>PHONE / WHATSAPP</span>
             <p>
               <a
@@ -122,16 +111,16 @@ export default function Contact() {
               <input required placeholder="Your full name" />
             </label>
             <label>
-              <span>Company Name</span>
+              <span>Company / Workshop Name</span>
               <input placeholder="Your company or workshop" />
             </label>
             <label>
-              <span>Email Address *</span>
-              <input required type="email" placeholder="name@company.com" />
+              <span>Phone / WhatsApp Number *</span>
+              <input required type="tel" placeholder="+91 97237 71164" />
             </label>
             <label>
-              <span>Phone Number *</span>
-              <input required type="tel" placeholder="+91 98765 43210" />
+              <span>City / State *</span>
+              <input required placeholder="e.g. Rajkot, Gujarat" />
             </label>
           </div>
           <label>

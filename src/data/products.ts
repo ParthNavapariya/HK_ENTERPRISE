@@ -9,8 +9,7 @@ export const COMPANY_INFO: CompanyInfo = {
   phoneDisplay: "+91 97237 71164",
   whatsappUrl:
     "https://wa.me/919723771164?text=Hello%20HK%20Enterprise,%20I%20am%20interested%20in%20your%20hardware%20products.",
-  email: "info@hkenterprise.co.in",
-  address: "Industrial Area, Metoda GIDC / Shapar, Rajkot, Gujarat, India",
+  address: "Bapunagar 10, Jilla Garden Main Road, Rajkot - 360002, Gujarat, India",
   hours: "Mon - Sat: 9:00 AM - 7:30 PM (Sunday Closed)",
 }
 
@@ -56,12 +55,12 @@ export const products: ProductItem[] = [
       "Anti-rattle flush fitting",
       "Heavy-duty steel gauge",
     ],
-    image: "/products/lockpatti/lockpatti-1.jpg",
+    image: "/products/lockpatti/lockpatti-4.jpg",
     images: [
+      "/products/lockpatti/lockpatti-4.jpg",
       "/products/lockpatti/lockpatti-1.jpg",
       "/products/lockpatti/lockpatti-2.jpg",
       "/products/lockpatti/lockpatti-3.jpg",
-      "/products/lockpatti/lockpatti-4.jpg",
     ],
     badge: "Featured Hero",
   },
@@ -270,8 +269,9 @@ export const products: ProductItem[] = [
       "Heavy tightening nut",
       "True 90-degree angle",
     ],
-    image: "/products/bed-clamp/bed-clamp-2.jpg",
+    image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
     images: [
+      "/products/bed-clamp/bed-clamp-2-clean.jpg",
       "/products/bed-clamp/bed-clamp-2.jpg",
       "/products/bed-clamp/bed-clamp-3.jpg",
       "/products/bed-clamp/bed-clamp-4.jpg",
@@ -394,12 +394,12 @@ export const products: ProductItem[] = [
       "Countersunk screw holes",
       "Uniform load distribution",
     ],
-    image: "/products/l-corner/l-corner-1.jpg",
+    image: "/products/l-corner/l-corner-4.jpg",
     images: [
+      "/products/l-corner/l-corner-4.jpg",
       "/products/l-corner/l-corner-1.jpg",
       "/products/l-corner/l-corner-2.jpg",
       "/products/l-corner/l-corner-3.jpg",
-      "/products/l-corner/l-corner-4.jpg",
     ],
     badge: "Structural Core",
   },
@@ -494,3 +494,12 @@ export const products: ProductItem[] = [
     badge: "Sub-Frame",
   },
 ]
+
+export const showcaseProducts: ProductItem[] = [
+  products.find((p) => p.id === "lp-01")!,
+  products.find((p) => p.id === "hg-02")!,
+  products.find((p) => p.id === "bc-01")!,
+  products.find((p) => p.id === "bs-01")!,
+  products.find((p) => p.id === "lc-01")!,
+].filter(Boolean)
+
