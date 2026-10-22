@@ -55,8 +55,9 @@ export const products: ProductItem[] = [
       "Anti-rattle flush fitting",
       "Heavy-duty steel gauge",
     ],
-    image: "/products/lockpatti/lockpatti-4.jpg",
+    image: "/products/lockpatti/hero-product-clean.jpg",
     images: [
+      "/products/lockpatti/hero-product-clean.jpg",
       "/products/lockpatti/lockpatti-4.jpg",
       "/products/lockpatti/lockpatti-1.jpg",
       "/products/lockpatti/lockpatti-2.jpg",
