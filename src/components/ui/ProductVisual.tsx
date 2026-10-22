@@ -16,6 +16,9 @@ export default function ProductVisual({
   productCode,
 }: ProductVisualProps) {
   const product =
+    (productCode
+      ? products.find((item) => item.code === productCode)
+      : undefined) ??
     products.find(
       (item) =>
         category.toLowerCase().includes(item.category.toLowerCase()) ||
