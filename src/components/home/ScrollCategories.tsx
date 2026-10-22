@@ -84,6 +84,11 @@ export default function ScrollCategories() {
                   }`}
                   key={product.id}
                 >
+                  <div
+                    className="product-visual-ambient"
+                    style={{ backgroundImage: `url(${product.image})` }}
+                    aria-hidden="true"
+                  />
                   <img
                     src={product.image}
                     alt={`${product.name} - HK Enterprise`}

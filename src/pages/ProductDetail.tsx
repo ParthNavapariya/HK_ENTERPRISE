@@ -18,6 +18,7 @@ export default function ProductDetail({ category }: { category: string }) {
     ) ?? products[0]
 
   const [activeImage, setActiveImage] = useState(currentProduct.image)
+  const [zoomOpen, setZoomOpen] = useState(false)
 
   useEffect(() => {
     setActiveImage(currentProduct.image)
@@ -51,7 +52,17 @@ export default function ProductDetail({ category }: { category: string }) {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          <div className="product-visual hero-product" style={{ position: "relative" }}>
+          <div
+            className="product-visual hero-product"
+            style={{ position: "relative", cursor: "zoom-in" }}
+            onClick={() => setZoomOpen(true)}
+            title="Click to view full image in high resolution"
+          >
+            <div
+              className="product-visual-ambient"
+              style={{ backgroundImage: `url(${activeImage})` }}
+              aria-hidden="true"
+            />
             <img
               className="concept-product-image"
               src={activeImage}
@@ -60,6 +71,28 @@ export default function ProductDetail({ category }: { category: string }) {
             <div className="visual-label">
               <span>HK PRECISION SERIES</span>
               <b>{currentProduct.code || currentProduct.category}</b>
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                zIndex: 4,
+                background: "rgba(14, 17, 22, 0.75)",
+                backdropFilter: "blur(8px)",
+                border: "1px solid rgba(232, 213, 154, 0.25)",
+                color: "var(--champagne)",
+                fontSize: "10px",
+                letterSpacing: "0.12em",
+                padding: "6px 12px",
+                borderRadius: "4px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                pointerEvents: "none",
+              }}
+            >
+              <span>FULL VIEW</span>
             </div>
           </div>
 
@@ -85,17 +118,23 @@ export default function ProductDetail({ category }: { category: string }) {
                       activeImage === img
                         ? "2px solid var(--gold)"
                         : "1px solid rgba(245,245,245,0.18)",
-                    background: "#16191f",
-                    padding: "2px",
+                    background: "#111318",
+                    padding: "4px",
                     cursor: "pointer",
                     transition: "border-color 0.2s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "4px",
                   }}
                   aria-label={`View photo ${idx + 1}`}
                 >
                   <img
                     src={img}
                     alt={`${currentProduct.name} angle ${idx + 1}`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </button>
               ))}
@@ -168,13 +207,98 @@ export default function ProductDetail({ category }: { category: string }) {
                 key={p.id}
                 onClick={() => navigate("detail", p.id)}
               >
-                <ProductVisual category={p.category} light />
+                <ProductVisual
+                  category={p.category}
+                  light
+                  image={p.image}
+                  productCode={p.code}
+                />
                 <strong>{p.name}</strong>
                 <Icon name="arrow" />
               </button>
             ))}
         </div>
       </section>
+
+      {zoomOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="High resolution product view"
+          onClick={() => setZoomOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "rgba(10, 12, 16, 0.94)",
+            backdropFilter: "blur(12px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "24px",
+            cursor: "zoom-out",
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setZoomOpen(false)}
+            style={{
+              position: "absolute",
+              top: "24px",
+              right: "24px",
+              background: "rgba(22, 25, 31, 0.85)",
+              border: "1px solid rgba(232, 213, 154, 0.3)",
+              color: "#fff",
+              padding: "10px 18px",
+              borderRadius: "4px",
+              fontSize: "12px",
+              letterSpacing: "0.15em",
+              cursor: "pointer",
+              zIndex: 10000,
+            }}
+            aria-label="Close full view"
+          >
+            ✕ CLOSE
+          </button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "92vw",
+              maxHeight: "90vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              cursor: "default",
+            }}
+          >
+            <img
+              src={activeImage}
+              alt={`${currentProduct.name} - Full Preview`}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "82vh",
+                objectFit: "contain",
+                borderRadius: "4px",
+                boxShadow: "0 20px 60px rgba(0, 0, 0, 0.8)",
+                border: "1px solid rgba(232, 213, 154, 0.2)",
+                background: "#111318",
+              }}
+            />
+            <div
+              style={{
+                marginTop: "14px",
+                color: "var(--champagne)",
+                fontSize: "13px",
+                letterSpacing: "0.08em",
+                textAlign: "center",
+              }}
+            >
+              <strong>{currentProduct.code}</strong> • {currentProduct.name}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
+

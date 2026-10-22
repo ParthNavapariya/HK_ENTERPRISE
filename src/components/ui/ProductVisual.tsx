@@ -37,10 +37,16 @@ export default function ProductVisual({
         light ? "on-light" : ""
       }`}
     >
+      <div
+        className="product-visual-ambient"
+        style={{ backgroundImage: `url(${displayImage})` }}
+        aria-hidden="true"
+      />
       <img
         className="concept-product-image"
         src={displayImage}
         alt={`${product.name} - HK Enterprise industrial hardware`}
+        loading="lazy"
       />
       <div className="visual-label">
         <span>HK PRECISION SERIES</span>
@@ -51,3 +57,4 @@ export default function ProductVisual({
     </div>
   )
 }
+
