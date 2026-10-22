@@ -199,8 +199,18 @@ export default function ProductDetail({ category }: { category: string }) {
       <section className="related">
         <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
         <div>
-          {products
-            .filter((p) => p.id !== currentProduct.id)
+          {[
+            ...products.filter(
+              (p) =>
+                p.id !== currentProduct.id &&
+                p.category === currentProduct.category,
+            ),
+            ...products.filter(
+              (p) =>
+                p.id !== currentProduct.id &&
+                p.category !== currentProduct.category,
+            ),
+          ]
             .slice(0, 3)
             .map((p) => (
               <button

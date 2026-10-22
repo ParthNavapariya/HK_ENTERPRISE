@@ -24,7 +24,7 @@ export const categories: Exclude<Category, "All">[] = [
 
 export const categoryImages: Record<Exclude<Category, "All">, string> = {
   Lockpatti: "/products/lockpatti/hero-product-clean.jpg",
-  Hinges: "/products/hinges/hinges-4.jpg",
+  Hinges: "/products/hinges/hinges-1.jpg",
   "Bed Clamp": "/products/bed-clamp/bed-clamp-1.jpg",
   "Bed Socket": "/products/bed-soket/bed-soket-1.jpg",
   "L Corner": "/products/l-corner/l-corner-1.jpg",
@@ -182,7 +182,7 @@ export const products: ProductItem[] = [
       "/products/lockpatti/real-lockpatti-4.png",
       "/products/lockpatti/lockpatti-5.jpg",
     ],
-    badge: "Commercial Pair",
+    badge: "Commercial Flange",
   },
   {
     id: "lp-06",
@@ -616,15 +616,15 @@ export const products: ProductItem[] = [
     categoryName: "Bed Clamp Series",
     note: "Bridge-profile hat channel bracket with dual mounting ears and center bolt hole for central bed support beams.",
     description:
-      "Specialized hat-channel bridge bracket engineered to cradle and rigidly lock central longitudinal bed frame beams.",
-    descriptionGu: "બેડના વચ્ચેના પાટિયાને ટેકો આપવા માટે હેટ-ચેનલ બ્રિજ ક્લેમ્પ બ્રેકેટ.",
+      "Specialized hat-channel bridge bracket engineered to cradle and rigidly lock central longitudinal bed frame beams with quad screw anchor points and center hex fastener.",
+    descriptionGu: "બેડના વચ્ચેના સેન્ટર પાટિયાને ટેકો આપી ચુસ્ત પકડવા માટે પ્રીમિયમ હેટ-ચેનલ બ્રિજ ક્લેમ્પ બ્રેકેટ.",
     material: "Cold-Rolled Carbon Steel",
     finish: "Silver Zinc Electroplated",
     thickness: "2.8 mm Formed Steel",
     loadCapacity: "350 kg Center Beam Support",
     dimensions: "160mm x 45mm x 28mm",
     features: [
-      "Raised bridge profile for beam support",
+      "Raised bridge profile for center beam support",
       "Quad perimeter mounting holes",
       "Central alignment bolt hole",
       "Heavy stamp formed rigidity",
@@ -633,6 +633,7 @@ export const products: ProductItem[] = [
     images: [
       "/products/bed-clamp/bed-clamp-9.jpg",
       "/products/bed-clamp/bed-clamp-8.jpg",
+      "/products/bed-clamp/bed-clamp-1.jpg",
     ],
     badge: "Center Bridge",
   },
