@@ -10,26 +10,31 @@ export default function About() {
         eyebrow="ABOUT HK ENTERPRISE"
         title={
           <>
-            Quietly essential.
+            Precision & purpose.
             <br />
-            <em>Precisely considered.</em>
+            <em>Built to endure.</em>
           </>
         }
-        description="Based in Rajkot's industrial heartland, HK Enterprise specializes in high-tolerance architectural hardware, heavy-gauge bed clamps, and precision furniture fittings."
+        description="At HK Enterprise, we bring precision and purpose to furniture hardware. We believe that even the smallest component plays an essential role in creating furniture that stands the test of time."
       />
       <section className="about-intro">
-        <Eyebrow>OUR APPROACH</Eyebrow>
+        <Eyebrow>ABOUT HK ENTERPRISE</Eyebrow>
         <div className="split-copy">
           <h2>
-            Strength lies in the <em>details.</em>
+            Precision & purpose in <em>furniture hardware.</em>
           </h2>
           <div>
             <p>
-              At HK Enterprise, hardware is more than just fasteners and plates—it is the structural backbone of furniture and architectural spaces. Our stamping and press tools are calibrated for micron-level tolerances to guarantee a perfect flush fit.
+              At HK Enterprise, we bring precision and purpose to furniture hardware. We believe that even the smallest component plays an essential role in creating furniture that stands the test of time.
             </p>
             <p>
-              From heavy-duty 4-corner bed clamps to deburred lock strike plates, every piece is stamped from high-gauge cold-rolled steel and passivated for lasting corrosion resistance.
+              With a focus on quality, functionality, and refined finishing, we serve furniture manufacturers, wholesalers, and hardware distributors with products designed to meet the demands of a dynamic industry.
             </p>
+            <div className="about-motto">
+              <span>Built on quality.</span>
+              <span>Driven by trust.</span>
+              <span>Committed to excellence.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -43,26 +48,26 @@ export default function About() {
       </section>
       <section className="quality-section">
         <div>
-          <Eyebrow>QUALITY, DEFINED</Eyebrow>
+          <Eyebrow>THE HK PROMISE</Eyebrow>
           <h2>
-            A measured
+            Built on quality.
             <br />
-            approach to <em>quality.</em>
+            Driven by <em>trust.</em>
           </h2>
         </div>
         <div className="quality-list">
           {[
             {
-              title: "Tooling Precision",
-              desc: "Heavy hydraulic stamping dies engineered for burr-free deburred edges and accurate countersunk holes.",
+              title: "Built on Quality",
+              desc: "From heavy-gauge cold-rolled carbon steel to micron-calibrated stamping, every product is engineered for structural rigidity and lifetime endurance.",
             },
             {
-              title: "High-Grade Steel",
-              desc: "Selected cold-rolled carbon steel and heavy gauge MS tested for maximum joint rigidity and dynamic load resistance.",
+              title: "Driven by Trust",
+              desc: "Proudly serving furniture manufacturers, wholesalers, and hardware distributors across India with reliable supply and transparent specifications.",
             },
             {
-              title: "Anti-Corrosion Finish",
-              desc: "Electroplated yellow zinc and silver passivated coatings for lifelong rust protection in humid climates.",
+              title: "Committed to Excellence",
+              desc: "Refined finishing, burr-free deburred edges, and continuous tooling innovations designed to meet the demands of a dynamic furniture industry.",
             },
           ].map((item, i) => (
             <article key={item.title}>

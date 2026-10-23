@@ -1154,6 +1154,47 @@ em {
     margin-top: 24px
 }
 
+.about-motto {
+    margin-top: 36px;
+    padding: 22px 28px;
+    background: #111318;
+    border: 1px solid rgba(201, 164, 76, 0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.about-motto span {
+    color: var(--champagne);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.about-motto span:before {
+    content: "◆";
+    color: var(--gold);
+    font-size: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-motto {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px;
+        gap: 12px;
+    }
+}
+
 .range-band {
     display: flex;
     overflow: hidden;
