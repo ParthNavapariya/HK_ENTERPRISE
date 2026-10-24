@@ -277,36 +277,6 @@ export const products: ProductItem[] = [
     badge: "Heavy Strap",
   },
   {
-    id: "hg-02",
-    code: "HK-HG-402",
-    name: "Architectural Heavy Butt Hinge (90° Swing)",
-    nameGu: "આર્કિટેક્ચરલ હેવી બટ્ટ હિંગ્સ (૯૦° સ્વીંગ)",
-    category: "Hinges",
-    categoryName: "Hinges Series",
-    note: "Industrial grade heavy gauge hinge engineered to prevent sagging on solid wood and metal doors.",
-    description:
-      "Ultra robust hinge built to withstand heavy industrial wooden & metal doors with zero sagging and high shear resilience.",
-    descriptionGu: "ભારે લાકડા અને મેટલ દરવાજા માટે મજબૂત બટ્ટ હિંગ્સ જે ક્યારેય ઝૂકતી નથી અને સ્મૂથ મૂવમેન્ટ આપે છે.",
-    material: "High Grade Heavy MS",
-    finish: "Silver Zinc Passivated",
-    thickness: "3.5 mm Heavy Duty",
-    loadCapacity: "75 kg / pair",
-    dimensions: "125mm x 75mm (5 inch)",
-    features: [
-      "Solid cold-drawn steel pin",
-      "Countersunk screw hole layout",
-      "Heavy commercial duty gauge",
-      "Zero-sag leaf tolerance",
-    ],
-    image: "/products/hinges/hinges-2.jpg",
-    images: [
-      "/products/hinges/hinges-2.jpg",
-      "/products/hinges/hinges-3.jpg",
-      "/products/hinges/hinges-4.jpg",
-    ],
-    badge: "Heavy Duty",
-  },
-  {
     id: "hg-03",
     code: "HK-HG-403",
     name: "Precision Folding Table Hinges (1\" x 1\")",
@@ -1093,7 +1063,7 @@ export const products: ProductItem[] = [
 
 export const showcaseProducts: ProductItem[] = [
   products.find((p) => p.id === "lp-01")!,
-  products.find((p) => p.id === "hg-02")!,
+  products.find((p) => p.id === "hg-01")!,
   products.find((p) => p.id === "bc-01")!,
   products.find((p) => p.id === "bs-01")!,
   products.find((p) => p.id === "lc-01")!,
