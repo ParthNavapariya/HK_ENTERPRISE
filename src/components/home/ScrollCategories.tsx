@@ -11,13 +11,28 @@ gsap.registerPlugin(ScrollTrigger)
 export default function ScrollCategories() {
   const sectionRef = useRef<HTMLElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<ScrollTrigger | null>(null)
   const [active, setActive] = useState(0)
 
-  // Guarantee active index is always within valid bounds [0, 4]
+  // Guarantee active index is always within valid bounds [0, 5]
   const safeActive = Math.max(
     0,
     Math.min(showcaseProducts.length - 1, active),
   )
+
+  const handleSelectCategory = (index: number) => {
+    setActive(index)
+    if (triggerRef.current) {
+      const st = triggerRef.current
+      const progressCenters = [0.08, 0.24, 0.40, 0.56, 0.72, 0.90]
+      const targetProgress = progressCenters[index] ?? 0.5
+      const targetY = st.start + targetProgress * (st.end - st.start)
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth",
+      })
+    }
+  }
 
   useLayoutEffect(() => {
     const reduced = window.matchMedia(
@@ -27,23 +42,25 @@ export default function ScrollCategories() {
 
     const ctx = gsap.context(() => {
       const isDesktop = window.innerWidth > 900
-      ScrollTrigger.create({
+      triggerRef.current = ScrollTrigger.create({
         trigger: stageRef.current,
         start: "top top",
-        end: () => `+=${isDesktop ? 2400 : 1400}`,
+        end: () => `+=${isDesktop ? 3000 : 1800}`,
         pin: true,
         scrub: true,
         anticipatePin: 1,
         onEnter: () => setActive(0),
         onLeaveBack: () => setActive(0),
+        onLeave: () => setActive(showcaseProducts.length - 1),
         onUpdate: (self) => {
-          const next = Math.max(
-            0,
-            Math.min(
-              showcaseProducts.length - 1,
-              Math.floor(self.progress * showcaseProducts.length),
-            ),
-          )
+          const p = self.progress
+          let next = 0
+          if (p < 0.16) next = 0
+          else if (p < 0.32) next = 1
+          else if (p < 0.48) next = 2
+          else if (p < 0.64) next = 3
+          else if (p < 0.80) next = 4
+          else next = 5
           setActive((current) => (current === next ? current : next))
         },
       })
@@ -56,12 +73,12 @@ export default function ScrollCategories() {
 
   return (
     <section
-      className={`category-story dark-section category-tone-${(safeActive % 5) + 1}`}
+      className={`category-story dark-section category-tone-${(safeActive % 6) + 1}`}
       ref={sectionRef}
     >
       <div className="section-head">
         <div>
-          <Eyebrow light>PRODUCT SERIES / 05</Eyebrow>
+          <Eyebrow light>PRODUCT SERIES / 06</Eyebrow>
           <h2>
             Engineered for
             <br />
@@ -114,7 +131,7 @@ export default function ScrollCategories() {
                   if (safeActive === index) {
                     navigate("detail", product.id)
                   } else {
-                    setActive(index)
+                    handleSelectCategory(index)
                   }
                 }}
                 key={product.id}

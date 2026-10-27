@@ -787,6 +787,10 @@ em {
     background: radial-gradient(circle, rgba(222, 220, 208, .11), transparent 62%)
 }
 
+.category-tone-6 .category-aura {
+    background: radial-gradient(circle, rgba(201, 164, 76, .13), transparent 62%)
+}
+
 .category-image-stack {
     position: absolute;
     inset: 0;
@@ -825,6 +829,12 @@ em {
 .category-tone-5 .category-image-stack .technical-orbits {
     transform: translate(-50%, -50%) scale(1.04);
     opacity: .64
+}
+
+.category-tone-6 .category-image-stack .technical-orbits {
+    transform: translate(-50%, -50%) scale(.96);
+    opacity: .75;
+    filter: drop-shadow(0 0 24px rgba(232, 213, 154, .14))
 }
 
 .category-image {
@@ -1939,6 +1949,10 @@ body {
     background: linear-gradient(145deg, #111318, #101216 58%, #18191b)
 }
 
+.category-tone-6 {
+    background: linear-gradient(145deg, #111318, #0e1117 56%, #171a20)
+}
+
 .category-aura {
     inset: -8%;
     background: radial-gradient(ellipse, rgba(232, 213, 154, .075), transparent 64%);
@@ -1959,6 +1973,10 @@ body {
 
 .category-tone-5 .category-aura {
     background: radial-gradient(ellipse, rgba(245, 245, 245, .065), transparent 64%)
+}
+
+.category-tone-6 .category-aura {
+    background: radial-gradient(ellipse, rgba(201, 164, 76, .085), transparent 64%)
 }
 
 .category-image-stack {

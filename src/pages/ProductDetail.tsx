@@ -7,7 +7,7 @@ import ProductVisual from "../components/ui/ProductVisual"
 import Icon from "../components/ui/Icon"
 
 export default function ProductDetail({ category }: { category: string }) {
-  const cleanParam = decodeURIComponent(category || "lp-01")
+  const cleanParam = decodeURIComponent(category || "bc-01")
   const currentProduct =
     products.find(
       (p) =>

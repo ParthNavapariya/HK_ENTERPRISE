@@ -11,7 +11,7 @@ export default function Industries() {
     },
     {
       title: "Architectural Doors & Cabinetry",
-      desc: "Precision deburred lock strike plates and heavy architectural hinges providing smooth swing cycles, tight latch tolerances, and flush mounting.",
+      desc: "Precision deburred lock patti fittings and heavy architectural hinges providing smooth swing cycles, tight latch tolerances, and flush mounting.",
       image: "/products/hinges/hinges-1.jpg",
     },
     {

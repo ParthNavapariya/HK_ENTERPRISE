@@ -86,7 +86,7 @@ export default function Hero() {
         <span />
         <span />
       </div>
-      <ProductVisual category="Lockpatti" hero />
+      <ProductVisual category="Bed Clamp" productCode="HK-BC-101" hero />
       <div className="hero-copy">
         <Eyebrow light>ENGINEERED HARDWARE / 01</Eyebrow>
         <h1>
@@ -107,7 +107,7 @@ export default function Hero() {
       </div>
       <div className="hero-index">
         <span>HK / PRODUCT STUDY</span>
-        <span>01 — 05</span>
+        <span>01 — 06</span>
       </div>
       <button
         className="scroll-cue"

@@ -27,8 +27,8 @@ export default function ProductVisual({
 
   const displayImage =
     image ||
-    (hero && product.category === "Lockpatti"
-      ? "/products/lockpatti/hero-product-clean.jpg"
+    (hero && product.category === "Bed Clamp"
+      ? "/products/bed-clamp/bed-clamp-2-clean.jpg"
       : product.image)
 
   return (

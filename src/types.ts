@@ -1,12 +1,12 @@
 export type Page = "home" | "about" | "products" | "industries" | "contact" | "detail"
 export type Category =
   | "All"
-  | "Lockpatti"
-  | "Hinges"
   | "Bed Clamp"
   | "Bed Socket"
+  | "Hinges"
   | "L Corner"
   | "Bed Fittings"
+  | "Lockpatti"
 
 export interface ProductItem {
   id: string
