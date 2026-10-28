@@ -103,9 +103,13 @@ export default function Footer() {
         <div className="footer-links">
           <div>
             <span>EXPLORE</span>
-            {(["home", "about", "products", "industries"] as Page[]).map((x) => (
+            {(["home", "about", "products", "story"] as Page[]).map((x) => (
               <button key={x} onClick={() => navigate(x)}>
-                {x === "about" ? "About Us" : x[0].toUpperCase() + x.slice(1)}
+                {x === "about"
+                  ? "About Us"
+                  : x === "story"
+                  ? "Our Story"
+                  : x[0].toUpperCase() + x.slice(1)}
               </button>
             ))}
           </div>

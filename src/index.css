@@ -1591,6 +1591,381 @@ em {
     font-size: 13px
 }
 
+/* ==========================================================================
+   OUR STORY PAGE — FOUNDER'S JOURNEY (MR. MAYUR SAKARIA)
+   ========================================================================== */
+
+.story-intro-section {
+    padding: 110px 8.5vw 100px;
+    background: #fbfbf9;
+}
+
+.story-intro-grid {
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    gap: 6vw;
+    align-items: center;
+}
+
+.story-intro-text h2 {
+    font-size: clamp(38px, 4.4vw, 56px);
+    line-height: 1.14;
+    letter-spacing: -0.025em;
+    margin: 18px 0 24px;
+    color: #111;
+}
+
+.story-intro-text h2 em {
+    color: #917637;
+}
+
+.story-lead-p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.story-intro-text p:not(.story-lead-p) {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.founder-card {
+    background: linear-gradient(145deg, #16181f 0%, #0d0f13 100%);
+    border: 1px solid rgba(232, 213, 154, 0.22);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32), 0 0 30px rgba(201, 164, 76, 0.05);
+    padding: 38px 34px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.founder-card:before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 164, 76, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.founder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--champagne);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.founder-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+}
+
+.founder-info h3 {
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+}
+
+.founder-title {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: rgba(245, 245, 245, 0.55);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.founder-quote {
+    font-size: 13px;
+    line-height: 1.75;
+    color: rgba(245, 245, 245, 0.85);
+    font-style: italic;
+    border-left: 2px solid var(--gold);
+    padding-left: 16px;
+    margin: 18px 0 26px;
+}
+
+.founder-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(232, 213, 154, 0.14);
+    padding-top: 22px;
+    margin-top: 10px;
+}
+
+.founder-stats b {
+    display: block;
+    font-size: 17px;
+    color: var(--champagne);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.founder-stats span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    color: rgba(245, 245, 245, 0.45);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.founder-stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(232, 213, 154, 0.14);
+}
+
+.story-timeline-section {
+    padding: 110px 8.5vw 120px;
+    background: #f2efe9;
+    border-top: 1px solid var(--light-line);
+    border-bottom: 1px solid var(--light-line);
+}
+
+.story-timeline {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-chapter {
+    display: grid;
+    grid-template-columns: 140px 1fr 220px;
+    gap: 4.5vw;
+    align-items: center;
+    padding: 42px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.story-chapter:last-child {
+    border-bottom: 0;
+}
+
+.chapter-marker {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.chapter-year {
+    font-size: 34px;
+    font-weight: 300;
+    font-family: "Manrope", sans-serif;
+    color: #111;
+    letter-spacing: -0.02em;
+}
+
+.chapter-index {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #917637;
+    text-transform: uppercase;
+}
+
+.chapter-content {
+    padding-right: 2vw;
+}
+
+.chapter-tag {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #8c7338;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.chapter-content h3 {
+    font-size: 23px;
+    line-height: 1.35;
+    color: #111;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.chapter-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.chapter-stat-box {
+    background: #e8e4db;
+    border: 1px solid rgba(145, 118, 55, 0.22);
+    padding: 18px 22px;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.chapter-stat-box b {
+    display: block;
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.chapter-stat-box span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.16em;
+    color: #8c7338;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.story-quote-section {
+    background: linear-gradient(135deg, #0e1014 0%, #15181f 100%);
+    color: var(--white);
+    padding: 130px 8.5vw;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.story-quote-section .quote-ambient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(201, 164, 76, 0.1), transparent 55%);
+    pointer-events: none;
+}
+
+.quote-container {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.quote-mark {
+    font-size: 92px;
+    line-height: 0.5;
+    color: var(--gold);
+    opacity: 0.45;
+    font-family: Georgia, serif;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.founder-main-quote {
+    font-size: clamp(24px, 3.2vw, 40px);
+    line-height: 1.35;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+}
+
+.quote-author {
+    margin-top: 42px;
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.quote-author-line {
+    width: 44px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.quote-author strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--champagne);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.quote-author span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(245, 245, 245, 0.45);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.story-values-section {
+    padding: 110px 8.5vw 120px;
+    background: #f7f7f5;
+}
+
+.story-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vw;
+    margin-top: 60px;
+}
+
+.story-value-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 42px 34px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.value-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.value-number {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: #917637;
+}
+
+.value-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(145, 118, 55, 0.22);
+}
+
+.story-value-card h3 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.story-value-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
 .contact-layout {
     padding: 110px 8.5vw 140px;
     display: grid;
@@ -2269,35 +2644,88 @@ body {
         width: 100%
     }
 
+    .hero {
+        height: auto;
+        min-height: 100svh;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: calc(76px + 32px) 24px 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-streak {
+        inset: 15% -20% auto 10%;
+        opacity: 0.22;
+        gap: 8vh;
+    }
+
     .hero-copy {
-        left: 24px;
-        width: calc(100% - 48px);
-        top: 38%
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 640px;
+        z-index: 3;
+        order: 1;
     }
 
     .hero h1 {
-        font-size: clamp(54px, 15vw, 76px)
+        font-size: clamp(38px, 9vw, 56px);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
     }
 
     .hero-copy>p {
-        max-width: 100%
+        margin-top: 18px;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .actions {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .hero-product {
-        width: 60vw;
-        height: 42%;
-        top: 48%;
-        right: -12vw;
-        opacity: .55 !important
+        position: relative !important;
+        inset: auto !important;
+        right: auto !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 480px;
+        height: auto !important;
+        min-height: 280px;
+        max-height: 380px;
+        aspect-ratio: 16 / 10;
+        margin: 32px auto 0 !important;
+        opacity: 1 !important;
+        order: 2;
+        border-radius: 4px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(201, 164, 76, 0.08);
     }
 
     .hero:after,
     .hero-index {
-        display: none
+        display: none;
     }
 
     .scroll-cue {
-        left: 24px
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 36px;
+        align-self: flex-start;
+        order: 3;
     }
 
     .manifesto,
@@ -2692,6 +3120,38 @@ body {
         display: none
     }
 
+    .story-intro-section,
+    .story-timeline-section,
+    .story-quote-section,
+    .story-values-section {
+        padding: 80px 24px;
+    }
+
+    .story-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-chapter {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 34px 0;
+    }
+
+    .chapter-content {
+        padding-right: 0;
+    }
+
+    .chapter-stat-box {
+        text-align: left;
+    }
+
+    .story-values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
     .industry-list {
         padding: 50px 24px 90px
     }
@@ -2743,21 +3203,45 @@ body {
     }
 
     .hero {
-        min-height: 780px
+        min-height: auto;
+        padding: calc(76px + 20px) 20px 48px;
     }
 
     .hero-copy {
-        top: 39%
+        top: auto;
+        left: auto;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8.5vw, 42px);
     }
 
     .actions {
         flex-direction: column;
         align-items: stretch;
-        max-width: 270px
+        max-width: 100%;
+        width: 100%;
     }
 
-    .product-visual {
-        min-height: 360px
+    .actions .btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero-product {
+        min-height: 240px;
+        max-height: 320px;
+        aspect-ratio: 4 / 3;
+        margin: 24px auto 0 !important;
+    }
+
+    .product-visual:not(.hero-product) {
+        min-height: 260px;
+    }
+
+    .scroll-cue {
+        margin-top: 24px;
     }
 
     .section-head {
@@ -2777,6 +3261,31 @@ body {
     .form-grid {
         grid-template-columns: 1fr;
         gap: 0
+    }
+
+    .founder-card {
+        padding: 28px 20px;
+    }
+
+    .founder-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .founder-stat-divider {
+        display: none;
+    }
+
+    .story-intro-section,
+    .story-timeline-section,
+    .story-quote-section,
+    .story-values-section {
+        padding: 64px 20px;
+    }
+
+    .story-value-card {
+        padding: 30px 22px;
     }
 
     .industry-list article {

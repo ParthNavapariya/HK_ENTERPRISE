@@ -31,7 +31,7 @@ export default function Navbar({ page }: { page: Page }) {
     ["Home", "home"],
     ["About Us", "about"],
     ["Products", "products"],
-    ["Industries", "industries"],
+    ["Our Story", "story"],
     ["Contact", "contact"],
   ]
 

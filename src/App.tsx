@@ -8,7 +8,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
 import ProductDetail from "./pages/ProductDetail"
-import Industries from "./pages/Industries"
+import Story from "./pages/Story"
 import Contact from "./pages/Contact"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -43,9 +43,15 @@ export default function App() {
     }
   }, [route])
 
-  const [pageName, detail = ""] = route.split("/")
+  const [rawPageName, detail = ""] = route.split("/")
+  // Support legacy '#industries' and '#our-story' mapping to 'story'
+  const pageName =
+    rawPageName === "industries" || rawPageName === "our-story"
+      ? "story"
+      : rawPageName
+
   const page = (
-    ["home", "about", "products", "industries", "contact", "detail"].includes(
+    ["home", "about", "story", "products", "contact", "detail"].includes(
       pageName,
     )
       ? pageName
@@ -56,9 +62,9 @@ export default function App() {
     <>
       <Navbar page={page} />
       {page === "home" && <Home />}
+      {page === "story" && <Story />}
       {page === "about" && <About />}
       {page === "products" && <Products />}
-      {page === "industries" && <Industries />}
       {page === "contact" && <Contact />}
       {page === "detail" && <ProductDetail category={detail} />}
       <Footer />
