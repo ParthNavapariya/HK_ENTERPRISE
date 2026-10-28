@@ -1592,378 +1592,318 @@ em {
 }
 
 /* ==========================================================================
-   OUR STORY PAGE — FOUNDER'S JOURNEY (MR. MAYUR SAKARIA)
+   OUR STORY PAGE — SECTION DESIGN (MATCHING FIGMA MOCKUP)
    ========================================================================== */
 
-.story-intro-section {
-    padding: 110px 8.5vw 100px;
-    background: #fbfbf9;
-}
-
-.story-intro-grid {
-    display: grid;
-    grid-template-columns: 1.18fr 0.82fr;
-    gap: 6vw;
-    align-items: center;
-}
-
-.story-intro-text h2 {
-    font-size: clamp(38px, 4.4vw, 56px);
-    line-height: 1.14;
-    letter-spacing: -0.025em;
-    margin: 18px 0 24px;
-    color: #111;
-}
-
-.story-intro-text h2 em {
-    color: #917637;
-}
-
-.story-lead-p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #1a1a1a;
-    font-weight: 500;
-    margin-bottom: 18px;
-}
-
-.story-intro-text p:not(.story-lead-p) {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--muted);
-}
-
-.founder-card {
-    background: linear-gradient(145deg, #16181f 0%, #0d0f13 100%);
-    border: 1px solid rgba(232, 213, 154, 0.22);
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32), 0 0 30px rgba(201, 164, 76, 0.05);
-    padding: 38px 34px;
-    border-radius: 4px;
+.story-modern-page {
+    background: #090a0d;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: calc(76px + 44px) 24px 120px;
     position: relative;
     overflow: hidden;
-    color: var(--white);
 }
 
-.founder-card:before {
-    content: "";
+.story-ambient-glow {
     position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201, 164, 76, 0.15), transparent 70%);
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 1000px;
+    height: 500px;
+    background: radial-gradient(ellipse at 50% 30%, rgba(201, 164, 76, 0.08) 0%, rgba(232, 213, 154, 0.02) 45%, transparent 70%);
     pointer-events: none;
+    z-index: 1;
+    filter: blur(40px);
 }
 
-.founder-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--champagne);
-    text-transform: uppercase;
-    margin-bottom: 22px;
+.story-container {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
-.founder-badge .badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
+/* Workshop Hero Photo Frame */
+.story-hero-frame {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    background: #111317;
+    border: 1px solid rgba(232, 213, 154, 0.16);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(201, 164, 76, 0.06);
 }
 
-.founder-info h3 {
-    font-size: 28px;
-    color: #ffffff;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    margin-bottom: 4px;
-}
-
-.founder-title {
+.story-hero-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9.4;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: center 25%;
     display: block;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    color: rgba(245, 245, 245, 0.55);
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    filter: brightness(0.96) contrast(1.05);
 }
 
-.founder-quote {
-    font-size: 13px;
-    line-height: 1.75;
-    color: rgba(245, 245, 245, 0.85);
-    font-style: italic;
-    border-left: 2px solid var(--gold);
-    padding-left: 16px;
-    margin: 18px 0 26px;
+.story-hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-.founder-stats {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(232, 213, 154, 0.14);
-    padding-top: 22px;
-    margin-top: 10px;
+/* Header Text Block */
+.story-header-block {
+    margin-top: 40px;
 }
 
-.founder-stats b {
-    display: block;
-    font-size: 17px;
-    color: var(--champagne);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-.founder-stats span {
-    display: block;
-    font-size: 8px;
-    letter-spacing: 0.14em;
-    color: rgba(245, 245, 245, 0.45);
-    text-transform: uppercase;
-    margin-top: 4px;
-}
-
-.founder-stat-divider {
-    width: 1px;
-    height: 32px;
-    background: rgba(232, 213, 154, 0.14);
-}
-
-.story-timeline-section {
-    padding: 110px 8.5vw 120px;
-    background: #f2efe9;
-    border-top: 1px solid var(--light-line);
-    border-bottom: 1px solid var(--light-line);
-}
-
-.story-timeline {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-}
-
-.story-chapter {
-    display: grid;
-    grid-template-columns: 140px 1fr 220px;
-    gap: 4.5vw;
-    align-items: center;
-    padding: 42px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.story-chapter:last-child {
-    border-bottom: 0;
-}
-
-.chapter-marker {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.chapter-year {
-    font-size: 34px;
-    font-weight: 300;
-    font-family: "Manrope", sans-serif;
-    color: #111;
-    letter-spacing: -0.02em;
-}
-
-.chapter-index {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: #917637;
-    text-transform: uppercase;
-}
-
-.chapter-content {
-    padding-right: 2vw;
-}
-
-.chapter-tag {
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    color: #8c7338;
-    text-transform: uppercase;
-    font-weight: 600;
+.story-tag {
     display: inline-block;
-    margin-bottom: 8px;
-}
-
-.chapter-content h3 {
-    font-size: 23px;
-    line-height: 1.35;
-    color: #111;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #c9a44c;
+    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
-.chapter-content p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--muted);
-}
-
-.chapter-stat-box {
-    background: #e8e4db;
-    border: 1px solid rgba(145, 118, 55, 0.22);
-    padding: 18px 22px;
-    border-radius: 4px;
-    text-align: right;
-}
-
-.chapter-stat-box b {
-    display: block;
-    font-size: 15px;
-    color: #1a1a1a;
+.story-title {
+    font-size: clamp(34px, 4.4vw, 48px);
     font-weight: 600;
-}
-
-.chapter-stat-box span {
-    display: block;
-    font-size: 8px;
-    letter-spacing: 0.16em;
-    color: #8c7338;
-    text-transform: uppercase;
-    margin-top: 4px;
-}
-
-.story-quote-section {
-    background: linear-gradient(135deg, #0e1014 0%, #15181f 100%);
-    color: var(--white);
-    padding: 130px 8.5vw;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.story-quote-section .quote-ambient {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(201, 164, 76, 0.1), transparent 55%);
-    pointer-events: none;
-}
-
-.quote-container {
-    position: relative;
-    z-index: 2;
-    max-width: 920px;
-    margin: 0 auto;
-}
-
-.quote-mark {
-    font-size: 92px;
-    line-height: 0.5;
-    color: var(--gold);
-    opacity: 0.45;
-    font-family: Georgia, serif;
-    display: block;
-    margin-bottom: 24px;
-}
-
-.founder-main-quote {
-    font-size: clamp(24px, 3.2vw, 40px);
-    line-height: 1.35;
-    font-weight: 300;
-    letter-spacing: -0.02em;
+    line-height: 1.16;
+    letter-spacing: -0.025em;
     color: #ffffff;
     font-family: "Manrope", sans-serif;
+    margin: 0 0 12px;
+}
+
+.story-subtitle {
+    font-size: clamp(16px, 1.8vw, 19px);
+    color: rgba(245, 245, 245, 0.65);
+    font-weight: 400;
+    line-height: 1.5;
     margin: 0;
 }
 
-.quote-author {
-    margin-top: 42px;
-    display: inline-flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.quote-author-line {
-    width: 44px;
+/* Fine Gold Divider */
+.story-gold-divider {
     height: 1px;
-    background: var(--gold);
+    width: 100%;
+    background: linear-gradient(90deg, rgba(201, 164, 76, 0.55) 0%, rgba(201, 164, 76, 0.2) 65%, transparent 100%);
+    margin: 34px 0 38px;
 }
 
-.quote-author strong {
+/* 2-Column Stats Grid */
+.story-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 46px;
+}
+
+.story-stat-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-stat-number {
     display: block;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    color: var(--champagne);
-    text-transform: uppercase;
+    font-size: clamp(34px, 4vw, 44px);
     font-weight: 600;
+    color: #c9a44c;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 8px;
 }
 
-.quote-author span {
+.story-stat-label {
     display: block;
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    color: rgba(245, 245, 245, 0.45);
-    text-transform: uppercase;
-    margin-top: 4px;
+    font-size: 14px;
+    color: rgba(245, 245, 245, 0.62);
+    font-weight: 400;
+    line-height: 1.4;
 }
 
-.story-values-section {
-    padding: 110px 8.5vw 120px;
-    background: #f7f7f5;
+/* Narrative Prose Groups */
+.story-narrative-block {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.story-prose-group h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+}
+
+.story-prose-group p {
+    font-size: 15px;
+    line-height: 1.82;
+    color: rgba(245, 245, 245, 0.68);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Down Arrow & Motto Accent */
+.story-quote-accent {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.story-arrow-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 164, 76, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9a44c;
+    background: rgba(201, 164, 76, 0.06);
+    box-shadow: 0 0 16px rgba(201, 164, 76, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.story-arrow-circle:hover {
+    transform: translateY(2px);
+    border-color: rgba(201, 164, 76, 0.6);
+}
+
+.story-motto {
+    font-size: 16px;
+    font-style: italic;
+    color: #c9a44c;
+    letter-spacing: 0.015em;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Dark Core Values Section */
+.story-values-dark-section {
+    margin-top: 90px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(232, 213, 154, 0.12);
+}
+
+.story-values-header {
+    margin-bottom: 36px;
+}
+
+.story-values-header span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #c9a44c;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.story-values-header h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
 
 .story-values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    margin-top: 60px;
+    gap: 20px;
 }
 
-.story-value-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 42px 34px;
+.story-value-dark-card {
+    background: linear-gradient(145deg, #12141a, #0b0d11);
+    border: 1px solid rgba(232, 213, 154, 0.14);
+    padding: 32px 26px;
     border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.story-value-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+.story-value-dark-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201, 164, 76, 0.35);
 }
 
-.value-header {
+.value-dark-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 22px;
+    gap: 12px;
+    margin-bottom: 18px;
 }
 
-.value-number {
-    font-size: 13px;
+.value-dark-num {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: #c9a44c;
     font-weight: 600;
-    letter-spacing: 0.14em;
-    color: #917637;
 }
 
-.value-line {
+.value-dark-line {
     flex: 1;
     height: 1px;
-    background: rgba(145, 118, 55, 0.22);
+    background: rgba(201, 164, 76, 0.18);
 }
 
-.story-value-card h3 {
-    font-size: 24px;
-    color: #111;
-    margin-bottom: 14px;
+.story-value-dark-card h4 {
+    font-size: 20px;
+    color: #ffffff;
     font-weight: 500;
+    margin: 0 0 12px;
 }
 
-.story-value-card p {
+.story-value-dark-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.6);
+    margin: 0;
+}
+
+/* Call to Action Block */
+.story-cta-block {
+    margin-top: 80px;
+    background: linear-gradient(145deg, #141720, #0d0f14);
+    border: 1px solid rgba(201, 164, 76, 0.22);
+    border-radius: 6px;
+    padding: 48px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.story-cta-copy h3 {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0 0 8px;
+    letter-spacing: -0.015em;
+}
+
+.story-cta-copy p {
     font-size: 14px;
-    line-height: 1.75;
-    color: var(--muted);
+    color: rgba(245, 245, 245, 0.6);
+    margin: 0;
+}
+
+.story-cta-actions {
+    display: flex;
+    gap: 14px;
+    flex-shrink: 0;
 }
 
 .contact-layout {
@@ -3120,37 +3060,7 @@ body {
         display: none
     }
 
-    .story-intro-section,
-    .story-timeline-section,
-    .story-quote-section,
-    .story-values-section {
-        padding: 80px 24px;
-    }
 
-    .story-intro-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .story-chapter {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 34px 0;
-    }
-
-    .chapter-content {
-        padding-right: 0;
-    }
-
-    .chapter-stat-box {
-        text-align: left;
-    }
-
-    .story-values-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 40px;
-    }
 
     .industry-list {
         padding: 50px 24px 90px
@@ -3263,30 +3173,7 @@ body {
         gap: 0
     }
 
-    .founder-card {
-        padding: 28px 20px;
-    }
 
-    .founder-stats {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
-
-    .founder-stat-divider {
-        display: none;
-    }
-
-    .story-intro-section,
-    .story-timeline-section,
-    .story-quote-section,
-    .story-values-section {
-        padding: 64px 20px;
-    }
-
-    .story-value-card {
-        padding: 30px 22px;
-    }
 
     .industry-list article {
         grid-template-columns: 1fr;
