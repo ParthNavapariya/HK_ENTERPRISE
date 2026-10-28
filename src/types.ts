@@ -1,4 +1,4 @@
-export type Page = "home" | "about" | "story" | "products" | "contact" | "detail"
+export type Page = "home" | "about" | "story" | "products" | "contact" | "detail" | "ourstory";
 export type Category =
   | "All"
   | "Bed Clamp"
