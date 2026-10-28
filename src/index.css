@@ -3158,6 +3158,30 @@ body {
         margin-bottom: 55px
     }
 
+    /* Fix split-copy, quality-section, section-head to single column on mobile */
+    .section-head,
+    .split-copy,
+    .quality-section,
+    .detail-info {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .principles {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .manifesto-copy {
+        font-size: clamp(32px, 9vw, 52px);
+    }
+
+    .manifesto-meta {
+        margin-left: 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .category-list button {
         min-height: 48px;
         height: auto;
@@ -3168,12 +3192,14 @@ body {
         padding: 80px 24px
     }
 
+    .cta-panel h2 {
+        font-size: clamp(38px, 10vw, 58px);
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
         gap: 0
     }
-
-
 
     .industry-list article {
         grid-template-columns: 1fr;
