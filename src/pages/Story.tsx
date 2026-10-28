@@ -79,55 +79,31 @@ export default function Story() {
         <span>FURNITURE HARDWARE</span>
       </section>
 
-      {/* Full story — quality-section layout with 2 cols */}
-      <section className="quality-section">
-        <div>
-          <Eyebrow>OUR GROWTH</Eyebrow>
-          <h2>
-            Built step
-            <br />
-            by <em>step.</em>
-          </h2>
-        </div>
-        <div className="quality-list">
-          <article>
-            <span>01</span>
-            <div>
-              <h3>The Beginning</h3>
-              <p>
-                With time, his hard work began to pay off. The business
-                gradually grew, more people joined the team, and production
-                increased. Starting with just one product, HK Enterprise slowly
-                expanded its range to offer many different furniture hardware
-                fittings.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <h3>Steady Expansion</h3>
-              <p>
-                Step by step, the small workshop developed into a growing
-                manufacturing business. For Mr. Mayur Sakaria, this journey has
-                always been about more than business — it represents years of
-                hard work, lessons learned, and the trust built with customers
-                along the way.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Looking Forward</h3>
-              <p>
-                Today, HK Enterprise continues to move forward with the same
-                values that shaped its beginnings: hard work, quality, and
-                trust. We look forward to growing further and building lasting
-                relationships across India and international markets.
-              </p>
-            </div>
-          </article>
+      {/* Growth story — manifesto style narrative */}
+      <section className="manifesto reveal">
+        <Eyebrow>OUR GROWTH</Eyebrow>
+        <p className="manifesto-copy">
+          Built on effort.<br />
+          <em>Grown through trust.</em>
+        </p>
+        <div className="manifesto-meta">
+          <span>The Journey</span>
+          <p>
+            With time, his hard work began to pay off. The business gradually grew,
+            more people joined the team, and production increased. Starting with just
+            one product, HK Enterprise slowly expanded its range to offer many
+            different furniture hardware fittings — step by step, a small workshop
+            became a growing manufacturing business.
+            <br /><br />
+            For Mr. Mayur Sakaria, this journey has always been about more than
+            business. It represents years of lessons learned, challenges overcome,
+            and the trust built with customers along the way.
+            <br /><br />
+            Today, HK Enterprise continues to move forward with the same values that
+            shaped its beginnings — with a strong foundation and a vision for the
+            future, building lasting relationships across India and international
+            markets.
+          </p>
         </div>
       </section>
 
