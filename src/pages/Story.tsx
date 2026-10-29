@@ -1,7 +1,12 @@
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { navigate } from "../utils/navigation"
 import PageHero from "../components/ui/PageHero"
 import Eyebrow from "../components/ui/Eyebrow"
 import Button from "../components/ui/Button"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const values = [
   {
@@ -22,8 +27,183 @@ const values = [
 ]
 
 export default function Story() {
+  const containerRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    const ctx = gsap.context(() => {
+      // 1. Animate .about-intro (The Journey) when scrolled to
+      const intro = document.querySelector(".about-intro")
+      if (intro) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: intro,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(intro.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            intro.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 55,
+              duration: 1.0,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            intro.querySelectorAll(".split-copy p, .about-motto"),
+            {
+              opacity: 0,
+              y: 30,
+              stagger: 0.15,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.55",
+          )
+      }
+
+      // 2. Animate .manifesto (Our Growth) when scrolled to
+      const manifesto = document.querySelector(".manifesto")
+      if (manifesto) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: manifesto,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(manifesto.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            manifesto.querySelector(".manifesto-copy"),
+            {
+              opacity: 0,
+              y: 55,
+              duration: 1.0,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            manifesto.querySelector(".manifesto-meta"),
+            {
+              opacity: 0,
+              y: 30,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.55",
+          )
+      }
+
+      // 3. Animate .process-section (Core Values)
+      const processSec = document.querySelector(".process-section")
+      if (processSec) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: processSec,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(processSec.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            processSec.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0.9,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            processSec.querySelector(".section-head > p"),
+            {
+              opacity: 0,
+              y: 25,
+              duration: 0.7,
+              ease: "power3.out",
+            },
+            "-=0.5",
+          )
+          .from(
+            processSec.querySelectorAll(".principles article"),
+            {
+              opacity: 0,
+              y: 35,
+              stagger: 0.15,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.4",
+          )
+      }
+
+      // 4. Animate .cta-panel
+      const cta = document.querySelector(".cta-panel")
+      if (cta) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: cta,
+            start: "top 85%",
+            once: true,
+          },
+        })
+          .from(cta.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            cta.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0.9,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            cta.querySelector(".btn"),
+            {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              ease: "power3.out",
+            },
+            "-=0.45",
+          )
+      }
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <main>
+    <main ref={containerRef}>
       {/* Dark hero header — same as About & Contact */}
       <PageHero
         eyebrow="EST. 2003 · OUR STORY"

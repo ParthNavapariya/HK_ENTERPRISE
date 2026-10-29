@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { COMPANY_INFO, products } from "../data/products"
 import { navigate } from "../utils/navigation"
 import Eyebrow from "../components/ui/Eyebrow"
@@ -6,7 +8,10 @@ import Button from "../components/ui/Button"
 import ProductVisual from "../components/ui/ProductVisual"
 import Icon from "../components/ui/Icon"
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function ProductDetail({ category }: { category: string }) {
+  const containerRef = useRef<HTMLElement>(null)
   const cleanParam = decodeURIComponent(category || "bc-01")
   const currentProduct =
     products.find(
@@ -24,8 +29,55 @@ export default function ProductDetail({ category }: { category: string }) {
     setActiveImage(currentProduct.image)
   }, [currentProduct])
 
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    const ctx = gsap.context(() => {
+      const detailInfo = document.querySelector(".detail-info")
+      if (detailInfo) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: detailInfo,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(detailInfo.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            detailInfo.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0.9,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            detailInfo.querySelectorAll(".specs article"),
+            {
+              opacity: 0,
+              y: 25,
+              stagger: 0.1,
+              duration: 0.7,
+              ease: "power3.out",
+            },
+            "-=0.45",
+          )
+      }
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [currentProduct])
+
   return (
-    <main>
+    <main ref={containerRef}>
       <section className="detail-hero">
         <div className="detail-copy">
           <Eyebrow light>

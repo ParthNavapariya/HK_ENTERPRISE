@@ -1,11 +1,105 @@
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { navigate } from "../utils/navigation"
 import PageHero from "../components/ui/PageHero"
 import Eyebrow from "../components/ui/Eyebrow"
 import Button from "../components/ui/Button"
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function About() {
+  const containerRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    const ctx = gsap.context(() => {
+      // 1. Animate .about-intro
+      const intro = document.querySelector(".about-intro")
+      if (intro) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: intro,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(intro.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            intro.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 55,
+              duration: 1.0,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            intro.querySelectorAll(".split-copy p, .about-motto"),
+            {
+              opacity: 0,
+              y: 30,
+              stagger: 0.15,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.55",
+          )
+      }
+
+      // 2. Animate .quality-section
+      const quality = document.querySelector(".quality-section")
+      if (quality) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: quality,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(quality.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            quality.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0.9,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            quality.querySelectorAll(".quality-list article"),
+            {
+              opacity: 0,
+              y: 30,
+              stagger: 0.12,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.5",
+          )
+      }
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <main>
+    <main ref={containerRef}>
       <PageHero
         eyebrow="ABOUT HK ENTERPRISE"
         title={
