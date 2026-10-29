@@ -69,22 +69,14 @@ export default function Story() {
         </div>
       </section>
 
-      {/* Gold ticker band — continuous animated drift */}
-      <section className="range-band" aria-hidden="true">
-        <div className="range-band-track">
-          <span>HARD WORK</span>
-          <span>QUALITY</span>
-          <span>TRUST</span>
-          <span>RAJKOT</span>
-          <span>EST. 2003</span>
-          <span>FURNITURE HARDWARE</span>
-          <span>HARD WORK</span>
-          <span>QUALITY</span>
-          <span>TRUST</span>
-          <span>RAJKOT</span>
-          <span>EST. 2003</span>
-          <span>FURNITURE HARDWARE</span>
-        </div>
+      {/* Gold ticker band — same as About */}
+      <section className="range-band">
+        <span>HARD WORK</span>
+        <span>QUALITY</span>
+        <span>TRUST</span>
+        <span>RAJKOT</span>
+        <span>EST. 2003</span>
+        <span>FURNITURE HARDWARE</span>
       </section>
 
       {/* Growth story — manifesto style narrative */}

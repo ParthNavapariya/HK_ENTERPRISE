@@ -38,21 +38,13 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="range-band" aria-hidden="true">
-        <div className="range-band-track">
-          <span>LOCKPATTI</span>
-          <span>HINGES</span>
-          <span>BED CLAMPS</span>
-          <span>BED SOCKETS</span>
-          <span>L CORNERS</span>
-          <span>BED FITTINGS</span>
-          <span>LOCKPATTI</span>
-          <span>HINGES</span>
-          <span>BED CLAMPS</span>
-          <span>BED SOCKETS</span>
-          <span>L CORNERS</span>
-          <span>BED FITTINGS</span>
-        </div>
+      <section className="range-band">
+        <span>LOCKPATTI</span>
+        <span>HINGES</span>
+        <span>BED CLAMPS</span>
+        <span>BED SOCKETS</span>
+        <span>L CORNERS</span>
+        <span>BED FITTINGS</span>
       </section>
       <section className="quality-section">
         <div>

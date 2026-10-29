@@ -61,14 +61,12 @@ export default function App() {
   return (
     <>
       <Navbar page={page} />
-      <div key={route} className="page-transition">
-        {page === "home" && <Home />}
-        {page === "story" && <Story />}
-        {page === "about" && <About />}
-        {page === "products" && <Products />}
-        {page === "contact" && <Contact />}
-        {page === "detail" && <ProductDetail category={detail} />}
-      </div>
+      {page === "home" && <Home />}
+      {page === "story" && <Story />}
+      {page === "about" && <About />}
+      {page === "products" && <Products />}
+      {page === "contact" && <Contact />}
+      {page === "detail" && <ProductDetail category={detail} />}
       <Footer />
     </>
   )
