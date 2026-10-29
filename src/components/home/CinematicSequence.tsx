@@ -44,20 +44,6 @@ export default function CinematicSequence() {
   const timelineRef = useRef<gsap.core.Timeline | null>(null)
   const [activeChapter, setActiveChapter] = useState(0)
 
-  const handleSelectChapter = (index: number) => {
-    setActiveChapter(index)
-    const st = timelineRef.current?.scrollTrigger
-    if (st) {
-      const progressPoints = [0.06, 0.38, 0.72, 0.96]
-      const targetProgress = progressPoints[index] ?? 0.5
-      const targetY = st.start + targetProgress * (st.end - st.start)
-      window.scrollTo({
-        top: targetY,
-        behavior: "smooth",
-      })
-    }
-  }
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const media = gsap.matchMedia()
@@ -216,24 +202,9 @@ export default function CinematicSequence() {
           <span>STUDY • HK-BC-101</span>
         </div>
 
-        <nav className="sequence-pills" aria-label="Chapter navigation">
-          {chapters.map((ch, idx) => (
-            <button
-              key={ch.num}
-              type="button"
-              onClick={() => handleSelectChapter(idx)}
-              className={`sequence-pill-btn ${
-                activeChapter === idx ? "active" : ""
-              }`}
-              aria-label={`Jump to chapter ${ch.num}: ${ch.tag}`}
-            >
-              <span className="pill-num">{ch.num}</span>
-              <span className="pill-label">{ch.tag}</span>
-            </button>
-          ))}
-        </nav>
-
-        <span className="sequence-top-counter">01 — 04</span>
+        <span className="sequence-top-counter">
+          0{activeChapter + 1} — 04
+        </span>
       </div>
 
       <div className="sequence-product">
