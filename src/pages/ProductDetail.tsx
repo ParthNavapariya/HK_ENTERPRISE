@@ -104,9 +104,24 @@ export default function ProductDetail({ category }: { category: string }) {
     return () => ctx.revert()
   }, [currentProduct])
 
-  const productWhatsappUrl = `https://wa.me/919723771164?text=${encodeURIComponent(
-    `Hello HK Enterprise,\n\nI want to enquire about this hardware product:\n• *Product:* ${currentProduct.name}\n• *Code:* ${currentProduct.code || currentProduct.category}\n• *Category:* ${currentProduct.category} Series\n\nPlease share availability, bulk pricing, and specifications.`
+  const productWhatsappUrl = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
+    `*Hardware Product Enquiry - HK Enterprise*\n\n` +
+    `Hello, I would like to enquire about:\n` +
+    `• *Product Name:* ${currentProduct.name}\n` +
+    `• *Product Code:* ${currentProduct.code || currentProduct.category}\n` +
+    `• *Category:* ${currentProduct.category} Series\n` +
+    (currentProduct.material ? `• *Material:* ${currentProduct.material}\n` : "") +
+    (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
+    (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
+    (currentProduct.dimensions ? `• *Dimensions:* ${currentProduct.dimensions}\n` : "") +
+    (currentProduct.loadCapacity ? `• *Load Capacity:* ${currentProduct.loadCapacity}\n` : "") +
+    `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`
   )}`
+
+  const handleWhatsappEnquiry = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.location.href = productWhatsappUrl
+  }
 
   return (
     <main ref={containerRef}>
@@ -121,15 +136,17 @@ export default function ProductDetail({ category }: { category: string }) {
           <div className="actions desktop-actions">
             <a
               href={productWhatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleWhatsappEnquiry}
               className="btn"
               style={{ textDecoration: "none" }}
             >
               <span>Enquire on WhatsApp</span>
               <Icon name="arrow" />
             </a>
-            <Button secondary onClick={() => navigate("contact")}>
+            <Button
+              secondary
+              onClick={() => navigate("contact", currentProduct.id)}
+            >
               Custom Form Enquiry
             </Button>
           </div>
@@ -156,15 +173,17 @@ export default function ProductDetail({ category }: { category: string }) {
           <div className="actions mobile-actions">
             <a
               href={productWhatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleWhatsappEnquiry}
               className="btn"
               style={{ textDecoration: "none" }}
             >
               <span>Enquire on WhatsApp</span>
               <Icon name="arrow" />
             </a>
-            <Button secondary onClick={() => navigate("contact")}>
+            <Button
+              secondary
+              onClick={() => navigate("contact", currentProduct.id)}
+            >
               Custom Form Enquiry
             </Button>
           </div>

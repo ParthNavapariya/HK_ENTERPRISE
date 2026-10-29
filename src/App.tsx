@@ -87,7 +87,7 @@ export default function App() {
       {page === "story" && <Story />}
       {page === "about" && <About />}
       {page === "products" && <Products />}
-      {page === "contact" && <Contact />}
+      {page === "contact" && <Contact productParam={detail} />}
       {page === "detail" && <ProductDetail category={detail} />}
       <Footer />
     </>

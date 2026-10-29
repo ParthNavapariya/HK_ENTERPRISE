@@ -102,10 +102,50 @@ export default function Products() {
                 </span>
                 <h2>{product.name}</h2>
                 <p>{product.note}</p>
-                <button onClick={() => navigate("detail", product.id)}>
-                  <span>View Details & Specs</span>
-                  <Icon name="arrow" />
-                </button>
+                <div style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "18px", flexWrap: "wrap" }}>
+                  <button onClick={() => navigate("detail", product.id)}>
+                    <span>View Specs</span>
+                    <Icon name="arrow" />
+                  </button>
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
+                      `*Hardware Product Enquiry - HK Enterprise*\n\n` +
+                      `Hello, I want to enquire about:\n` +
+                      `• *Product Name:* ${product.name}\n` +
+                      `• *Product Code:* ${product.code || "N/A"}\n` +
+                      `• *Category:* ${product.category} Series\n\n` +
+                      `Please share quotation, MOQ, and technical catalog.`
+                    )}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      window.location.href = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
+                        `*Hardware Product Enquiry - HK Enterprise*\n\n` +
+                        `Hello, I want to enquire about:\n` +
+                        `• *Product Name:* ${product.name}\n` +
+                        `• *Product Code:* ${product.code || "N/A"}\n` +
+                        `• *Category:* ${product.category} Series\n\n` +
+                        `Please share quotation, MOQ, and technical catalog.`
+                      )}`
+                    }}
+                    style={{
+                      color: "var(--gold)",
+                      fontSize: "9px",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                      borderBottom: "1px solid rgba(201, 164, 76, 0.4)",
+                      paddingBottom: "4px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <span>Enquire WhatsApp</span>
+                    <Icon name="arrow" />
+                  </a>
+                </div>
               </div>
             </article>
           ))}

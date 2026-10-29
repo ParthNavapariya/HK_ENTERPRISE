@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { COMPANY_INFO, categories } from "../data/products"
+import { COMPANY_INFO, categories, products } from "../data/products"
 import { navigate } from "../utils/navigation"
 import PageHero from "../components/ui/PageHero"
 import Eyebrow from "../components/ui/Eyebrow"
@@ -10,17 +10,47 @@ import Icon from "../components/ui/Icon"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Contact() {
+interface ContactProps {
+  productParam?: string
+}
+
+export default function Contact({ productParam }: ContactProps) {
   const containerRef = useRef<HTMLElement>(null)
   const [sent, setSent] = useState(false)
+
+  const selectedProduct = productParam
+    ? products.find(
+        (p) =>
+          p.id.toLowerCase() === productParam.toLowerCase() ||
+          (p.code && p.code.toLowerCase() === productParam.toLowerCase()) ||
+          p.category.toLowerCase() === productParam.toLowerCase(),
+      )
+    : null
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     phone: "",
     city: "",
-    category: "Bed Clamp",
-    message: "",
+    category: selectedProduct ? selectedProduct.category : "Bed Clamp",
+    productName: selectedProduct
+      ? `${selectedProduct.name} (${selectedProduct.code || ""})`
+      : "",
+    message: selectedProduct
+      ? `Hello HK Enterprise, I want to enquire about ${selectedProduct.name} (${selectedProduct.code || ""}). Please share quotation, MOQ, and technical catalog.`
+      : "",
   })
+
+  useEffect(() => {
+    if (selectedProduct) {
+      setFormData((prev) => ({
+        ...prev,
+        category: selectedProduct.category,
+        productName: `${selectedProduct.name} (${selectedProduct.code || ""})`,
+        message: `Hello HK Enterprise, I want to enquire about ${selectedProduct.name} (${selectedProduct.code || ""}). Please share quotation, MOQ, and technical catalog.`,
+      }))
+    }
+  }, [productParam])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,6 +62,7 @@ export default function Contact() {
       formData.company ? `*Company / Workshop:* ${formData.company}` : null,
       `*Phone / WhatsApp:* ${formData.phone}`,
       formData.city ? `*City / State:* ${formData.city}` : null,
+      formData.productName ? `*Product Name:* ${formData.productName}` : null,
       formData.category ? `*Product Category:* ${formData.category}` : null,
       "",
       `*Message / Requirements:*`,
@@ -40,7 +71,7 @@ export default function Contact() {
       .filter((line) => line !== null)
       .join("\n")
 
-    const whatsappUrl = `https://wa.me/919723771164?text=${encodeURIComponent(lines)}`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(lines)}`
 
     // Directly open WhatsApp application without popup blocker issues
     window.location.href = whatsappUrl
@@ -171,6 +202,63 @@ export default function Contact() {
         </aside>
 
         <form onSubmit={handleSubmit}>
+          {selectedProduct && (
+            <div
+              style={{
+                background: "rgba(201, 164, 76, 0.08)",
+                border: "1px solid rgba(232, 213, 154, 0.28)",
+                padding: "12px 16px",
+                borderRadius: "8px",
+                marginBottom: "20px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "12px",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  style={{
+                    width: "44px",
+                    height: "44px",
+                    objectFit: "cover",
+                    borderRadius: "6px",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                  }}
+                />
+                <div>
+                  <div
+                    style={{
+                      fontSize: "9px",
+                      color: "var(--gold)",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Direct Product Enquiry
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 600,
+                      color: "#ffffff",
+                    }}
+                  >
+                    {selectedProduct.name}{" "}
+                    {selectedProduct.code && (
+                      <span style={{ opacity: 0.65, fontSize: "12px" }}>
+                        ({selectedProduct.code})
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="form-grid">
             <label>
               <span>Full Name *</span>
@@ -217,21 +305,33 @@ export default function Contact() {
               />
             </label>
           </div>
-          <label>
-            <span>Product Category</span>
-            <select
-              value={formData.category}
-              onChange={(e) =>
-                setFormData({ ...formData, category: e.target.value })
-              }
-            >
-              {categories.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </label>
+          <div className="form-grid" style={{ marginTop: "14px" }}>
+            <label>
+              <span>Product Category</span>
+              <select
+                value={formData.category}
+                onChange={(e) =>
+                  setFormData({ ...formData, category: e.target.value })
+                }
+              >
+                {categories.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <span>Product / Model Name</span>
+              <input
+                placeholder="e.g. 111 Clamp (Capsule Hole)"
+                value={formData.productName}
+                onChange={(e) =>
+                  setFormData({ ...formData, productName: e.target.value })
+                }
+              />
+            </label>
+          </div>
           <label>
             <span>Message / Requirements *</span>
             <textarea
