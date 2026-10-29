@@ -2877,14 +2877,12 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        top: 56px;
-        bottom: 180px;
+        top: 48px;
+        bottom: auto;
+        height: clamp(210px, 38vh, 290px);
         width: auto;
         max-width: 440px;
         margin: 0 auto;
-        height: auto;
-        min-height: 200px;
-        max-height: none;
         opacity: 1 !important;
         pointer-events: none;
         z-index: 3;
@@ -2913,8 +2911,8 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        bottom: 28px;
-        top: auto;
+        top: calc(48px + clamp(210px, 38vh, 290px) + 14px);
+        bottom: auto;
         width: auto;
         max-width: 440px;
         margin: 0 auto;
@@ -3476,17 +3474,18 @@ body {
     }
 
     .sequence-product {
-        top: 48px;
+        top: 38px;
         left: 12px;
         right: 12px;
-        height: 33vh;
-        min-height: 190px;
+        bottom: auto;
+        height: clamp(185px, 34vh, 245px);
     }
 
     .sequence-copy {
         left: 12px;
         right: 12px;
-        bottom: 34px;
+        top: calc(38px + clamp(185px, 34vh, 245px) + 10px);
+        bottom: auto;
         padding: 10px 12px;
     }
 
