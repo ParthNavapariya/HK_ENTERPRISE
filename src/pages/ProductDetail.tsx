@@ -96,25 +96,6 @@ export default function ProductDetail({ category }: { category: string }) {
             </div>
           </div>
 
-          {currentProduct.images && currentProduct.images.length > 1 && (
-            <div className="detail-thumbnails">
-              {currentProduct.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveImage(img)}
-                  className={`detail-thumb-btn ${activeImage === img ? "active" : ""}`}
-                  aria-label={`View photo ${idx + 1}`}
-                >
-                  <img
-                    src={img}
-                    alt={`${currentProduct.name} angle ${idx + 1}`}
-                  />
-                </button>
-              ))}
-            </div>
-          )}
-
           <div className="actions mobile-actions">
             <Button onClick={() => navigate("contact")}>
               Enquire About Product
