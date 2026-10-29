@@ -87,26 +87,14 @@ export default function CinematicSequence() {
             transformOrigin: "left",
           })
 
-          const getStartOffset = () => {
-            if (isDesktop) return "top top"
-            const navEl = document.querySelector<HTMLElement>(".nav")
-            const navHeight = navEl
-              ? navEl.offsetHeight
-              : window.innerWidth <= 400
-                ? 68
-                : 76
-            return `top ${navHeight}px`
-          }
-
           const timeline = gsap.timeline({
             scrollTrigger: {
               trigger: sequenceRef.current,
-              start: () => getStartOffset(),
+              start: "top top",
               end: () => `+=${isDesktop ? 3000 : isTablet ? 2000 : 1500}`,
               pin: true,
               scrub: isDesktop ? 1.0 : isTablet ? 0.7 : 0.45,
               anticipatePin: 1,
-              invalidateOnRefresh: true,
               onUpdate: (self) => {
                 const p = self.progress
                 let active = 0

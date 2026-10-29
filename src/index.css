@@ -2830,9 +2830,9 @@ body {
 
     /* Cinematic Sequence Mobile (401px - 860px) */
     .sequence {
-        height: calc(100vh - 76px);
-        height: calc(100dvh - 76px);
-        min-height: 480px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 520px;
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -2876,14 +2876,14 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        top: 48px;
-        bottom: 175px;
+        top: 56px;
+        bottom: 180px;
         width: auto;
         max-width: 440px;
         margin: 0 auto;
         height: auto;
         min-height: 200px;
-        max-height: 350px;
+        max-height: none;
         opacity: 1 !important;
         pointer-events: none;
         z-index: 3;
@@ -3465,9 +3465,7 @@ body {
 /* Smallest Devices (<= 400px) */
 @media (max-width: 400px) {
     .sequence {
-        height: calc(100vh - 68px);
-        height: calc(100dvh - 68px);
-        min-height: 460px;
+        min-height: 480px;
     }
 
     .sequence-top {
@@ -3477,20 +3475,17 @@ body {
     }
 
     .sequence-product {
-        top: 38px;
+        top: 48px;
         left: 12px;
         right: 12px;
-        bottom: 155px;
-        height: auto;
+        height: 33vh;
         min-height: 190px;
-        max-height: 300px;
     }
 
     .sequence-copy {
         left: 12px;
         right: 12px;
-        bottom: 24px;
-        top: auto;
+        bottom: 34px;
         padding: 10px 12px;
     }
 
