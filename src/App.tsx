@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Page } from "./types"
@@ -16,13 +16,33 @@ gsap.registerPlugin(ScrollTrigger)
 export default function App() {
   const [route, setRoute] = useState(window.location.hash.slice(1) || "home")
 
+  // Ensure browser never forces scroll restoration on page change
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual"
+    }
+  }, [])
+
+  // Immediately scroll to the very top on every route change
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
+    const timer = setTimeout(() => {
+      ScrollTrigger.clearScrollMemory?.()
+      ScrollTrigger.refresh()
+    }, 60)
+
+    return () => clearTimeout(timer)
+  }, [route])
+
   useEffect(() => {
     const update = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
       setRoute(window.location.hash.slice(1) || "home")
-      // Refresh ScrollTrigger calculations cleanly on route transition
-      setTimeout(() => {
-        ScrollTrigger.refresh()
-      }, 100)
     }
 
     window.addEventListener("hashchange", update)
@@ -41,7 +61,7 @@ export default function App() {
       window.removeEventListener("hashchange", update)
       observer.disconnect()
     }
-  }, [route])
+  }, [])
 
   const [rawPageName, detail = ""] = route.split("/")
   // Support legacy '#industries' and '#our-story' mapping to 'story'
