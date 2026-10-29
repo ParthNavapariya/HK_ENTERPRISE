@@ -193,7 +193,7 @@ em {
     background: var(--gold);
     color: var(--black);
     min-height: 48px;
-    padding: 0 20px;
+    padding: 0 22px;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
@@ -202,32 +202,54 @@ em {
     font-size: 11px;
     letter-spacing: .08em;
     text-transform: uppercase;
-    transition: .3s
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+
+.btn:hover:before {
+    left: 140%;
 }
 
 .btn:hover {
     background: var(--champagne);
-    transform: translateY(-2px)
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(201, 164, 76, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
     border-color: rgba(245, 245, 245, .38);
-    color: var(--white)
+    color: var(--white);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--black)
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 8px 24px rgba(201, 164, 76, 0.2);
 }
 
 .btn svg {
     width: 16px;
-    transition: .3s
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn:hover svg {
-    transform: translateX(4px)
+    transform: translateX(5px);
 }
 
 .hero {
@@ -1296,18 +1318,31 @@ em {
 .range-band {
     display: flex;
     overflow: hidden;
-    gap: 5vw;
-    padding: 24px 4vw;
-    background: var(--gold);
+    padding: 22px 0;
+    background: linear-gradient(90deg, #b9923b, #d6bb72, #c9a44c);
     white-space: nowrap;
-    font-size: 9px;
-    letter-spacing: .18em
+    font-size: 10px;
+    letter-spacing: .2em;
+    user-select: none;
+}
+
+.range-band-track {
+    display: flex;
+    gap: 4vw;
+    width: max-content;
+    animation: marquee 24s linear infinite;
+    will-change: transform;
+}
+
+.range-band-track:hover {
+    animation-play-state: paused;
 }
 
 .range-band span:before {
     content: "◆";
-    margin-right: 5vw;
-    font-size: 6px
+    margin-right: 4vw;
+    font-size: 6px;
+    opacity: 0.6;
 }
 
 .quality-section {
@@ -2591,6 +2626,116 @@ body {
     50% {
         transform: scaleY(1)
     }
+}
+
+/* Page Route Transition */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-transition {
+    animation: pageFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: opacity, transform;
+}
+
+/* Infinite Marquee Ticker */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Slow Ambient Hardware Breathing Glow */
+@keyframes ambientGlow {
+    0%, 100% {
+        opacity: 0.55;
+        transform: scale(1.08);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.18);
+    }
+}
+
+.product-visual-ambient {
+    animation: ambientGlow 7s ease-in-out infinite;
+    will-change: opacity, transform;
+}
+
+/* Ambient Pulse for CTA Background */
+@keyframes ctaPulse {
+    0%, 100% {
+        opacity: 0.06;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.12;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.cta-panel:after {
+    animation: ctaPulse 6s ease-in-out infinite;
+}
+
+/* Product Card Interactive Elevation & Border Glow */
+.product-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card .card-copy strong svg {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .card-copy strong svg {
+    transform: translateX(5px);
+}
+
+/* Principles / Standard interactive highlight */
+.principles article {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    border-radius: 6px;
+    padding: 12px;
+    margin: -12px;
+}
+
+.principles article:hover {
+    transform: translateY(-4px);
+    background: rgba(232, 213, 154, 0.04);
+}
+
+.principles article .principle-line {
+    transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.principles article:hover .principle-line {
+    background-color: var(--gold);
+    transform: scaleX(1.1);
+}
+
+/* Category Filter Buttons Smooth Hover */
+.filter-bar button {
+    transition: all 0.25s ease;
+}
+
+.filter-bar button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
 }
 
 @media(prefers-reduced-motion:reduce) {
