@@ -42,10 +42,8 @@ export default function Contact() {
 
     const whatsappUrl = `https://wa.me/919723771164?text=${encodeURIComponent(lines)}`
 
-    // Open WhatsApp directly
-    window.open(whatsappUrl, "_blank")
-
-    setSent(true)
+    // Directly open WhatsApp application without popup blocker issues
+    window.location.href = whatsappUrl
   }
 
   useEffect(() => {
@@ -246,10 +244,22 @@ export default function Contact() {
               }
             />
           </label>
-          <Button type="submit">
-            <span>Send Enquiry on WhatsApp</span>
-            <Icon name="arrow" />
-          </Button>
+          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "10px" }}>
+            <Button type="submit">
+              <span>Send Enquiry on WhatsApp</span>
+              <Icon name="arrow" />
+            </Button>
+            <a
+              href={COMPANY_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              style={{ textDecoration: "none" }}
+            >
+              <span>Direct WhatsApp Chat</span>
+              <Icon name="arrow" />
+            </a>
+          </div>
         </form>
       </section>
     </main>

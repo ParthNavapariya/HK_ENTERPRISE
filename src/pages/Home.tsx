@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { COMPANY_INFO } from "../data/products"
 import { navigate } from "../utils/navigation"
 import Hero from "../components/home/Hero"
 import CinematicSequence from "../components/home/CinematicSequence"
 import ScrollCategories from "../components/home/ScrollCategories"
 import Eyebrow from "../components/ui/Eyebrow"
 import Button from "../components/ui/Button"
+import Icon from "../components/ui/Icon"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -216,7 +218,16 @@ export default function Home() {
           <br />
           connection.
         </h2>
-        <Button onClick={() => navigate("contact")}>Send an Enquiry</Button>
+        <a
+          href={COMPANY_INFO.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+          style={{ textDecoration: "none" }}
+        >
+          <span>Enquire on WhatsApp</span>
+          <Icon name="arrow" />
+        </a>
         <span className="cta-code">HK / 2025</span>
       </section>
     </main>
