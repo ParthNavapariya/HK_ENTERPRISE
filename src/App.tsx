@@ -25,21 +25,26 @@ export default function App() {
 
   // Immediately scroll to the very top on every route change
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+    window.scrollTo(0, 0)
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
 
-    const timer = setTimeout(() => {
-      ScrollTrigger.clearScrollMemory?.()
-      ScrollTrigger.refresh()
-    }, 60)
+    // Kill stale ScrollTriggers so old scroll memories never pull the new page
+    ScrollTrigger.getAll().forEach((t) => t.kill())
 
-    return () => clearTimeout(timer)
+    const rafId = requestAnimationFrame(() => {
+      window.scrollTo(0, 0)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+      ScrollTrigger.refresh()
+    })
+
+    return () => cancelAnimationFrame(rafId)
   }, [route])
 
   useEffect(() => {
     const update = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+      window.scrollTo(0, 0)
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
       setRoute(window.location.hash.slice(1) || "home")
