@@ -2593,47 +2593,6 @@ body {
     }
 }
 
-/* ==========================================================================
-   SCROLL REVEAL & TEXT ANIMATIONS
-   Kinetic text animations triggered exactly when scroll reaches each element
-   ========================================================================== */
-
-.reveal-text,
-.manifesto-copy,
-.manifesto-meta,
-.section-head h2,
-.section-head p,
-.principles article,
-.cta-panel h2,
-.cta-panel p,
-.cta-panel .btn,
-.about-intro h2,
-.about-intro p,
-.story-manifesto h2,
-.story-manifesto p,
-.quality-section h2,
-.quality-section p,
-.detail-info h2,
-.detail-info p,
-.specs article,
-.industry-list article,
-main :not(.hero):not(.hero-copy):not(.detail-hero):not(.detail-copy) > .eyebrow {
-    opacity: 0;
-    transform: translateY(38px);
-    filter: blur(4px);
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity, filter;
-}
-
-/* Active / Revealed State - when scroll reaches the element */
-.is-revealed {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    filter: blur(0) !important;
-}
-
 @media(prefers-reduced-motion:reduce) {
 
     *,
