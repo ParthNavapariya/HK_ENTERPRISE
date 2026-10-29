@@ -50,12 +50,9 @@ export default function CinematicSequence() {
 
       media.add(
         {
-          isDesktop:
-            "(min-width: 1025px) and (prefers-reduced-motion: no-preference)",
-          isTablet:
-            "(min-width: 769px) and (max-width: 1024px) and (prefers-reduced-motion: no-preference)",
-          isMobile:
-            "(max-width: 768px) and (prefers-reduced-motion: no-preference)",
+          isDesktop: "(min-width: 1025px)",
+          isTablet: "(min-width: 769px) and (max-width: 1024px)",
+          isMobile: "(max-width: 768px)",
           reducedMotion: "(prefers-reduced-motion: reduce)",
         },
         ({ conditions }) => {

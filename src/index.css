@@ -2877,7 +2877,7 @@ body {
         left: 16px;
         right: 16px;
         top: 56px;
-        bottom: 180px;
+        bottom: calc(180px + env(safe-area-inset-bottom, 0px));
         width: auto;
         max-width: 440px;
         margin: 0 auto;
@@ -2912,7 +2912,7 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        bottom: 28px;
+        bottom: calc(22px + env(safe-area-inset-bottom, 0px));
         top: auto;
         width: auto;
         max-width: 440px;
@@ -2951,7 +2951,7 @@ body {
     .sequence-progress {
         left: 16px;
         right: 16px;
-        bottom: 10px;
+        bottom: calc(8px + env(safe-area-inset-bottom, 0px));
         height: 2px;
         z-index: 6;
     }

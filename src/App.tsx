@@ -29,9 +29,6 @@ export default function App() {
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
 
-    // Kill stale ScrollTriggers so old scroll memories never pull the new page
-    ScrollTrigger.getAll().forEach((t) => t.kill())
-
     const rafId = requestAnimationFrame(() => {
       window.scrollTo(0, 0)
       document.documentElement.scrollTop = 0
