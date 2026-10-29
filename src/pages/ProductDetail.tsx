@@ -67,33 +67,6 @@ export default function ProductDetail({ category }: { category: string }) {
               src={activeImage}
               alt={`${currentProduct.name} - HK Enterprise`}
             />
-            <div className="visual-label">
-              <span>HK PRECISION SERIES</span>
-              <b>{currentProduct.code || currentProduct.category}</b>
-            </div>
-            <div
-              className="detail-zoom-pill"
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                zIndex: 4,
-                background: "rgba(14, 17, 22, 0.75)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(232, 213, 154, 0.25)",
-                color: "var(--champagne)",
-                fontSize: "10px",
-                letterSpacing: "0.12em",
-                padding: "6px 12px",
-                borderRadius: "4px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                pointerEvents: "none",
-              }}
-            >
-              <span>FULL VIEW</span>
-            </div>
           </div>
 
           <div className="actions mobile-actions">
