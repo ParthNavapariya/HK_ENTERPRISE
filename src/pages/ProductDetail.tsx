@@ -71,6 +71,34 @@ export default function ProductDetail({ category }: { category: string }) {
             "-=0.45",
           )
       }
+
+      const related = document.querySelector(".related")
+      if (related) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: related,
+            start: "top 85%",
+            once: true,
+          },
+        })
+          .from(related.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            related.querySelectorAll(".related > div > button"),
+            {
+              opacity: 0,
+              y: 35,
+              stagger: 0.12,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+      }
     }, containerRef)
 
     return () => ctx.revert()

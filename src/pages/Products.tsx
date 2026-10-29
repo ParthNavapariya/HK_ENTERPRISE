@@ -1,4 +1,6 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Category } from "../types"
 import { categories, products } from "../data/products"
 import { navigate } from "../utils/navigation"
@@ -6,7 +8,10 @@ import PageHero from "../components/ui/PageHero"
 import ProductVisual from "../components/ui/ProductVisual"
 import Icon from "../components/ui/Icon"
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function Products() {
+  const containerRef = useRef<HTMLElement>(null)
   const [filter, setFilter] = useState<Category>("All")
   const shown = useMemo(
     () =>
@@ -16,8 +21,45 @@ export default function Products() {
     [filter],
   )
 
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    const ctx = gsap.context(() => {
+      const catalog = document.querySelector(".catalog")
+      if (catalog) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: catalog,
+            start: "top 85%",
+            once: true,
+          },
+        })
+          .from(catalog.querySelector(".filter-bar"), {
+            opacity: 0,
+            y: 25,
+            duration: 0.7,
+            ease: "power3.out",
+          })
+          .from(
+            catalog.querySelectorAll(".product-grid > article:nth-child(-n+6)"),
+            {
+              opacity: 0,
+              y: 40,
+              stagger: 0.1,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+      }
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <main>
+    <main ref={containerRef}>
       <PageHero
         eyebrow="PRODUCT COLLECTION"
         title={

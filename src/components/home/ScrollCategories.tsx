@@ -42,6 +42,44 @@ export default function ScrollCategories() {
 
     const ctx = gsap.context(() => {
       const isDesktop = window.innerWidth > 900
+
+      const head = sectionRef.current?.querySelector(".section-head")
+      if (head) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: head,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(head.querySelector(".eyebrow"), {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
+          })
+          .from(
+            head.querySelector("h2"),
+            {
+              opacity: 0,
+              y: 50,
+              duration: 0.9,
+              ease: "power3.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            head.querySelector("p"),
+            {
+              opacity: 0,
+              y: 25,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.55",
+          )
+      }
+
       triggerRef.current = ScrollTrigger.create({
         trigger: stageRef.current,
         start: "top top",

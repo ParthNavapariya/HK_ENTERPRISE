@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { COMPANY_INFO, categories } from "../data/products"
 import { navigate } from "../utils/navigation"
 import PageHero from "../components/ui/PageHero"
@@ -6,8 +8,45 @@ import Eyebrow from "../components/ui/Eyebrow"
 import Button from "../components/ui/Button"
 import Icon from "../components/ui/Icon"
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function Contact() {
+  const containerRef = useRef<HTMLElement>(null)
   const [sent, setSent] = useState(false)
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    const ctx = gsap.context(() => {
+      const layout = document.querySelector(".contact-layout")
+      if (layout) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: layout,
+            start: "top 80%",
+            once: true,
+          },
+        })
+          .from(layout.querySelector("aside .eyebrow"), { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" })
+          .from(layout.querySelectorAll("aside > div"), {
+            opacity: 0,
+            y: 30,
+            stagger: 0.12,
+            duration: 0.8,
+            ease: "power3.out",
+          }, "-=0.35")
+          .from(layout.querySelector(".contact-form-card"), {
+            opacity: 0,
+            y: 40,
+            duration: 0.9,
+            ease: "power3.out",
+          }, "-=0.55")
+      }
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [sent])
 
   if (sent) {
     return (
@@ -51,7 +90,7 @@ export default function Contact() {
   }
 
   return (
-    <main>
+    <main ref={containerRef}>
       <PageHero
         eyebrow="CONTACT HK ENTERPRISE"
         title={
