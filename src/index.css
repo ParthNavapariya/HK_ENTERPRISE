@@ -2974,9 +2974,13 @@ body {
 
     .story-visual {
         height: 55vw;
-        min-height: 260px;
-        max-height: 420px;
+        min-height: 250px;
+        max-height: 380px;
         overflow: hidden;
+    }
+
+    .story-visual .category-image img {
+        padding: 14px 14px 44px;
     }
 
     .story-number {
@@ -3503,9 +3507,13 @@ body {
     }
 
     .story-visual {
-        height: 60vw;
-        min-height: 220px;
-        max-height: 300px;
+        height: 58vw;
+        min-height: 210px;
+        max-height: 260px;
+    }
+
+    .story-visual .category-image img {
+        padding: 10px 10px 40px;
     }
 
     .active-product-meta {

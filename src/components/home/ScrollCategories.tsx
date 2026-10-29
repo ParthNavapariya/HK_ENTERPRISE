@@ -80,13 +80,25 @@ export default function ScrollCategories() {
           )
       }
 
+      const getStartOffset = () => {
+        if (window.innerWidth > 900) return "top top"
+        const navEl = document.querySelector<HTMLElement>(".nav")
+        const navHeight = navEl
+          ? navEl.offsetHeight
+          : window.innerWidth <= 400
+            ? 68
+            : 76
+        return `top ${navHeight + 10}px`
+      }
+
       triggerRef.current = ScrollTrigger.create({
         trigger: stageRef.current,
-        start: "top top",
-        end: () => `+=${isDesktop ? 3000 : 1800}`,
+        start: () => getStartOffset(),
+        end: () => `+=${window.innerWidth > 900 ? 3000 : 1800}`,
         pin: true,
         scrub: true,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
         onEnter: () => setActive(0),
         onLeaveBack: () => setActive(0),
         onLeave: () => setActive(showcaseProducts.length - 1),
