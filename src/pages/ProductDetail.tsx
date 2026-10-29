@@ -34,7 +34,7 @@ export default function ProductDetail({ category }: { category: string }) {
           </Eyebrow>
           <h1>{currentProduct.name}</h1>
           <p>{currentProduct.description || currentProduct.note}</p>
-          <div className="actions" style={{ marginTop: "24px" }}>
+          <div className="actions desktop-actions">
             <Button onClick={() => navigate("contact")}>
               Enquire About Product
             </Button>
@@ -51,20 +51,19 @@ export default function ProductDetail({ category }: { category: string }) {
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+        <div className="detail-visual-wrapper">
           <div
-            className="product-visual hero-product"
-            style={{ position: "relative", cursor: "zoom-in" }}
+            className="detail-product-visual"
             onClick={() => setZoomOpen(true)}
             title="Click to view full image in high resolution"
           >
             <div
-              className="product-visual-ambient"
+              className="detail-ambient"
               style={{ backgroundImage: `url(${activeImage})` }}
               aria-hidden="true"
             />
             <img
-              className="concept-product-image"
+              className="detail-image"
               src={activeImage}
               alt={`${currentProduct.name} - HK Enterprise`}
             />
@@ -73,6 +72,7 @@ export default function ProductDetail({ category }: { category: string }) {
               <b>{currentProduct.code || currentProduct.category}</b>
             </div>
             <div
+              className="detail-zoom-pill"
               style={{
                 position: "absolute",
                 top: "16px",
@@ -97,49 +97,39 @@ export default function ProductDetail({ category }: { category: string }) {
           </div>
 
           {currentProduct.images && currentProduct.images.length > 1 && (
-            <div
-              style={{
-                display: "flex",
-                gap: "10px",
-                overflowX: "auto",
-                paddingBottom: "4px",
-              }}
-            >
+            <div className="detail-thumbnails">
               {currentProduct.images.map((img, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => setActiveImage(img)}
-                  style={{
-                    width: "72px",
-                    height: "72px",
-                    flexShrink: 0,
-                    border:
-                      activeImage === img
-                        ? "2px solid var(--gold)"
-                        : "1px solid rgba(245,245,245,0.18)",
-                    background: "#111318",
-                    padding: "4px",
-                    cursor: "pointer",
-                    transition: "border-color 0.2s ease",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                    overflow: "hidden",
-                    borderRadius: "4px",
-                  }}
+                  className={`detail-thumb-btn ${activeImage === img ? "active" : ""}`}
                   aria-label={`View photo ${idx + 1}`}
                 >
                   <img
                     src={img}
                     alt={`${currentProduct.name} angle ${idx + 1}`}
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </button>
               ))}
             </div>
           )}
+
+          <div className="actions mobile-actions">
+            <Button onClick={() => navigate("contact")}>
+              Enquire About Product
+            </Button>
+            <a
+              href={COMPANY_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              style={{ textDecoration: "none" }}
+            >
+              <span>WhatsApp Us</span>
+              <Icon name="arrow" />
+            </a>
+          </div>
         </div>
       </section>
 
