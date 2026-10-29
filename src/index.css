@@ -2593,6 +2593,123 @@ body {
     }
 }
 
+/* ==========================================================================
+   SCROLL REVEAL & TEXT ANIMATIONS
+   Triggered dynamically when scroll reaches each section
+   ========================================================================== */
+
+.reveal-text,
+.manifesto .manifesto-copy,
+.manifesto .manifesto-meta,
+.manifesto .eyebrow,
+.section-head h2,
+.section-head p,
+.section-head .eyebrow,
+.cta-panel h2,
+.cta-panel p,
+.cta-panel .eyebrow,
+.cta-panel .btn,
+.about-intro h2,
+.about-intro p,
+.about-intro .eyebrow,
+.story-manifesto p,
+.story-manifesto h2,
+.quality-section h2,
+.quality-section p,
+.quality-section .eyebrow,
+.detail-info h2,
+.detail-info p,
+.detail-info .eyebrow,
+.specs article,
+.principles article,
+.industry-list article,
+.related .eyebrow,
+.related > div > button {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+/* Eyebrows glide in first */
+.is-revealed.reveal-text,
+.is-revealed .eyebrow,
+.manifesto.is-revealed .eyebrow,
+.section-head.is-revealed .eyebrow,
+.cta-panel.is-revealed .eyebrow,
+.about-intro.is-revealed .eyebrow,
+.quality-section.is-revealed .eyebrow,
+.detail-info.is-revealed .eyebrow,
+.related.is-revealed .eyebrow {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.04s;
+}
+
+/* Headings glide in second */
+.manifesto.is-revealed .manifesto-copy,
+.section-head.is-revealed h2,
+.cta-panel.is-revealed h2,
+.about-intro.is-revealed h2,
+.story-manifesto.is-revealed h2,
+.story-manifesto.is-revealed p,
+.quality-section.is-revealed h2,
+.detail-info.is-revealed h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.14s;
+}
+
+/* Paragraphs, meta & CTA buttons glide in third */
+.manifesto.is-revealed .manifesto-meta,
+.section-head.is-revealed p,
+.cta-panel.is-revealed p,
+.cta-panel.is-revealed .btn,
+.about-intro.is-revealed p,
+.quality-section.is-revealed p,
+.detail-info.is-revealed p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+}
+
+/* Staggered principles / specs / articles */
+.principles.is-revealed article:nth-child(1),
+.specs.is-revealed article:nth-child(1),
+.industry-list.is-revealed article:nth-child(1),
+.related.is-revealed > div > button:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.08s;
+}
+
+.principles.is-revealed article:nth-child(2),
+.specs.is-revealed article:nth-child(2),
+.industry-list.is-revealed article:nth-child(2),
+.related.is-revealed > div > button:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.18s;
+}
+
+.principles.is-revealed article:nth-child(3),
+.specs.is-revealed article:nth-child(3),
+.industry-list.is-revealed article:nth-child(3),
+.related.is-revealed > div > button:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.28s;
+}
+
+.principles.is-revealed article:nth-child(4),
+.specs.is-revealed article:nth-child(4),
+.industry-list.is-revealed article:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.38s;
+}
+
 @media(prefers-reduced-motion:reduce) {
 
     *,

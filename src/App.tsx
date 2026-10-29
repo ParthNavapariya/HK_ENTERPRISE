@@ -27,18 +27,50 @@ export default function App() {
 
     window.addEventListener("hashchange", update)
 
+    // Scroll reveal observer: triggers text animation when scroll reaches the section
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach(
-          (e) => e.isIntersecting && e.target.classList.add("visible"),
-        ),
-      { threshold: 0.12 },
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed")
+            entry.target.classList.add("visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -40px 0px",
+      },
     )
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
+    // Observe all key content sections and text blocks after mount
+    const timer = setTimeout(() => {
+      const selectors = [
+        ".reveal",
+        ".reveal-text",
+        ".reveal-group",
+        ".manifesto",
+        ".section-head",
+        ".principles",
+        ".cta-panel",
+        ".about-intro",
+        ".story-manifesto",
+        ".industry-list",
+        ".quality-section",
+        ".detail-info",
+        ".specs",
+        ".related",
+        ".product-card",
+      ]
+      document
+        .querySelectorAll(selectors.join(","))
+        .forEach((el) => observer.observe(el))
+    }, 60)
 
     return () => {
       window.removeEventListener("hashchange", update)
+      clearTimeout(timer)
       observer.disconnect()
     }
   }, [route])
