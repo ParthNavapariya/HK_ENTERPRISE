@@ -104,6 +104,10 @@ export default function ProductDetail({ category }: { category: string }) {
     return () => ctx.revert()
   }, [currentProduct])
 
+  const productWhatsappUrl = `https://wa.me/919723771164?text=${encodeURIComponent(
+    `Hello HK Enterprise,\n\nI want to enquire about this hardware product:\n• *Product:* ${currentProduct.name}\n• *Code:* ${currentProduct.code || currentProduct.category}\n• *Category:* ${currentProduct.category} Series\n\nPlease share availability, bulk pricing, and specifications.`
+  )}`
+
   return (
     <main ref={containerRef}>
       <section className="detail-hero">
@@ -115,19 +119,19 @@ export default function ProductDetail({ category }: { category: string }) {
           <h1>{currentProduct.name}</h1>
           <p>{currentProduct.description || currentProduct.note}</p>
           <div className="actions desktop-actions">
-            <Button onClick={() => navigate("contact")}>
-              Enquire About Product
-            </Button>
             <a
-              href={COMPANY_INFO.whatsappUrl}
+              href={productWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-secondary"
+              className="btn"
               style={{ textDecoration: "none" }}
             >
-              <span>WhatsApp Us</span>
+              <span>Enquire on WhatsApp</span>
               <Icon name="arrow" />
             </a>
+            <Button secondary onClick={() => navigate("contact")}>
+              Custom Form Enquiry
+            </Button>
           </div>
         </div>
 
@@ -150,19 +154,19 @@ export default function ProductDetail({ category }: { category: string }) {
           </div>
 
           <div className="actions mobile-actions">
-            <Button onClick={() => navigate("contact")}>
-              Enquire About Product
-            </Button>
             <a
-              href={COMPANY_INFO.whatsappUrl}
+              href={productWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-secondary"
+              className="btn"
               style={{ textDecoration: "none" }}
             >
-              <span>WhatsApp Us</span>
+              <span>Enquire on WhatsApp</span>
               <Icon name="arrow" />
             </a>
+            <Button secondary onClick={() => navigate("contact")}>
+              Custom Form Enquiry
+            </Button>
           </div>
         </div>
       </section>

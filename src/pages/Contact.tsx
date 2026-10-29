@@ -13,6 +13,40 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Contact() {
   const containerRef = useRef<HTMLElement>(null)
   const [sent, setSent] = useState(false)
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    city: "",
+    category: "Bed Clamp",
+    message: "",
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const lines = [
+      "*New Hardware Enquiry - HK Enterprise*",
+      "",
+      `*Name:* ${formData.name}`,
+      formData.company ? `*Company / Workshop:* ${formData.company}` : null,
+      `*Phone / WhatsApp:* ${formData.phone}`,
+      formData.city ? `*City / State:* ${formData.city}` : null,
+      formData.category ? `*Product Category:* ${formData.category}` : null,
+      "",
+      `*Message / Requirements:*`,
+      formData.message,
+    ]
+      .filter((line) => line !== null)
+      .join("\n")
+
+    const whatsappUrl = `https://wa.me/919723771164?text=${encodeURIComponent(lines)}`
+
+    // Open WhatsApp directly
+    window.open(whatsappUrl, "_blank")
+
+    setSent(true)
+  }
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -138,50 +172,84 @@ export default function Contact() {
           </div>
         </aside>
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault()
-            setSent(true)
-          }}
-        >
+        <form onSubmit={handleSubmit}>
           <div className="form-grid">
             <label>
               <span>Full Name *</span>
-              <input required placeholder="Your full name" />
+              <input
+                required
+                placeholder="Your full name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
             </label>
             <label>
               <span>Company / Workshop Name</span>
-              <input placeholder="Your company or workshop" />
+              <input
+                placeholder="Your company or workshop"
+                value={formData.company}
+                onChange={(e) =>
+                  setFormData({ ...formData, company: e.target.value })
+                }
+              />
             </label>
             <label>
               <span>Phone / WhatsApp Number *</span>
-              <input required type="tel" placeholder="+91 97237 71164" />
+              <input
+                required
+                type="tel"
+                placeholder="+91 97237 71164"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+              />
             </label>
             <label>
               <span>City / State *</span>
-              <input required placeholder="e.g. Rajkot, Gujarat" />
+              <input
+                required
+                placeholder="e.g. Rajkot, Gujarat"
+                value={formData.city}
+                onChange={(e) =>
+                  setFormData({ ...formData, city: e.target.value })
+                }
+              />
             </label>
           </div>
           <label>
             <span>Product Category</span>
-            <select defaultValue="">
-              <option value="" disabled>
-                Select a product series
-              </option>
+            <select
+              value={formData.category}
+              onChange={(e) =>
+                setFormData({ ...formData, category: e.target.value })
+              }
+            >
               {categories.map((c) => (
-                <option key={c}>{c}</option>
+                <option key={c} value={c}>
+                  {c}
+                </option>
               ))}
             </select>
           </label>
           <label>
-            <span>Message *</span>
+            <span>Message / Requirements *</span>
             <textarea
               required
               rows={5}
               placeholder="Tell us about your hardware quantity or custom dimension requirements"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
             />
           </label>
-          <Button type="submit">Send Enquiry</Button>
+          <Button type="submit">
+            <span>Send Enquiry on WhatsApp</span>
+            <Icon name="arrow" />
+          </Button>
         </form>
       </section>
     </main>
