@@ -2739,11 +2739,8 @@ body {
         height: 100vh;
         height: 100dvh;
         min-height: 540px;
-        max-height: 850px;
+        max-height: 1000px;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        position: relative;
     }
 
     .sequence-top {
@@ -2781,14 +2778,13 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        top: 54px;
-        bottom: auto;
+        top: 58px;
         width: auto;
         max-width: 440px;
         margin: 0 auto;
-        height: 44vh;
-        min-height: 250px;
-        max-height: 380px;
+        height: 38vh;
+        min-height: 220px;
+        max-height: 310px;
         opacity: 1 !important;
         pointer-events: none;
         z-index: 3;
@@ -2817,21 +2813,20 @@ body {
         position: absolute;
         left: 16px;
         right: 16px;
-        bottom: 38px;
+        bottom: 54px;
         top: auto;
         width: auto;
         max-width: 440px;
         margin: 0 auto;
         transform: none;
         padding: 14px 16px;
-        background: rgba(13, 16, 22, 0.92);
+        background: rgba(13, 16, 22, 0.88);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(232, 213, 154, 0.16);
         border-radius: 14px;
         box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
         pointer-events: auto;
-        z-index: 5;
     }
 
     .sequence-copy > span {
@@ -2856,17 +2851,15 @@ body {
     .sequence-progress {
         left: 16px;
         right: 16px;
-        bottom: 14px;
+        bottom: 16px;
         height: 2px;
-        z-index: 6;
     }
 
     .sequence-hint {
         right: 16px;
-        bottom: 22px;
+        bottom: 26px;
         font-size: 8px;
         letter-spacing: 0.12em;
-        z-index: 6;
     }
 }
 
