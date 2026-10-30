@@ -47,8 +47,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Hydraulic Stamped",
-    loadCapacity: "320 kg Corner Rigidity",
-    dimensions: "100mm x 55mm x 35mm",
     features: [
       "5 Aani precision bolt",
       "Elongated capsule hole for micro-alignment",
@@ -78,8 +76,6 @@ export const products: ProductItem[] = [
     material: "Heavy Galvanized Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Stamped Steel",
-    loadCapacity: "350 kg Joint Stability",
-    dimensions: "120mm x 55mm x 40mm",
     features: [
       "6 Aani heavy precision bolt",
       "True 90° L-profile corner reinforcement",
@@ -108,8 +104,6 @@ export const products: ProductItem[] = [
     material: "Heavy Industrial Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "3.5 mm Extra Heavy",
-    loadCapacity: "420 kg Corner Rigidity",
-    dimensions: "125mm x 60mm x 42mm",
     features: [
       "8 Aani heavy-duty hex bolt",
       "Golden zinc plated corrosion protection",
@@ -138,8 +132,6 @@ export const products: ProductItem[] = [
     material: "Structural Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Light, Medium, Heavy (2.5mm - 3.5mm)",
-    loadCapacity: "Up to 450 kg Heavy Duty",
-    dimensions: "175mm x 50mm x 40mm (7 inch)",
     features: [
       "5 Aani precision hex bolts included",
       "Available thickness: Light, Medium, Heavy",
@@ -168,8 +160,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "3.2 mm Stamped Steel",
-    loadCapacity: "380 kg Corner Load",
-    dimensions: "115mm x 55mm x 38mm",
     features: [
       "7 Aani high-torque hex bolt",
       "Golden zinc plated corrosion protection",
@@ -198,8 +188,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Architectural White Powder Coated",
     thickness: "Light, Medium, Heavy (2.5mm - 3.5mm)",
-    loadCapacity: "Up to 450 kg Heavy Duty",
-    dimensions: "175mm x 50mm x 40mm (7 inch)",
     features: [
       "5 Aani precision hex bolts included",
       "Available thickness: Light, Medium, Heavy",
@@ -228,8 +216,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Medium, Heavy (2.8mm - 3.2mm)",
-    loadCapacity: "320 kg Joint Stability",
-    dimensions: "105mm x 55mm x 35mm",
     features: [
       "5 Aani precision bolt",
       "Available thickness: Medium & Heavy",
@@ -258,8 +244,6 @@ export const products: ProductItem[] = [
     material: "Galvanized Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Heavy Duty",
-    loadCapacity: "400 kg Heavy Duty",
-    dimensions: "100mm (4 inch) x 50mm x 30mm",
     features: [
       "Size: 4 inch",
       "Finishing: White zinc plated",
@@ -288,8 +272,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "2.5 mm Heavy Duty",
-    loadCapacity: "260 kg Joint Stability",
-    dimensions: "80mm x 75mm x 6mm",
     features: [
       "Modular interlocking slide-lock design",
       "Finishing: Powder coated & Zinc plated",
@@ -319,8 +301,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "2.5 mm Heavy Duty",
-    loadCapacity: "350 kg Corner Joint",
-    dimensions: "6 Inch (150mm x 40mm)",
     features: [
       "6-inch heavy-duty interlocking profile",
       "Finishing: Golden zinc plated & Powder coated",
@@ -350,8 +330,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "2.5 mm Stamped Steel",
-    loadCapacity: "240 kg Corner Capacity",
-    dimensions: "4 Inch (100mm x 38mm)",
     features: [
       "4-inch compact modular profile",
       "Finishing: Golden zinc plated",
@@ -380,8 +358,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "2.8 mm Heavy MS",
-    loadCapacity: "350 kg Heavy Duty",
-    dimensions: "8 Inch (200mm x 42mm)",
     features: [
       "8-inch extended heavy-duty profile",
       "Finishing: Golden zinc plated & Powder coated",
@@ -411,8 +387,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "2.8 mm Heavy MS",
-    loadCapacity: "320 kg Corner Joint",
-    dimensions: "7 Inch (175mm x 40mm)",
     features: [
       "7-inch heavy-duty interlocking profile",
       "Finishing: Golden zinc plated & Powder coated",
@@ -444,8 +418,6 @@ export const products: ProductItem[] = [
     material: "Heavy Stamped Mild Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Heavy Duty",
-    loadCapacity: "65 kg / pair",
-    dimensions: "200mm x 90mm (8-inch strap)",
     features: [
       "Heavy-gauge T strap leaf design",
       "Finishing: White zinc plated",
@@ -476,8 +448,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Mild Steel",
     finish: "Nickel Plated",
     thickness: "2.0 mm Heavy Duty",
-    loadCapacity: "40 kg / pair",
-    dimensions: "50mm x 35mm (2 inch)",
     features: [
       "Size: 2 inch",
       "Finishing: Nickel plated",
@@ -507,8 +477,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "2.0 mm Heavy Duty",
-    loadCapacity: "25 kg / pair",
-    dimensions: "1” x 1” (25mm x 25mm)",
     features: [
       "Compact 1” x 1” square leaf profile",
       "Finishing: White zinc plated",
@@ -538,8 +506,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "2.5 mm Heavy Duty",
-    loadCapacity: "45 kg / pair",
-    dimensions: "2” x 2” (50mm x 50mm)",
     features: [
       "Broad 2” x 2” load-bearing leaf area",
       "Finishing: White zinc plated",
@@ -568,8 +534,6 @@ export const products: ProductItem[] = [
     material: "Solid Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm",
-    loadCapacity: "60 kg / pair",
-    dimensions: "100mm x 75mm (4 inch)",
     features: [
       "4” stone hinges leaf design",
       "Finishing: White zinc plated",
@@ -599,8 +563,6 @@ export const products: ProductItem[] = [
     material: "Solid Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm",
-    loadCapacity: "50 kg / pair",
-    dimensions: "75mm x 65mm (3 inch)",
     features: [
       "3” stone hinges leaf design",
       "Finishing: White zinc plated",
@@ -632,8 +594,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "2.5 mm Stamped Steel",
-    loadCapacity: "140 kg Corner Rigidity",
-    dimensions: "1” x 1” (25mm x 25mm)",
     features: [
       "Size: 1” x 1”",
       "Finishing: Powder coated & Zinc plated",
@@ -662,8 +622,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "2.5 mm Stamped Steel",
-    loadCapacity: "160 kg Joint Stability",
-    dimensions: "1” x 1½” (25mm x 38mm)",
     features: [
       "Size: 1” x 1½” (1 x 1.5 inch)",
       "Finishing: Powder coated & Zinc plated",
@@ -692,8 +650,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "2.8 mm Stamped Steel",
-    loadCapacity: "180 kg Corner Rigidity",
-    dimensions: "1” x 2” (25mm x 50mm)",
     features: [
       "Size: 1” x 2”",
       "Finishing: Powder coated & Zinc plated",
@@ -722,8 +678,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Heavy Gauge",
-    loadCapacity: "200 kg Corner Rigidity",
-    dimensions: "1½ Inch (38mm x 38mm x 30mm)",
     features: [
       "Size: 1½ inch (1.5\")",
       "Finishing: Zinc plated (White Zinc)",
@@ -752,8 +706,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "2.8 mm Stamped Steel",
-    loadCapacity: "210 kg Partition Support",
-    dimensions: "1” x 3” (25mm x 75mm)",
     features: [
       "Size: 1” x 3”",
       "Finishing: Powder coated & Zinc plated",
@@ -782,8 +734,6 @@ export const products: ProductItem[] = [
     material: "Heavy Gauge Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Heavy Gauge",
-    loadCapacity: "220 kg Corner Rigidity",
-    dimensions: "1½ Inch (38mm x 38mm x 30mm)",
     features: [
       "Size: 1½ inch (1.5\")",
       "Profile: Smooth round safety corner",
@@ -814,8 +764,6 @@ export const products: ProductItem[] = [
     material: "Heavy Gauge Cold-Rolled Steel + Tempered Spring",
     finish: "Powder Coated",
     thickness: "4.0 mm Structural MS",
-    loadCapacity: "150 kg Lift Capacity",
-    dimensions: "450mm x 280mm x 45mm",
     features: [
       "Heavy duty spring jack mechanism",
       "Finishing: Powder coated",
@@ -844,8 +792,6 @@ export const products: ProductItem[] = [
     material: "Heavy Stamped Carbon Steel",
     finish: "Powder Coated",
     thickness: "4.0 mm Heavy Duty",
-    loadCapacity: "220 kg Static Support",
-    dimensions: "520mm x 290mm x 40mm",
     features: [
       "Heavy-duty sofa cum bed scissor mechanism",
       "Finishing: Powder coated",
@@ -874,8 +820,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Steel Channel with Hydraulic Struts",
     finish: "Powder Coated",
     thickness: "Heavy Duty Frame",
-    loadCapacity: "250 kg Lift Capacity",
-    dimensions: "3ft, 5ft (900mm / 1500mm)",
     features: [
       "Size: 3ft, 5ft",
       "Finishing: Powder coated",
@@ -906,8 +850,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "2.5 mm Heavy Duty",
-    loadCapacity: "High Cycle Endurance",
-    dimensions: "125mm x 32mm",
     features: [
       "Angled IMP support profile",
       "Finishing: White zinc plated",
@@ -937,8 +879,6 @@ export const products: ProductItem[] = [
     material: "High-Tensile Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "3.0 mm Heavy Duty",
-    loadCapacity: "Industrial Flush Fit",
-    dimensions: "115mm x 40mm",
     features: [
       "Precision 3-hole alignment layout",
       "Finishing: White zinc plated",
@@ -967,8 +907,6 @@ export const products: ProductItem[] = [
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Heavy, Light",
-    loadCapacity: "Heavy Commercial Duty",
-    dimensions: "Available in Heavy & Light",
     features: [
       "Size: Heavy, Light",
       "Finishing: White zinc plated",
@@ -998,8 +936,6 @@ export const products: ProductItem[] = [
     material: "Cold-Drawn Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "2.5 mm Heavy Duty",
-    loadCapacity: "High Cycle Endurance",
-    dimensions: "110mm x 38mm",
     features: [
       "Smooth rounded capsule SSR profile",
       "Finishing: White zinc plated",
@@ -1028,8 +964,6 @@ export const products: ProductItem[] = [
     material: "CRC (Cold-Rolled Carbon Steel)",
     finish: "CRC Finish",
     thickness: "2.5 mm Heavy Gauge",
-    loadCapacity: "Anti-Tamper Grade",
-    dimensions: "105mm x 42mm",
     features: [
       "Precision double-D cam lock aperture",
       "Material: Heavy-gauge CRC steel",

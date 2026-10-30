@@ -113,8 +113,6 @@ export default function ProductDetail({ category }: { category: string }) {
     (currentProduct.material ? `• *Material:* ${currentProduct.material}\n` : "") +
     (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
     (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
-    (currentProduct.dimensions ? `• *Dimensions:* ${currentProduct.dimensions}\n` : "") +
-    (currentProduct.loadCapacity ? `• *Load Capacity:* ${currentProduct.loadCapacity}\n` : "") +
     `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`
   )}`
 
@@ -214,22 +212,6 @@ export default function ProductDetail({ category }: { category: string }) {
                 <>
                   <br />
                   <strong>Thickness:</strong> {currentProduct.thickness}
-                </>
-              )}
-            </p>
-          </article>
-          <article>
-            <span>DIMENSIONS & LOAD</span>
-            <p>
-              {currentProduct.dimensions && (
-                <>
-                  <strong>Dimensions:</strong> {currentProduct.dimensions}
-                  <br />
-                </>
-              )}
-              {currentProduct.loadCapacity && (
-                <>
-                  <strong>Rating:</strong> {currentProduct.loadCapacity}
                 </>
               )}
             </p>

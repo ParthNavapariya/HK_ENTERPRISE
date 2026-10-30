@@ -337,7 +337,7 @@ export default function Contact({ productParam }: ContactProps) {
             <textarea
               required
               rows={5}
-              placeholder="Tell us about your hardware quantity or custom dimension requirements"
+              placeholder="Tell us about your hardware quantity or custom requirements"
               value={formData.message}
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
