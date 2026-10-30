@@ -544,14 +544,14 @@ em {
 
 .manifesto {
     padding: 140px 8.5vw 120px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 1s
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .manifesto.visible {
     opacity: 1;
-    transform: none
+    transform: none;
 }
 
 .manifesto-copy {

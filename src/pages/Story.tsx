@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { navigate } from "../utils/navigation"
@@ -29,18 +29,21 @@ const values = [
 export default function Story() {
   const containerRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
+      const root = containerRef.current
+      if (!root) return
+
       // 1. Animate .about-intro (The Journey) when scrolled to
-      const intro = document.querySelector(".about-intro")
+      const intro = root.querySelector(".about-intro")
       if (intro) {
         gsap.timeline({
           scrollTrigger: {
             trigger: intro,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -54,8 +57,8 @@ export default function Story() {
             intro.querySelector("h2"),
             {
               opacity: 0,
-              y: 55,
-              duration: 1.0,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -64,22 +67,22 @@ export default function Story() {
             intro.querySelectorAll(".split-copy p, .about-motto"),
             {
               opacity: 0,
-              y: 30,
-              stagger: 0.15,
-              duration: 0.8,
+              y: 25,
+              stagger: 0.12,
+              duration: 0.7,
               ease: "power3.out",
             },
-            "-=0.55",
+            "-=0.5",
           )
       }
 
       // 2. Animate .manifesto (Our Growth) when scrolled to
-      const manifesto = document.querySelector(".manifesto")
+      const manifesto = root.querySelector(".manifesto")
       if (manifesto) {
         gsap.timeline({
           scrollTrigger: {
             trigger: manifesto,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -93,8 +96,8 @@ export default function Story() {
             manifesto.querySelector(".manifesto-copy"),
             {
               opacity: 0,
-              y: 55,
-              duration: 1.0,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -103,21 +106,21 @@ export default function Story() {
             manifesto.querySelector(".manifesto-meta"),
             {
               opacity: 0,
-              y: 30,
-              duration: 0.8,
+              y: 25,
+              duration: 0.7,
               ease: "power3.out",
             },
-            "-=0.55",
+            "-=0.5",
           )
       }
 
       // 3. Animate .process-section (Core Values)
-      const processSec = document.querySelector(".process-section")
+      const processSec = root.querySelector(".process-section")
       if (processSec) {
         gsap.timeline({
           scrollTrigger: {
             trigger: processSec,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -131,8 +134,8 @@ export default function Story() {
             processSec.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
-              duration: 0.9,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -141,8 +144,8 @@ export default function Story() {
             processSec.querySelector(".section-head > p"),
             {
               opacity: 0,
-              y: 25,
-              duration: 0.7,
+              y: 20,
+              duration: 0.6,
               ease: "power3.out",
             },
             "-=0.5",
@@ -151,9 +154,9 @@ export default function Story() {
             processSec.querySelectorAll(".principles article"),
             {
               opacity: 0,
-              y: 35,
-              stagger: 0.15,
-              duration: 0.8,
+              y: 30,
+              stagger: 0.12,
+              duration: 0.7,
               ease: "power3.out",
             },
             "-=0.4",
@@ -161,7 +164,7 @@ export default function Story() {
       }
 
       // 4. Animate .cta-panel
-      const cta = document.querySelector(".cta-panel")
+      const cta = root.querySelector(".cta-panel")
       if (cta) {
         gsap.timeline({
           scrollTrigger: {
@@ -180,8 +183,8 @@ export default function Story() {
             cta.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
-              duration: 0.9,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -197,6 +200,11 @@ export default function Story() {
             "-=0.45",
           )
       }
+
+      // Refresh ScrollTrigger markers so measurements match current layout
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
     }, containerRef)
 
     return () => ctx.revert()

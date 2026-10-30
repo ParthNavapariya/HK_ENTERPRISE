@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { COMPANY_INFO } from "../data/products"
@@ -15,18 +15,21 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   const homeRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
+      const root = homeRef.current
+      if (!root) return
+
       // 1. Animate Manifesto on scroll
-      const manifesto = document.querySelector(".manifesto")
+      const manifesto = root.querySelector(".manifesto")
       if (manifesto) {
         gsap.timeline({
           scrollTrigger: {
             trigger: manifesto,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -59,12 +62,12 @@ export default function Home() {
       }
 
       // 2. Animate Process Section (The HK Standard)
-      const processSec = document.querySelector(".process-section")
+      const processSec = root.querySelector(".process-section")
       if (processSec) {
         gsap.timeline({
           scrollTrigger: {
             trigger: processSec,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -78,8 +81,8 @@ export default function Home() {
             processSec.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
-              duration: 0.9,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -88,8 +91,8 @@ export default function Home() {
             processSec.querySelector(".section-head > p"),
             {
               opacity: 0,
-              y: 25,
-              duration: 0.7,
+              y: 20,
+              duration: 0.6,
               ease: "power3.out",
             },
             "-=0.5",
@@ -98,9 +101,9 @@ export default function Home() {
             processSec.querySelectorAll(".principles article"),
             {
               opacity: 0,
-              y: 35,
-              stagger: 0.15,
-              duration: 0.8,
+              y: 30,
+              stagger: 0.12,
+              duration: 0.7,
               ease: "power3.out",
             },
             "-=0.4",
@@ -108,7 +111,7 @@ export default function Home() {
       }
 
       // 3. Animate CTA panel
-      const cta = document.querySelector(".cta-panel")
+      const cta = root.querySelector(".cta-panel")
       if (cta) {
         gsap.timeline({
           scrollTrigger: {
@@ -127,8 +130,8 @@ export default function Home() {
             cta.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
-              duration: 0.9,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -144,6 +147,10 @@ export default function Home() {
             "-=0.45",
           )
       }
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
     }, homeRef)
 
     return () => ctx.revert()

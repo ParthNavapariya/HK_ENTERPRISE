@@ -48,7 +48,11 @@ export default function App() {
     }
 
     window.addEventListener("hashchange", update)
+    return () => window.removeEventListener("hashchange", update)
+  }, [])
 
+  // Observe .reveal elements whenever route changes
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach(
@@ -59,11 +63,8 @@ export default function App() {
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
 
-    return () => {
-      window.removeEventListener("hashchange", update)
-      observer.disconnect()
-    }
-  }, [])
+    return () => observer.disconnect()
+  }, [route])
 
   const [rawPageName, detail = ""] = route.split("/")
   // Support legacy '#industries' and '#our-story' mapping to 'story'

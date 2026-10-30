@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { navigate } from "../utils/navigation"
@@ -11,18 +11,21 @@ gsap.registerPlugin(ScrollTrigger)
 export default function About() {
   const containerRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
+      const root = containerRef.current
+      if (!root) return
+
       // 1. Animate .about-intro
-      const intro = document.querySelector(".about-intro")
+      const intro = root.querySelector(".about-intro")
       if (intro) {
         gsap.timeline({
           scrollTrigger: {
             trigger: intro,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -36,8 +39,8 @@ export default function About() {
             intro.querySelector("h2"),
             {
               opacity: 0,
-              y: 55,
-              duration: 1.0,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -46,22 +49,22 @@ export default function About() {
             intro.querySelectorAll(".split-copy p, .about-motto"),
             {
               opacity: 0,
-              y: 30,
-              stagger: 0.15,
-              duration: 0.8,
+              y: 25,
+              stagger: 0.12,
+              duration: 0.7,
               ease: "power3.out",
             },
-            "-=0.55",
+            "-=0.5",
           )
       }
 
       // 2. Animate .quality-section
-      const quality = document.querySelector(".quality-section")
+      const quality = root.querySelector(".quality-section")
       if (quality) {
         gsap.timeline({
           scrollTrigger: {
             trigger: quality,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -75,8 +78,8 @@ export default function About() {
             quality.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
-              duration: 0.9,
+              y: 40,
+              duration: 0.8,
               ease: "power3.out",
             },
             "-=0.35",
@@ -85,14 +88,19 @@ export default function About() {
             quality.querySelectorAll(".quality-list article"),
             {
               opacity: 0,
-              y: 30,
+              y: 25,
               stagger: 0.12,
-              duration: 0.8,
+              duration: 0.7,
               ease: "power3.out",
             },
             "-=0.5",
           )
       }
+
+      // Refresh ScrollTrigger markers so measurements match current layout
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
     }, containerRef)
 
     return () => ctx.revert()

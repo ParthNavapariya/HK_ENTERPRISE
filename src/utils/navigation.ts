@@ -44,14 +44,9 @@ export function navigate(page: Page, detail?: string) {
     return
   }
 
-  const currentY = window.scrollY || document.documentElement.scrollTop || 0
-
-  if (currentY > 40) {
-    smoothScrollToTop(350, () => {
-      window.location.hash = targetHash
-    })
-  } else {
-    window.location.hash = targetHash
-    window.scrollTo(0, 0)
-  }
+  // Immediately reset scroll position to top and update hash
+  window.scrollTo(0, 0)
+  document.documentElement.scrollTop = 0
+  document.body.scrollTop = 0
+  window.location.hash = targetHash
 }
