@@ -344,21 +344,8 @@ export default function Contact({ productParam }: ContactProps) {
               }
             />
           </label>
-          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "10px" }}>
-            <Button type="submit">
-              <span>Send Enquiry on WhatsApp</span>
-              <Icon name="arrow" />
-            </Button>
-            <a
-              href={COMPANY_INFO.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-              style={{ textDecoration: "none" }}
-            >
-              <span>Direct WhatsApp Chat</span>
-              <Icon name="arrow" />
-            </a>
+          <div style={{ marginTop: "24px" }}>
+            <Button type="submit">Send Enquiry on WhatsApp</Button>
           </div>
         </form>
       </section>

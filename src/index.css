@@ -209,15 +209,31 @@ em {
     transform: translateY(-2px)
 }
 
+.btn span {
+    white-space: nowrap;
+}
+
 .btn-secondary {
     background: transparent;
     border-color: rgba(245, 245, 245, .38);
-    color: var(--white)
+    color: var(--white);
 }
 
 .btn-secondary:hover {
     background: var(--white);
-    color: var(--black)
+    color: var(--black);
+}
+
+.contact-layout .btn-secondary,
+.on-light .btn-secondary {
+    border-color: rgba(12, 14, 18, 0.25);
+    color: var(--ink);
+}
+
+.contact-layout .btn-secondary:hover,
+.on-light .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--white);
 }
 
 .btn svg {
