@@ -324,7 +324,7 @@ export default function Contact({ productParam }: ContactProps) {
             <label>
               <span>Product / Model Name</span>
               <input
-                placeholder="e.g. 111 Clamp (Capsule Hole)"
+                placeholder="e.g. 1ll clamp(capsule hole)"
                 value={formData.productName}
                 onChange={(e) =>
                   setFormData({ ...formData, productName: e.target.value })
