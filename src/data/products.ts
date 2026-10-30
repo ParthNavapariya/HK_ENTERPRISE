@@ -58,6 +58,7 @@ export const products: ProductItem[] = [
     image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
     images: [
       "/products/bed-clamp/bed-clamp-2-clean.jpg",
+      "/products/bed-clamp/bed-clamp-2-dark.jpg",
       "/products/bed-clamp/bed-clamp-2.jpg",
       "/products/bed-clamp/bed-clamp-1.jpg",
     ],
