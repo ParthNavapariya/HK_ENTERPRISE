@@ -131,7 +131,7 @@ export const products: ProductItem[] = [
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
     material: "Structural Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
-    thickness: "Regular",
+    thickness: "Light, Medium, Heavy",
     features: [
       "5 Aani precision hex bolts included",
       "Available thickness: Light, Medium, Heavy",
@@ -187,7 +187,7 @@ export const products: ProductItem[] = [
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો પ્રીમિયમ વ્હાઇટ પાવડર કોટેડ બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં ઉપલબ્ધ.",
     material: "Cold-Rolled Carbon Steel",
     finish: "Architectural White Powder Coated",
-    thickness: "Regular",
+    thickness: "Light, Medium, Heavy",
     features: [
       "5 Aani precision hex bolts included",
       "Available thickness: Light, Medium, Heavy",
@@ -215,7 +215,7 @@ export const products: ProductItem[] = [
     descriptionGu: "૫ આની બોલ્ટ સાથે ૧૧૧ બેડ ક્લેમ્પ. મીડીયમ અને હેવી બંને ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
     material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
-    thickness: "Regular",
+    thickness: "Medium, Heavy",
     features: [
       "5 Aani precision bolt",
       "Available thickness: Medium & Heavy",
