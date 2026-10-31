@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { COMPANY_INFO, categories, products } from "../data/products"
+import type { Category } from "../types"
 import { navigate } from "../utils/navigation"
 import PageHero from "../components/ui/PageHero"
 import Eyebrow from "../components/ui/Eyebrow"
@@ -311,7 +312,10 @@ export default function Contact({ productParam }: ContactProps) {
               <select
                 value={formData.category}
                 onChange={(e) =>
-                  setFormData({ ...formData, category: e.target.value })
+                  setFormData({
+                    ...formData,
+                    category: e.target.value as Exclude<Category, "All">,
+                  })
                 }
               >
                 {categories.map((c) => (
