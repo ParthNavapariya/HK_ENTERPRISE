@@ -25,7 +25,11 @@ export default function ProductVisual({
         item.name.toLowerCase().includes(category.toLowerCase())
     ) ?? products[0]
 
-  const displayImage = image || product.image
+  const displayImage =
+    image ||
+    (hero && product.category === "Bed Clamp"
+      ? "/products/bed-clamp/bed-clamp-2-clean.jpg"
+      : product.image)
 
   return (
     <div
