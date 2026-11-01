@@ -23,7 +23,7 @@ export const categories: Exclude<Category, "All">[] = [
 ]
 
 export const categoryImages: Record<Exclude<Category, "All">, string> = {
-  "Bed Clamp": "/products/bed-clamp/bed-clamp-2-clean.jpg",
+  "Bed Clamp": "/products/bed-clamp/bed-clamp-3.jpg",
   "Bed Socket": "/products/bed-soket/bed-soket-1.jpg",
   Hinges: "/products/hinges/butt-hinges.jpg",
   "L Corner": "/products/l-corner/l-corner-1.jpg",
@@ -983,7 +983,7 @@ export const products: ProductItem[] = [
 ]
 
 export const showcaseProducts: ProductItem[] = [
-  products.find((p) => p.id === "bc-01")!,
+  products.find((p) => p.id === "bc-04")!,
   products.find((p) => p.id === "bs-01")!,
   products.find((p) => p.id === "hg-02")!,
   products.find((p) => p.id === "lc-01")!,

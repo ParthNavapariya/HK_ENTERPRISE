@@ -16,26 +16,26 @@ const chapters: Chapter[] = [
   {
     num: "01",
     tag: "FORM",
-    title: "Solid 90° Joint.",
-    copy: "Hydraulic stamped 3.0mm cold-rolled steel with reinforced gusset bend for zero-flex structural stability.",
+    title: "Extended 7” Profile.",
+    copy: "Precision-engineered 7-inch structural steel clamp providing superior span and dual-point load distribution across bed corners.",
   },
   {
     num: "02",
     tag: "DETAIL",
-    title: "5 Aani Capsule Slot.",
-    copy: "Engineered capsule hole with precision bolt alignment allows smooth micro-adjustment and rattle-free lockup.",
+    title: "Twin Capsule Slots.",
+    copy: "Dual elongated capsule holes with 5 Aani precision hex bolts allow effortless micro-adjustment and rigid, squeak-free joinery.",
   },
   {
     num: "03",
     tag: "ENDURANCE",
-    title: "Built for 300+ kg.",
-    copy: "Deep zinc passivated finish resists corrosion, wear, and heavy dynamic loads on bed and modular frames.",
+    title: "Triple-Gauge Steel.",
+    copy: "Available in Light, Medium, and Heavy thickness options with deep white zinc plating for decades of rust resistance.",
   },
   {
     num: "04",
     tag: "SYSTEM",
     title: "Modular Integration.",
-    copy: "Engineered for rapid knock-down assembly across commercial furniture and heavy architectural joinery.",
+    copy: "Engineered for rapid knock-down assembly across heavy hydraulic beds, commercial frames, and modular furniture.",
   },
 ]
 
@@ -196,7 +196,7 @@ export default function CinematicSequence() {
       <div className="sequence-top">
         <div className="sequence-tag">
           <span className="sequence-tag-dot" />
-          <span>STUDY • HK-BC-101</span>
+          <span>STUDY • HK-BC-104</span>
         </div>
 
         <span className="sequence-top-counter">
@@ -207,8 +207,8 @@ export default function CinematicSequence() {
       <div className="sequence-product">
         <ProductVisual
           category="Bed Clamp"
-          image="/products/bed-clamp/bed-clamp-2-clean.jpg"
-          productCode="HK-BC-101"
+          image="/products/bed-clamp/bed-clamp-3.jpg"
+          productCode="HK-BC-104"
         />
       </div>
 

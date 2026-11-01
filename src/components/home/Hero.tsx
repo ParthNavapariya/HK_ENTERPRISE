@@ -104,7 +104,7 @@ export default function Hero() {
           </Button>
         </div>
       </div>
-      <ProductVisual category="Bed Clamp" productCode="HK-BC-101" hero />
+      <ProductVisual category="Bed Clamp" productCode="HK-BC-104" hero />
       <div className="hero-index">
         <span>HK / PRODUCT STUDY</span>
         <span>01 — 06</span>
