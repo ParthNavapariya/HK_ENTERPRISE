@@ -110,7 +110,6 @@ export default function ProductDetail({ category }: { category: string }) {
     `• *Product Name:* ${currentProduct.name}\n` +
     `• *Product Code:* ${currentProduct.code || currentProduct.category}\n` +
     `• *Category:* ${currentProduct.category} Series\n` +
-    (currentProduct.material ? `• *Material:* ${currentProduct.material}\n` : "") +
     (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
     (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
     `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`
@@ -203,10 +202,8 @@ export default function ProductDetail({ category }: { category: string }) {
             <p>{currentProduct.description || currentProduct.note}</p>
           </article>
           <article>
-            <span>MATERIAL & FINISH</span>
+            <span>FINISH & DETAILS</span>
             <p>
-              <strong>Material:</strong> {currentProduct.material || "High Grade Steel"}
-              <br />
               <strong>Finish:</strong> {currentProduct.finish || "Rust-Resistant Passivated"}
               {currentProduct.thickness && (
                 <>

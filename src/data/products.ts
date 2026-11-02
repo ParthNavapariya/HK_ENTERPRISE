@@ -44,7 +44,6 @@ export const products: ProductItem[] = [
     description:
       "Precision-formed 1ll corner clamp equipped with 5 Aani bolt and elongated capsule slot, engineered with a rust-resistant white zinc plated finish for rigid, zero-squeak bed joinery.",
     descriptionGu: "૫ આની બોલ્ટ, કેપ્સ્યુલ હોલ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ વાળો 1ll ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમ માટે અવાજ વગર મજબૂત રાખે છે.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -73,7 +72,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 4-corner L bed clamp engineered with high-torque 6 Aani bolt and white zinc plated coating for durable, squeak-free joint stability across double beds and wooden furniture.",
     descriptionGu: "૬ આની બોલ્ટ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે મજબૂત એલ બેડ ક્લેમ્પ, બેડના સાંધાને કાયમી મજબૂતાઈ અને અવાજ-મુક્ત સ્થિરતા આપે છે.",
-    material: "Heavy Galvanized Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -101,7 +99,6 @@ export const products: ProductItem[] = [
     description:
       "Ultra-heavy duty L bed clamp equipped with maximum strength 8 Aani bolt and corrosion-resistant golden zinc plated finish for heavy-load hydraulic beds and commercial furniture.",
     descriptionGu: "૮ આની બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ વાળો હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે શ્રેષ્ઠ.",
-    material: "Heavy Industrial Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "Regular",
     features: [
@@ -129,7 +126,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 7-inch steel bed clamp with twin adjustment slots and 5 Aani bolts. Available across Light, Medium, and Heavy thickness gauges with durable rust-proof white zinc plating.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
-    material: "Structural Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Light, Medium, Heavy",
     features: [
@@ -157,7 +153,6 @@ export const products: ProductItem[] = [
     description:
       "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge steel construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
     descriptionGu: "૭ આની મોટા બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે ખાસ બનાવેલ.",
-    material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "Regular",
     features: [
@@ -185,7 +180,6 @@ export const products: ProductItem[] = [
     description:
       "Architectural 7-inch bed clamp finished in scratch-resistant white thermoset powder coating. Features 5 Aani bolts and heavy steel construction across Light, Medium, and Heavy gauges.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો પ્રીમિયમ વ્હાઇટ પાવડર કોટેડ બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Architectural White Powder Coated",
     thickness: "Light, Medium, Heavy",
     features: [
@@ -213,7 +207,6 @@ export const products: ProductItem[] = [
     description:
       "Standard 111 corner bed clamp with 5 Aani bolt and quad mounting holes. Available in Medium and Heavy gauge steel with protective rust-proof white zinc plating.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૧૧૧ બેડ ક્લેમ્પ. મીડીયમ અને હેવી બંને ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Medium, Heavy",
     features: [
@@ -241,7 +234,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 4-inch steel bed clamp engineered for rigid furniture and bed joint reinforcement with durable rust-resistant white zinc plating.",
     descriptionGu: "૪-ઇંચ સાઇઝનો મજબૂત બેડ ક્લેમ્પ, ફર્નિચર અને બેડના જોઈન્ટ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Galvanized Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -269,7 +261,6 @@ export const products: ProductItem[] = [
     description:
       "Precision interlocking bed connector pair engineered for seamless, flush-mount knock-down bed frames, headboards, and modular furniture. Available in powder coated and zinc plated finishes for superior joint stability.",
     descriptionGu: "મોડ્યુલર બેડ ફ્રેમ, હેડબોર્ડ અને ફર્નિચર માટે ઇન્ટરલોકિંગ બેડ કનેક્ટર જોડી, પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં સરળ ફીટિંગ અને અવાજ-મુક્ત જોઈન્ટ સાથે ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
@@ -298,7 +289,6 @@ export const products: ProductItem[] = [
     description:
       "Precision 6-inch heavy-duty bed socket engineered for rigid, knock-down modular bed assembly. Available in golden zinc plated and powder coated finishes for superior corrosion protection.",
     descriptionGu: "૬-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "Regular",
     features: [
@@ -327,7 +317,6 @@ export const products: ProductItem[] = [
     description:
       "Compact 4-inch modular bed socket engineered with precision hook engagement tabs and golden zinc plated corrosion protection.",
     descriptionGu: "૪-ઇંચ કોમ્પેક્ટ મોડ્યુલર બેડ સોકેટ, સિંગલ બેડ અને સોફા ફર્નિચર જોઈન્ટ માટે પ્રીમિયમ ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated",
     thickness: "Regular",
     features: [
@@ -355,7 +344,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge 8-inch extended bed socket engineered for heavy king and queen size beds. Available in golden zinc plated and powder coated finishes for superior stability.",
     descriptionGu: "૮-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોટા કિંગ અને ક્વીન સાઇઝ બેડ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "Regular",
     features: [
@@ -384,7 +372,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge 7-inch modular bed socket engineered for double and king size knock-down bed frames. Available in golden zinc plated and powder coated finishes for lasting durability.",
     descriptionGu: "૭-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "High-Tensile Cold-Rolled Carbon Steel",
     finish: "Golden Zinc Plated / Powder Coated",
     thickness: "Regular",
     features: [
@@ -415,7 +402,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge T hinges engineered to support and distribute weight evenly across wooden doors, frames, and cabinets with durable white zinc plating.",
     descriptionGu: "મોટા લાકડાના દરવાજા, ફ્રેમ અને કેબિનેટ માટે મજબૂત ટી હિંગ્સ જે વજનને સમાન રીતે વહેંચે છે. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Heavy Stamped Mild Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -445,7 +431,6 @@ export const products: ProductItem[] = [
       "Precision 2-inch stamped steel small butt hinges engineered for smooth swinging motion and durable alignment across wooden doors, frames, and furniture cabinets in corrosion-resistant nickel plated finish.",
     descriptionGu:
       "૨-ઇંચ સાઇઝની પ્રિસિઝન સ્મોલ બટ્ટ હિંગ્સ, કેબિનેટ અને લાકડાના દરવાજા માટે સ્મૂથ મૂવમેન્ટ અને નિકલ પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Rolled Mild Steel",
     finish: "Nickel Plated",
     thickness: "Regular",
     features: [
@@ -474,7 +459,6 @@ export const products: ProductItem[] = [
       "Precision cold-rolled steel table hinges designed for folding table leaves, flap desks, and modular furniture with durable white zinc plating.",
     descriptionGu:
       "૧” x ૧” સાઇઝની ફોલ્ડિંગ ટેબલ હિંગ્સ, ડ્રોપ-લીફ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -503,7 +487,6 @@ export const products: ProductItem[] = [
       "Heavy-duty 2” x 2” stamped steel folding table hinges engineered for dining leaves, desks, and commercial folding furniture with durable white zinc plating.",
     descriptionGu:
       "૨” x ૨” સાઇઝની હેવી ડ્યુટી ફોલ્ડિંગ ટેબલ હિંગ્સ, મોટા ડાઇનિંગ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -531,7 +514,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 4” stone hinges engineered for furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
     descriptionGu: "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Solid Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -560,7 +542,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 3” stone hinges engineered for compact furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
     descriptionGu: "હેવી-ડ્યુટી ૩” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Solid Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -591,7 +572,6 @@ export const products: ProductItem[] = [
     description:
       "Precision 1” x 1” 90-degree L-corner bracket engineered for modular furniture, cabinetry, and wooden framing. Available in powder coated and zinc plated finishes for durable corner joint stability.",
     descriptionGu: "૧” x ૧” સાઇઝનો પ્રિસિઝન એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર મજબૂત રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
@@ -619,7 +599,6 @@ export const products: ProductItem[] = [
     description:
       "Wide 1” x 1½” 90-degree L-corner bracket engineered with wide screw spacing for solid joint bracing and load distribution across furniture joints. Available in powder coated and zinc plated finishes.",
     descriptionGu: "૧” x ૧.૫” (1 x 1½”) સાઇઝનો પહોળો એલ કોર્નર, ફર્નિચર અને કેબિનેટના મજબૂત જોઈન્ટ માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
@@ -647,7 +626,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 1” x 2” 90-degree L-corner bracket engineered with gusset reinforcement for deflection-free right angle joint bracing. Available in powder coated and zinc plated finishes.",
     descriptionGu: "૧” x ૨” સાઇઝનો મજબૂત એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર અડીખમ રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
@@ -675,7 +653,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty 1½ inch computer table corner bracket engineered with twin reinforcement gussets for rigid, zero-wobble desk, table, and workstation assembly with rust-resistant zinc plating.",
     descriptionGu: "૧.૫ ઇંચ (1½”) સાઇઝનો મજબૂત કમ્પ્યુટર ટેબલ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા આપવા માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -703,7 +680,6 @@ export const products: ProductItem[] = [
     description:
       "Extended 1” x 3” 6-hole L-corner bracket engineered with 3 inline mounting points per flange for tall cabinetry, partitions, and heavy wardrobe carcass bracing. Available in powder coated and zinc plated finishes.",
     descriptionGu: "૧” x ૩” સાઇઝનો ૬ હોલ લાંબો એલ કોર્નર, મોટા કબાટ, વોર્ડરોબ અને પાર્ટીશનના ખૂણાને ટેકો આપવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
@@ -731,7 +707,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge 1½ inch computer table round corner bracket engineered with twin domed reinforcement gussets and smooth radiused safety corners for computer desks, office tables, and rigid wooden furniture.",
     descriptionGu: "૧.૫ ઇંચ (1½”) સાઇઝનો કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા અને ગોળ ખૂણાની સલામતી આપવા માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Heavy Gauge Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -761,7 +736,6 @@ export const products: ProductItem[] = [
     description:
       "Precision-engineered heavy duty spring jack mechanism with high-tension tempered coil spring for smooth, effortless lifting and support of bed storage frames in powder coated finish.",
     descriptionGu: "હાઈ-ટેન્શન કોઈલ સ્પ્રિંગ સાથેનો હેવી બેડ સ્પ્રિંગ જેક, સ્ટોરેજ બેડ સરળતાથી ઓપન કરવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
-    material: "Heavy Gauge Cold-Rolled Steel + Tempered Spring",
     finish: "Powder Coated",
     thickness: "Regular",
     features: [
@@ -789,7 +763,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty multi-pivot scissor frame sofa cum bed fitting engineered for smooth conversion between sofa seating and flat bed support with protective powder coated finish.",
     descriptionGu: "સોફામાંથી બેડ બનાવવા માટેનું હેવી ડ્યુટી મલ્ટી-પિવોટ સિઝર ફિટિંગ, સરળ મૂવમેન્ટ અને ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
-    material: "Heavy Stamped Carbon Steel",
     finish: "Powder Coated",
     thickness: "Regular",
     features: [
@@ -817,7 +790,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty pneumatic hydraulic bed jack lift mechanism designed for king and queen size hydraulic storage beds. Available in 3ft and 5ft lengths with protective powder coated finish.",
     descriptionGu: "૩ ફૂટ અને ૫ ફૂટ સાઇઝમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
-    material: "High-Tensile Cold-Rolled Steel Channel with Hydraulic Struts",
     finish: "Powder Coated",
     thickness: "Heavy Duty Frame",
     features: [
@@ -847,7 +819,6 @@ export const products: ProductItem[] = [
     description:
       "Precision angled IMP support bracket manufactured from high-tensile cold-rolled steel with white zinc plated finish for door and cabinet latch support.",
     descriptionGu: "લાકડાના દરવાજા અને ફર્નિચર માટે એંગલ્ડ આઈએમપી સપોર્ટ બ્રેકેટ, વ્હાઇટ ઝીંક પ્લેટેડ રસ્ટ-પ્રૂફ ફિનિશિંગ સાથે.",
-    material: "High-Tensile Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -876,7 +847,6 @@ export const products: ProductItem[] = [
     description:
       "Precision industrial spring patti manufactured from high-tensile steel, engineered with durable white zinc plating for door, cabinet, and lock mechanisms.",
     descriptionGu: "૩ હોલ વાળી મજબૂત સ્પ્રીંગ પટ્ટી, દરવાજા અને લોક ફિટિંગ્સ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "High-Tensile Cold-Rolled Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -904,7 +874,6 @@ export const products: ProductItem[] = [
     description:
       "Precision-bent right-angle lock patti manufactured for door frames, furniture, and cabinets. Available in Heavy and Light sizes with durable rust-resistant white zinc plating.",
     descriptionGu: "૯૦ ડિગ્રી એંગલ્ડ લોક પટ્ટી, હેવી અને લાઈટ બંને સાઈઝમાં ઉપલબ્ધ. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે દરવાજા અને કબાટના લોક માટે શ્રેષ્ઠ.",
-    material: "Cold-Rolled Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Heavy, Light",
     features: [
@@ -933,7 +902,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty SSR patti engineered with precision punched pivot eyelet and corrosion-resistant white zinc plating for smooth lock and cabinet action.",
     descriptionGu: "ગોળાકાર કેપ્સ્યુલ આકાર અને પ્રિસિઝન પિવોટ હોલ વાળી એસએસઆર પટ્ટી, વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    material: "Cold-Drawn Carbon Steel",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -961,7 +929,6 @@ export const products: ProductItem[] = [
     description:
       "Heavy-duty CRC cam lock strike patti engineered for desk drawers, cabinet locks, and commercial furniture with precision cam aperture.",
     descriptionGu: "ટેબલ ડ્રોઅર અને કબાટના કેમ લોક માટે સ્પેશિયલ સીઆરસી કેમ લોક પટ્ટી, મજબૂત પકડ અને લાંબા આયુષ્ય માટે.",
-    material: "CRC (Cold-Rolled Carbon Steel)",
     finish: "CRC Finish",
     thickness: "Regular",
     features: [
