@@ -87,13 +87,6 @@ export default function Footer() {
             At HK Enterprise, we craft high-quality hardware solutions for modern
             spaces — combining strength, precision and trust.
           </p>
-          <div className="footer-statement-specs">
-            <span>COLD-ROLLED STEEL</span>
-            <b>•</b>
-            <span>HIGH LOAD ENDURANCE</span>
-            <b>•</b>
-            <span>ZERO DEFECT TOLERANCE</span>
-          </div>
         </div>
 
         {/* Center subtle engineering divider */}
