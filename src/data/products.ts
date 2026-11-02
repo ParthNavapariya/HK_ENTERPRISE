@@ -203,17 +203,17 @@ export const products: ProductItem[] = [
     nameGu: "1|| બેડ ક્લેમ્પ",
     category: "Bed Clamp",
     categoryName: "Bed Clamp Series",
-    note: "1|| bed clamp with 5 Aani bolt, available mostly in Heavy gauge with white zinc plated finish.",
+    note: "1|| bed clamp with 5 Aani bolt, quad mounting holes, and protective white zinc plated finish.",
     description:
-      "Standard 1|| corner bed clamp with 5 Aani bolt and quad mounting holes. Available mostly in Heavy gauge steel with protective rust-proof white zinc plating.",
-    descriptionGu: "૫ આની બોલ્ટ સાથે 1|| બેડ ક્લેમ્પ. મોસ્ટ ઓફ હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
+      "Standard 1|| corner bed clamp with 5 Aani bolt and quad mounting holes engineered for squeak-free joint stability and corrosion-resistant white zinc plating.",
+    descriptionGu: "૫ આની બોલ્ટ અને ૪ માઉન્ટિંગ હોલ સાથે 1|| બેડ ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમી અવાજ-મુક્ત સ્થિરતા આપવા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
-    thickness: "Mostly Heavy Gauge",
+    thickness: "Regular",
     features: [
       "5 Aani precision bolt",
-      "Available thickness: Mostly Heavy Gauge",
+      "Quad front-mount screw holes for rigid corner alignment",
       "White zinc plated rust-resistant coating",
-      "Quad front-mount screw holes",
+      "Anti-vibration noise-dampening joinery",
     ],
     image: "/products/bed-clamp/bed-clamp-7.jpg",
     images: [
@@ -221,7 +221,7 @@ export const products: ProductItem[] = [
       "/products/bed-clamp/bed-clamp-1.jpg",
       "/products/bed-clamp/bed-clamp-2-clean.jpg",
     ],
-    badge: "5 Aani / Mostly Heavy Gauge",
+    badge: "1|| / 5 Aani Bolt",
   },
   {
     id: "bc-08",
