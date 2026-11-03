@@ -50,7 +50,7 @@ export const products: ProductItem[] = [
       "5 Aani precision bolt",
       "Elongated capsule hole for micro-alignment",
       "White zinc plated anti-rust finish",
-      "Heavy gauge hydraulic stamped steel",
+      "Heavy gauge hydraulic stamped construction",
     ],
     image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
     images: [
@@ -104,7 +104,7 @@ export const products: ProductItem[] = [
     features: [
       "8 Aani heavy-duty hex bolt",
       "Golden zinc plated corrosion protection",
-      "Extra-thick cold-rolled steel",
+      "Extra-thick high-load construction",
       "High-torque vibration resistance",
     ],
     image: "/products/bed-clamp/bed-clamp-6.jpg",
@@ -241,7 +241,7 @@ export const products: ProductItem[] = [
       "Finishing: White zinc plated",
       "4 perimeter countersunk screw holes",
       "Center locking bolt aperture",
-      "High-tensile rigid carbon steel",
+      "Rigid vibration-free joint reinforcement",
     ],
     image: "/products/bed-clamp/bed-clamp-9.jpg",
     images: [
@@ -408,7 +408,7 @@ export const products: ProductItem[] = [
       "Heavy-gauge T strap leaf design",
       "Finishing: White zinc plated",
       "Precision countersunk screw mounting holes",
-      "Solid steel pivot knuckle barrel",
+      "Solid precision pivot knuckle barrel",
       "High weight distribution and rust protection",
     ],
     image: "/products/hinges/hinges-1.jpg",
@@ -466,7 +466,7 @@ export const products: ProductItem[] = [
       "Finishing: White zinc plated",
       "Countersunk screw mounting holes",
       "Smooth 180° flush folding action",
-      "High-tensile steel center pivot pin",
+      "High-tensile center pivot pin",
     ],
     image: "/products/hinges/table-hinges-1x1.jpg",
     images: [
@@ -521,7 +521,7 @@ export const products: ProductItem[] = [
       "Finishing: White zinc plated",
       "Asymmetric stone & timber mounting holes",
       "Smooth knuckle movement",
-      "Cold-rolled heavy-gauge carbon steel",
+      "Heavy-gauge rigid structural construction",
     ],
     image: "/products/hinges/hinges-3.jpg",
     images: [
@@ -549,7 +549,7 @@ export const products: ProductItem[] = [
       "Finishing: White zinc plated",
       "Asymmetric stone & timber mounting holes",
       "Smooth knuckle pin operation",
-      "Cold-rolled heavy-gauge carbon steel",
+      "Heavy-gauge rigid structural construction",
     ],
     image: "/products/hinges/hinges-4.jpg",
     images: [
@@ -741,7 +741,7 @@ export const products: ProductItem[] = [
     features: [
       "Heavy duty spring jack mechanism",
       "Finishing: Powder coated",
-      "High-tension tempered steel coil spring",
+      "High-tension tempered coil spring",
       "Precision riveted multi-link scissor arms",
       "Smooth effortless bed storage lift assist",
     ],
