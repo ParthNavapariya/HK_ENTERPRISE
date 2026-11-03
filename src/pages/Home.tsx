@@ -117,7 +117,7 @@ export default function Home() {
         gsap.timeline({
           scrollTrigger: {
             trigger: cta,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
@@ -137,12 +137,16 @@ export default function Home() {
             },
             "-=0.35",
           )
-          .from(
+          .fromTo(
             ctaBtn,
             {
               opacity: 0,
-              x: 50,
-              duration: 0.85,
+              x: 80, // Explicit Right to Left slide
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.9,
               ease: "power3.out",
               clearProps: "transform,opacity",
             },
@@ -224,7 +228,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="cta-panel">
+      <section className="cta-panel home-cta">
         <Eyebrow light>START A CONVERSATION</Eyebrow>
         <h2>
           Find the right
@@ -235,7 +239,7 @@ export default function Home() {
           href={COMPANY_INFO.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn home-whatsapp-btn"
           style={{ textDecoration: "none" }}
         >
           <span>Enquire on WhatsApp</span>
