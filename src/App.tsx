@@ -80,46 +80,45 @@ export default function App() {
 
         ScrollTrigger.create({
           trigger: container,
-          start: "top 96%", // Trigger immediately when container starts entering viewport (responsive, no late waiting)
+          start: "top 95%",
           once: true,
           onEnter: () => {
             if (btns.length === 1) {
               gsap.fromTo(
                 btns[0],
-                { opacity: 0, x: -40, scale: 0.98 },
+                { opacity: 0, x: -30 },
                 {
                   opacity: 1,
                   x: 0,
-                  scale: 1,
-                  duration: 0.65, // Crisp, natural speed (not sluggish or late)
+                  duration: 0.6,
                   ease: "power2.out",
+                  overwrite: "auto",
                   clearProps: "all",
                 },
               )
             } else {
-              // 2 buttons: first from left, second from right
+              // 2 buttons: simultaneous fluid slide-in without delay
               gsap.fromTo(
                 btns[0],
-                { opacity: 0, x: -40, scale: 0.98 },
+                { opacity: 0, x: -30 },
                 {
                   opacity: 1,
                   x: 0,
-                  scale: 1,
-                  duration: 0.65,
+                  duration: 0.6,
                   ease: "power2.out",
+                  overwrite: "auto",
                   clearProps: "all",
                 },
               )
               gsap.fromTo(
                 btns[1],
-                { opacity: 0, x: 40, scale: 0.98 },
+                { opacity: 0, x: 30 },
                 {
                   opacity: 1,
                   x: 0,
-                  scale: 1,
-                  duration: 0.65,
-                  delay: 0.08,
+                  duration: 0.6,
                   ease: "power2.out",
+                  overwrite: "auto",
                   clearProps: "all",
                 },
               )
@@ -141,22 +140,22 @@ export default function App() {
           batchMax: 2,
           onEnter: (batch) => {
             batch.forEach((btn, idx) => {
-              const fromX = idx % 2 === 0 ? -40 : 40
+              const fromX = idx % 2 === 0 ? -30 : 30
               gsap.fromTo(
                 btn,
-                { opacity: 0, x: fromX, scale: 0.98 },
+                { opacity: 0, x: fromX },
                 {
                   opacity: 1,
                   x: 0,
-                  scale: 1,
-                  duration: 0.65,
+                  duration: 0.6,
                   ease: "power2.out",
+                  overwrite: "auto",
                   clearProps: "all",
                 },
               )
             })
           },
-          start: "top 96%",
+          start: "top 95%",
           once: true,
         })
       }

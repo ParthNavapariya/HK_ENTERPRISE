@@ -212,12 +212,10 @@ em {
     letter-spacing: .1em;
     text-transform: uppercase;
     border-radius: 0; /* Square industrial design */
-    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    transition: background-color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
                 color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
@@ -242,15 +240,12 @@ em {
     background: var(--champagne);
     border-color: var(--champagne);
     color: var(--black);
-    transform: translateY(-2px);
     box-shadow: 0 10px 24px -6px rgba(201, 164, 76, 0.38);
 }
 
 /* Tactile click / active state */
 .btn:active {
-    transform: translateY(0) scale(0.96);
     box-shadow: 0 4px 10px rgba(201, 164, 76, 0.22);
-    transition-duration: 0.12s;
 }
 
 .btn span {
@@ -297,9 +292,7 @@ em {
 }
 
 .btn-secondary:active {
-    transform: translateY(0) scale(0.96);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.12);
-    transition-duration: 0.12s;
 }
 
 .contact-layout .btn-secondary,

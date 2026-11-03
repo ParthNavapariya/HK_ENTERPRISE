@@ -50,9 +50,8 @@ export default function Hero() {
               heroActionBtns[0],
               {
                 opacity: 0,
-                x: -40,
-                scale: 0.98,
-                duration: 0.7,
+                x: -30,
+                duration: 0.65,
                 ease: "power2.out",
                 clearProps: "all",
               },
@@ -64,9 +63,8 @@ export default function Hero() {
                 heroActionBtns[0],
                 {
                   opacity: 0,
-                  x: -40,
-                  scale: 0.98,
-                  duration: 0.7,
+                  x: -30,
+                  duration: 0.65,
                   ease: "power2.out",
                   clearProps: "all",
                 },
@@ -76,13 +74,12 @@ export default function Hero() {
                 heroActionBtns[1],
                 {
                   opacity: 0,
-                  x: 40,
-                  scale: 0.98,
-                  duration: 0.7,
+                  x: 30,
+                  duration: 0.65,
                   ease: "power2.out",
                   clearProps: "all",
                 },
-                "-=.6",
+                "-=.65",
               )
           }
 

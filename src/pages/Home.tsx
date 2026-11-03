@@ -143,8 +143,7 @@ export default function Home() {
             ctaBtns[0],
             {
               opacity: 0,
-              x: -40,
-              scale: 0.98,
+              x: -30,
               duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
@@ -156,8 +155,7 @@ export default function Home() {
             ctaBtns[0],
             {
               opacity: 0,
-              x: -40,
-              scale: 0.98,
+              x: -30,
               duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
@@ -167,13 +165,12 @@ export default function Home() {
             ctaBtns[1],
             {
               opacity: 0,
-              x: 40,
-              scale: 0.98,
+              x: 30,
               duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
             },
-            "-=0.55",
+            "-=0.65",
           )
         }
       }
