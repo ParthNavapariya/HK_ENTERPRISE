@@ -582,8 +582,7 @@ em {
 
 .product-visual:hover .technical-orbits {
     transform: translate(-50%, -50%) scale(1.015);
-    opacity: .88;
-    filter: drop-shadow(0 0 24px rgba(232, 213, 154, .14))
+    opacity: .88
 }
 
 .visual-label {
@@ -1514,16 +1513,16 @@ em {
     height: 440px;
     aspect-ratio: 4 / 3;
     border-radius: 6px;
+    box-shadow: none;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                border-color 0.4s ease,
-                box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    will-change: transform, box-shadow;
+                border-color 0.4s ease;
+    will-change: transform;
 }
 
 .product-card:hover .product-visual {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     border-color: rgba(201, 164, 76, 0.45);
-    box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.65), 0 0 30px rgba(201, 164, 76, 0.16);
+    box-shadow: none;
 }
 
 /* Smooth zoom on product image when hovering product card */
@@ -1544,7 +1543,6 @@ em {
 .product-card:hover .technical-orbits {
     transform: translate(-50%, -50%) scale(1.025) rotate(2deg);
     opacity: 0.95;
-    filter: drop-shadow(0 0 26px rgba(232, 213, 154, 0.2));
 }
 
 .card-copy {
@@ -1713,9 +1711,8 @@ em {
 }
 
 .detail-product-visual:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     border-color: rgba(201, 164, 76, 0.55);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.75), 0 0 35px rgba(201, 164, 76, 0.2);
 }
 
 .detail-ambient {
