@@ -110,7 +110,7 @@ export default function Contact({ productParam }: ContactProps) {
               x: -30,
               duration: 0.65,
               ease: "power2.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
             },
             "-=0.35",
           )
@@ -127,7 +127,7 @@ export default function Contact({ productParam }: ContactProps) {
               x: 30,
               duration: 0.65,
               ease: "power2.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
             },
             "-=0.4",
           )

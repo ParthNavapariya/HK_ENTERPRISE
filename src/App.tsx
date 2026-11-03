@@ -93,7 +93,7 @@ export default function App() {
                   duration: 0.6,
                   ease: "power2.out",
                   overwrite: "auto",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
               )
             } else {
@@ -107,7 +107,7 @@ export default function App() {
                   duration: 0.6,
                   ease: "power2.out",
                   overwrite: "auto",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
               )
               gsap.fromTo(
@@ -119,7 +119,7 @@ export default function App() {
                   duration: 0.6,
                   ease: "power2.out",
                   overwrite: "auto",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
               )
             }
@@ -150,7 +150,7 @@ export default function App() {
                   duration: 0.6,
                   ease: "power2.out",
                   overwrite: "auto",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
               )
             })

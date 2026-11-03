@@ -146,7 +146,7 @@ export default function Home() {
               x: -30,
               duration: 0.65,
               ease: "power2.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
             },
             "-=0.4",
           )
@@ -158,7 +158,7 @@ export default function Home() {
               x: -30,
               duration: 0.65,
               ease: "power2.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
             },
             "-=0.4",
           ).from(
@@ -168,7 +168,7 @@ export default function Home() {
               x: 30,
               duration: 0.65,
               ease: "power2.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
             },
             "-=0.65",
           )

@@ -53,7 +53,7 @@ export default function Hero() {
                 x: -30,
                 duration: 0.65,
                 ease: "power2.out",
-                clearProps: "all",
+                clearProps: "transform,opacity",
               },
               "-=.5",
             )
@@ -66,7 +66,7 @@ export default function Hero() {
                   x: -30,
                   duration: 0.65,
                   ease: "power2.out",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
                 "-=.5",
               )
@@ -77,7 +77,7 @@ export default function Hero() {
                   x: 30,
                   duration: 0.65,
                   ease: "power2.out",
-                  clearProps: "all",
+                  clearProps: "transform,opacity",
                 },
                 "-=.65",
               )
