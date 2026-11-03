@@ -61,9 +61,54 @@ export default function App() {
       { threshold: 0.12 },
     )
 
+    // Observe .reveal elements whenever route changes
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
 
-    return () => observer.disconnect()
+    // Scroll reveal animation for all action buttons across pages
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (!reduced) {
+      // Find all buttons that are not inside hero (hero has its own timeline)
+      const scrollButtons = Array.from(
+        document.querySelectorAll<HTMLElement>(
+          "main .btn:not(.hero-copy .btn):not(.scroll-cue), footer .btn",
+        ),
+      )
+
+      if (scrollButtons.length > 0) {
+        ScrollTrigger.batch(scrollButtons, {
+          interval: 0.1,
+          batchMax: 4,
+          onEnter: (batch) => {
+            gsap.fromTo(
+              batch,
+              {
+                opacity: 0,
+                y: 28,
+                scale: 0.96,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                stagger: 0.08,
+                duration: 0.7,
+                ease: "power3.out",
+                overwrite: "auto",
+              },
+            )
+          },
+          start: "top 92%",
+          once: true,
+        })
+      }
+    }
+
+    return () => {
+      observer.disconnect()
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.vars.id?.startsWith("btn-batch")) t.kill()
+      })
+    }
   }, [route])
 
   const [rawPageName, detail = ""] = route.split("/")
