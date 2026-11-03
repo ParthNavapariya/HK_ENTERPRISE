@@ -80,44 +80,45 @@ export default function App() {
 
         ScrollTrigger.create({
           trigger: container,
-          start: "top 90%",
+          start: "top 96%", // Trigger immediately when container starts entering viewport (responsive, no late waiting)
           once: true,
           onEnter: () => {
             if (btns.length === 1) {
               gsap.fromTo(
                 btns[0],
-                { opacity: 0, x: -50, scale: 0.96 },
+                { opacity: 0, x: -40, scale: 0.98 },
                 {
                   opacity: 1,
                   x: 0,
                   scale: 1,
-                  duration: 1.15,
+                  duration: 0.65, // Crisp, natural speed (not sluggish or late)
                   ease: "power2.out",
                   clearProps: "all",
                 },
               )
             } else {
-              // 2 buttons: first button from left, second button from right
+              // 2 buttons: first from left, second from right
               gsap.fromTo(
                 btns[0],
-                { opacity: 0, x: -50, scale: 0.96 },
+                { opacity: 0, x: -40, scale: 0.98 },
                 {
                   opacity: 1,
                   x: 0,
                   scale: 1,
-                  duration: 1.15,
+                  duration: 0.65,
                   ease: "power2.out",
                   clearProps: "all",
                 },
               )
               gsap.fromTo(
                 btns[1],
-                { opacity: 0, x: 50, scale: 0.96 },
+                { opacity: 0, x: 40, scale: 0.98 },
                 {
                   opacity: 1,
                   x: 0,
                   scale: 1,
-                  duration: 1.15,
+                  duration: 0.65,
+                  delay: 0.08,
                   ease: "power2.out",
                   clearProps: "all",
                 },
@@ -136,26 +137,26 @@ export default function App() {
 
       if (standaloneBtns.length > 0) {
         ScrollTrigger.batch(standaloneBtns, {
-          interval: 0.1,
+          interval: 0.05,
           batchMax: 2,
           onEnter: (batch) => {
             batch.forEach((btn, idx) => {
-              const fromX = idx % 2 === 0 ? -50 : 50
+              const fromX = idx % 2 === 0 ? -40 : 40
               gsap.fromTo(
                 btn,
-                { opacity: 0, x: fromX, scale: 0.96 },
+                { opacity: 0, x: fromX, scale: 0.98 },
                 {
                   opacity: 1,
                   x: 0,
                   scale: 1,
-                  duration: 1.15,
+                  duration: 0.65,
                   ease: "power2.out",
                   clearProps: "all",
                 },
               )
             })
           },
-          start: "top 90%",
+          start: "top 96%",
           once: true,
         })
       }

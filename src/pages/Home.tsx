@@ -117,25 +117,25 @@ export default function Home() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: cta,
-            start: "top 85%",
+            start: "top 95%", // Trigger immediately when entering view
             once: true,
           },
         })
           .from(cta.querySelector(".eyebrow"), {
             opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
+            y: 15,
+            duration: 0.5,
+            ease: "power2.out",
           })
           .from(
             cta.querySelector("h2"),
             {
               opacity: 0,
-              y: 40,
-              duration: 0.8,
-              ease: "power3.out",
+              y: 25,
+              duration: 0.6,
+              ease: "power2.out",
             },
-            "-=0.35",
+            "-=0.3",
           )
 
         if (ctaBtns.length === 1) {
@@ -143,37 +143,37 @@ export default function Home() {
             ctaBtns[0],
             {
               opacity: 0,
-              x: -50,
-              scale: 0.96,
-              duration: 1.15,
+              x: -40,
+              scale: 0.98,
+              duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
             },
-            "-=0.45",
+            "-=0.4",
           )
         } else if (ctaBtns.length > 1) {
           tl.from(
             ctaBtns[0],
             {
               opacity: 0,
-              x: -50,
-              scale: 0.96,
-              duration: 1.15,
+              x: -40,
+              scale: 0.98,
+              duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
             },
-            "-=0.45",
+            "-=0.4",
           ).from(
             ctaBtns[1],
             {
               opacity: 0,
-              x: 50,
-              scale: 0.96,
-              duration: 1.15,
+              x: 40,
+              scale: 0.98,
+              duration: 0.65,
               ease: "power2.out",
               clearProps: "all",
             },
-            "-=0.95",
+            "-=0.55",
           )
         }
       }

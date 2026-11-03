@@ -50,13 +50,13 @@ export default function Hero() {
               heroActionBtns[0],
               {
                 opacity: 0,
-                x: -50,
-                scale: 0.96,
-                duration: 1.15,
+                x: -40,
+                scale: 0.98,
+                duration: 0.7,
                 ease: "power2.out",
                 clearProps: "all",
               },
-              "-=.4",
+              "-=.5",
             )
           } else if (heroActionBtns && heroActionBtns.length > 1) {
             timeline
@@ -64,25 +64,25 @@ export default function Hero() {
                 heroActionBtns[0],
                 {
                   opacity: 0,
-                  x: -50,
-                  scale: 0.96,
-                  duration: 1.15,
+                  x: -40,
+                  scale: 0.98,
+                  duration: 0.7,
                   ease: "power2.out",
                   clearProps: "all",
                 },
-                "-=.4",
+                "-=.5",
               )
               .from(
                 heroActionBtns[1],
                 {
                   opacity: 0,
-                  x: 50,
-                  scale: 0.96,
-                  duration: 1.15,
+                  x: 40,
+                  scale: 0.98,
+                  duration: 0.7,
                   ease: "power2.out",
                   clearProps: "all",
                 },
-                "-=.95",
+                "-=.6",
               )
           }
 
