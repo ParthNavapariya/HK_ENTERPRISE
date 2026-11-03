@@ -645,18 +645,18 @@ export const products: ProductItem[] = [
   {
     id: "lc-04",
     code: "HK-LC-304",
-    name: "Computer Table Corner (1½ Inch)",
-    nameGu: "કમ્પ્યુટર ટેબલ કોર્નર (૧.૫ ઇંચ)",
+    name: "Computer Table Corner (1ll inch)",
+    nameGu: "કમ્પ્યુટર ટેબલ કોર્નર (1ll inch)",
     category: "L Corner",
     categoryName: "L Corner Series",
-    note: "1½ inch heavy-duty computer table corner bracket in white zinc plated finish with dual gusset ribs.",
+    note: "1ll inch heavy-duty computer table corner bracket in white zinc plated finish with dual gusset ribs.",
     description:
-      "Heavy-duty 1½ inch computer table corner bracket engineered with twin reinforcement gussets for rigid, zero-wobble desk, table, and workstation assembly with rust-resistant zinc plating.",
-    descriptionGu: "૧.૫ ઇંચ (1½”) સાઇઝનો મજબૂત કમ્પ્યુટર ટેબલ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા આપવા માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+      "Heavy-duty 1ll inch computer table corner bracket engineered with twin reinforcement gussets for rigid, zero-wobble desk, table, and workstation assembly with rust-resistant zinc plating.",
+    descriptionGu: "1ll inch સાઇઝનો મજબૂત કમ્પ્યુટર ટેબલ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા આપવા માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
-      "Size: 1½ inch (1.5\")",
+      "Size: 1ll inch",
       "Finishing: Zinc plated (White Zinc)",
       "Dual embossed reinforcement gussets",
       "4 countersunk screw apertures",
@@ -667,7 +667,7 @@ export const products: ProductItem[] = [
       "/products/l-corner/l-corner-4.jpg",
       "/products/l-corner/l-corner-6.jpg",
     ],
-    badge: "1½” / Zinc Plated",
+    badge: "1ll inch / Zinc Plated",
   },
   {
     id: "lc-05",
