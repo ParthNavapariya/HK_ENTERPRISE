@@ -80,8 +80,8 @@ export default function App() {
           batchMax: 4,
           onEnter: (batch) => {
             batch.forEach((btn, idx) => {
-              // Primary / odd buttons slide in smoothly from left (-36px), secondary / even from right (+36px)
-              const fromX = btn.classList.contains("btn-secondary") || idx % 2 === 1 ? 36 : -36
+              // Primary buttons slide in smoothly from left (-45px), secondary from right (+45px)
+              const fromX = btn.classList.contains("btn-secondary") || idx % 2 === 1 ? 45 : -45
               gsap.fromTo(
                 btn,
                 {
@@ -93,9 +93,9 @@ export default function App() {
                   opacity: 1,
                   x: 0,
                   scale: 1,
-                  duration: 0.75,
-                  delay: idx * 0.1,
-                  ease: "power3.out",
+                  duration: 1.15, // Smooth and calm speed (slower)
+                  delay: idx * 0.15,
+                  ease: "power2.out", // Soft cinematic deceleration
                   overwrite: "auto",
                   clearProps: "transform",
                 },

@@ -140,9 +140,10 @@ export default function Home() {
             cta.querySelector(".btn"),
             {
               opacity: 0,
-              y: 20,
-              duration: 0.6,
-              ease: "power3.out",
+              x: -45,
+              scale: 0.96,
+              duration: 1.1,
+              ease: "power2.out",
             },
             "-=0.45",
           )

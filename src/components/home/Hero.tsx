@@ -37,9 +37,21 @@ export default function Hero() {
               "-=.25",
             )
             .from(
-              ".hero-copy > p, .hero-copy .actions .btn",
-              { opacity: 0, y: 30, stagger: 0.12, duration: 0.7 },
+              ".hero-copy > p",
+              { opacity: 0, y: 30, duration: 0.8 },
               "-=.55",
+            )
+            .from(
+              ".hero-copy .actions .btn",
+              {
+                opacity: 0,
+                x: (idx) => (idx % 2 === 0 ? -45 : 45),
+                scale: 0.96,
+                stagger: 0.16,
+                duration: 1.15,
+                ease: "power2.out",
+              },
+              "-=.4",
             )
             .from(
               ".hero-product",
