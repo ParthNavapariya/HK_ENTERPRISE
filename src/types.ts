@@ -20,6 +20,7 @@ export interface ProductItem {
   descriptionGu?: string
   finish?: string
   thickness?: string
+  available?: string
   loadCapacity?: string
   dimensions?: string
   features?: string[]
