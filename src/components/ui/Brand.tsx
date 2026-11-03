@@ -12,16 +12,15 @@ export default function Brand() {
         alt="HK Enterprise Logo"
         className="brand-logo-img"
         style={{
-          width: "36px",
-          height: "36px",
+          width: "48px",
+          height: "48px",
           objectFit: "contain",
-          filter: "drop-shadow(0 2px 8px rgba(201,164,76,0.35))",
+          filter: "drop-shadow(0 2px 10px rgba(201,164,76,0.4))",
           transition: "transform 0.3s ease",
         }}
       />
       <span className="brand-copy">
         <strong>ENTERPRISE</strong>
-        <small>Precision hardware</small>
       </span>
     </button>
   )
