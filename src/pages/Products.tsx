@@ -26,37 +26,51 @@ export default function Products() {
     if (reduced) return
 
     const ctx = gsap.context(() => {
-      const catalog = document.querySelector(".catalog")
-      if (catalog) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: catalog,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(catalog.querySelector(".filter-bar"), {
-            opacity: 0,
-            y: 25,
+      // 1. Filter bar entrance
+      const filterBar = document.querySelector(".filter-bar")
+      if (filterBar) {
+        gsap.fromTo(
+          filterBar,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
             duration: 0.7,
             ease: "power3.out",
-          })
-          .from(
-            catalog.querySelectorAll(".product-grid > article:nth-child(-n+6)"),
-            {
-              opacity: 0,
-              y: 40,
-              stagger: 0.1,
-              duration: 0.8,
-              ease: "power3.out",
+            scrollTrigger: {
+              trigger: filterBar,
+              start: "top 90%",
+              once: true,
             },
-            "-=0.35",
-          )
+          },
+        )
       }
+
+      // 2. Smooth batch scroll reveal for all product cards as user scrolls
+      const cards = gsap.utils.toArray<HTMLElement>(".product-grid > article")
+      gsap.set(cards, { opacity: 0, y: 40 })
+
+      ScrollTrigger.batch(cards, {
+        start: "top 88%",
+        once: true,
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.12,
+            duration: 0.85,
+            ease: "power3.out",
+            overwrite: true,
+          }),
+      })
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
     }, containerRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [shown])
 
   return (
     <main ref={containerRef}>
@@ -127,20 +141,7 @@ export default function Products() {
                         `Please share quotation, MOQ, and technical catalog.`
                       )}`
                     }}
-                    style={{
-                      color: "var(--gold)",
-                      fontSize: "9px",
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      textDecoration: "none",
-                      fontWeight: 600,
-                      borderBottom: "1px solid rgba(201, 164, 76, 0.4)",
-                      paddingBottom: "4px",
-                      cursor: "pointer",
-                    }}
+                    className="card-whatsapp-link"
                   >
                     <span>Enquire WhatsApp</span>
                     <Icon name="arrow" />

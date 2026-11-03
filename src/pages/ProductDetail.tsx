@@ -34,12 +34,70 @@ export default function ProductDetail({ category }: { category: string }) {
     if (reduced) return
 
     const ctx = gsap.context(() => {
+      // 1. Smooth entrance animation for product hero
+      const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } })
+      heroTimeline
+        .from(".detail-copy .eyebrow", {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+        })
+        .from(
+          ".detail-copy h1",
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.9,
+          },
+          "-=0.35",
+        )
+        .from(
+          ".detail-copy > p",
+          {
+            opacity: 0,
+            y: 25,
+            duration: 0.7,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".detail-product-visual",
+          {
+            opacity: 0,
+            scale: 0.92,
+            y: 30,
+            duration: 1.05,
+          },
+          "-=0.65",
+        )
+        .from(
+          ".desktop-actions, .mobile-actions",
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.1,
+            duration: 0.65,
+          },
+          "-=0.45",
+        )
+        .from(
+          ".detail-thumbnails button",
+          {
+            opacity: 0,
+            y: 15,
+            stagger: 0.08,
+            duration: 0.5,
+          },
+          "-=0.4",
+        )
+
+      // 2. Specifications scroll reveal
       const detailInfo = document.querySelector(".detail-info")
       if (detailInfo) {
         gsap.timeline({
           scrollTrigger: {
             trigger: detailInfo,
-            start: "top 80%",
+            start: "top 82%",
             once: true,
           },
         })
@@ -53,7 +111,7 @@ export default function ProductDetail({ category }: { category: string }) {
             detailInfo.querySelector("h2"),
             {
               opacity: 0,
-              y: 50,
+              y: 45,
               duration: 0.9,
               ease: "power3.out",
             },
@@ -63,15 +121,16 @@ export default function ProductDetail({ category }: { category: string }) {
             detailInfo.querySelectorAll(".specs article"),
             {
               opacity: 0,
-              y: 25,
-              stagger: 0.1,
-              duration: 0.7,
+              y: 28,
+              stagger: 0.12,
+              duration: 0.75,
               ease: "power3.out",
             },
             "-=0.45",
           )
       }
 
+      // 3. Related hardware scroll reveal
       const related = document.querySelector(".related")
       if (related) {
         gsap.timeline({
@@ -99,6 +158,10 @@ export default function ProductDetail({ category }: { category: string }) {
             "-=0.35",
           )
       }
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
     }, containerRef)
 
     return () => ctx.revert()
