@@ -141,8 +141,8 @@ export default function Home() {
             ctaBtn,
             {
               opacity: 0,
-              y: 30,
-              duration: 0.8,
+              x: -40,
+              duration: 0.85,
               ease: "power3.out",
               clearProps: "transform,opacity",
             },
