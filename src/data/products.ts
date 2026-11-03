@@ -450,19 +450,19 @@ export const products: ProductItem[] = [
   {
     id: "hg-03",
     code: "HK-HG-403",
-    name: "Table Hinges (1” x 1”)",
-    nameGu: "ટેબલ હિંગ્સ (૧” x ૧”)",
+    name: "Table Hinges 1ll x 1ll",
+    nameGu: "ટેબલ હિંગ્સ 1ll x 1ll",
     category: "Hinges",
     categoryName: "Hinges Series",
-    note: "Compact 1” x 1” folding table hinges with precision countersunk holes in white zinc plated finish.",
+    note: "1ll x 1ll folding table hinges with precision countersunk holes in white zinc plated finish.",
     description:
-      "Precision table hinges designed for folding table leaves, flap desks, and modular furniture with durable white zinc plating.",
+      "Precision 1ll x 1ll table hinges designed for folding table leaves, flap desks, and modular furniture with durable white zinc plating.",
     descriptionGu:
-      "૧” x ૧” સાઇઝની ફોલ્ડિંગ ટેબલ હિંગ્સ, ડ્રોપ-લીફ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+      "1ll x 1ll સાઇઝની ફોલ્ડિંગ ટેબલ હિંગ્સ, ડ્રોપ-લીફ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
-      "Compact 1” x 1” square leaf profile",
+      "Compact 1ll x 1ll square leaf profile",
       "Finishing: White zinc plated",
       "Countersunk screw mounting holes",
       "Smooth 180° flush folding action",
@@ -473,7 +473,7 @@ export const products: ProductItem[] = [
       "/products/hinges/table-hinges-1x1.jpg",
       "/products/hinges/table-hinges-2x2.jpg",
     ],
-    badge: "1” x 1” / White Zinc",
+    badge: "1ll x 1ll / White Zinc",
   },
   {
     id: "hg-04",
