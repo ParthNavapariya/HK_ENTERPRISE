@@ -433,10 +433,10 @@ em {
 }
 
 .actions {
-    margin-top: 36px;
+    margin-top: 48px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .hero-product {
@@ -3003,9 +3003,10 @@ body {
     }
 
     .actions {
-        margin-top: 26px;
+        margin-top: 32px;
         display: flex;
         flex-direction: row;
+        align-items: center;
         flex-wrap: wrap;
         gap: 12px;
     }

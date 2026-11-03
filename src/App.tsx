@@ -79,28 +79,24 @@ export default function App() {
           interval: 0.1,
           batchMax: 4,
           onEnter: (batch) => {
-            batch.forEach((btn, idx) => {
-              // Primary buttons slide in smoothly from left (-45px), secondary from right (+45px)
-              const fromX = btn.classList.contains("btn-secondary") || idx % 2 === 1 ? 45 : -45
-              gsap.fromTo(
-                btn,
-                {
-                  opacity: 0,
-                  x: fromX,
-                  scale: 0.96,
-                },
-                {
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  duration: 1.15, // Smooth and calm speed (slower)
-                  delay: idx * 0.15,
-                  ease: "power2.out", // Soft cinematic deceleration
-                  overwrite: "auto",
-                  clearProps: "transform",
-                },
-              )
-            })
+            gsap.fromTo(
+              batch,
+              {
+                opacity: 0,
+                y: 35,
+                scale: 0.96,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.15,
+                stagger: 0.15,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "all",
+              },
+            )
           },
           start: "top 92%",
           once: true,

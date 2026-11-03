@@ -193,11 +193,12 @@ export default function Story() {
             cta.querySelectorAll(".btn"),
             {
               opacity: 0,
-              x: (idx) => (idx % 2 === 0 ? -45 : 45),
+              y: 35,
               scale: 0.96,
-              stagger: 0.16,
+              stagger: 0.14,
               duration: 1.1,
               ease: "power2.out",
+              clearProps: "all",
             },
             "-=0.45",
           )
