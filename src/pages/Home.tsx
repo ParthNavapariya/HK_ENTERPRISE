@@ -117,36 +117,36 @@ export default function Home() {
         gsap.timeline({
           scrollTrigger: {
             trigger: cta,
-            start: "top 88%",
+            start: "top 80%",
             once: true,
           },
         })
           .from(cta.querySelector(".eyebrow"), {
             opacity: 0,
-            y: 15,
-            duration: 0.5,
-            ease: "power2.out",
+            y: 20,
+            duration: 0.6,
+            ease: "power3.out",
           })
           .from(
             cta.querySelector("h2"),
             {
               opacity: 0,
-              y: 25,
-              duration: 0.6,
-              ease: "power2.out",
+              y: 40,
+              duration: 0.8,
+              ease: "power3.out",
             },
-            "-=0.3",
+            "-=0.35",
           )
           .from(
             ctaBtn,
             {
               opacity: 0,
-              x: -35,
-              duration: 0.7,
-              ease: "power2.out",
+              y: 30,
+              duration: 0.8,
+              ease: "power3.out",
               clearProps: "transform,opacity",
             },
-            "-=0.35",
+            "-=0.45",
           )
       }
 
