@@ -41,19 +41,52 @@ export default function Hero() {
               { opacity: 0, y: 30, duration: 0.8 },
               "-=.55",
             )
-            .from(
-              desktop ? ".desktop-hero-actions .btn" : ".mobile-hero-actions .btn",
+          const heroActionBtns = desktop
+            ? heroRef.current?.querySelectorAll<HTMLElement>(".desktop-hero-actions .btn")
+            : heroRef.current?.querySelectorAll<HTMLElement>(".mobile-hero-actions .btn")
+
+          if (heroActionBtns && heroActionBtns.length === 1) {
+            timeline.from(
+              heroActionBtns[0],
               {
                 opacity: 0,
-                y: 35,
+                x: -50,
                 scale: 0.96,
-                stagger: 0.14,
                 duration: 1.15,
                 ease: "power2.out",
                 clearProps: "all",
               },
               "-=.4",
             )
+          } else if (heroActionBtns && heroActionBtns.length > 1) {
+            timeline
+              .from(
+                heroActionBtns[0],
+                {
+                  opacity: 0,
+                  x: -50,
+                  scale: 0.96,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+                "-=.4",
+              )
+              .from(
+                heroActionBtns[1],
+                {
+                  opacity: 0,
+                  x: 50,
+                  scale: 0.96,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+                "-=.95",
+              )
+          }
+
+          timeline
             .from(
               ".hero-product",
               {

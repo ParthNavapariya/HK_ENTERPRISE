@@ -166,7 +166,8 @@ export default function Story() {
       // 4. Animate .cta-panel
       const cta = root.querySelector(".cta-panel")
       if (cta) {
-        gsap.timeline({
+        const ctaBtns = cta.querySelectorAll<HTMLElement>(".btn")
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: cta,
             start: "top 85%",
@@ -189,19 +190,45 @@ export default function Story() {
             },
             "-=0.35",
           )
-          .from(
-            cta.querySelectorAll(".btn"),
+
+        if (ctaBtns.length === 1) {
+          tl.from(
+            ctaBtns[0],
             {
               opacity: 0,
-              y: 35,
+              x: -50,
               scale: 0.96,
-              stagger: 0.14,
-              duration: 1.1,
+              duration: 1.15,
               ease: "power2.out",
               clearProps: "all",
             },
             "-=0.45",
           )
+        } else if (ctaBtns.length > 1) {
+          tl.from(
+            ctaBtns[0],
+            {
+              opacity: 0,
+              x: -50,
+              scale: 0.96,
+              duration: 1.15,
+              ease: "power2.out",
+              clearProps: "all",
+            },
+            "-=0.45",
+          ).from(
+            ctaBtns[1],
+            {
+              opacity: 0,
+              x: 50,
+              scale: 0.96,
+              duration: 1.15,
+              ease: "power2.out",
+              clearProps: "all",
+            },
+            "-=0.95",
+          )
+        }
       }
 
       // Refresh ScrollTrigger markers so measurements match current layout

@@ -67,38 +67,95 @@ export default function App() {
     // Scroll reveal animation for all action buttons across pages
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (!reduced) {
-      // Find all buttons that are not inside hero (hero has its own timeline)
-      const scrollButtons = Array.from(
+      // Find all button groups/parents or standalone buttons outside hero
+      const allActionContainers = Array.from(
         document.querySelectorAll<HTMLElement>(
-          "main .btn:not(.hero-copy .btn):not(.scroll-cue), footer .btn",
+          "main .actions:not(.hero .actions), main .desktop-actions, main .mobile-actions, main .cta-panel div:has(.btn), footer",
         ),
       )
 
-      if (scrollButtons.length > 0) {
-        ScrollTrigger.batch(scrollButtons, {
-          interval: 0.1,
-          batchMax: 4,
-          onEnter: (batch) => {
-            gsap.fromTo(
-              batch,
-              {
-                opacity: 0,
-                y: 35,
-                scale: 0.96,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 1.15,
-                stagger: 0.15,
-                ease: "power2.out",
-                overwrite: "auto",
-                clearProps: "all",
-              },
-            )
+      allActionContainers.forEach((container) => {
+        const btns = Array.from(container.querySelectorAll<HTMLElement>(".btn"))
+        if (btns.length === 0) return
+
+        ScrollTrigger.create({
+          trigger: container,
+          start: "top 90%",
+          once: true,
+          onEnter: () => {
+            if (btns.length === 1) {
+              gsap.fromTo(
+                btns[0],
+                { opacity: 0, x: -50, scale: 0.96 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+              )
+            } else {
+              // 2 buttons: first button from left, second button from right
+              gsap.fromTo(
+                btns[0],
+                { opacity: 0, x: -50, scale: 0.96 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+              )
+              gsap.fromTo(
+                btns[1],
+                { opacity: 0, x: 50, scale: 0.96 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+              )
+            }
           },
-          start: "top 92%",
+        })
+      })
+
+      // Any remaining standalone buttons not inside the action containers
+      const standaloneBtns = Array.from(
+        document.querySelectorAll<HTMLElement>(
+          "main .btn:not(.hero .btn):not(.actions .btn):not(.cta-panel .btn):not(.scroll-cue)",
+        ),
+      )
+
+      if (standaloneBtns.length > 0) {
+        ScrollTrigger.batch(standaloneBtns, {
+          interval: 0.1,
+          batchMax: 2,
+          onEnter: (batch) => {
+            batch.forEach((btn, idx) => {
+              const fromX = idx % 2 === 0 ? -50 : 50
+              gsap.fromTo(
+                btn,
+                { opacity: 0, x: fromX, scale: 0.96 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  duration: 1.15,
+                  ease: "power2.out",
+                  clearProps: "all",
+                },
+              )
+            })
+          },
+          start: "top 90%",
           once: true,
         })
       }
