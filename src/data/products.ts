@@ -124,7 +124,7 @@ export const products: ProductItem[] = [
     categoryName: "Bed Clamp Series",
     note: "7-inch bed clamp with 5 Aani bolt, available in Light, Medium, and Heavy gauge with White Zinc Plated finish.",
     description:
-      "Heavy-duty 7-inch steel bed clamp with twin adjustment slots and 5 Aani bolts. Available across Light, Medium, and Heavy thickness gauges with durable rust-proof white zinc plating.",
+      "Heavy-duty 7-inch bed clamp with twin adjustment slots and 5 Aani bolts. Available across Light, Medium, and Heavy thickness gauges with durable rust-proof white zinc plating.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
     finish: "White Zinc Plated",
     thickness: "Light, Medium, Heavy",
@@ -151,7 +151,7 @@ export const products: ProductItem[] = [
     categoryName: "Bed Clamp Series",
     note: "L bed clamp with heavy-duty 7 Aani bolt, threaded backing plate, and golden zinc plated finish.",
     description:
-      "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge steel construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
+      "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge reinforced construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
     descriptionGu: "૭ આની મોટા બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે ખાસ બનાવેલ.",
     finish: "Golden Zinc Plated",
     thickness: "Regular",
@@ -178,7 +178,7 @@ export const products: ProductItem[] = [
     categoryName: "Bed Clamp Series",
     note: "7-inch bed clamp with 5 Aani bolt, available in Light, Medium, and Heavy gauge with architectural white powder coated finish.",
     description:
-      "Architectural 7-inch bed clamp finished in scratch-resistant white thermoset powder coating. Features 5 Aani bolts and heavy steel construction across Light, Medium, and Heavy gauges.",
+      "Architectural 7-inch bed clamp finished in scratch-resistant white thermoset powder coating. Features 5 Aani bolts and heavy-gauge construction across Light, Medium, and Heavy gauges.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો પ્રીમિયમ વ્હાઇટ પાવડર કોટેડ બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં ઉપલબ્ધ.",
     finish: "Architectural White Powder Coated",
     thickness: "Light, Medium, Heavy",
@@ -232,7 +232,7 @@ export const products: ProductItem[] = [
     categoryName: "Bed Clamp Series",
     note: "4-inch heavy-duty bed clamp in white zinc plated finish.",
     description:
-      "Heavy-duty 4-inch steel bed clamp engineered for rigid furniture and bed joint reinforcement with durable rust-resistant white zinc plating.",
+      "Heavy-duty 4-inch bed clamp engineered for rigid furniture and bed joint reinforcement with durable rust-resistant white zinc plating.",
     descriptionGu: "૪-ઇંચ સાઇઝનો મજબૂત બેડ ક્લેમ્પ, ફર્નિચર અને બેડના જોઈન્ટ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
@@ -428,7 +428,7 @@ export const products: ProductItem[] = [
     categoryName: "Hinges Series",
     note: "2-inch precision stamped small butt hinges with solid knuckle pin in nickel plated finish.",
     description:
-      "Precision 2-inch stamped steel small butt hinges engineered for smooth swinging motion and durable alignment across wooden doors, frames, and furniture cabinets in corrosion-resistant nickel plated finish.",
+      "Precision 2-inch small butt hinges engineered for smooth swinging motion and durable alignment across wooden doors, frames, and furniture cabinets in corrosion-resistant nickel plated finish.",
     descriptionGu:
       "૨-ઇંચ સાઇઝની પ્રિસિઝન સ્મોલ બટ્ટ હિંગ્સ, કેબિનેટ અને લાકડાના દરવાજા માટે સ્મૂથ મૂવમેન્ટ અને નિકલ પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "Nickel Plated",
@@ -456,7 +456,7 @@ export const products: ProductItem[] = [
     categoryName: "Hinges Series",
     note: "Compact 1” x 1” folding table hinges with precision countersunk holes in white zinc plated finish.",
     description:
-      "Precision cold-rolled steel table hinges designed for folding table leaves, flap desks, and modular furniture with durable white zinc plating.",
+      "Precision table hinges designed for folding table leaves, flap desks, and modular furniture with durable white zinc plating.",
     descriptionGu:
       "૧” x ૧” સાઇઝની ફોલ્ડિંગ ટેબલ હિંગ્સ, ડ્રોપ-લીફ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
@@ -484,7 +484,7 @@ export const products: ProductItem[] = [
     categoryName: "Hinges Series",
     note: "Heavy-duty 2” x 2” wide leaf folding table hinges with precision countersunk holes in white zinc plated finish.",
     description:
-      "Heavy-duty 2” x 2” stamped steel folding table hinges engineered for dining leaves, desks, and commercial folding furniture with durable white zinc plating.",
+      "Heavy-duty 2” x 2” folding table hinges engineered for dining leaves, desks, and commercial folding furniture with durable white zinc plating.",
     descriptionGu:
       "૨” x ૨” સાઇઝની હેવી ડ્યુટી ફોલ્ડિંગ ટેબલ હિંગ્સ, મોટા ડાઇનિંગ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
@@ -817,7 +817,7 @@ export const products: ProductItem[] = [
     categoryName: "Lockpatti Series",
     note: "IMP support angled lock bracket in corrosion-resistant white zinc plated finish.",
     description:
-      "Precision angled IMP support bracket manufactured from high-tensile cold-rolled steel with white zinc plated finish for door and cabinet latch support.",
+      "Precision angled IMP support bracket manufactured with white zinc plated finish for door and cabinet latch support.",
     descriptionGu: "લાકડાના દરવાજા અને ફર્નિચર માટે એંગલ્ડ આઈએમપી સપોર્ટ બ્રેકેટ, વ્હાઇટ ઝીંક પ્લેટેડ રસ્ટ-પ્રૂફ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
@@ -845,7 +845,7 @@ export const products: ProductItem[] = [
     categoryName: "Lockpatti Series",
     note: "Heavy-duty industrial spring patti with 3-hole alignment in white zinc plated finish.",
     description:
-      "Precision industrial spring patti manufactured from high-tensile steel, engineered with durable white zinc plating for door, cabinet, and lock mechanisms.",
+      "Precision industrial spring patti engineered with durable white zinc plating for door, cabinet, and lock mechanisms.",
     descriptionGu: "૩ હોલ વાળી મજબૂત સ્પ્રીંગ પટ્ટી, દરવાજા અને લોક ફિટિંગ્સ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",

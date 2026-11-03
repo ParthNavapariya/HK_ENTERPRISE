@@ -161,7 +161,7 @@ export default function About() {
           {[
             {
               title: "Built on Quality",
-              desc: "From heavy-gauge cold-rolled carbon steel to micron-calibrated stamping, every product is engineered for structural rigidity and lifetime endurance.",
+              desc: "From heavy-gauge precision tooling to micron-calibrated stamping, every product is engineered for structural rigidity and lifetime endurance.",
             },
             {
               title: "Driven by Trust",
