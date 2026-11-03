@@ -190,10 +190,11 @@ export default function Story() {
             "-=0.35",
           )
           .from(
-            cta.querySelector(".btn"),
+            cta.querySelectorAll(".btn"),
             {
               opacity: 0,
               y: 20,
+              stagger: 0.1,
               duration: 0.6,
               ease: "power3.out",
             },
