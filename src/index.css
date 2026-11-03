@@ -439,6 +439,10 @@ em {
     gap: 14px;
 }
 
+.mobile-hero-actions {
+    display: none;
+}
+
 .hero-product {
     position: absolute !important;
     right: 2.5vw;
@@ -3024,25 +3028,40 @@ body {
         min-height: 280px;
         max-height: 380px;
         aspect-ratio: 16 / 10;
-        margin: 32px auto 0 !important;
+        margin: 28px auto 0 !important;
         opacity: 1 !important;
         order: 2;
         border-radius: 4px;
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(201, 164, 76, 0.08);
     }
 
-    .hero:after,
-    .hero-index {
-        display: none;
+    .desktop-hero-actions {
+        display: none !important;
+    }
+
+    .mobile-hero-actions {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+        max-width: 480px;
+        margin: 28px auto 0 !important;
+        order: 3;
+    }
+
+    .mobile-hero-actions .btn {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .scroll-cue {
         position: relative;
         left: auto;
         bottom: auto;
-        margin-top: 36px;
+        margin-top: 32px;
         align-self: flex-start;
-        order: 3;
+        order: 4;
     }
 
     .manifesto,

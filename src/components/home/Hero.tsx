@@ -42,7 +42,7 @@ export default function Hero() {
               "-=.55",
             )
             .from(
-              ".hero-copy .actions .btn",
+              desktop ? ".desktop-hero-actions .btn" : ".mobile-hero-actions .btn",
               {
                 opacity: 0,
                 y: 35,
@@ -110,7 +110,7 @@ export default function Hero() {
           Discover thoughtfully engineered hardware solutions for modern
           furniture and industrial applications.
         </p>
-        <div className="actions">
+        <div className="actions desktop-hero-actions">
           <Button onClick={() => navigate("products")}>Explore Products</Button>
           <Button secondary onClick={() => navigate("contact")}>
             Contact Us
@@ -118,6 +118,12 @@ export default function Hero() {
         </div>
       </div>
       <ProductVisual category="Bed Clamp" productCode="HK-BC-104" hero />
+      <div className="actions mobile-hero-actions">
+        <Button onClick={() => navigate("products")}>Explore Products</Button>
+        <Button secondary onClick={() => navigate("contact")}>
+          Contact Us
+        </Button>
+      </div>
       <div className="hero-index">
         <span>HK / PRODUCT STUDY</span>
         <span>01 — 06</span>
