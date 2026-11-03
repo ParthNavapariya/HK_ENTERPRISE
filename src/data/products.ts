@@ -104,7 +104,7 @@ export const products: ProductItem[] = [
     features: [
       "8 Aani heavy-duty hex bolt",
       "Golden zinc plated corrosion protection",
-      "Extra-thick high-load construction",
+      "Reinforced 90° corner body for heavy loads",
       "High-torque vibration resistance",
     ],
     image: "/products/bed-clamp/bed-clamp-6.jpg",
