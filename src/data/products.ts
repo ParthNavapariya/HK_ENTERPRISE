@@ -50,7 +50,7 @@ export const products: ProductItem[] = [
       "5 Aani precision bolt",
       "Elongated capsule hole for micro-alignment",
       "White zinc plated anti-rust finish",
-      "Heavy gauge hydraulic stamped construction",
+      "Rigid zero-squeak corner lockup",
     ],
     image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
     images: [
