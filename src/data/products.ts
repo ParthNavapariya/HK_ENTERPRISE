@@ -791,6 +791,7 @@ export const products: ProductItem[] = [
       "Heavy-duty pneumatic hydraulic bed jack lift mechanism designed for king and queen size hydraulic storage beds. Available in 3 piece and 5 piece with protective powder coated finish.",
     descriptionGu: "૩ પીસ અને ૫ પીસમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
     finish: "Powder Coated",
+    thickness: "Heavy Duty Frame",
     available: "Available in 3 Piece and 5 Piece",
     features: [
       "Available: 3 piece, 5 piece",
