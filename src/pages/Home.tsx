@@ -113,11 +113,11 @@ export default function Home() {
       // 3. Animate CTA panel
       const cta = root.querySelector(".cta-panel")
       if (cta) {
-        const ctaBtns = cta.querySelectorAll<HTMLElement>(".btn")
-        const tl = gsap.timeline({
+        const ctaBtn = cta.querySelector<HTMLElement>(".btn")
+        gsap.timeline({
           scrollTrigger: {
             trigger: cta,
-            start: "top 95%", // Trigger immediately when entering view
+            start: "top 88%",
             once: true,
           },
         })
@@ -137,47 +137,26 @@ export default function Home() {
             },
             "-=0.3",
           )
-
-        if (ctaBtns.length === 1) {
-          tl.from(
-            ctaBtns[0],
+          .from(
+            ctaBtn,
             {
               opacity: 0,
-              x: -30,
-              duration: 0.65,
+              x: -35,
+              duration: 0.7,
               ease: "power2.out",
               clearProps: "transform,opacity",
             },
-            "-=0.4",
+            "-=0.35",
           )
-        } else if (ctaBtns.length > 1) {
-          tl.from(
-            ctaBtns[0],
-            {
-              opacity: 0,
-              x: -30,
-              duration: 0.65,
-              ease: "power2.out",
-              clearProps: "transform,opacity",
-            },
-            "-=0.4",
-          ).from(
-            ctaBtns[1],
-            {
-              opacity: 0,
-              x: 30,
-              duration: 0.65,
-              ease: "power2.out",
-              clearProps: "transform,opacity",
-            },
-            "-=0.65",
-          )
-        }
       }
 
+      // Refresh ScrollTrigger markers once pins and layout calculate
       requestAnimationFrame(() => {
         ScrollTrigger.refresh()
       })
+      setTimeout(() => {
+        ScrollTrigger.refresh()
+      }, 250)
     }, homeRef)
 
     return () => ctx.revert()

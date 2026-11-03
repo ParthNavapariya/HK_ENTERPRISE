@@ -70,7 +70,7 @@ export default function App() {
       // Find all button groups/parents or standalone buttons outside hero
       const allActionContainers = Array.from(
         document.querySelectorAll<HTMLElement>(
-          "main .actions:not(.hero .actions), main .desktop-actions, main .mobile-actions, main .cta-panel div:has(.btn), footer",
+          "main .actions:not(.hero .actions), main .desktop-actions, main .mobile-actions, main .cta-panel:not(.home-cta), footer",
         ),
       )
 
