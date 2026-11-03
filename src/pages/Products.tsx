@@ -69,7 +69,7 @@ export default function Products() {
             <em>Built to endure.</em>
           </>
         }
-        description="Explore our complete line of heavy 4-corner bed clamps, knock-down bed sockets, precision hinges, gusset-reinforced L corners, bed storage fittings, and cold-rolled steel lockpatti."
+        description="Explore our complete line of heavy 4-corner bed clamps, knock-down bed sockets, precision hinges, gusset-reinforced L corners, bed storage fittings, and precision lockpatti."
       />
       <section className="catalog">
         <div className="filter-bar">

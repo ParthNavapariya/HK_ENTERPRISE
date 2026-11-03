@@ -17,7 +17,7 @@ const chapters: Chapter[] = [
     num: "01",
     tag: "FORM",
     title: "Extended 7” Profile.",
-    copy: "Precision-engineered 7-inch structural steel clamp providing superior span and dual-point load distribution across bed corners.",
+    copy: "Precision-engineered 7-inch structural clamp providing superior span and dual-point load distribution across bed corners.",
   },
   {
     num: "02",
@@ -28,7 +28,7 @@ const chapters: Chapter[] = [
   {
     num: "03",
     tag: "ENDURANCE",
-    title: "Triple-Gauge Steel.",
+    title: "Triple-Gauge Options.",
     copy: "Available in Light, Medium, and Heavy thickness options with deep white zinc plating for decades of rust resistance.",
   },
   {

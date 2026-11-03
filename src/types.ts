@@ -18,7 +18,6 @@ export interface ProductItem {
   note: string
   description?: string
   descriptionGu?: string
-  material?: string
   finish?: string
   thickness?: string
   loadCapacity?: string

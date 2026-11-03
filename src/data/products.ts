@@ -933,7 +933,7 @@ export const products: ProductItem[] = [
     thickness: "Regular",
     features: [
       "Precision double-D cam lock aperture",
-      "Material: Heavy-gauge CRC steel",
+      "Heavy-gauge precision stamped construction",
       "Dual side mounting screw holes",
       "Deburred smooth rounded corners",
       "Anti-tamper drawer lock support",
