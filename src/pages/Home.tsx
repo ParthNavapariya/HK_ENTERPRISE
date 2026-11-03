@@ -141,16 +141,17 @@ export default function Home() {
             ctaBtn,
             {
               opacity: 0,
-              x: 80, // Explicit Right to Left slide
+              x: 30,
             },
             {
               opacity: 1,
               x: 0,
-              duration: 0.9,
-              ease: "power3.out",
+              duration: 0.6,
+              ease: "power2.out",
+              overwrite: "auto",
               clearProps: "transform,opacity",
             },
-            "-=0.45",
+            "-=0.35",
           )
       }
 
