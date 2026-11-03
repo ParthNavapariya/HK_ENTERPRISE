@@ -97,6 +97,36 @@ export default function About() {
           )
       }
 
+      // 3. Animate .wide-cta
+      const wideCta = root.querySelector(".wide-cta")
+      if (wideCta) {
+        const btn = wideCta.querySelector<HTMLElement>(".btn")
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: wideCta,
+            start: "top 85%",
+            once: true,
+          },
+        })
+          .from(wideCta.querySelector("h2"), {
+            opacity: 0,
+            y: 30,
+            duration: 0.7,
+            ease: "power2.out",
+          })
+          .from(
+            btn,
+            {
+              opacity: 0,
+              x: 30,
+              duration: 0.65,
+              ease: "power2.out",
+              clearProps: "transform,opacity",
+            },
+            "-=0.4",
+          )
+      }
+
       // Refresh ScrollTrigger markers so measurements match current layout
       requestAnimationFrame(() => {
         ScrollTrigger.refresh()
