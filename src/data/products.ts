@@ -591,18 +591,18 @@ export const products: ProductItem[] = [
   {
     id: "lc-02",
     code: "HK-LC-302",
-    name: "L Corner (1” x 1½”)",
-    nameGu: "એલ કોર્નર (૧” x ૧.૫”)",
+    name: "L Corner 1 x 1ll",
+    nameGu: "એલ કોર્નર 1 x 1ll",
     category: "L Corner",
     categoryName: "L Corner Series",
-    note: "1” x 1½” precision stamped L-corner bracket available in powder coated and zinc plated finishes.",
+    note: "1 x 1ll precision stamped L-corner bracket available in powder coated and zinc plated finishes.",
     description:
-      "Wide 1” x 1½” 90-degree L-corner bracket engineered with wide screw spacing for solid joint bracing and load distribution across furniture joints. Available in powder coated and zinc plated finishes.",
-    descriptionGu: "૧” x ૧.૫” (1 x 1½”) સાઇઝનો પહોળો એલ કોર્નર, ફર્નિચર અને કેબિનેટના મજબૂત જોઈન્ટ માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+      "Wide 1 x 1ll 90-degree L-corner bracket engineered with wide screw spacing for solid joint bracing and load distribution across furniture joints. Available in powder coated and zinc plated finishes.",
+    descriptionGu: "1 x 1ll સાઇઝનો પહોળો એલ કોર્નર, ફર્નિચર અને કેબિનેટના મજબૂત જોઈન્ટ માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Powder Coated / Zinc Plated",
     thickness: "Regular",
     features: [
-      "Size: 1” x 1½” (1 x 1.5 inch)",
+      "Size: 1 x 1ll",
       "Finishing: Powder coated & Zinc plated",
       "Wide 4-hole mounting pattern",
       "Reinforced 90° corner rigidity",
@@ -613,7 +613,7 @@ export const products: ProductItem[] = [
       "/products/l-corner/l-corner-2.jpg",
       "/products/l-corner/l-corner-1.jpg",
     ],
-    badge: "1” x 1½” / Powder & Zinc",
+    badge: "1 x 1ll / Powder & Zinc",
   },
   {
     id: "lc-03",
