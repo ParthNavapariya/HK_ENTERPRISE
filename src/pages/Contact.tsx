@@ -85,27 +85,52 @@ export default function Contact({ productParam }: ContactProps) {
     const ctx = gsap.context(() => {
       const layout = document.querySelector(".contact-layout")
       if (layout) {
+        const asideBtn = layout.querySelector<HTMLElement>("aside .btn")
+        const formBtn = layout.querySelector<HTMLElement>("form .btn")
+
         gsap.timeline({
           scrollTrigger: {
             trigger: layout,
-            start: "top 80%",
+            start: "top 85%",
             once: true,
           },
         })
-          .from(layout.querySelector("aside .eyebrow"), { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" })
-          .from(layout.querySelectorAll("aside > div"), {
+          .from(layout.querySelector("aside .eyebrow"), { opacity: 0, y: 15, duration: 0.5, ease: "power2.out" })
+          .from(layout.querySelectorAll("aside > div:not(:has(.btn))"), {
             opacity: 0,
-            y: 30,
-            stagger: 0.12,
-            duration: 0.8,
-            ease: "power3.out",
-          }, "-=0.35")
-          .from(layout.querySelector(".contact-form-card"), {
+            y: 20,
+            stagger: 0.08,
+            duration: 0.6,
+            ease: "power2.out",
+          }, "-=0.3")
+          .from(
+            asideBtn,
+            {
+              opacity: 0,
+              x: -30,
+              duration: 0.65,
+              ease: "power2.out",
+              clearProps: "all",
+            },
+            "-=0.35",
+          )
+          .from(layout.querySelector(".form-grid, form"), {
             opacity: 0,
-            y: 40,
-            duration: 0.9,
-            ease: "power3.out",
-          }, "-=0.55")
+            y: 25,
+            duration: 0.6,
+            ease: "power2.out",
+          }, "-=0.5")
+          .from(
+            formBtn,
+            {
+              opacity: 0,
+              x: 30,
+              duration: 0.65,
+              ease: "power2.out",
+              clearProps: "all",
+            },
+            "-=0.4",
+          )
       }
     }, containerRef)
 
