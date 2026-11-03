@@ -99,15 +99,16 @@ em {
 }
 
 .brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 11px;
+    gap: 12px;
     padding: 0;
     border: 0;
     background: none;
     color: inherit;
     cursor: pointer;
-    text-align: left
+    text-align: left;
+    line-height: 1
 }
 
 .brand-mark {
@@ -125,12 +126,17 @@ em {
 }
 
 .brand-copy {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
     letter-spacing: .18em;
-    font-size: 13px;
-    line-height: 1.2;
+    font-size: 14px;
+    line-height: 1;
     font-weight: 600
+}
+
+.brand-copy strong {
+    line-height: 1;
+    display: inline-block
 }
 
 .brand-copy small {

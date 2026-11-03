@@ -14,6 +14,7 @@ export default function Brand() {
         style={{
           width: "48px",
           height: "48px",
+          display: "block",
           objectFit: "contain",
           filter: "drop-shadow(0 2px 10px rgba(201,164,76,0.4))",
           transition: "transform 0.3s ease",
