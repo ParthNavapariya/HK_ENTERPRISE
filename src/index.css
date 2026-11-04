@@ -710,7 +710,7 @@ em {
 .sequence-top {
     position: absolute;
     z-index: 10;
-    top: 96px;
+    top: max(88px, calc(50% - 310px));
     left: 5vw;
     right: 5vw;
     display: flex;
@@ -878,7 +878,8 @@ em {
     z-index: 5;
     left: 7vw;
     right: 7vw;
-    bottom: 40px;
+    top: min(calc(100% - 44px), calc(50% + 268px));
+    bottom: auto;
     height: 2px;
     background: rgba(245, 245, 245, .1);
     border-radius: 2px;
@@ -897,7 +898,8 @@ em {
     position: absolute;
     z-index: 5;
     right: 7vw;
-    bottom: 54px;
+    top: min(calc(100% - 30px), calc(50% + 284px));
+    bottom: auto;
     color: rgba(245, 245, 245, .4);
     font-size: 9px;
     letter-spacing: .2em;
@@ -936,7 +938,8 @@ em {
 .category-story {
     position: relative;
     isolation: isolate;
-    transition: background-color .8s
+    transition: background-color .8s;
+    background: #0b0d11;
 }
 
 .category-stage {
@@ -944,11 +947,31 @@ em {
     min-height: 640px;
     height: 100vh;
     height: 100dvh;
-    padding-top: 84px;
+    padding: 88px 0 32px;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.category-stage .section-head {
+    width: 100%;
+    max-width: 1040px;
+    padding: 0 4vw;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.category-stage .section-head h2 {
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.15;
+}
+
+.category-stage .section-head p {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 380px;
 }
 
 .story-layout {
@@ -3014,12 +3037,30 @@ body {
         height: 100vh;
         height: 100dvh;
         min-height: 600px;
-        padding-top: 84px;
+        padding: 84px 0 24px;
         box-sizing: border-box;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         position: relative;
+    }
+
+    .category-stage .section-head {
+        margin-bottom: 20px;
+        padding: 0 4vw;
+        width: 100%;
+        max-width: 1040px;
+        box-sizing: border-box;
+    }
+
+    .category-stage .section-head h2 {
+        font-size: clamp(24px, 3.2vw, 36px);
+    }
+
+    .category-stage .section-head p {
+        font-size: 12.5px;
+        line-height: 1.55;
     }
 
     .story-layout {
@@ -3086,7 +3127,17 @@ body {
     }
 
     .sequence-top {
-        top: 92px;
+        top: max(84px, calc(50% - 280px));
+    }
+
+    .sequence-progress {
+        top: min(calc(100% - 40px), calc(50% + 240px));
+        bottom: auto;
+    }
+
+    .sequence-hint {
+        top: min(calc(100% - 26px), calc(50% + 256px));
+        bottom: auto;
     }
 
     .sequence-product {

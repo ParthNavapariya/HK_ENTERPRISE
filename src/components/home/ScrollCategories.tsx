@@ -117,20 +117,20 @@ export default function ScrollCategories() {
       className={`category-story dark-section category-tone-${(safeActive % 6) + 1}`}
       ref={sectionRef}
     >
-      <div className="section-head">
-        <div>
-          <Eyebrow light>PRODUCT SERIES / 06</Eyebrow>
-          <h2>
-            Engineered for
-            <br />
-            Every <em>Connection.</em>
-          </h2>
-        </div>
-        <p>
-          Explore our core precision hardware lines manufactured in Rajkot. Each series is engineered for structural rigidity and seamless assembly.
-        </p>
-      </div>
       <div className="category-stage" ref={stageRef}>
+        <div className="section-head">
+          <div>
+            <Eyebrow light>PRODUCT SERIES / 06</Eyebrow>
+            <h2>
+              Engineered for
+              <br />
+              Every <em>Connection.</em>
+            </h2>
+          </div>
+          <p>
+            Explore our core precision hardware lines manufactured in Rajkot. Each series is engineered for structural rigidity and seamless assembly.
+          </p>
+        </div>
         <div className="story-layout">
           <div className="story-visual">
             <div className="category-aura" />
