@@ -331,9 +331,7 @@ em {
 }
 
 .hero {
-    min-height: 640px;
-    height: 100vh;
-    height: 100dvh;
+    height: max(760px, 100vh);
     position: relative;
     overflow: hidden;
     background: var(--black);
@@ -373,9 +371,8 @@ em {
     left: 8.5vw;
     top: 50%;
     z-index: 3;
-    transform: translateY(-50%);
-    width: 48%;
-    max-width: 580px;
+    transform: translateY(-48%);
+    width: 52%
 }
 
 .hero-streak {
@@ -449,13 +446,10 @@ em {
 
 .hero-product {
     position: absolute !important;
-    right: 4vw;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(340px, 44vw, 540px);
-    aspect-ratio: 1 / 1;
-    height: auto;
-    max-height: 520px;
+    right: 2.5vw;
+    top: 15%;
+    width: 48vw;
+    height: 70%
 }
 
 .hero-index {
@@ -710,7 +704,7 @@ em {
 .sequence-top {
     position: absolute;
     z-index: 10;
-    top: max(88px, calc(50% - 310px));
+    top: 32px;
     left: 5vw;
     right: 5vw;
     display: flex;
@@ -787,13 +781,12 @@ em {
 
 .sequence-product {
     position: absolute;
-    width: clamp(340px, 46vw, 560px);
-    max-width: 560px;
-    height: clamp(340px, 46vw, 520px);
-    max-height: 520px;
-    aspect-ratio: 1 / 1;
-    left: 42vw;
-    top: calc(50% - 250px);
+    width: 48vw;
+    max-width: 820px;
+    height: 66vh;
+    min-height: 480px;
+    left: 36vw;
+    top: 17vh;
     will-change: transform;
     pointer-events: none;
 }
@@ -878,8 +871,7 @@ em {
     z-index: 5;
     left: 7vw;
     right: 7vw;
-    top: min(calc(100% - 44px), calc(50% + 268px));
-    bottom: auto;
+    bottom: 40px;
     height: 2px;
     background: rgba(245, 245, 245, .1);
     border-radius: 2px;
@@ -898,8 +890,7 @@ em {
     position: absolute;
     z-index: 5;
     right: 7vw;
-    top: min(calc(100% - 30px), calc(50% + 284px));
-    bottom: auto;
+    bottom: 54px;
     color: rgba(245, 245, 245, .4);
     font-size: 9px;
     letter-spacing: .2em;
@@ -938,40 +929,15 @@ em {
 .category-story {
     position: relative;
     isolation: isolate;
-    transition: background-color .8s;
-    background: #0b0d11;
+    transition: background-color .8s
 }
 
 .category-stage {
     position: relative;
-    min-height: 640px;
     height: 100vh;
-    height: 100dvh;
-    padding: 88px 0 32px;
-    box-sizing: border-box;
+    min-height: 700px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.category-stage .section-head {
-    width: 100%;
-    max-width: 1040px;
-    padding: 0 4vw;
-    margin-bottom: 24px;
-    box-sizing: border-box;
-}
-
-.category-stage .section-head h2 {
-    font-size: clamp(26px, 3.2vw, 40px);
-    line-height: 1.15;
-}
-
-.category-stage .section-head p {
-    font-size: 13px;
-    line-height: 1.6;
-    max-width: 380px;
+    align-items: center
 }
 
 .story-layout {
@@ -984,9 +950,8 @@ em {
 
 .story-visual {
     position: relative;
-    height: clamp(420px, 58vh, 560px);
-    max-height: 560px;
-    min-height: 420px;
+    height: min(68vh, 650px);
+    min-height: 500px
 }
 
 .category-aura {
