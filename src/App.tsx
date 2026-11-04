@@ -16,6 +16,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   const [route, setRoute] = useState(window.location.hash.slice(1) || "home")
+  const [introReady, setIntroReady] = useState(() => {
+    if (typeof window === "undefined") return true
+    if (sessionStorage.getItem("hk_intro_shown") === "true") return true
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true
+    return false
+  })
 
   // Ensure browser never forces scroll restoration on page change
   useEffect(() => {
@@ -54,6 +60,8 @@ export default function App() {
 
   // Observe .reveal elements whenever route changes
   useEffect(() => {
+    if (!introReady) return
+
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach(
@@ -168,7 +176,7 @@ export default function App() {
         if (t.vars.id?.startsWith("btn-batch")) t.kill()
       })
     }
-  }, [route])
+  }, [route, introReady])
 
   const [rawPageName, detail = ""] = route.split("/")
   // Support legacy '#industries' and '#our-story' mapping to 'story'
@@ -187,15 +195,19 @@ export default function App() {
 
   return (
     <>
-      <LogoIntro />
-      <Navbar page={page} />
-      {page === "home" && <Home />}
-      {page === "story" && <Story />}
-      {page === "about" && <About />}
-      {page === "products" && <Products />}
-      {page === "contact" && <Contact productParam={detail} />}
-      {page === "detail" && <ProductDetail category={detail} />}
-      <Footer />
+      <LogoIntro onIntroFinish={() => setIntroReady(true)} />
+      {introReady && (
+        <>
+          <Navbar page={page} />
+          {page === "home" && <Home />}
+          {page === "story" && <Story />}
+          {page === "about" && <About />}
+          {page === "products" && <Products />}
+          {page === "contact" && <Contact productParam={detail} />}
+          {page === "detail" && <ProductDetail category={detail} />}
+          <Footer />
+        </>
+      )}
     </>
   )
 }

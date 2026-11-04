@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 
-export default function LogoIntro() {
+interface LogoIntroProps {
+  onIntroFinish?: () => void
+}
+
+export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
   const [visible, setVisible] = useState(() => {
     if (typeof window === "undefined") return false
     // Skip if already shown in this session
@@ -19,6 +23,14 @@ export default function LogoIntro() {
   const glowRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
   const lineRef = useRef<HTMLDivElement>(null)
+  const timelineRef = useRef<gsap.core.Timeline | null>(null)
+
+  // Notify parent if intro was already skipped / not visible
+  useEffect(() => {
+    if (!visible) {
+      onIntroFinish?.()
+    }
+  }, [visible, onIntroFinish])
 
   useEffect(() => {
     if (!visible) return
@@ -35,6 +47,7 @@ export default function LogoIntro() {
           setVisible(false)
         },
       })
+      timelineRef.current = tl
 
       // 1. Initial State Setup
       gsap.set(overlayRef.current, { opacity: 1 })
@@ -54,7 +67,7 @@ export default function LogoIntro() {
         .to(glowRef.current, {
           opacity: 0.85,
           scale: 1,
-          duration: 1.2,
+          duration: 0.9,
           ease: "power2.out",
         })
         // Golden emblem smoothly scales up & floats into view with radiant glow
@@ -65,10 +78,10 @@ export default function LogoIntro() {
             scale: 1,
             y: 0,
             filter: "drop-shadow(0 0 28px rgba(201, 164, 76, 0.45))",
-            duration: 1.15,
+            duration: 0.9,
             ease: "power3.out",
           },
-          "-=1.0",
+          "-=0.75",
         )
         // Architectural divider line extends from center
         .to(
@@ -76,10 +89,10 @@ export default function LogoIntro() {
           {
             scaleX: 1,
             opacity: 0.75,
-            duration: 0.75,
+            duration: 0.6,
             ease: "power2.out",
           },
-          "-=0.55",
+          "-=0.45",
         )
         // Typography fades in with expansive tracking
         .to(
@@ -87,10 +100,10 @@ export default function LogoIntro() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.85,
+            duration: 0.7,
             ease: "power2.out",
           },
-          "-=0.6",
+          "-=0.5",
         )
         // Elegant subtle resting shimmer hold
         .to(
@@ -98,31 +111,36 @@ export default function LogoIntro() {
           {
             filter: "drop-shadow(0 0 38px rgba(232, 213, 154, 0.65))",
             scale: 1.025,
-            duration: 0.7,
+            duration: 0.5,
             ease: "sine.inOut",
           },
-          "+=0.2",
+          "+=0.15",
         )
         // 3. Cinematic Outro Transition into Homepage
+        // Reveal homepage and start web entrance animations right as outro begins!
         .to(
           [emblemRef.current, textRef.current, lineRef.current, glowRef.current],
           {
             opacity: 0,
             scale: 1.06,
             y: -10,
-            duration: 0.6,
+            duration: 0.5,
             ease: "power2.inOut",
           },
-          "+=0.25",
+          "+=0.15",
         )
         .to(
           overlayRef.current,
           {
             opacity: 0,
-            duration: 0.65,
+            duration: 0.55,
             ease: "power3.inOut",
+            onStart: () => {
+              // Trigger website entrance animations at this exact reveal moment!
+              onIntroFinish?.()
+            },
           },
-          "-=0.35",
+          "-=0.25",
         )
     }, overlayRef)
 
@@ -130,7 +148,15 @@ export default function LogoIntro() {
       document.body.style.overflow = originalOverflow
       ctx.revert()
     }
-  }, [visible])
+  }, [visible, onIntroFinish])
+
+  // Allow clicking to immediately skip intro if desired
+  const handleSkip = () => {
+    if (timelineRef.current) {
+      onIntroFinish?.()
+      timelineRef.current.progress(1)
+    }
+  }
 
   if (!visible) return null
 
@@ -141,6 +167,7 @@ export default function LogoIntro() {
       role="status"
       aria-live="polite"
       aria-label="Loading HK Enterprise"
+      onClick={handleSkip}
     >
       <div className="logo-intro-container">
         {/* Cinematic ambient golden aura */}
