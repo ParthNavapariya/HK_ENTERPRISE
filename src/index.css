@@ -331,9 +331,9 @@ em {
 }
 
 .hero {
-    min-height: 620px;
-    height: clamp(620px, 88vh, 820px);
-    max-height: 820px;
+    min-height: 640px;
+    height: 100vh;
+    height: 100dvh;
     position: relative;
     overflow: hidden;
     background: var(--black);
@@ -689,9 +689,9 @@ em {
 
 .sequence {
     position: relative;
-    min-height: 620px;
-    height: clamp(620px, 85vh, 800px);
-    max-height: 800px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 640px;
     overflow: hidden;
     background: #0c0e12;
     color: var(--white);
@@ -710,7 +710,7 @@ em {
 .sequence-top {
     position: absolute;
     z-index: 10;
-    top: 32px;
+    top: 96px;
     left: 5vw;
     right: 5vw;
     display: flex;
@@ -941,11 +941,14 @@ em {
 
 .category-stage {
     position: relative;
-    min-height: 620px;
-    height: clamp(620px, 86vh, 800px);
-    max-height: 800px;
+    min-height: 640px;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: 84px;
+    box-sizing: border-box;
     display: flex;
-    align-items: center
+    align-items: center;
+    justify-content: center;
 }
 
 .story-layout {
@@ -2951,9 +2954,9 @@ body {
 
     /* Hero Section Proportions */
     .hero {
-        min-height: 580px;
-        height: clamp(580px, 78vh, 720px);
-        max-height: 720px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 600px;
     }
 
     .hero-copy {
@@ -3008,8 +3011,11 @@ body {
     }
 
     .category-stage {
-        height: calc(100vh - 100px);
-        min-height: 560px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 600px;
+        padding-top: 84px;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3074,9 +3080,13 @@ body {
 
     /* Sequence Section for Tablet & Mobile Desktop Site */
     .sequence {
-        min-height: 580px;
-        height: clamp(580px, 78vh, 720px);
-        max-height: 720px;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 600px;
+    }
+
+    .sequence-top {
+        top: 92px;
     }
 
     .sequence-product {

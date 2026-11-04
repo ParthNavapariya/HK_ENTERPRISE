@@ -80,15 +80,7 @@ export default function ScrollCategories() {
           )
       }
 
-      const getStartOffset = () => {
-        const navEl = document.querySelector<HTMLElement>(".nav")
-        const navHeight = navEl
-          ? navEl.offsetHeight
-          : window.innerWidth <= 400
-            ? 68
-            : 82
-        return `top ${navHeight + 10}px`
-      }
+      const getStartOffset = () => "top top"
 
       triggerRef.current = ScrollTrigger.create({
         trigger: stageRef.current,
