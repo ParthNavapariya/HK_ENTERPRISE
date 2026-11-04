@@ -1870,37 +1870,46 @@ em {
     padding: 100px 8.5vw;
     background: #e8e7e2;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+.related-head {
+    width: 100%;
+}
+
+.related-grid,
 .related>div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2vw
+    gap: 2vw;
+    width: 100%;
 }
 
+.related-grid>button,
 .related>div>button {
     border: 0;
     background: none;
     text-align: left;
     cursor: pointer;
     padding: 0;
-    position: relative
+    position: relative;
 }
 
 .related .product-visual {
     min-height: 310px;
-    margin-bottom: 18px
+    margin-bottom: 18px;
 }
 
 .related strong {
     font-size: 16px;
-    font-weight: 400
+    font-weight: 400;
 }
 
 .related button>svg {
     position: absolute;
     right: 5px;
-    bottom: 0
+    bottom: 0;
 }
 
 .industry-list {
@@ -3484,27 +3493,60 @@ body {
     }
 
     .related {
-        padding: 70px 20px;
+        padding: 70px 0;
         overflow: hidden;
+        width: 100%;
+        box-sizing: border-box;
     }
 
+    .related-head {
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .related-head .eyebrow {
+        margin-bottom: 24px;
+    }
+
+    .related-grid,
     .related > div {
-        overflow-x: visible;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 32px;
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        gap: 16px;
+        padding: 4px 20px 20px;
         width: 100%;
-        max-width: 440px;
-        margin: 0 auto;
+        box-sizing: border-box;
     }
 
+    .related-grid::-webkit-scrollbar,
+    .related > div::-webkit-scrollbar {
+        display: none;
+    }
+
+    .related-grid > button,
     .related > div > button {
-        width: 100%;
+        flex: 0 0 270px;
+        width: 270px;
+        scroll-snap-align: start;
+        border: 0;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
     }
 
+    .related-grid .product-visual,
     .related .product-visual {
         min-height: 280px;
+        height: 280px;
         width: 100%;
+        margin-bottom: 14px;
+        border-radius: 8px;
     }
 
     .industry-list {

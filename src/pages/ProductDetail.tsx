@@ -172,7 +172,7 @@ export default function ProductDetail({ category }: { category: string }) {
             },
           )
           .fromTo(
-            related.querySelectorAll(".related > div > button"),
+            related.querySelectorAll(".related-grid > button"),
             {
               opacity: 0,
               y: 25,
@@ -323,8 +323,10 @@ export default function ProductDetail({ category }: { category: string }) {
       </section>
 
       <section className="related">
-        <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
-        <div>
+        <div className="related-head">
+          <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
+        </div>
+        <div className="related-grid">
           {[
             ...products.filter(
               (p) =>
