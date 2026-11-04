@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Page } from "./types"
 import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
+import LogoIntro from "./components/ui/LogoIntro"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
@@ -186,6 +187,7 @@ export default function App() {
 
   return (
     <>
+      <LogoIntro />
       <Navbar page={page} />
       {page === "home" && <Home />}
       {page === "story" && <Story />}
