@@ -4311,11 +4311,11 @@ body {
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgba(201, 164, 76, 0.22) 0%,
-        rgba(232, 213, 154, 0.08) 45%,
-        transparent 70%
+        rgba(201, 164, 76, 0.35) 0%,
+        rgba(232, 213, 154, 0.16) 45%,
+        transparent 72%
     );
-    filter: blur(45px);
+    filter: blur(52px);
     pointer-events: none;
     z-index: 1;
 }
@@ -4329,9 +4329,9 @@ body {
 }
 
 .logo-intro-emblem-img {
-    width: clamp(84px, 12vw, 120px);
+    width: clamp(120px, 16vw, 175px);
     height: auto;
-    max-height: 120px;
+    max-height: 175px;
     object-fit: contain;
     display: block;
     user-select: none;
@@ -4339,17 +4339,17 @@ body {
 }
 
 .logo-intro-divider {
-    width: clamp(140px, 20vw, 220px);
-    height: 1px;
+    width: clamp(200px, 28vw, 320px);
+    height: 1.5px;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(201, 164, 76, 0.8) 20%,
+        rgba(201, 164, 76, 0.85) 20%,
         rgba(232, 213, 154, 1) 50%,
-        rgba(201, 164, 76, 0.8) 80%,
+        rgba(201, 164, 76, 0.85) 80%,
         transparent
     );
-    margin: 22px 0 18px;
+    margin: 26px 0 20px;
     transform-origin: center;
     z-index: 2;
 }
@@ -4363,22 +4363,24 @@ body {
 }
 
 .logo-intro-name {
-    color: var(--champagne);
-    font-size: clamp(14px, 1.8vw, 19px);
+    color: #f7e7c4;
+    font-size: clamp(22px, 3.2vw, 34px);
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+    text-transform: uppercase;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 10px;
+    text-shadow: 0 0 24px rgba(232, 213, 154, 0.45);
+}
+
+.logo-intro-tagline {
+    color: #e8d59a;
+    font-size: clamp(12px, 1.4vw, 16px);
     font-weight: 600;
     letter-spacing: 0.32em;
     text-indent: 0.32em;
     text-transform: uppercase;
-    font-family: "Manrope", sans-serif;
-    margin-bottom: 6px;
-}
-
-.logo-intro-tagline {
-    color: rgba(201, 164, 76, 0.85);
-    font-size: clamp(8.5px, 0.9vw, 10.5px);
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-indent: 0.3em;
-    text-transform: uppercase;
     font-family: "DM Sans", sans-serif;
+    text-shadow: 0 0 16px rgba(201, 164, 76, 0.35);
 }
