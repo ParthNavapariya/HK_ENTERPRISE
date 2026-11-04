@@ -18,6 +18,7 @@ interface ContactProps {
 export default function Contact({ productParam }: ContactProps) {
   const containerRef = useRef<HTMLElement>(null)
   const [sent, setSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const selectedProduct = productParam
     ? products.find(
@@ -74,8 +75,21 @@ export default function Contact({ productParam }: ContactProps) {
 
     const whatsappUrl = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(lines)}`
 
-    // Directly open WhatsApp application without popup blocker issues
-    window.location.href = whatsappUrl
+    setIsSubmitting(true)
+
+    // Smooth tactile dispatch to WhatsApp
+    setTimeout(() => {
+      try {
+        const newTab = window.open(whatsappUrl, "_blank", "noopener,noreferrer")
+        if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+          window.location.href = whatsappUrl
+        }
+      } catch {
+        window.location.href = whatsappUrl
+      }
+      setIsSubmitting(false)
+      setSent(true)
+    }, 280)
   }
 
   useEffect(() => {
@@ -374,7 +388,9 @@ export default function Contact({ productParam }: ContactProps) {
             />
           </label>
           <div style={{ marginTop: "24px" }}>
-            <Button type="submit">Send Enquiry on WhatsApp</Button>
+            <Button type="submit">
+              {isSubmitting ? "Opening WhatsApp..." : "Send Enquiry on WhatsApp"}
+            </Button>
           </div>
         </form>
       </section>
