@@ -70,15 +70,36 @@ export default function ProductDetail({ category }: { category: string }) {
           },
           "-=0.65",
         )
-        .from(
-          ".desktop-actions, .mobile-actions",
+        // Button 1 from left, Button 2 from right (matching the rest of the site)
+        .fromTo(
+          ".desktop-actions .btn:first-child, .mobile-actions .btn:first-child",
           {
             opacity: 0,
-            y: 20,
-            stagger: 0.1,
-            duration: 0.65,
+            x: -30,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            clearProps: "transform,opacity",
           },
           "-=0.45",
+        )
+        .fromTo(
+          ".desktop-actions .btn:last-child, .mobile-actions .btn:last-child",
+          {
+            opacity: 0,
+            x: 30,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            clearProps: "transform,opacity",
+          },
+          "-=0.6",
         )
         .from(
           ".detail-thumbnails button",
