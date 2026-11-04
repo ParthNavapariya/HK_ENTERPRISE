@@ -67,10 +67,10 @@ export default function App() {
     // Scroll reveal animation for all action buttons across pages
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (!reduced) {
-      // Find all button groups/parents or standalone buttons outside hero
+      // Find all button groups/parents or standalone buttons outside hero and detail pages
       const allActionContainers = Array.from(
         document.querySelectorAll<HTMLElement>(
-          "main .actions:not(.hero .actions), main .desktop-actions, main .mobile-actions, main .cta-panel:not(.home-cta), footer",
+          "main:not(.detail-page) .actions:not(.hero .actions):not(.desktop-actions):not(.mobile-actions), footer",
         ),
       )
 
@@ -127,10 +127,10 @@ export default function App() {
         })
       })
 
-      // Any remaining standalone buttons not inside the action containers
+      // Any remaining standalone buttons not inside action containers or detail page
       const standaloneBtns = Array.from(
         document.querySelectorAll<HTMLElement>(
-          "main .btn:not(.hero .btn):not(.actions .btn):not(.cta-panel .btn):not(.scroll-cue)",
+          "main:not(.detail-page) .btn:not(.hero .btn):not(.actions .btn):not(.cta-panel .btn):not(.scroll-cue)",
         ),
       )
 

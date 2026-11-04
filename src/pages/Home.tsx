@@ -246,7 +246,7 @@ export default function Home() {
           <span>Enquire on WhatsApp</span>
           <Icon name="arrow" />
         </a>
-        <span className="cta-code">HK / 2025</span>
+        <span className="cta-code">HK / 2026</span>
       </section>
     </main>
   )
