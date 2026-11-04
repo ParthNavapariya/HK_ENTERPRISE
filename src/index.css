@@ -3484,20 +3484,27 @@ body {
     }
 
     .related {
-        padding: 70px 24px;
+        padding: 70px 20px;
         overflow: hidden;
     }
 
     .related > div {
-        overflow-x: auto;
-        grid-template-columns: repeat(3, minmax(260px, 1fr));
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        gap: 18px;
+        overflow-x: visible;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
     }
 
-    .related > div::-webkit-scrollbar {
-        display: none;
+    .related > div > button {
+        width: 100%;
+    }
+
+    .related .product-visual {
+        min-height: 280px;
+        width: 100%;
     }
 
     .industry-list {
