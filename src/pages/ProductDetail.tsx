@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { COMPANY_INFO, products } from "../data/products"
@@ -28,6 +28,79 @@ export default function ProductDetail({ category }: { category: string }) {
   useEffect(() => {
     setActiveImage(currentProduct.image)
   }, [currentProduct])
+
+  const relatedProducts = useMemo(() => {
+    return [
+      ...products.filter(
+        (p) =>
+          p.id !== currentProduct.id &&
+          p.category === currentProduct.category,
+      ),
+      ...products.filter(
+        (p) =>
+          p.id !== currentProduct.id &&
+          p.category !== currentProduct.category,
+      ),
+    ].slice(0, 3)
+  }, [currentProduct])
+
+  const relatedGridRef = useRef<HTMLDivElement>(null)
+  const [relatedIndex, setRelatedIndex] = useState(0)
+  const isInteractingRef = useRef(false)
+
+  // Reset related carousel on product change
+  useEffect(() => {
+    setRelatedIndex(0)
+    if (relatedGridRef.current) {
+      relatedGridRef.current.scrollTo({ left: 0, behavior: "instant" })
+    }
+  }, [currentProduct])
+
+  // Automatic mobile carousel slideshow
+  useEffect(() => {
+    if (relatedProducts.length <= 1) return
+
+    const timer = setInterval(() => {
+      if (window.innerWidth > 900 || isInteractingRef.current) return
+
+      setRelatedIndex((prev) => {
+        const next = (prev + 1) % relatedProducts.length
+        if (relatedGridRef.current) {
+          const container = relatedGridRef.current
+          const cardWidth = container.clientWidth
+          container.scrollTo({
+            left: next * cardWidth,
+            behavior: "smooth",
+          })
+        }
+        return next
+      })
+    }, 3500)
+
+    return () => clearInterval(timer)
+  }, [relatedProducts])
+
+  const handleRelatedScroll = () => {
+    if (!relatedGridRef.current) return
+    const container = relatedGridRef.current
+    const cardWidth = container.clientWidth
+    if (cardWidth > 0) {
+      const idx = Math.round(container.scrollLeft / cardWidth)
+      if (idx !== relatedIndex && idx >= 0 && idx < relatedProducts.length) {
+        setRelatedIndex(idx)
+      }
+    }
+  }
+
+  const handleTouchStart = () => {
+    isInteractingRef.current = true
+  }
+
+  const handleTouchEnd = () => {
+    setTimeout(() => {
+      isInteractingRef.current = false
+    }, 2500)
+  }
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -326,35 +399,45 @@ export default function ProductDetail({ category }: { category: string }) {
         <div className="related-head">
           <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
         </div>
-        <div className="related-grid">
-          {[
-            ...products.filter(
-              (p) =>
-                p.id !== currentProduct.id &&
-                p.category === currentProduct.category,
-            ),
-            ...products.filter(
-              (p) =>
-                p.id !== currentProduct.id &&
-                p.category !== currentProduct.category,
-            ),
-          ]
-            .slice(0, 3)
-            .map((p) => (
-              <button
-                key={p.id}
-                onClick={() => navigate("detail", p.id)}
-              >
-                <ProductVisual
-                  category={p.category}
-                  light
-                  image={p.image}
-                  productCode={p.code}
-                />
-                <strong>{p.name}</strong>
-                <Icon name="arrow" />
-              </button>
-            ))}
+        <div
+          className="related-grid"
+          ref={relatedGridRef}
+          onScroll={handleRelatedScroll}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {relatedProducts.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => navigate("detail", p.id)}
+            >
+              <ProductVisual
+                category={p.category}
+                light
+                image={p.image}
+                productCode={p.code}
+              />
+              <strong>{p.name}</strong>
+              <Icon name="arrow" />
+            </button>
+          ))}
+        </div>
+        <div className="related-dots" aria-hidden="true">
+          {relatedProducts.map((_, idx) => (
+            <span
+              key={idx}
+              className={`related-dot ${idx === relatedIndex ? "active" : ""}`}
+              onClick={() => {
+                setRelatedIndex(idx)
+                if (relatedGridRef.current) {
+                  relatedGridRef.current.scrollTo({
+                    left: idx * relatedGridRef.current.clientWidth,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+            />
+          ))}
         </div>
       </section>
 

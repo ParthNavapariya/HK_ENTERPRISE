@@ -1912,6 +1912,10 @@ em {
     bottom: 0;
 }
 
+.related-dots {
+    display: none;
+}
+
 .industry-list {
     padding: 80px 8.5vw 130px
 }
@@ -3516,8 +3520,8 @@ body {
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
-        gap: 16px;
-        padding: 4px 20px 20px;
+        gap: 0;
+        padding: 4px 0 16px;
         width: 100%;
         box-sizing: border-box;
     }
@@ -3529,14 +3533,18 @@ body {
 
     .related-grid > button,
     .related > div > button {
-        flex: 0 0 270px;
-        width: 270px;
-        scroll-snap-align: start;
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        padding: 0 20px;
+        box-sizing: border-box;
         border: 0;
         background: none;
         text-align: left;
         cursor: pointer;
-        padding: 0;
         position: relative;
     }
 
@@ -3547,6 +3555,30 @@ body {
         width: 100%;
         margin-bottom: 14px;
         border-radius: 8px;
+    }
+
+    .related-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 14px;
+        padding: 0 20px;
+    }
+
+    .related-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(17, 19, 24, 0.22);
+        transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .related-dot.active {
+        width: 22px;
+        border-radius: 4px;
+        background: var(--gold);
     }
 
     .industry-list {
