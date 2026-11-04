@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Page } from "./types"
@@ -22,6 +22,10 @@ export default function App() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true
     return false
   })
+
+  const handleIntroFinish = useCallback(() => {
+    setIntroReady(true)
+  }, [])
 
   // Ensure browser never forces scroll restoration on page change
   useEffect(() => {
@@ -195,7 +199,7 @@ export default function App() {
 
   return (
     <>
-      <LogoIntro onIntroFinish={() => setIntroReady(true)} />
+      <LogoIntro onIntroFinish={handleIntroFinish} />
       {introReady && (
         <>
           <Navbar page={page} />

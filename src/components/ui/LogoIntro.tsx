@@ -5,16 +5,26 @@ interface LogoIntroProps {
   onIntroFinish?: () => void
 }
 
+// Module-level guard: strictly guarantees intro runs at most once in application lifecycle
+let hasIntroEverStarted = false
+
 export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
+  const onIntroFinishRef = useRef(onIntroFinish)
+  onIntroFinishRef.current = onIntroFinish
+
   const [visible, setVisible] = useState(() => {
     if (typeof window === "undefined") return false
-    // Skip if already shown in this session
+    // If already ran in this session or in this JS instance, skip immediately
+    if (hasIntroEverStarted) return false
     if (sessionStorage.getItem("hk_intro_shown") === "true") return false
-    // Skip if user prefers reduced motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       sessionStorage.setItem("hk_intro_shown", "true")
       return false
     }
+
+    // Mark as started immediately to prevent any re-trigger on re-render/Strict Mode
+    hasIntroEverStarted = true
+    sessionStorage.setItem("hk_intro_shown", "true")
     return true
   })
 
@@ -25,15 +35,11 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
   const lineRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<gsap.core.Timeline | null>(null)
 
-  // Notify parent if intro was already skipped / not visible
   useEffect(() => {
     if (!visible) {
-      onIntroFinish?.()
+      onIntroFinishRef.current?.()
+      return
     }
-  }, [visible, onIntroFinish])
-
-  useEffect(() => {
-    if (!visible) return
 
     // Lock body scroll while intro animation plays
     const originalOverflow = document.body.style.overflow
@@ -42,7 +48,6 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         onComplete: () => {
-          sessionStorage.setItem("hk_intro_shown", "true")
           document.body.style.overflow = originalOverflow
           setVisible(false)
         },
@@ -117,7 +122,7 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
           "+=0.15",
         )
         // 3. Cinematic Outro Transition into Homepage
-        // Reveal homepage and start web entrance animations right as outro begins!
+        // Reveal homepage and start web entrance animations right as outro begins
         .to(
           [emblemRef.current, textRef.current, lineRef.current, glowRef.current],
           {
@@ -136,8 +141,8 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
             duration: 0.55,
             ease: "power3.inOut",
             onStart: () => {
-              // Trigger website entrance animations at this exact reveal moment!
-              onIntroFinish?.()
+              // Trigger website entrance animations at this exact reveal moment
+              onIntroFinishRef.current?.()
             },
           },
           "-=0.25",
@@ -148,12 +153,12 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
       document.body.style.overflow = originalOverflow
       ctx.revert()
     }
-  }, [visible, onIntroFinish])
+  }, [visible])
 
   // Allow clicking to immediately skip intro if desired
   const handleSkip = () => {
     if (timelineRef.current) {
-      onIntroFinish?.()
+      onIntroFinishRef.current?.()
       timelineRef.current.progress(1)
     }
   }
