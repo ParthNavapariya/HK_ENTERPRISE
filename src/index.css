@@ -1673,7 +1673,7 @@ em {
     display: grid;
     grid-template-columns: 0.95fr 1.05fr;
     padding: 145px 6vw 60px 8.5vw;
-    gap: 4vw;
+    gap: 5vw;
     align-items: center;
 }
 
@@ -1697,8 +1697,8 @@ em {
 
 .desktop-actions {
     display: flex;
-    gap: 12px;
-    margin-top: 24px;
+    gap: 16px;
+    margin-top: 36px;
 }
 
 .mobile-actions {
@@ -3441,7 +3441,7 @@ body {
     .detail-visual-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 22px;
         width: 100%;
     }
 
@@ -3466,9 +3466,9 @@ body {
     .mobile-actions {
         display: flex !important;
         flex-direction: column;
-        gap: 10px;
+        gap: 14px;
         width: 100%;
-        margin-top: 8px;
+        margin-top: 20px;
         order: 2;
     }
 
