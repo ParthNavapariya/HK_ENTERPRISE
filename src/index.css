@@ -1698,7 +1698,7 @@ em {
 .desktop-actions {
     display: flex;
     gap: 12px;
-    margin-top: 36px;
+    margin-top: 48px;
 }
 
 .mobile-actions {
@@ -3468,7 +3468,7 @@ body {
         flex-direction: column;
         gap: 10px;
         width: 100%;
-        margin-top: 26px;
+        margin-top: 38px;
         order: 2;
     }
 
