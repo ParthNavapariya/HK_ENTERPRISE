@@ -77,38 +77,27 @@ export default function CinematicSequence() {
           }
 
           const copies = gsap.utils.toArray<HTMLElement>(".sequence-copy")
-          gsap.set(copies.slice(1), { autoAlpha: 0, y: isMobile ? 24 : 48, filter: "blur(6px)" })
-          gsap.set(copies[0], { autoAlpha: 1, y: 0, filter: "blur(0px)" })
+          gsap.set(copies.slice(1), { autoAlpha: 0, y: isMobile ? 22 : 45 })
+          gsap.set(copies[0], { autoAlpha: 1, y: 0 })
           gsap.set(".sequence-progress i", {
             scaleX: 0,
             transformOrigin: "left",
           })
-          gsap.set(".sequence-product", {
-            transformPerspective: 1400,
-            transformOrigin: "center center",
-            rotateY: isDesktop ? -6 : -4,
-            rotateX: 3,
-            rotateZ: 0,
-            scale: isDesktop ? 1.08 : 1.03,
-            xPercent: isDesktop ? -6 : 0,
-            yPercent: 0,
-          })
 
           const timeline = gsap.timeline({
-            defaults: { ease: "power2.inOut" },
             scrollTrigger: {
               trigger: sequenceRef.current,
               start: "top top",
-              end: () => `+=${isDesktop ? 3200 : isTablet ? 2400 : 1800}`,
+              end: () => `+=${isDesktop ? 3000 : isTablet ? 2000 : 1500}`,
               pin: true,
-              scrub: isDesktop ? 1.2 : isTablet ? 1.0 : 0.8,
+              scrub: isDesktop ? 1.0 : isTablet ? 0.7 : 0.45,
               anticipatePin: 1,
               onUpdate: (self) => {
                 const p = self.progress
                 let active = 0
-                if (p < 0.26) active = 0
-                else if (p < 0.52) active = 1
-                else if (p < 0.78) active = 2
+                if (p < 0.28) active = 0
+                else if (p < 0.58) active = 1
+                else if (p < 0.86) active = 2
                 else active = 3
                 setActiveChapter((prev) =>
                   prev !== active ? active : prev,
@@ -119,92 +108,78 @@ export default function CinematicSequence() {
 
           timelineRef.current = timeline
 
-          // Act 1: FORM (01) -> DETAIL (02)
-          // Smooth camera swoop into the twin capsule slots & hex bolts
+          // Stage 1 (01 / FORM)
           timeline
+            .to(".sequence-product", {
+              scale: isDesktop ? 1.25 : isTablet ? 1.15 : 1.06,
+              xPercent: isDesktop ? -15 : isTablet ? 4 : 0,
+              yPercent: 0,
+              rotate: isDesktop ? 4 : isTablet ? 3 : 2,
+              duration: 2,
+            })
             .to(
               copies[0],
-              { autoAlpha: 0, y: isMobile ? -20 : -40, filter: "blur(6px)", duration: 1.0, ease: "power2.in" },
-              1.8,
+              { autoAlpha: 0, y: isMobile ? -16 : -35, duration: 0.45 },
+              1.4,
             )
-            .to(
-              ".sequence-product",
-              {
-                scale: isDesktop ? 1.62 : isTablet ? 1.38 : 1.22,
-                xPercent: isDesktop ? 16 : isTablet ? 6 : 0,
-                yPercent: isMobile ? -2 : -5,
-                rotateY: isDesktop ? 15 : isTablet ? 10 : 6,
-                rotateX: isDesktop ? -8 : isTablet ? -5 : -3,
-                rotateZ: isDesktop ? 2 : isTablet ? 1 : 0,
-                duration: 2.8,
-                ease: "power2.inOut",
-              },
-              1.6,
-            )
-            .to(".sequence-progress i", { scaleX: 0.35, duration: 2.4, ease: "power1.inOut" }, 1.8)
-            .to(
-              copies[1],
-              { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1.0, ease: "power2.out" },
-              2.6,
-            )
+            .to(copies[1], { autoAlpha: 1, y: 0, duration: 0.55 }, 1.7)
 
-          // Act 2: DETAIL (02) -> ENDURANCE (03)
-          // Smooth 3D camera pan across heavy thickness gauge & zinc plating
+          // Stage 2 (02 / DETAIL)
           timeline
             .to(
-              copies[1],
-              { autoAlpha: 0, y: isMobile ? -20 : -40, filter: "blur(6px)", duration: 1.0, ease: "power2.in" },
-              5.2,
-            )
-            .to(
               ".sequence-product",
               {
-                scale: isDesktop ? 1.95 : isTablet ? 1.52 : 1.30,
-                xPercent: isDesktop ? -10 : isTablet ? -3 : 0,
-                yPercent: isMobile ? 3 : 5,
-                rotateY: isDesktop ? -16 : isTablet ? -10 : -6,
-                rotateX: isDesktop ? 10 : isTablet ? 7 : 4,
-                rotateZ: isDesktop ? -2 : isTablet ? -1 : 0,
-                duration: 2.8,
-                ease: "power2.inOut",
+                scale: isDesktop ? 1.65 : isTablet ? 1.35 : 1.18,
+                xPercent: isDesktop ? 16 : isTablet ? 8 : 0,
+                yPercent: isMobile ? -2 : -4,
+                rotate: isDesktop ? -5 : isTablet ? -3 : -2,
+                duration: 2,
               },
-              5.0,
+              2.1,
             )
-            .to(".sequence-progress i", { scaleX: 0.70, duration: 2.4, ease: "power1.inOut" }, 5.2)
+            .to(".sequence-progress i", { scaleX: 0.34, duration: 1 }, 2)
             .to(
-              copies[2],
-              { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1.0, ease: "power2.out" },
-              6.0,
+              copies[1],
+              { autoAlpha: 0, y: isMobile ? -16 : -35, duration: 0.45 },
+              3.6,
             )
+            .to(copies[2], { autoAlpha: 1, y: 0, duration: 0.55 }, 3.9)
 
-          // Act 3: ENDURANCE (03) -> SYSTEM (04)
-          // Pull back to heroic full-assembly perspective
+          // Stage 3 (03 / ENDURANCE)
           timeline
             .to(
-              copies[2],
-              { autoAlpha: 0, y: isMobile ? -20 : -40, filter: "blur(6px)", duration: 1.0, ease: "power2.in" },
-              8.6,
+              ".sequence-product",
+              {
+                scale: isDesktop ? 2.1 : isTablet ? 1.55 : 1.24,
+                xPercent: isDesktop ? -5 : isTablet ? 5 : 0,
+                yPercent: isMobile ? 3 : 6,
+                rotate: isDesktop ? 3 : isTablet ? 2 : 1,
+                duration: 2,
+              },
+              4.2,
             )
+            .to(".sequence-progress i", { scaleX: 0.68, duration: 1 }, 4.1)
+            .to(
+              copies[2],
+              { autoAlpha: 0, y: isMobile ? -16 : -35, duration: 0.45 },
+              5.7,
+            )
+            .to(copies[3], { autoAlpha: 1, y: 0, duration: 0.55 }, 6.0)
+
+          // Stage 4 (04 / SYSTEM)
+          timeline
             .to(
               ".sequence-product",
               {
-                scale: isDesktop ? 1.02 : isTablet ? 0.98 : 1.0,
-                xPercent: isDesktop ? 12 : isTablet ? 2 : 0,
+                scale: isDesktop ? 0.9 : isTablet ? 0.95 : 1.0,
+                xPercent: isDesktop ? 18 : isTablet ? 2 : 0,
                 yPercent: 0,
-                rotateY: 0,
-                rotateX: 0,
-                rotateZ: 0,
-                duration: 2.8,
-                ease: "power2.inOut",
+                rotate: 0,
+                duration: 2,
               },
-              8.4,
+              6.2,
             )
-            .to(".sequence-progress i", { scaleX: 1, duration: 2.4, ease: "power1.inOut" }, 8.6)
-            .to(
-              copies[3],
-              { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1.0, ease: "power2.out" },
-              9.4,
-            )
+            .to(".sequence-progress i", { scaleX: 1, duration: 1 }, 6.2)
         },
       )
     }, sequenceRef)
