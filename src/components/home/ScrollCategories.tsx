@@ -81,13 +81,12 @@ export default function ScrollCategories() {
       }
 
       const getStartOffset = () => {
-        if (window.innerWidth > 900) return "top top"
         const navEl = document.querySelector<HTMLElement>(".nav")
         const navHeight = navEl
           ? navEl.offsetHeight
           : window.innerWidth <= 400
             ? 68
-            : 76
+            : 82
         return `top ${navHeight + 10}px`
       }
 

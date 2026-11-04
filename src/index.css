@@ -3004,21 +3004,37 @@ body {
 
     /* Category Story & Pinned Stage */
     .category-story {
-        padding: 80px 0;
+        padding: 50px 0 60px;
     }
 
     .category-stage {
-        height: auto;
-        min-height: 600px;
+        height: calc(100vh - 100px);
+        min-height: 560px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
 
     .story-layout {
-        gap: 4vw;
+        gap: 3.5vw;
+        width: 100%;
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 4vw;
+        align-items: center;
     }
 
     .story-visual {
-        height: min(55vh, 480px);
+        height: clamp(380px, 48vh, 500px);
         min-height: 380px;
+        position: relative;
+    }
+
+    .story-number {
+        font-size: 110px;
+        top: -46px;
+        right: -8px;
     }
 
     .category-title {
@@ -3029,6 +3045,31 @@ body {
         font-size: 13px;
         line-height: 1.65;
         max-width: 400px;
+    }
+
+    .category-list button {
+        min-height: clamp(62px, 7.5vh, 78px);
+        padding: 10px 12px;
+        grid-template-columns: 42px 115px 1fr 20px;
+        gap: 10px;
+    }
+
+    .category-list button strong {
+        font-size: 14.5px;
+    }
+
+    .category-list button small {
+        font-size: 9.5px;
+        line-height: 1.4;
+    }
+
+    .category-scroll-progress {
+        bottom: 24px;
+    }
+
+    .category-scroll-label {
+        bottom: 8px;
+        font-size: 8px;
     }
 
     /* Sequence Section for Tablet & Mobile Desktop Site */
