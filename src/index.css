@@ -1673,7 +1673,7 @@ em {
     display: grid;
     grid-template-columns: 0.95fr 1.05fr;
     padding: 145px 6vw 60px 8.5vw;
-    gap: 5vw;
+    gap: 4vw;
     align-items: center;
 }
 
@@ -1697,7 +1697,7 @@ em {
 
 .desktop-actions {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     margin-top: 36px;
 }
 
@@ -3441,7 +3441,7 @@ body {
     .detail-visual-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 22px;
+        gap: 0;
         width: 100%;
     }
 
@@ -3466,9 +3466,9 @@ body {
     .mobile-actions {
         display: flex !important;
         flex-direction: column;
-        gap: 14px;
+        gap: 10px;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 26px;
         order: 2;
     }
 
