@@ -3294,6 +3294,30 @@ body {
     .footer-body {
         gap: 4vw;
     }
+
+    /* Logo Intro: subtle touch larger specifically for phone in desktop mode */
+    .logo-intro-emblem-img {
+        width: 110px;
+        max-height: 110px;
+    }
+
+    .logo-intro-divider {
+        width: 190px;
+        margin: 22px 0 16px;
+    }
+
+    .logo-intro-name {
+        font-size: 18px;
+        letter-spacing: 0.3em;
+        text-indent: 0.3em;
+        margin-bottom: 7px;
+    }
+
+    .logo-intro-tagline {
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        text-indent: 0.28em;
+    }
 }
 
 /* Main Mobile & Small Screen Breakpoint (<= 860px, covers 401px-860px) */
