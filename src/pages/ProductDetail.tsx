@@ -161,22 +161,31 @@ export default function ProductDetail({ category }: { category: string }) {
             once: true,
           },
         })
-          .from(related.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
+          .fromTo(
+            related.querySelector(".eyebrow"),
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 0.5,
+              ease: "power2.out",
+              clearProps: "all",
+            },
+          )
+          .fromTo(
             related.querySelectorAll(".related > div > button"),
             {
               opacity: 0,
-              y: 35,
-              stagger: 0.12,
-              duration: 0.8,
-              ease: "power3.out",
+              y: 25,
             },
-            "-=0.35",
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.1,
+              duration: 0.6,
+              ease: "power2.out",
+              clearProps: "transform,opacity",
+            },
+            "-=0.3",
           )
       }
 

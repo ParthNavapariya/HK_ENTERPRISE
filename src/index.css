@@ -1867,8 +1867,9 @@ em {
 }
 
 .related {
-    padding: 100px 6vw;
-    background: #e8e7e2
+    padding: 100px 8.5vw;
+    background: #e8e7e2;
+    overflow: hidden;
 }
 
 .related>div {
@@ -3484,6 +3485,7 @@ body {
 
     .related {
         padding: 70px 24px;
+        overflow: hidden;
     }
 
     .related > div {
