@@ -65,8 +65,8 @@ export const products: ProductItem[] = [
   {
     id: "bc-02",
     code: "HK-BC-102",
-    name: "L Bed Clamp",
-    nameGu: "એલ બેડ ક્લેમ્પ",
+    name: "L Bed Clamp (6 Aani Bolt)",
+    nameGu: "એલ બેડ ક્લેમ્પ (૬ આની બોલ્ટ)",
     category: "Bed Clamp",
     categoryName: "Bed Clamp Series",
     note: "L bed clamp with heavy 6 Aani bolt, reinforced 90° corner, and corrosion-resistant white zinc plated finish.",
@@ -93,8 +93,8 @@ export const products: ProductItem[] = [
   {
     id: "bc-03",
     code: "HK-BC-103",
-    name: "L Bed Clamp",
-    nameGu: "એલ બેડ ક્લેમ્પ",
+    name: "L Bed Clamp (8 Aani Bolt)",
+    nameGu: "એલ બેડ ક્લેમ્પ (૮ આની બોલ્ટ)",
     category: "Bed Clamp",
     categoryName: "Bed Clamp Series",
     note: "Heavy L bed clamp with 8 Aani industrial bolt, reinforced corner body, and premium golden zinc plated finish.",
