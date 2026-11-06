@@ -93,8 +93,8 @@ export const products: ProductItem[] = [
   {
     id: "bc-03",
     code: "HK-BC-103",
-    name: "L Bed Clamp (8 Aani Bolt)",
-    nameGu: "એલ બેડ ક્લેમ્પ (૮ આની બોલ્ટ)",
+    name: "L Bed Clamp",
+    nameGu: "એલ બેડ ક્લેમ્પ",
     category: "Bed Clamp",
     categoryName: "Bed Clamp Series",
     note: "Heavy L bed clamp with 8 Aani industrial bolt, reinforced corner body, and premium golden zinc plated finish.",
@@ -102,9 +102,10 @@ export const products: ProductItem[] = [
       "Ultra-heavy duty L bed clamp equipped with maximum strength 8 Aani bolt and corrosion-resistant golden zinc plated finish for heavy-load hydraulic beds and commercial furniture.",
     descriptionGu: "૮ આની બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ વાળો હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે શ્રેષ્ઠ.",
     finish: "Golden Zinc Plated",
+    boltSize: "8 Aani Bolt",
     thickness: "Regular",
     features: [
-      "8 Aani heavy-duty hex bolt",
+      "Bolt size: 8 Aani bolt",
       "Golden zinc plated corrosion protection",
       "Reinforced 90° corner body for heavy loads",
       "High-torque vibration resistance",
@@ -115,7 +116,7 @@ export const products: ProductItem[] = [
       "/products/bed-clamp/bed-clamp-5.jpg",
       "/products/bed-clamp/bed-clamp-1.jpg",
     ],
-    badge: "8 Aani / Golden",
+    badge: "8 Aani / Golden Zinc",
   },
   {
     id: "bc-04",
