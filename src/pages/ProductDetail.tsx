@@ -103,6 +103,22 @@ export default function ProductDetail({ category }: { category: string }) {
     }, 2500)
   }
 
+  const handlePrevSlide = () => {
+    if (relatedGridRef.current) {
+      const container = relatedGridRef.current
+      const scrollStep = container.clientWidth > 860 ? 380 : container.clientWidth
+      container.scrollBy({ left: -scrollStep, behavior: "smooth" })
+    }
+  }
+
+  const handleNextSlide = () => {
+    if (relatedGridRef.current) {
+      const container = relatedGridRef.current
+      const scrollStep = container.clientWidth > 860 ? 380 : container.clientWidth
+      container.scrollBy({ left: scrollStep, behavior: "smooth" })
+    }
+  }
+
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) return
@@ -399,6 +415,24 @@ export default function ProductDetail({ category }: { category: string }) {
       <section className="related">
         <div className="related-head">
           <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
+          <div className="related-nav-arrows">
+            <button
+              type="button"
+              className="related-arrow-btn"
+              onClick={handlePrevSlide}
+              aria-label="Previous hardware"
+            >
+              <Icon name="arrow" style={{ transform: "rotate(180deg)" }} />
+            </button>
+            <button
+              type="button"
+              className="related-arrow-btn"
+              onClick={handleNextSlide}
+              aria-label="Next hardware"
+            >
+              <Icon name="arrow" />
+            </button>
+          </div>
         </div>
         <div
           className="related-grid"
