@@ -44,16 +44,43 @@ export default function ProductDetail({ category }: { category: string }) {
   }, [currentProduct])
 
   const relatedGridRef = useRef<HTMLDivElement>(null)
+  const activeIndexRef = useRef(0)
   const isInteractingRef = useRef(false)
 
   // Reset related carousel on product change
   useEffect(() => {
+    activeIndexRef.current = 0
     if (relatedGridRef.current) {
       relatedGridRef.current.scrollTo({ left: 0, behavior: "instant" })
     }
   }, [currentProduct])
 
-  // Automatic smooth carousel slideshow on both desktop & mobile
+  // Track scroll position to keep activeIndexRef in sync on manual swipe
+  const handleRelatedScroll = () => {
+    if (!relatedGridRef.current) return
+    const container = relatedGridRef.current
+    const cards = container.querySelectorAll<HTMLElement>("button")
+    if (!cards.length) return
+
+    const containerPaddingLeft =
+      parseFloat(window.getComputedStyle(container).paddingLeft) || 0
+
+    let closestIdx = 0
+    let minDiff = Infinity
+
+    cards.forEach((card, idx) => {
+      const cardLeft = card.offsetLeft - container.offsetLeft - containerPaddingLeft
+      const diff = Math.abs(container.scrollLeft - cardLeft)
+      if (diff < minDiff) {
+        minDiff = diff
+        closestIdx = idx
+      }
+    })
+
+    activeIndexRef.current = closestIdx
+  }
+
+  // Automatic smooth one-by-one carousel on both desktop & mobile
   useEffect(() => {
     if (relatedProducts.length <= 1) return
 
@@ -61,23 +88,39 @@ export default function ProductDetail({ category }: { category: string }) {
       if (isInteractingRef.current || !relatedGridRef.current) return
 
       const container = relatedGridRef.current
-      const isMobile = window.innerWidth <= 860
-      const firstCard = container.querySelector<HTMLElement>("button")
-      const cardStep = firstCard
-        ? firstCard.offsetWidth + (isMobile ? 0 : 24)
-        : isMobile
-          ? container.clientWidth
-          : 320
+      const cards = container.querySelectorAll<HTMLElement>("button")
+      if (!cards.length) return
 
+      const containerPaddingLeft =
+        parseFloat(window.getComputedStyle(container).paddingLeft) || 0
       const maxScroll = container.scrollWidth - container.clientWidth
 
-      // If at or near the end, loop back smoothly to the beginning
-      if (container.scrollLeft >= maxScroll - 20) {
+      // If at or near the end of scrolling track, loop back to the first card
+      if (container.scrollLeft >= maxScroll - 15) {
+        activeIndexRef.current = 0
         container.scrollTo({ left: 0, behavior: "smooth" })
-      } else {
-        container.scrollBy({ left: cardStep, behavior: "smooth" })
+        return
       }
-    }, 3500)
+
+      // Advance by EXACTLY one card (one-by-one)
+      let nextIndex = activeIndexRef.current + 1
+      if (nextIndex >= cards.length) {
+        nextIndex = 0
+      }
+
+      const targetCard = cards[nextIndex]
+      if (!targetCard) return
+
+      const targetScrollLeft =
+        targetCard.offsetLeft - container.offsetLeft - containerPaddingLeft
+
+      activeIndexRef.current = nextIndex
+
+      container.scrollTo({
+        left: Math.max(0, targetScrollLeft),
+        behavior: "smooth",
+      })
+    }, 3200)
 
     return () => clearInterval(timer)
   }, [relatedProducts])
@@ -392,6 +435,7 @@ export default function ProductDetail({ category }: { category: string }) {
         <div
           className="related-grid"
           ref={relatedGridRef}
+          onScroll={handleRelatedScroll}
           onMouseEnter={() => {
             isInteractingRef.current = true
           }}
