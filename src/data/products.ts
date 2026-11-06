@@ -385,11 +385,13 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge 7-inch modular bed socket engineered for double and king size knock-down bed frames. Available in golden zinc plated and powder coated finishes for lasting durability.",
     descriptionGu: "૭-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    finish: "Golden Zinc Plated / Powder Coated",
+    finish: "Golden Zinc Plated, Powder Coated",
+    size: "7 Inch",
     thickness: "Regular",
     features: [
+      "Size: 7 Inch",
+      "Finishing: Golden Zinc Plated, Powder Coated",
       "7-inch heavy-duty interlocking profile",
-      "Finishing: Golden zinc plated & Powder coated",
       "Multi-hole reinforced fastening pattern",
       "Interlocking wedge hook design",
       "Anti-squeak flush lockup",
