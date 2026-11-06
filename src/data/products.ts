@@ -814,15 +814,15 @@ export const products: ProductItem[] = [
     nameGu: "હાઇડ્રોલિક બેડ જેક",
     category: "Bed Fittings",
     categoryName: "Bed Fittings Series",
-    note: "Hydraulic bed jack mechanism available in 3 piece and 5 piece with durable powder coated finish.",
+    note: "Hydraulic bed jack mechanism available in 3ft piece and 5ft piece with durable powder coated finish.",
     description:
-      "Heavy-duty pneumatic hydraulic bed jack lift mechanism designed for king and queen size hydraulic storage beds. Available in 3 piece and 5 piece with protective powder coated finish.",
-    descriptionGu: "૩ પીસ અને ૫ પીસમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
+      "Heavy-duty pneumatic hydraulic bed jack lift mechanism designed for king and queen size hydraulic storage beds. Available in 3ft piece and 5ft piece with protective powder coated finish.",
+    descriptionGu: "૩ ફૂટ અને ૫ ફૂટ પીસમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
     finish: "Powder Coated",
     thickness: "Heavy Duty Frame",
-    available: "Available in 3 Piece and 5 Piece",
+    available: "Available in 3ft Piece and 5ft Piece",
     features: [
-      "Available: 3 piece, 5 piece",
+      "Available: 3ft piece, 5ft piece",
       "Finishing: Powder coated",
       "Heavy duty gas-hydraulic strut integration",
       "Effortless fingertip bed opening action",
@@ -833,7 +833,7 @@ export const products: ProductItem[] = [
       "/products/bed-fittings/bed-fittings-3.jpg",
       "/products/bed-fittings/bed-fittings-3-dark.jpg",
     ],
-    badge: "3 Piece & 5 Piece / Powder Coated",
+    badge: "3ft & 5ft Piece / Powder Coated",
   },
 
   // --- 06. LOCKPATTI SERIES ---
