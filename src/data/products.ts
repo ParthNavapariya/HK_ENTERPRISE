@@ -409,11 +409,13 @@ export const products: ProductItem[] = [
     description:
       "Heavy-gauge 8-inch extended bed socket engineered for heavy king and queen size beds. Available in golden zinc plated and powder coated finishes for superior stability.",
     descriptionGu: "૮-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોટા કિંગ અને ક્વીન સાઇઝ બેડ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    finish: "Golden Zinc Plated / Powder Coated",
+    finish: "Golden Zinc Plated, Powder Coated",
+    size: "8 Inch",
     thickness: "Regular",
     features: [
+      "Size: 8 Inch",
+      "Finishing: Golden Zinc Plated, Powder Coated",
       "8-inch extended heavy-duty profile",
-      "Finishing: Golden zinc plated & Powder coated",
       "Multi-hole reinforced fastening pattern",
       "Interlocking wedge hook design",
       "Anti-squeak flush lockup",
