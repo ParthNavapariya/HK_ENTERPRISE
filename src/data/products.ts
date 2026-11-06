@@ -488,8 +488,8 @@ export const products: ProductItem[] = [
   {
     id: "hg-03",
     code: "HK-HG-403",
-    name: "Table Hinges",
-    nameGu: "ટેબલ હિંગ્સ",
+    name: "Table Hinges (1ll x 1ll)",
+    nameGu: "ટેબલ હિંગ્સ (1ll x 1ll)",
     category: "Hinges",
     categoryName: "Hinges Series",
     note: "1ll x 1ll folding table hinges with precision countersunk holes in white zinc plated finish.",
