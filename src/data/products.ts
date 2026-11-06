@@ -327,10 +327,12 @@ export const products: ProductItem[] = [
       "Compact 4-inch modular bed socket engineered with precision hook engagement tabs and golden zinc plated corrosion protection.",
     descriptionGu: "૪-ઇંચ કોમ્પેક્ટ મોડ્યુલર બેડ સોકેટ, સિંગલ બેડ અને સોફા ફર્નિચર જોઈન્ટ માટે પ્રીમિયમ ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "Golden Zinc Plated",
+    size: "4 Inch",
     thickness: "Regular",
     features: [
+      "Size: 4 Inch",
+      "Finishing: Golden Zinc Plated",
       "4-inch compact modular profile",
-      "Finishing: Golden zinc plated",
       "Precision hook engagement tab",
       "Countersunk screw mounting holes",
       "High shear strength joinery",
