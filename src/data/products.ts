@@ -134,7 +134,7 @@ export const products: ProductItem[] = [
     thickness: "Light, Medium, Heavy",
     features: [
       "Bolt size: 5 Aani bolt",
-      "Available thickness: Light, Medium, Heavy",
+      "Thickness: Light, Medium, Heavy",
       "Finishing: White Zinc Plated, Powder Coated",
       "Twin capsule locking slots with backing plate",
     ],
@@ -189,7 +189,7 @@ export const products: ProductItem[] = [
     thickness: "Medium, Heavy",
     features: [
       "Bolt size: 5 Aani bolt",
-      "Available thickness: Medium, Heavy",
+      "Thickness: Medium, Heavy",
       "Finishing: White Zinc Plated",
       "Deburred smooth edges & zero-squeak fit",
     ],
