@@ -158,10 +158,11 @@ export const products: ProductItem[] = [
       "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge reinforced construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
     descriptionGu: "૭ આની મોટા બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે ખાસ બનાવેલ.",
     finish: "Golden Zinc Plated",
+    boltSize: "7 Aani Bolt",
     thickness: "Regular",
     features: [
-      "7 Aani high-torque hex bolt",
-      "Golden zinc plated corrosion protection",
+      "Bolt size: 7 Aani bolt",
+      "Finishing: Golden Zinc Plated",
       "Heavy threaded square backing plate",
       "Engineered for hydraulic and storage beds",
     ],
@@ -171,7 +172,7 @@ export const products: ProductItem[] = [
       "/products/bed-clamp/bed-clamp-6.jpg",
       "/products/bed-clamp/bed-clamp-1.jpg",
     ],
-    badge: "7 Aani / Golden",
+    badge: "7 Aani / Golden Zinc",
   },
   {
     id: "bc-06",
