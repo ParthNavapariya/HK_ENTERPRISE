@@ -68,21 +68,21 @@ export default function ProductDetail({ category }: { category: string }) {
       const isMobile = window.innerWidth <= 860
       const firstCard = container.querySelector<HTMLElement>("button")
       const cardStep = firstCard
-        ? firstCard.offsetWidth + (isMobile ? 0 : 28)
+        ? firstCard.offsetWidth + (isMobile ? 0 : 24)
         : isMobile
           ? container.clientWidth
-          : 360
+          : 340
 
       const maxScroll = container.scrollWidth - container.clientWidth
 
       // If at or near the end, loop back smoothly to the beginning
-      if (container.scrollLeft >= maxScroll - 15) {
+      if (container.scrollLeft >= maxScroll - 20) {
         container.scrollTo({ left: 0, behavior: "smooth" })
         setRelatedIndex(0)
       } else {
         container.scrollBy({ left: cardStep, behavior: "smooth" })
       }
-    }, 2800)
+    }, 3400)
 
     return () => clearInterval(timer)
   }, [relatedProducts])
@@ -93,10 +93,10 @@ export default function ProductDetail({ category }: { category: string }) {
     const isMobile = window.innerWidth <= 860
     const firstCard = container.querySelector<HTMLElement>("button")
     const cardStep = firstCard
-      ? firstCard.offsetWidth + (isMobile ? 0 : 28)
+      ? firstCard.offsetWidth + (isMobile ? 0 : 24)
       : isMobile
         ? container.clientWidth
-        : 360
+        : 340
 
     if (cardStep > 0) {
       const idx = Math.round(container.scrollLeft / cardStep)
@@ -437,8 +437,12 @@ export default function ProductDetail({ category }: { category: string }) {
                 image={p.image}
                 productCode={p.code}
               />
-              <strong>{p.name}</strong>
-              <Icon name="arrow" />
+              <div className="related-card-footer">
+                <strong>{p.name}</strong>
+                <span className="related-card-arrow" aria-hidden="true">
+                  <Icon name="arrow" />
+                </span>
+              </div>
             </button>
           ))}
         </div>
@@ -450,8 +454,16 @@ export default function ProductDetail({ category }: { category: string }) {
               onClick={() => {
                 setRelatedIndex(idx)
                 if (relatedGridRef.current) {
-                  relatedGridRef.current.scrollTo({
-                    left: idx * relatedGridRef.current.clientWidth,
+                  const container = relatedGridRef.current
+                  const isMobile = window.innerWidth <= 860
+                  const firstCard = container.querySelector<HTMLElement>("button")
+                  const cardStep = firstCard
+                    ? firstCard.offsetWidth + (isMobile ? 0 : 24)
+                    : isMobile
+                      ? container.clientWidth
+                      : 340
+                  container.scrollTo({
+                    left: idx * cardStep,
                     behavior: "smooth",
                   })
                 }
