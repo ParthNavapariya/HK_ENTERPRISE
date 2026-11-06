@@ -1875,7 +1875,7 @@ em {
 }
 
 .related {
-    padding: 85px 0 105px;
+    padding: 100px 8.5vw;
     background: #e8e7e2;
     overflow: hidden;
     width: 100%;
@@ -1883,84 +1883,41 @@ em {
 }
 
 .related-head {
-    padding: 0 max(24px, 8.5vw);
     width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 26px;
 }
 
-.related-head .eyebrow {
-    margin-bottom: 0;
-}
-
-.related-grid {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    gap: 24px;
+.related-grid,
+.related>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
     width: 100%;
-    padding: 10px max(24px, 8.5vw) 26px;
-    scroll-padding: 0 max(24px, 8.5vw);
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
 }
 
-.related-grid::-webkit-scrollbar {
-    display: none;
-}
-
-.related-grid>button {
-    flex: 0 0 clamp(280px, 26vw, 340px);
-    width: clamp(280px, 26vw, 340px);
-    scroll-snap-align: start;
+.related-grid>button,
+.related>div>button {
     border: 0;
     background: none;
     text-align: left;
     cursor: pointer;
     padding: 0;
     position: relative;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.related-grid>button:hover {
-    transform: translateY(-5px);
-}
-
-.related-grid>button:hover .product-visual {
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
-    border-color: rgba(201, 164, 76, 0.45);
 }
 
 .related .product-visual {
-    min-height: 300px;
-    height: 300px;
-    margin-bottom: 16px;
-    border-radius: 8px;
-    background: #0d0f14;
-    overflow: hidden;
-    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+    min-height: 310px;
+    margin-bottom: 18px;
 }
 
-.related-card-footer {
-    display: block;
-    padding: 2px 2px 0;
-    width: 100%;
-    box-sizing: border-box;
+.related strong {
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.related-card-footer strong {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.4;
-    display: block;
-    transition: color 0.3s ease;
-}
-
-.related-grid>button:hover strong {
-    color: var(--gold);
+.related button>svg {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
 }
 
 .related-dots {
@@ -3269,16 +3226,7 @@ body {
     }
 
     .related {
-        padding: 75px 0 95px;
-    }
-
-    .related-head {
-        padding: 0 5vw;
-    }
-
-    .related-grid {
-        padding: 8px 5vw 22px;
-        scroll-padding: 0 5vw;
+        padding: 80px 5vw;
     }
 
     .related .product-visual {
@@ -3929,11 +3877,10 @@ body {
         padding: 0 20px;
         width: 100%;
         box-sizing: border-box;
-        margin-bottom: 20px;
     }
 
     .related-head .eyebrow {
-        margin-bottom: 0;
+        margin-bottom: 24px;
     }
 
     .related-grid,
@@ -3987,10 +3934,6 @@ body {
         gap: 8px;
         margin-top: 14px;
         padding: 0 20px;
-        flex-wrap: wrap;
-        max-width: 90vw;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .related-dot {

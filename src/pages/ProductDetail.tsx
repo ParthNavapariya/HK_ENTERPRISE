@@ -27,22 +27,21 @@ export default function ProductDetail({ category }: { category: string }) {
 
   useEffect(() => {
     setActiveImage(currentProduct.image)
-    window.scrollTo(0, 0)
   }, [currentProduct])
 
   const relatedProducts = useMemo(() => {
-    // Show all other products in the same category series (e.g. all other Bed Clamps)
-    const sameSeries = products.filter(
-      (p) =>
-        p.id !== currentProduct.id &&
-        p.category === currentProduct.category,
-    )
-
-    if (sameSeries.length > 0) {
-      return sameSeries
-    }
-
-    return products.filter((p) => p.id !== currentProduct.id)
+    return [
+      ...products.filter(
+        (p) =>
+          p.id !== currentProduct.id &&
+          p.category === currentProduct.category,
+      ),
+      ...products.filter(
+        (p) =>
+          p.id !== currentProduct.id &&
+          p.category !== currentProduct.category,
+      ),
+    ].slice(0, 3)
   }, [currentProduct])
 
   const relatedGridRef = useRef<HTMLDivElement>(null)
@@ -57,32 +56,26 @@ export default function ProductDetail({ category }: { category: string }) {
     }
   }, [currentProduct])
 
-  // Automatic smooth carousel slideshow on both desktop & mobile
+  // Automatic mobile carousel slideshow
   useEffect(() => {
     if (relatedProducts.length <= 1) return
 
     const timer = setInterval(() => {
-      if (isInteractingRef.current || !relatedGridRef.current) return
+      if (window.innerWidth > 900 || isInteractingRef.current) return
 
-      const container = relatedGridRef.current
-      const isMobile = window.innerWidth <= 860
-      const firstCard = container.querySelector<HTMLElement>("button")
-      const cardStep = firstCard
-        ? firstCard.offsetWidth + (isMobile ? 0 : 24)
-        : isMobile
-          ? container.clientWidth
-          : 340
-
-      const maxScroll = container.scrollWidth - container.clientWidth
-
-      // If at or near the end, loop back smoothly to the beginning
-      if (container.scrollLeft >= maxScroll - 20) {
-        container.scrollTo({ left: 0, behavior: "smooth" })
-        setRelatedIndex(0)
-      } else {
-        container.scrollBy({ left: cardStep, behavior: "smooth" })
-      }
-    }, 3400)
+      setRelatedIndex((prev) => {
+        const next = (prev + 1) % relatedProducts.length
+        if (relatedGridRef.current) {
+          const container = relatedGridRef.current
+          const cardWidth = container.clientWidth
+          container.scrollTo({
+            left: next * cardWidth,
+            behavior: "smooth",
+          })
+        }
+        return next
+      })
+    }, 3500)
 
     return () => clearInterval(timer)
   }, [relatedProducts])
@@ -90,16 +83,9 @@ export default function ProductDetail({ category }: { category: string }) {
   const handleRelatedScroll = () => {
     if (!relatedGridRef.current) return
     const container = relatedGridRef.current
-    const isMobile = window.innerWidth <= 860
-    const firstCard = container.querySelector<HTMLElement>("button")
-    const cardStep = firstCard
-      ? firstCard.offsetWidth + (isMobile ? 0 : 24)
-      : isMobile
-        ? container.clientWidth
-        : 340
-
-    if (cardStep > 0) {
-      const idx = Math.round(container.scrollLeft / cardStep)
+    const cardWidth = container.clientWidth
+    if (cardWidth > 0) {
+      const idx = Math.round(container.scrollLeft / cardWidth)
       if (idx !== relatedIndex && idx >= 0 && idx < relatedProducts.length) {
         setRelatedIndex(idx)
       }
@@ -411,18 +397,12 @@ export default function ProductDetail({ category }: { category: string }) {
 
       <section className="related">
         <div className="related-head">
-          <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
+          <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
         </div>
         <div
           className="related-grid"
           ref={relatedGridRef}
           onScroll={handleRelatedScroll}
-          onMouseEnter={() => {
-            isInteractingRef.current = true
-          }}
-          onMouseLeave={() => {
-            isInteractingRef.current = false
-          }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -437,10 +417,26 @@ export default function ProductDetail({ category }: { category: string }) {
                 image={p.image}
                 productCode={p.code}
               />
-              <div className="related-card-footer">
-                <strong>{p.name}</strong>
-              </div>
+              <strong>{p.name}</strong>
+              <Icon name="arrow" />
             </button>
+          ))}
+        </div>
+        <div className="related-dots" aria-hidden="true">
+          {relatedProducts.map((_, idx) => (
+            <span
+              key={idx}
+              className={`related-dot ${idx === relatedIndex ? "active" : ""}`}
+              onClick={() => {
+                setRelatedIndex(idx)
+                if (relatedGridRef.current) {
+                  relatedGridRef.current.scrollTo({
+                    left: idx * relatedGridRef.current.clientWidth,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+            />
           ))}
         </div>
       </section>
