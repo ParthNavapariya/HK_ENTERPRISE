@@ -194,7 +194,7 @@ export default function LogoIntro({ onIntroFinish }: LogoIntroProps) {
         {/* Typography */}
         <div ref={textRef} className="logo-intro-brand-wrap">
           <span className="logo-intro-name">HK ENTERPRISE</span>
-          <span className="logo-intro-tagline">PRECISION IN EVERY DETAIL</span>
+          <span className="logo-intro-tagline">Mfg. of Furniture Accessories</span>
         </div>
       </div>
     </div>
