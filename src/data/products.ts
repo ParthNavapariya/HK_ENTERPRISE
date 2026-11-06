@@ -583,10 +583,8 @@ export const products: ProductItem[] = [
       "Heavy-duty 3” stone hinges engineered for compact furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
     descriptionGu: "હેવી-ડ્યુટી ૩” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
-    size: "3 Inch",
     thickness: "Regular",
     features: [
-      "Size: 3 Inch",
       "3” stone hinges leaf design",
       "Finishing: White Zinc Plated",
       "Asymmetric stone & timber mounting holes",
