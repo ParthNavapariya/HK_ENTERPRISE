@@ -310,6 +310,7 @@ export default function ProductDetail({ category }: { category: string }) {
     `• *Product Code:* ${currentProduct.code || currentProduct.category}\n` +
     `• *Category:* ${currentProduct.category} Series\n` +
     (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
+    (currentProduct.size ? `• *Size:* ${currentProduct.size}\n` : "") +
     (currentProduct.boltSize ? `• *Bolt Size:* ${currentProduct.boltSize}\n` : "") +
     (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
     (currentProduct.available ? `• *Available:* ${currentProduct.available}\n` : "") +
@@ -406,6 +407,12 @@ export default function ProductDetail({ category }: { category: string }) {
             <span>FINISH & DETAILS</span>
             <p>
               <strong>Finish:</strong> {currentProduct.finish || "Rust-Resistant Passivated"}
+              {currentProduct.size && (
+                <>
+                  <br />
+                  <strong>Size:</strong> {currentProduct.size}
+                </>
+              )}
               {currentProduct.boltSize && (
                 <>
                   <br />

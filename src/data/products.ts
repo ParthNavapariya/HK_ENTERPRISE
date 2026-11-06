@@ -469,6 +469,7 @@ export const products: ProductItem[] = [
     descriptionGu:
       "૨-ઇંચ સાઇઝની પ્રિસિઝન સ્મોલ બટ્ટ હિંગ્સ, કેબિનેટ અને લાકડાના દરવાજા માટે સ્મૂથ મૂવમેન્ટ અને નિકલ પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "Nickel Plated",
+    size: "2 Inch",
     thickness: "Regular",
     features: [
       "Size: 2 inch",
@@ -487,8 +488,8 @@ export const products: ProductItem[] = [
   {
     id: "hg-03",
     code: "HK-HG-403",
-    name: "Table Hinges 1ll x 1ll",
-    nameGu: "ટેબલ હિંગ્સ 1ll x 1ll",
+    name: "Table Hinges",
+    nameGu: "ટેબલ હિંગ્સ",
     category: "Hinges",
     categoryName: "Hinges Series",
     note: "1ll x 1ll folding table hinges with precision countersunk holes in white zinc plated finish.",
@@ -497,10 +498,11 @@ export const products: ProductItem[] = [
     descriptionGu:
       "1ll x 1ll સાઇઝની ફોલ્ડિંગ ટેબલ હિંગ્સ, ડ્રોપ-લીફ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
+    size: "1ll x 1ll",
     thickness: "Regular",
     features: [
-      "Compact 1ll x 1ll square leaf profile",
-      "Finishing: White zinc plated",
+      "Size: 1ll x 1ll",
+      "Finishing: White Zinc Plated",
       "Countersunk screw mounting holes",
       "Smooth 180° flush folding action",
       "High-tensile center pivot pin",
@@ -525,10 +527,11 @@ export const products: ProductItem[] = [
     descriptionGu:
       "૨” x ૨” સાઇઝની હેવી ડ્યુટી ફોલ્ડિંગ ટેબલ હિંગ્સ, મોટા ડાઇનિંગ ટેબલ અને મોડ્યુલર ફર્નિચર માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
+    size: "2” x 2”",
     thickness: "Regular",
     features: [
-      "Broad 2” x 2” load-bearing leaf area",
-      "Finishing: White zinc plated",
+      "Size: 2” x 2”",
+      "Finishing: White Zinc Plated",
       "Precision countersunk screw holes",
       "Zero-sag reinforced pivot barrel",
       "Smooth 180° flush folding action",
@@ -552,10 +555,12 @@ export const products: ProductItem[] = [
       "Heavy-duty 4” stone hinges engineered for furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
     descriptionGu: "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
+    size: "4 Inch",
     thickness: "Regular",
     features: [
+      "Size: 4 Inch",
       "4” stone hinges leaf design",
-      "Finishing: White zinc plated",
+      "Finishing: White Zinc Plated",
       "Asymmetric stone & timber mounting holes",
       "Smooth knuckle movement",
       "Heavy-gauge rigid structural construction",
@@ -580,8 +585,10 @@ export const products: ProductItem[] = [
       "Heavy-duty 4” stone hinges engineered for furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
     descriptionGu: "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
+    size: "4 Inch",
     thickness: "Regular",
     features: [
+      "Size: 4 Inch",
       "4” stone hinges leaf design",
       "Finishing: White Zinc Plated",
       "Asymmetric stone & timber mounting holes",

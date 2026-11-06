@@ -19,6 +19,7 @@ export interface ProductItem {
   description?: string
   descriptionGu?: string
   finish?: string
+  size?: string
   thickness?: string
   boltSize?: string
   available?: string
