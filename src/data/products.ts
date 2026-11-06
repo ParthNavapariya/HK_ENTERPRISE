@@ -576,20 +576,20 @@ export const products: ProductItem[] = [
   {
     id: "hg-06",
     code: "HK-HG-406",
-    name: "4” Stone Hinges",
-    nameGu: "૪” સ્ટોન હિંગ્સ",
+    name: "3” Stone Hinges",
+    nameGu: "૩” સ્ટોન હિંગ્સ",
     category: "Hinges",
     categoryName: "Hinges Series",
-    note: "4-inch stone hinges with asymmetric mounting hole layout for stone, granite, and timber frames in white zinc plated finish.",
+    note: "3-inch stone hinges with asymmetric mounting hole layout for stone, granite, and timber frames in white zinc plated finish.",
     description:
-      "Heavy-duty 4” stone hinges engineered for furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
-    descriptionGu: "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+      "Heavy-duty 3” stone hinges engineered for compact furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
+    descriptionGu: "હેવી-ડ્યુટી ૩” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
-    size: "4 Inch",
+    size: "3 Inch",
     thickness: "Regular",
     features: [
-      "Size: 4 Inch",
-      "4” stone hinges leaf design",
+      "Size: 3 Inch",
+      "3” stone hinges leaf design",
       "Finishing: White Zinc Plated",
       "Asymmetric stone & timber mounting holes",
       "Smooth knuckle pin operation",
@@ -601,7 +601,7 @@ export const products: ProductItem[] = [
       "/products/hinges/hinges-3.jpg",
       "/products/hinges/hinges-2.jpg",
     ],
-    badge: "4” Stone / White Zinc",
+    badge: "3” Stone / White Zinc",
   },
 
   // --- 04. L CORNER SERIES ---
