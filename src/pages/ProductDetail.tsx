@@ -57,26 +57,32 @@ export default function ProductDetail({ category }: { category: string }) {
     }
   }, [currentProduct])
 
-  // Automatic mobile carousel slideshow
+  // Automatic smooth carousel slideshow on both desktop & mobile
   useEffect(() => {
     if (relatedProducts.length <= 1) return
 
     const timer = setInterval(() => {
-      if (window.innerWidth > 900 || isInteractingRef.current) return
+      if (isInteractingRef.current || !relatedGridRef.current) return
 
-      setRelatedIndex((prev) => {
-        const next = (prev + 1) % relatedProducts.length
-        if (relatedGridRef.current) {
-          const container = relatedGridRef.current
-          const cardWidth = container.clientWidth
-          container.scrollTo({
-            left: next * cardWidth,
-            behavior: "smooth",
-          })
-        }
-        return next
-      })
-    }, 3500)
+      const container = relatedGridRef.current
+      const isMobile = window.innerWidth <= 860
+      const firstCard = container.querySelector<HTMLElement>("button")
+      const cardStep = firstCard
+        ? firstCard.offsetWidth + (isMobile ? 0 : 28)
+        : isMobile
+          ? container.clientWidth
+          : 360
+
+      const maxScroll = container.scrollWidth - container.clientWidth
+
+      // If at or near the end, loop back smoothly to the beginning
+      if (container.scrollLeft >= maxScroll - 15) {
+        container.scrollTo({ left: 0, behavior: "smooth" })
+        setRelatedIndex(0)
+      } else {
+        container.scrollBy({ left: cardStep, behavior: "smooth" })
+      }
+    }, 2800)
 
     return () => clearInterval(timer)
   }, [relatedProducts])
@@ -84,9 +90,16 @@ export default function ProductDetail({ category }: { category: string }) {
   const handleRelatedScroll = () => {
     if (!relatedGridRef.current) return
     const container = relatedGridRef.current
-    const cardWidth = container.clientWidth
-    if (cardWidth > 0) {
-      const idx = Math.round(container.scrollLeft / cardWidth)
+    const isMobile = window.innerWidth <= 860
+    const firstCard = container.querySelector<HTMLElement>("button")
+    const cardStep = firstCard
+      ? firstCard.offsetWidth + (isMobile ? 0 : 28)
+      : isMobile
+        ? container.clientWidth
+        : 360
+
+    if (cardStep > 0) {
+      const idx = Math.round(container.scrollLeft / cardStep)
       if (idx !== relatedIndex && idx >= 0 && idx < relatedProducts.length) {
         setRelatedIndex(idx)
       }
@@ -101,22 +114,6 @@ export default function ProductDetail({ category }: { category: string }) {
     setTimeout(() => {
       isInteractingRef.current = false
     }, 2500)
-  }
-
-  const handlePrevSlide = () => {
-    if (relatedGridRef.current) {
-      const container = relatedGridRef.current
-      const scrollStep = container.clientWidth > 860 ? 380 : container.clientWidth
-      container.scrollBy({ left: -scrollStep, behavior: "smooth" })
-    }
-  }
-
-  const handleNextSlide = () => {
-    if (relatedGridRef.current) {
-      const container = relatedGridRef.current
-      const scrollStep = container.clientWidth > 860 ? 380 : container.clientWidth
-      container.scrollBy({ left: scrollStep, behavior: "smooth" })
-    }
   }
 
   useEffect(() => {
@@ -415,29 +412,17 @@ export default function ProductDetail({ category }: { category: string }) {
       <section className="related">
         <div className="related-head">
           <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
-          <div className="related-nav-arrows">
-            <button
-              type="button"
-              className="related-arrow-btn"
-              onClick={handlePrevSlide}
-              aria-label="Previous hardware"
-            >
-              <Icon name="arrow" style={{ transform: "rotate(180deg)" }} />
-            </button>
-            <button
-              type="button"
-              className="related-arrow-btn"
-              onClick={handleNextSlide}
-              aria-label="Next hardware"
-            >
-              <Icon name="arrow" />
-            </button>
-          </div>
         </div>
         <div
           className="related-grid"
           ref={relatedGridRef}
           onScroll={handleRelatedScroll}
+          onMouseEnter={() => {
+            isInteractingRef.current = true
+          }}
+          onMouseLeave={() => {
+            isInteractingRef.current = false
+          }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
