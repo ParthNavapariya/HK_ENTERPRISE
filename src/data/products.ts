@@ -353,11 +353,13 @@ export const products: ProductItem[] = [
     description:
       "Precision 6-inch heavy-duty bed socket engineered for rigid, knock-down modular bed assembly. Available in golden zinc plated and powder coated finishes for superior corrosion protection.",
     descriptionGu: "૬-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    finish: "Golden Zinc Plated / Powder Coated",
+    finish: "Golden Zinc Plated, Powder Coated",
+    size: "6 Inch",
     thickness: "Regular",
     features: [
+      "Size: 6 Inch",
+      "Finishing: Golden Zinc Plated, Powder Coated",
       "6-inch heavy-duty interlocking profile",
-      "Finishing: Golden zinc plated & Powder coated",
       "Precision countersunk screw mounting holes",
       "Zero-play interlocking tongue and hook",
       "Effortless modular knock-down assembly",
