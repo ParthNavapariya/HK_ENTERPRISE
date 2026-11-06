@@ -36,20 +36,21 @@ export const products: ProductItem[] = [
   {
     id: "bc-01",
     code: "HK-BC-101",
-    name: "1” Bed Clamp (Capsule Hole)",
-    nameGu: "૧” બેડ ક્લેમ્પ (કેપ્સ્યુલ હોલ)",
+    name: "1ll clamp (capsule hole)",
+    nameGu: "1ll ક્લેમ્પ (કેપ્સ્યુલ હોલ)",
     category: "Bed Clamp",
     categoryName: "Bed Clamp Series",
-    note: "1” bed clamp with 5 Aani bolt, elongated capsule hole, and white zinc plated finish.",
+    note: "1ll clamp with 5 Aani bolt, elongated capsule hole, and white zinc plated finish.",
     description:
-      "Precision-formed 1” corner clamp equipped with 5 Aani bolt and elongated capsule slot, engineered with a rust-resistant white zinc plated finish for rigid, zero-squeak bed joinery.",
-    descriptionGu: "૫ આની બોલ્ટ, કેપ્સ્યુલ હોલ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ વાળો ૧” ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમ માટે અવાજ વગર મજબૂત રાખે છે.",
+      "Precision-formed 1ll corner clamp equipped with 5 Aani bolt and elongated capsule slot, engineered with a rust-resistant white zinc plated finish for rigid, zero-squeak bed joinery.",
+    descriptionGu: "૫ આની બોલ્ટ, કેપ્સ્યુલ હોલ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ વાળો 1ll ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમ માટે અવાજ વગર મજબૂત રાખે છે.",
     finish: "White Zinc Plated",
+    boltSize: "5 Aani Bolt",
     thickness: "Regular",
     features: [
-      "5 Aani precision bolt",
+      "Bolt size: 5 Aani bolt",
       "Elongated capsule hole for micro-alignment",
-      "White zinc plated anti-rust finish",
+      "Finishing: White Zinc Plated",
       "Rigid zero-squeak corner lockup",
     ],
     image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
@@ -59,7 +60,7 @@ export const products: ProductItem[] = [
       "/products/bed-clamp/bed-clamp-2.jpg",
       "/products/bed-clamp/bed-clamp-1.jpg",
     ],
-    badge: "1\" / Capsule Hole",
+    badge: "5 Aani / Capsule Hole",
   },
   {
     id: "bc-02",
@@ -127,6 +128,7 @@ export const products: ProductItem[] = [
       "Heavy-duty 7-inch bed clamp with twin adjustment slots and 5 Aani bolts. Available across Light, Medium, and Heavy thickness gauges with durable rust-proof white zinc plated and powder coated finishes.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ત્રણેય ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "White Zinc Plated, Powder Coated",
+    boltSize: "5 Aani Bolt",
     thickness: "Light, Medium, Heavy",
     features: [
       "Bolt size: 5 Aani bolt",
@@ -181,6 +183,7 @@ export const products: ProductItem[] = [
       "Heavy-duty 7-inch bed clamp engineered with 5 Aani bolt and rigid construction across Medium and Heavy gauges with protective rust-resistant white zinc plating.",
     descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
     finish: "White Zinc Plated",
+    boltSize: "5 Aani Bolt",
     thickness: "Medium, Heavy",
     features: [
       "Bolt size: 5 Aani bolt",
