@@ -1890,7 +1890,7 @@ em {
 .related>div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
+    gap: 44px 2vw;
     width: 100%;
 }
 
@@ -1902,11 +1902,30 @@ em {
     cursor: pointer;
     padding: 0;
     position: relative;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.related-grid>button:hover,
+.related>div>button:hover {
+    transform: translateY(-4px);
+}
+
+.related-grid>button:hover .product-visual,
+.related>div>button:hover .product-visual {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(201, 164, 76, 0.35);
+}
+
+.related-grid>button:hover svg,
+.related>div>button:hover svg {
+    transform: translateX(4px);
+    color: var(--gold);
 }
 
 .related .product-visual {
     min-height: 310px;
     margin-bottom: 18px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .related strong {
@@ -1918,6 +1937,7 @@ em {
     position: absolute;
     right: 5px;
     bottom: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .related-dots {
@@ -3934,6 +3954,10 @@ body {
         gap: 8px;
         margin-top: 14px;
         padding: 0 20px;
+        flex-wrap: wrap;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .related-dot {

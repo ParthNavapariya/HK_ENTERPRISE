@@ -27,21 +27,22 @@ export default function ProductDetail({ category }: { category: string }) {
 
   useEffect(() => {
     setActiveImage(currentProduct.image)
+    window.scrollTo(0, 0)
   }, [currentProduct])
 
   const relatedProducts = useMemo(() => {
-    return [
-      ...products.filter(
-        (p) =>
-          p.id !== currentProduct.id &&
-          p.category === currentProduct.category,
-      ),
-      ...products.filter(
-        (p) =>
-          p.id !== currentProduct.id &&
-          p.category !== currentProduct.category,
-      ),
-    ].slice(0, 3)
+    // Show all other products in the same category series (e.g. all other Bed Clamps)
+    const sameSeries = products.filter(
+      (p) =>
+        p.id !== currentProduct.id &&
+        p.category === currentProduct.category,
+    )
+
+    if (sameSeries.length > 0) {
+      return sameSeries
+    }
+
+    return products.filter((p) => p.id !== currentProduct.id)
   }, [currentProduct])
 
   const relatedGridRef = useRef<HTMLDivElement>(null)
@@ -397,7 +398,7 @@ export default function ProductDetail({ category }: { category: string }) {
 
       <section className="related">
         <div className="related-head">
-          <Eyebrow>RELATED HARDWARE IN RANGE</Eyebrow>
+          <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
         </div>
         <div
           className="related-grid"
