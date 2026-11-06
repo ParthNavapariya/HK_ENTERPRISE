@@ -439,36 +439,8 @@ export default function ProductDetail({ category }: { category: string }) {
               />
               <div className="related-card-footer">
                 <strong>{p.name}</strong>
-                <span className="related-card-arrow" aria-hidden="true">
-                  <Icon name="arrow" />
-                </span>
               </div>
             </button>
-          ))}
-        </div>
-        <div className="related-dots" aria-hidden="true">
-          {relatedProducts.map((_, idx) => (
-            <span
-              key={idx}
-              className={`related-dot ${idx === relatedIndex ? "active" : ""}`}
-              onClick={() => {
-                setRelatedIndex(idx)
-                if (relatedGridRef.current) {
-                  const container = relatedGridRef.current
-                  const isMobile = window.innerWidth <= 860
-                  const firstCard = container.querySelector<HTMLElement>("button")
-                  const cardStep = firstCard
-                    ? firstCard.offsetWidth + (isMobile ? 0 : 24)
-                    : isMobile
-                      ? container.clientWidth
-                      : 340
-                  container.scrollTo({
-                    left: idx * cardStep,
-                    behavior: "smooth",
-                  })
-                }
-              }}
-            />
           ))}
         </div>
       </section>

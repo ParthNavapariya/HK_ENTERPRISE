@@ -1944,10 +1944,7 @@ em {
 }
 
 .related-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
+    display: block;
     padding: 2px 2px 0;
     width: 100%;
     box-sizing: border-box;
@@ -1959,37 +1956,11 @@ em {
     color: var(--ink);
     line-height: 1.4;
     display: block;
-    flex: 1;
+    transition: color 0.3s ease;
 }
 
-.related-card-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(17, 19, 24, 0.05);
-    border: 1px solid rgba(17, 19, 24, 0.12);
-    color: var(--ink);
-    flex-shrink: 0;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.related-card-arrow svg {
-    width: 14px;
-    height: 14px;
-    transition: transform 0.3s ease;
-}
-
-.related-grid>button:hover .related-card-arrow {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: #0b0c10;
-}
-
-.related-grid>button:hover .related-card-arrow svg {
-    transform: translateX(3px);
+.related-grid>button:hover strong {
+    color: var(--gold);
 }
 
 .related-dots {
