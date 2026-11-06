@@ -311,7 +311,7 @@ export default function ProductDetail({ category }: { category: string }) {
     `• *Category:* ${currentProduct.category} Series\n` +
     (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
     (currentProduct.boltSize ? `• *Bolt Size:* ${currentProduct.boltSize}\n` : "") +
-    (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
+    (currentProduct.thickness ? `• *Available Thickness:* ${currentProduct.thickness}\n` : "") +
     (currentProduct.available ? `• *Available:* ${currentProduct.available}\n` : "") +
     `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`
   )}`
@@ -415,7 +415,7 @@ export default function ProductDetail({ category }: { category: string }) {
               {currentProduct.thickness && (
                 <>
                   <br />
-                  <strong>Thickness:</strong> {currentProduct.thickness}
+                  <strong>Available Thickness:</strong> {currentProduct.thickness}
                 </>
               )}
               {currentProduct.available && (
