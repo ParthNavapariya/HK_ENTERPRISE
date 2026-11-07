@@ -1912,8 +1912,10 @@ em {
 }
 
 .related-grid>button {
-    flex: 0 0 clamp(280px, 26vw, 340px);
-    width: clamp(280px, 26vw, 340px);
+    flex: 0 0 calc((100% - 48px) / 3);
+    width: calc((100% - 48px) / 3);
+    min-width: calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
     scroll-snap-align: start;
     border: 0;
     background: none;
@@ -1934,8 +1936,8 @@ em {
 }
 
 .related .product-visual {
-    min-height: 300px;
-    height: 300px;
+    min-height: 280px;
+    height: clamp(280px, 20vw, 340px);
     margin-bottom: 16px;
     border-radius: 8px;
     background: #0d0f14;
