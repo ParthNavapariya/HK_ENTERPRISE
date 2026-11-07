@@ -753,20 +753,21 @@ export const products: ProductItem[] = [
   {
     id: "lc-06",
     code: "HK-LC-306",
-    name: "Computer Table (Round Corner)",
-    nameGu: "કમ્પ્યુટર ટેબલ (રાઉન્ડ કોર્નર)",
+    name: "Computer Table Round Corner (1ll Inch)",
+    nameGu: "કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર (1ll Inch)",
     category: "L Corner",
     categoryName: "L Corner Series",
-    note: "1½ inch heavy-duty computer table round corner bracket in white zinc plated finish with reinforced dome gussets.",
+    note: "1ll inch heavy-duty computer table round corner bracket in zinc plated finish with reinforced dome gussets.",
     description:
-      "Heavy-gauge 1½ inch computer table round corner bracket engineered with twin domed reinforcement gussets and smooth radiused safety corners for computer desks, office tables, and rigid wooden furniture.",
-    descriptionGu: "૧.૫ ઇંચ (1½”) સાઇઝનો કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા અને ગોળ ખૂણાની સલામતી આપવા માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    finish: "White Zinc Plated",
+      "Heavy-gauge 1ll inch computer table round corner bracket engineered with twin domed reinforcement gussets and smooth radiused safety corners for computer desks, office tables, and rigid wooden furniture.",
+    descriptionGu: "1ll inch સાઇઝનો કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા અને ગોળ ખૂણાની સલામતી આપવા માટે ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    finish: "Zinc Plated",
+    size: "1ll Inch",
     thickness: "Regular",
     features: [
-      "Size: 1½ inch (1.5\")",
+      "Size: 1ll Inch",
+      "Finishing: Zinc Plated",
       "Profile: Smooth round safety corner",
-      "Finishing: Zinc plated (White Zinc)",
       "Twin deep domed reinforcement gussets",
       "Countersunk 4-hole screw mounting",
     ],
@@ -775,7 +776,7 @@ export const products: ProductItem[] = [
       "/products/l-corner/l-corner-6.jpg",
       "/products/l-corner/l-corner-4.jpg",
     ],
-    badge: "1½” Round / Zinc Plated",
+    badge: "1ll Inch Round / Zinc Plated",
   },
 
   // --- 05. BED FITTINGS SERIES ---
