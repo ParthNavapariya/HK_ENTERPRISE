@@ -272,10 +272,11 @@ export const products: ProductItem[] = [
       "Heavy-duty 4-inch bed clamp engineered for rigid furniture and bed joint reinforcement with durable rust-resistant white zinc plating.",
     descriptionGu: "૪-ઇંચ સાઇઝનો મજબૂત બેડ ક્લેમ્પ, ફર્નિચર અને બેડના જોઈન્ટ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
+    size: "4 Inch",
     thickness: "Regular",
     features: [
-      "Size: 4 inch",
-      "Finishing: White zinc plated",
+      "Size: 4 Inch",
+      "Finishing: White Zinc Plated",
       "4 perimeter countersunk screw holes",
       "Center locking bolt aperture",
       "Rigid vibration-free joint reinforcement",
