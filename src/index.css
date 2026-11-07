@@ -1893,30 +1893,33 @@ em {
     margin-bottom: 0;
 }
 
-.related-grid {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    gap: 24px;
-    width: 100%;
-    padding: 10px max(24px, 8.5vw) 24px;
-    scroll-padding: 0 max(24px, 8.5vw);
-    scrollbar-width: none;
-    scroll-behavior: smooth;
+.related-viewport {
+    margin: 0 max(24px, 8.5vw);
+    overflow: hidden;
+    position: relative;
     box-sizing: border-box;
 }
 
-.related-grid::-webkit-scrollbar {
-    display: none;
+.related-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    box-sizing: border-box;
 }
 
-.related-grid>button {
-    flex: 0 0 calc((100% - 48px) / 3);
-    width: calc((100% - 48px) / 3);
-    min-width: calc((100% - 48px) / 3);
-    max-width: calc((100% - 48px) / 3);
-    scroll-snap-align: start;
+.related-page {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    box-sizing: border-box;
+    padding: 6px 0 16px;
+}
+
+.related-card {
     border: 0;
     background: none;
     text-align: left;
@@ -1924,18 +1927,15 @@ em {
     padding: 0;
     position: relative;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.related-grid>button:hover {
+.related-card:hover {
     transform: translateY(-5px);
 }
 
-.related-grid>button:hover .product-visual {
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
-    border-color: rgba(201, 164, 76, 0.45);
-}
-
-.related .product-visual {
+.related-card .product-visual {
     min-height: 280px;
     height: clamp(280px, 20vw, 340px);
     margin-bottom: 16px;
@@ -1943,6 +1943,12 @@ em {
     background: #0d0f14;
     overflow: hidden;
     transition: box-shadow 0.35s ease, border-color 0.35s ease;
+    width: 100%;
+}
+
+.related-card:hover .product-visual {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+    border-color: rgba(201, 164, 76, 0.45);
 }
 
 .related-card-title {
@@ -1961,12 +1967,33 @@ em {
     transition: color 0.3s ease;
 }
 
-.related-grid>button:hover .related-card-title strong {
+.related-card:hover .related-card-title strong {
     color: var(--gold);
 }
 
 .related-dots {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.related-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(17, 19, 24, 0.22);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.related-dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--gold, #c9a44c);
 }
 
 .industry-list {
@@ -3271,7 +3298,12 @@ body {
     }
 
     .related {
-        padding: 80px 5vw;
+        padding: 80px 0;
+    }
+
+    .related-head,
+    .related-viewport {
+        margin: 0 5vw;
     }
 
     .related .product-visual {
@@ -3912,63 +3944,51 @@ body {
     }
 
     .related {
-        padding: 70px 0;
+        padding: 60px 0 70px;
         overflow: hidden;
         width: 100%;
         box-sizing: border-box;
     }
 
     .related-head {
-        padding: 0 20px;
-        width: 100%;
+        margin: 0 20px 20px;
+        padding: 0;
+        width: auto;
         box-sizing: border-box;
     }
 
     .related-head .eyebrow {
-        margin-bottom: 24px;
+        margin-bottom: 0;
     }
 
-    .related-grid,
-    .related > div {
+    .related-viewport {
+        margin: 0 20px;
+        overflow: hidden;
+        width: auto;
+    }
+
+    .related-track {
         display: flex;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        gap: 0;
-        padding: 4px 0 16px;
         width: 100%;
-        box-sizing: border-box;
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .related-grid::-webkit-scrollbar,
-    .related > div::-webkit-scrollbar {
-        display: none;
-    }
-
-    .related-grid > button,
-    .related > div > button {
+    .related-page {
         flex: 0 0 100%;
         width: 100%;
         min-width: 100%;
         max-width: 100%;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-        padding: 0 20px;
-        box-sizing: border-box;
-        border: 0;
-        background: none;
-        text-align: left;
-        cursor: pointer;
-        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 4px 0 10px;
     }
 
-    .related-grid .product-visual,
-    .related .product-visual {
-        min-height: 280px;
-        height: 280px;
+    .related-card .product-visual {
+        min-height: 270px;
+        height: 270px;
         width: 100%;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         border-radius: 8px;
     }
 
@@ -3977,7 +3997,7 @@ body {
         justify-content: center;
         align-items: center;
         gap: 8px;
-        margin-top: 14px;
+        margin-top: 16px;
         padding: 0 20px;
     }
 

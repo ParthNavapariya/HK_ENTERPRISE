@@ -43,96 +43,70 @@ export default function ProductDetail({ category }: { category: string }) {
     return products.filter((p) => p.id !== currentProduct.id)
   }, [currentProduct])
 
-  const relatedGridRef = useRef<HTMLDivElement>(null)
-  const activeIndexRef = useRef(0)
-  const isInteractingRef = useRef(false)
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false,
+  )
 
-  // Reset related carousel on product change
   useEffect(() => {
-    activeIndexRef.current = 0
-    if (relatedGridRef.current) {
-      relatedGridRef.current.scrollTo({ left: 0, behavior: "instant" })
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
     }
-  }, [currentProduct])
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-  // Track scroll position to keep activeIndexRef in sync on manual swipe
-  const handleRelatedScroll = () => {
-    if (!relatedGridRef.current) return
-    const container = relatedGridRef.current
-    const cards = container.querySelectorAll<HTMLElement>("button")
-    if (!cards.length) return
+  const itemsPerPage = isMobile ? 1 : 3
 
-    const containerPaddingLeft =
-      parseFloat(window.getComputedStyle(container).paddingLeft) || 0
+  const relatedPages = useMemo(() => {
+    const chunks: (typeof relatedProducts)[] = []
+    for (let i = 0; i < relatedProducts.length; i += itemsPerPage) {
+      chunks.push(relatedProducts.slice(i, i + itemsPerPage))
+    }
+    return chunks
+  }, [relatedProducts, itemsPerPage])
 
-    let closestIdx = 0
-    let minDiff = Infinity
+  const [currentPage, setCurrentPage] = useState(0)
+  const isInteractingRef = useRef(false)
+  const touchStartXRef = useRef<number | null>(null)
 
-    cards.forEach((card, idx) => {
-      const cardLeft = card.offsetLeft - container.offsetLeft - containerPaddingLeft
-      const diff = Math.abs(container.scrollLeft - cardLeft)
-      if (diff < minDiff) {
-        minDiff = diff
-        closestIdx = idx
-      }
-    })
-
-    activeIndexRef.current = closestIdx
-  }
-
-  // Automatic smooth one-by-one carousel on both desktop & mobile
+  // Reset page when current product changes or layout shifts
   useEffect(() => {
-    if (relatedProducts.length <= 1) return
+    setCurrentPage(0)
+  }, [currentProduct, itemsPerPage])
+
+  // Automatic smooth 3-by-3 slide transition
+  useEffect(() => {
+    if (relatedPages.length <= 1) return
 
     const timer = setInterval(() => {
-      if (isInteractingRef.current || !relatedGridRef.current) return
-
-      const container = relatedGridRef.current
-      const cards = container.querySelectorAll<HTMLElement>("button")
-      if (!cards.length) return
-
-      const containerPaddingLeft =
-        parseFloat(window.getComputedStyle(container).paddingLeft) || 0
-      const maxScroll = container.scrollWidth - container.clientWidth
-
-      // If at or near the end of scrolling track, loop back to the first card
-      if (container.scrollLeft >= maxScroll - 15) {
-        activeIndexRef.current = 0
-        container.scrollTo({ left: 0, behavior: "smooth" })
-        return
-      }
-
-      // Advance by EXACTLY one card (one-by-one)
-      let nextIndex = activeIndexRef.current + 1
-      if (nextIndex >= cards.length) {
-        nextIndex = 0
-      }
-
-      const targetCard = cards[nextIndex]
-      if (!targetCard) return
-
-      const targetScrollLeft =
-        targetCard.offsetLeft - container.offsetLeft - containerPaddingLeft
-
-      activeIndexRef.current = nextIndex
-
-      container.scrollTo({
-        left: Math.max(0, targetScrollLeft),
-        behavior: "smooth",
-      })
-    }, 3200)
+      if (isInteractingRef.current) return
+      setCurrentPage((prev) => (prev + 1) % relatedPages.length)
+    }, 4200)
 
     return () => clearInterval(timer)
-  }, [relatedProducts])
+  }, [relatedPages.length])
 
-  const handleTouchStart = () => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     isInteractingRef.current = true
+    touchStartXRef.current = e.touches[0].clientX
   }
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current !== null) {
+      const touchEndX = e.changedTouches[0].clientX
+      const diff = touchStartXRef.current - touchEndX
+      if (diff > 45) {
+        // Swipe left -> next page
+        setCurrentPage((prev) => (prev + 1) % relatedPages.length)
+      } else if (diff < -45) {
+        // Swipe right -> prev page
+        setCurrentPage((prev) => (prev - 1 + relatedPages.length) % relatedPages.length)
+      }
+    }
+    touchStartXRef.current = null
     setTimeout(() => {
       isInteractingRef.current = false
-    }, 2500)
+    }, 2000)
   }
 
   useEffect(() => {
@@ -447,9 +421,7 @@ export default function ProductDetail({ category }: { category: string }) {
           <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
         </div>
         <div
-          className="related-grid"
-          ref={relatedGridRef}
-          onScroll={handleRelatedScroll}
+          className="related-viewport"
           onMouseEnter={() => {
             isInteractingRef.current = true
           }}
@@ -459,23 +431,48 @@ export default function ProductDetail({ category }: { category: string }) {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {relatedProducts.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => navigate("detail", p.id)}
-            >
-              <ProductVisual
-                category={p.category}
-                light
-                image={p.image}
-                productCode={p.code}
-              />
-              <div className="related-card-title">
-                <strong>{p.name}</strong>
+          <div
+            className="related-track"
+            style={{ transform: `translateX(-${currentPage * 100}%)` }}
+          >
+            {relatedPages.map((page, pageIdx) => (
+              <div className="related-page" key={pageIdx}>
+                {page.map((p) => (
+                  <button
+                    key={p.id}
+                    className="related-card"
+                    onClick={() => navigate("detail", p.id)}
+                  >
+                    <ProductVisual
+                      category={p.category}
+                      light
+                      image={p.image}
+                      productCode={p.code}
+                    />
+                    <div className="related-card-title">
+                      <strong>{p.name}</strong>
+                    </div>
+                  </button>
+                ))}
               </div>
-            </button>
-          ))}
+            ))}
+          </div>
         </div>
+        {relatedPages.length > 1 && (
+          <div className="related-dots" role="tablist" aria-label="Related products pagination">
+            {relatedPages.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                role="tab"
+                aria-selected={idx === currentPage}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`related-dot ${idx === currentPage ? "active" : ""}`}
+                onClick={() => setCurrentPage(idx)}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {zoomOpen && (
