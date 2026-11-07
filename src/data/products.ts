@@ -299,11 +299,11 @@ export const products: ProductItem[] = [
     description:
       "Precision interlocking bed connector pair engineered for seamless, flush-mount knock-down bed frames, headboards, and modular furniture. Available in powder coated and zinc plated finishes for superior joint stability.",
     descriptionGu: "મોડ્યુલર બેડ ફ્રેમ, હેડબોર્ડ અને ફર્નિચર માટે ઇન્ટરલોકિંગ બેડ કનેક્ટર જોડી, પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં સરળ ફીટિંગ અને અવાજ-મુક્ત જોઈન્ટ સાથે ઉપલબ્ધ.",
-    finish: "Powder Coated / Zinc Plated",
+    finish: "Powder Coated, Zinc Plated",
     thickness: "Regular",
     features: [
+      "Finishing: Powder Coated, Zinc Plated",
       "Modular interlocking slide-lock design",
-      "Finishing: Powder coated & Zinc plated",
       "Flush-mount concealed profile",
       "Multi-hole countersunk screw layout",
       "Tool-free knock-down bed assembly",
