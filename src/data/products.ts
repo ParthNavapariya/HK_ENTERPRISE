@@ -621,11 +621,12 @@ export const products: ProductItem[] = [
     description:
       "Precision 1” x 1” 90-degree L-corner bracket engineered for modular furniture, cabinetry, and wooden framing. Available in powder coated and zinc plated finishes for durable corner joint stability.",
     descriptionGu: "૧” x ૧” સાઇઝનો પ્રિસિઝન એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર મજબૂત રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    finish: "Powder Coated / Zinc Plated",
+    finish: "Powder Coated, Zinc Plated",
+    size: "1” x 1”",
     thickness: "Regular",
     features: [
       "Size: 1” x 1”",
-      "Finishing: Powder coated & Zinc plated",
+      "Finishing: Powder Coated, Zinc Plated",
       "Countersunk screw mounting holes",
       "Hydraulic pressed true 90° bend",
       "Smooth deburred safety edges",
