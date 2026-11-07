@@ -899,8 +899,8 @@ export const products: ProductItem[] = [
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
+      "Finishing: White Zinc Plated",
       "Precision 3-hole alignment layout",
-      "Finishing: White zinc plated",
       "High tensile flex and impact resistance",
       "Corrosion-resistant anti-rust protection",
     ],
