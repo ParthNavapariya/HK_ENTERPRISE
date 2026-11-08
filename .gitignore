@@ -12,6 +12,7 @@ logs/
 *.log
 .claude-replay.*
 .tmp-*
-/.figma/design-context/
+.figma/
+/.figma/
 /.plugins/
 /.opencode-skills/

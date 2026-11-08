@@ -12,126 +12,134 @@ export default function About() {
   const containerRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (reduced) return
 
-    const ctx = gsap.context(() => {
-      const root = containerRef.current
-      if (!root) return
+    const ctx = gsap.context(
+      () => {
+        const root = containerRef.current
+        if (!root) return
 
-      // 1. Animate .about-intro
-      const intro = root.querySelector(".about-intro")
-      if (intro) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: intro,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(intro.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
-            intro.querySelector("h2"),
-            {
+        // 1. Animate .about-intro
+        const intro = root.querySelector(".about-intro")
+        if (intro) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: intro,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(intro.querySelector(".eyebrow"), {
               opacity: 0,
-              y: 40,
-              duration: 0.8,
+              y: 20,
+              duration: 0.6,
               ease: "power3.out",
-            },
-            "-=0.35",
-          )
-          .from(
-            intro.querySelectorAll(".split-copy p, .about-motto"),
-            {
+            })
+            .from(
+              intro.querySelector("h2"),
+              {
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                ease: "power3.out",
+              },
+              "-=0.35",
+            )
+            .from(
+              intro.querySelectorAll(".split-copy p, .about-motto"),
+              {
+                opacity: 0,
+                y: 25,
+                stagger: 0.12,
+                duration: 0.7,
+                ease: "power3.out",
+              },
+              "-=0.5",
+            )
+        }
+
+        // 2. Animate .quality-section
+        const quality = root.querySelector(".quality-section")
+        if (quality) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: quality,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(quality.querySelector(".eyebrow"), {
               opacity: 0,
-              y: 25,
-              stagger: 0.12,
+              y: 20,
+              duration: 0.6,
+              ease: "power3.out",
+            })
+            .from(
+              quality.querySelector("h2"),
+              {
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                ease: "power3.out",
+              },
+              "-=0.35",
+            )
+            .from(
+              quality.querySelectorAll(".quality-list article"),
+              {
+                opacity: 0,
+                y: 25,
+                stagger: 0.12,
+                duration: 0.7,
+                ease: "power3.out",
+              },
+              "-=0.5",
+            )
+        }
+
+        // 3. Animate .wide-cta
+        const wideCta = root.querySelector(".wide-cta")
+        if (wideCta) {
+          const btn = wideCta.querySelector<HTMLElement>(".btn")
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: wideCta,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(wideCta.querySelector("h2"), {
+              opacity: 0,
+              y: 30,
               duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.5",
-          )
-      }
-
-      // 2. Animate .quality-section
-      const quality = root.querySelector(".quality-section")
-      if (quality) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: quality,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(quality.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
-            quality.querySelector("h2"),
-            {
-              opacity: 0,
-              y: 40,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.35",
-          )
-          .from(
-            quality.querySelectorAll(".quality-list article"),
-            {
-              opacity: 0,
-              y: 25,
-              stagger: 0.12,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.5",
-          )
-      }
-
-      // 3. Animate .wide-cta
-      const wideCta = root.querySelector(".wide-cta")
-      if (wideCta) {
-        const btn = wideCta.querySelector<HTMLElement>(".btn")
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: wideCta,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(wideCta.querySelector("h2"), {
-            opacity: 0,
-            y: 30,
-            duration: 0.7,
-            ease: "power2.out",
-          })
-          .from(
-            btn,
-            {
-              opacity: 0,
-              x: 30,
-              duration: 0.65,
               ease: "power2.out",
-              clearProps: "transform,opacity",
-            },
-            "-=0.4",
-          )
-      }
+            })
+            .from(
+              btn,
+              {
+                opacity: 0,
+                x: 30,
+                duration: 0.65,
+                ease: "power2.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.4",
+            )
+        }
 
-      // Refresh ScrollTrigger markers so measurements match current layout
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh()
-      })
-    }, containerRef)
+        // Refresh ScrollTrigger markers so measurements match current layout
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh()
+        })
+      },
+      containerRef,
+    )
 
     return () => ctx.revert()
   }, [])
@@ -157,10 +165,15 @@ export default function About() {
           </h2>
           <div>
             <p>
-              At HK Enterprise, we bring precision and purpose to furniture hardware. We believe that even the smallest component plays an essential role in creating furniture that stands the test of time.
+              At HK Enterprise, we bring precision and purpose to furniture
+              hardware. We believe that even the smallest component plays an
+              essential role in creating furniture that stands the test of time.
             </p>
             <p>
-              With a focus on quality, functionality, and refined finishing, we serve furniture manufacturers, wholesalers, and hardware distributors with products designed to meet the demands of a dynamic industry.
+              With a focus on quality, functionality, and refined finishing, we
+              serve furniture manufacturers, wholesalers, and hardware
+              distributors with products designed to meet the demands of a
+              dynamic industry.
             </p>
             <div className="about-motto">
               <span>Built on quality.</span>

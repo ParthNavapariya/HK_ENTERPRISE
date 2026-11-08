@@ -1,3 +1,12 @@
+/**
+ * HK Enterprise - Hardware Product Catalog & Company Metadata
+ *
+ * This file serves as the single source of truth for:
+ * 1. Company contact info, operational timings, and WhatsApp endpoints
+ * 2. Hardware category definitions and hero cover images
+ * 3. Complete list of hardware products with technical specs, finishes, and image paths
+ * 4. Curated showcase products featured in interactive home page sequences
+ */
 import { Category, CompanyInfo, ProductItem } from "../types"
 
 export const COMPANY_INFO: CompanyInfo = {
@@ -9,7 +18,8 @@ export const COMPANY_INFO: CompanyInfo = {
   phoneDisplay: "+91 97237 71164",
   whatsappUrl:
     "https://wa.me/919723771164?text=Hello%20HK%20Enterprise,%20I%20am%20interested%20in%20your%20hardware%20products.",
-  address: "Bapunagar 10, Jilla Garden Main Road, Rajkot - 360002, Gujarat, India",
+  address:
+    "Bapunagar 10, Jilla Garden Main Road, Rajkot - 360002, Gujarat, India",
   hours: "Mon - Sat: 9:00 AM - 7:30 PM (Sunday Closed)",
 }
 
@@ -34,6 +44,82 @@ export const categoryImages: Record<Exclude<Category, "All">, string> = {
 export const products: ProductItem[] = [
   // --- 01. BED CLAMP SERIES ---
   {
+    id: "bc-04",
+    code: "HK-BC-104",
+    name: "7” Bed Clamp",
+    nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "7-inch bed clamp with 5 Aani bolt, available in Light, Medium, and Heavy gauge with White Zinc Plated and Powder Coated finishes.",
+    description:
+      "Heavy-duty 7-inch bed clamp with twin adjustment slots and 5 Aani bolts across Light, Medium, and Heavy thickness gauges with durable rust-resistant white zinc plating and powder coated finishes.",
+    descriptionGu:
+      "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. લાઈટ, મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ અને પાવડર કોટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
+    finish: "White Zinc Plated, Powder Coated",
+    boltSize: "5 Aani Bolt",
+    thickness: "Light, Medium, Heavy",
+    features: [
+      "Bolt size: 5 Aani bolt",
+      "Thickness: Light, Medium, Heavy",
+      "Finishing: White Zinc Plated, Powder Coated",
+      "Twin capsule locking slots with backing plate",
+    ],
+    image: "/products/bed-clamp/bed-clamp-3.jpg",
+    images: ["/products/bed-clamp/bed-clamp-3.jpg"],
+    badge: '7" / Zinc & Powder Coated',
+  },
+  {
+    id: "bc-06",
+    code: "HK-BC-106",
+    name: "7” Bed Clamp",
+    nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "7-inch bed clamp with 5 Aani bolt, available in Medium and Heavy gauge with protective white zinc plated finish.",
+    description:
+      "Heavy-duty 7-inch bed clamp engineered with 5 Aani bolt and rigid construction across Medium and Heavy gauges with durable white zinc plated finish.",
+    descriptionGu:
+      "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
+    finish: "White Zinc Plated",
+    boltSize: "5 Aani Bolt",
+    thickness: "Medium, Heavy",
+    features: [
+      "Bolt size: 5 Aani bolt",
+      "Thickness: Medium, Heavy",
+      "Finishing: White Zinc Plated",
+      "Deburred smooth edges & zero-squeak fit",
+    ],
+    image: "/products/bed-clamp/bed-clamp-4.jpg",
+    images: ["/products/bed-clamp/bed-clamp-4.jpg"],
+    badge: '7" / White Zinc',
+  },
+  {
+    id: "bc-07",
+    code: "HK-BC-107",
+    name: "1ll Bed Clamp",
+    nameGu: "1ll બેડ ક્લેમ્પ",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "1ll bed clamp with 5 Aani bolt, available in Medium and Heavy gauge with protective white zinc plated finish.",
+    description:
+      "Precision 1ll corner bed clamp with 5 Aani bolt and quad mounting holes, available in Medium and Heavy gauge with corrosion-resistant white zinc plating.",
+    descriptionGu:
+      "૫ આની બોલ્ટ અને ૪ માઉન્ટિંગ હોલ સાથે 1ll બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
+    finish: "White Zinc Plated",
+    boltSize: "5 Aani Bolt",
+    thickness: "Medium, Heavy",
+    features: [
+      "Bolt size: 5 Aani bolt",
+      "Thickness: Medium, Heavy",
+      "Finishing: White Zinc Plated",
+      "Quad front-mount screw holes for rigid corner alignment",
+      "Anti-vibration noise-dampening joinery",
+    ],
+    image: "/products/bed-clamp/bed-clamp-7.jpg",
+    images: ["/products/bed-clamp/bed-clamp-7.jpg"],
+    badge: "1ll / 5 Aani Bolt",
+  },
+  {
     id: "bc-01",
     code: "HK-BC-101",
     name: "1ll clamp (capsule hole)",
@@ -43,7 +129,8 @@ export const products: ProductItem[] = [
     note: "1ll clamp with 5 Aani bolt, elongated capsule hole, and white zinc plated finish.",
     description:
       "Precision-formed 1ll corner clamp equipped with 5 Aani bolt and elongated capsule slot, engineered with a rust-resistant white zinc plated finish for rigid, zero-squeak bed joinery.",
-    descriptionGu: "૫ આની બોલ્ટ, કેપ્સ્યુલ હોલ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ વાળો 1ll ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમ માટે અવાજ વગર મજબૂત રાખે છે.",
+    descriptionGu:
+      "૫ આની બોલ્ટ, કેપ્સ્યુલ હોલ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ વાળો 1ll ક્લેમ્પ, ફર્નિચરના સાંધાને કાયમ માટે અવાજ વગર મજબૂત રાખે છે.",
     finish: "White Zinc Plated",
     boltSize: "5 Aani Bolt",
     thickness: "Regular",
@@ -56,180 +143,10 @@ export const products: ProductItem[] = [
     image: "/products/bed-clamp/bed-clamp-2-clean.jpg",
     images: [
       "/products/bed-clamp/bed-clamp-2-clean.jpg",
-      "/products/bed-clamp/bed-clamp-2-dark.jpg",
       "/products/bed-clamp/bed-clamp-2.jpg",
-      "/products/bed-clamp/bed-clamp-1.jpg",
+      "/products/bed-clamp/bed-clamp-2-dark.jpg",
     ],
     badge: "5 Aani / Capsule Hole",
-  },
-  {
-    id: "bc-02",
-    code: "HK-BC-102",
-    name: "L Bed Clamp (6 Aani Bolt)",
-    nameGu: "એલ બેડ ક્લેમ્પ (૬ આની બોલ્ટ)",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "L bed clamp with heavy 6 Aani bolt, reinforced 90° corner, and corrosion-resistant white zinc plated finish.",
-    description:
-      "Heavy-duty 4-corner L bed clamp engineered with high-torque 6 Aani bolt and white zinc plated coating for durable, squeak-free joint stability across double beds and wooden furniture.",
-    descriptionGu: "૬ આની બોલ્ટ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે મજબૂત એલ બેડ ક્લેમ્પ, બેડના સાંધાને કાયમી મજબૂતાઈ અને અવાજ-મુક્ત સ્થિરતા આપે છે.",
-    finish: "White Zinc Plated",
-    boltSize: "6 Aani Bolt",
-    thickness: "Regular",
-    features: [
-      "Bolt size: 6 Aani bolt",
-      "True 90° L-profile corner reinforcement",
-      "Finishing: White Zinc Plated",
-      "Anti-vibration noise dampening joinery",
-    ],
-    image: "/products/bed-clamp/bed-clamp-1.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-1.jpg",
-      "/products/bed-clamp/bed-clamp-7.jpg",
-      "/products/bed-clamp/bed-clamp-2-clean.jpg",
-    ],
-    badge: "6 Aani / White Zinc",
-  },
-  {
-    id: "bc-03",
-    code: "HK-BC-103",
-    name: "L Bed Clamp (8 Aani Bolt)",
-    nameGu: "એલ બેડ ક્લેમ્પ (૮ આની બોલ્ટ)",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "Heavy L bed clamp with 8 Aani industrial bolt, reinforced corner body, and premium golden zinc plated finish.",
-    description:
-      "Ultra-heavy duty L bed clamp equipped with maximum strength 8 Aani bolt and corrosion-resistant golden zinc plated finish for heavy-load hydraulic beds and commercial furniture.",
-    descriptionGu: "૮ આની બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ વાળો હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે શ્રેષ્ઠ.",
-    finish: "Golden Zinc Plated",
-    boltSize: "8 Aani Bolt",
-    thickness: "Regular",
-    features: [
-      "Bolt size: 8 Aani bolt",
-      "Golden zinc plated corrosion protection",
-      "Reinforced 90° corner body for heavy loads",
-      "High-torque vibration resistance",
-    ],
-    image: "/products/bed-clamp/bed-clamp-6.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-6.jpg",
-      "/products/bed-clamp/bed-clamp-5.jpg",
-      "/products/bed-clamp/bed-clamp-1.jpg",
-    ],
-    badge: "8 Aani / Golden Zinc",
-  },
-  {
-    id: "bc-04",
-    code: "HK-BC-104",
-    name: "7” Bed Clamp",
-    nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "7-inch bed clamp with 5 Aani bolt, available in Medium and Heavy gauge with protective white zinc plated finish.",
-    description:
-      "Heavy-duty 7-inch bed clamp with twin adjustment slots and 5 Aani bolts across Medium and Heavy thickness gauges with durable rust-resistant white zinc plating.",
-    descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
-    finish: "White Zinc Plated",
-    boltSize: "5 Aani Bolt",
-    thickness: "Medium, Heavy",
-    features: [
-      "Bolt size: 5 Aani bolt",
-      "Thickness: Medium, Heavy",
-      "Finishing: White Zinc Plated",
-      "Twin capsule locking slots with backing plate",
-    ],
-    image: "/products/bed-clamp/bed-clamp-3.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-3.jpg",
-      "/products/bed-clamp/bed-clamp-8.jpg",
-      "/products/bed-clamp/bed-clamp-4.jpg",
-    ],
-    badge: "7\" / White Zinc",
-  },
-  {
-    id: "bc-05",
-    code: "HK-BC-105",
-    name: "L Bed Clamp (7 Aani Bolt)",
-    nameGu: "એલ બેડ ક્લેમ્પ (૭ આની બોલ્ટ)",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "L bed clamp with heavy-duty 7 Aani bolt, threaded backing plate, and golden zinc plated finish.",
-    description:
-      "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge reinforced construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
-    descriptionGu: "૭ આની મોટા બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે ખાસ બનાવેલ.",
-    finish: "Golden Zinc Plated",
-    boltSize: "7 Aani Bolt",
-    thickness: "Regular",
-    features: [
-      "Bolt size: 7 Aani bolt",
-      "Finishing: Golden Zinc Plated",
-      "Heavy threaded square backing plate",
-      "Engineered for hydraulic and storage beds",
-    ],
-    image: "/products/bed-clamp/bed-clamp-5.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-5.jpg",
-      "/products/bed-clamp/bed-clamp-6.jpg",
-      "/products/bed-clamp/bed-clamp-1.jpg",
-    ],
-    badge: "7 Aani / Golden Zinc",
-  },
-  {
-    id: "bc-06",
-    code: "HK-BC-106",
-    name: "7” Bed Clamp",
-    nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "7-inch bed clamp with 5 Aani bolt, available in Medium and Heavy gauge with White Zinc Plated and Powder Coated finishes.",
-    description:
-      "Heavy-duty 7-inch bed clamp engineered with 5 Aani bolt and rigid construction across Medium and Heavy gauges with durable white zinc plated and powder coated finishes.",
-    descriptionGu: "૫ આની બોલ્ટ સાથે ૭-ઇંચ લાંબો મજબૂત બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
-    finish: "White Zinc Plated, Powder Coated",
-    boltSize: "5 Aani Bolt",
-    thickness: "Medium, Heavy",
-    features: [
-      "Bolt size: 5 Aani bolt",
-      "Thickness: Medium, Heavy",
-      "Finishing: White Zinc Plated, Powder Coated",
-      "Deburred smooth edges & zero-squeak fit",
-    ],
-    image: "/products/bed-clamp/bed-clamp-4.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-4.jpg",
-      "/products/bed-clamp/bed-clamp-3.jpg",
-      "/products/bed-clamp/bed-clamp-8.jpg",
-    ],
-    badge: "7\" / Zinc & Powder Coated",
-  },
-  {
-    id: "bc-07",
-    code: "HK-BC-107",
-    name: "1ll Bed Clamp",
-    nameGu: "1ll બેડ ક્લેમ્પ",
-    category: "Bed Clamp",
-    categoryName: "Bed Clamp Series",
-    note: "1ll bed clamp with 5 Aani bolt, available in Medium and Heavy gauge with protective white zinc plated finish.",
-    description:
-      "Precision 1ll corner bed clamp with 5 Aani bolt and quad mounting holes, available in Medium and Heavy gauge with corrosion-resistant white zinc plating.",
-    descriptionGu: "૫ આની બોલ્ટ અને ૪ માઉન્ટિંગ હોલ સાથે 1ll બેડ ક્લેમ્પ. મીડીયમ અને હેવી ગેજમાં તથા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે ઉપલબ્ધ.",
-    finish: "White Zinc Plated",
-    boltSize: "5 Aani Bolt",
-    thickness: "Medium, Heavy",
-    features: [
-      "Bolt size: 5 Aani bolt",
-      "Thickness: Medium, Heavy",
-      "Finishing: White Zinc Plated",
-      "Quad front-mount screw holes for rigid corner alignment",
-      "Anti-vibration noise-dampening joinery",
-    ],
-    image: "/products/bed-clamp/bed-clamp-7.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-7.jpg",
-      "/products/bed-clamp/bed-clamp-1.jpg",
-      "/products/bed-clamp/bed-clamp-2-clean.jpg",
-    ],
-    badge: "1ll / 5 Aani Bolt",
   },
   {
     id: "bc-08",
@@ -241,7 +158,8 @@ export const products: ProductItem[] = [
     note: "2ll bed clamp with 5 Aani bolt and corrosion-resistant white zinc plated finish.",
     description:
       "Precision 2ll corner bed clamp equipped with 5 Aani bolt and quad mounting holes, engineered for maximum zero-squeak joint stability and rust-resistant white zinc plating.",
-    descriptionGu: "૫ આની બોલ્ટ અને ૪ માઉન્ટિંગ હોલ સાથે 2ll બેડ ક્લેમ્પ, બેડના સાંધાને કાયમી અવાજ-મુક્ત મજબૂતાઈ આપવા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "૫ આની બોલ્ટ અને ૪ માઉન્ટિંગ હોલ સાથે 2ll બેડ ક્લેમ્પ, બેડના સાંધાને કાયમી અવાજ-મુક્ત મજબૂતાઈ આપવા વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     boltSize: "5 Aani Bolt",
     thickness: "Regular",
@@ -253,12 +171,83 @@ export const products: ProductItem[] = [
       "Zero-squeak anti-vibration joint lockup",
     ],
     image: "/products/bed-clamp/bed-clamp-8.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-8.jpg",
-      "/products/bed-clamp/bed-clamp-7.jpg",
-      "/products/bed-clamp/bed-clamp-3.jpg",
-    ],
+    images: ["/products/bed-clamp/bed-clamp-8.jpg"],
     badge: "2ll / 5 Aani Bolt",
+  },
+  {
+    id: "bc-02",
+    code: "HK-BC-102",
+    name: "L Bed Clamp (6 Aani Bolt)",
+    nameGu: "એલ બેડ ક્લેમ્પ (૬ આની બોલ્ટ)",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "L bed clamp with heavy 6 Aani bolt, reinforced 90° corner, and corrosion-resistant white zinc plated finish.",
+    description:
+      "Heavy-duty 4-corner L bed clamp engineered with high-torque 6 Aani bolt and white zinc plated coating for durable, squeak-free joint stability across double beds and wooden furniture.",
+    descriptionGu:
+      "૬ આની બોલ્ટ અને વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે મજબૂત એલ બેડ ક્લેમ્પ, બેડના સાંધાને કાયમી મજબૂતાઈ અને અવાજ-મુક્ત સ્થિરતા આપે છે.",
+    finish: "White Zinc Plated",
+    boltSize: "6 Aani Bolt",
+    thickness: "Regular",
+    features: [
+      "Bolt size: 6 Aani bolt",
+      "True 90° L-profile corner reinforcement",
+      "Finishing: White Zinc Plated",
+      "Anti-vibration noise dampening joinery",
+    ],
+    image: "/products/bed-clamp/bed-clamp-1.jpg",
+    images: ["/products/bed-clamp/bed-clamp-1.jpg"],
+    badge: "6 Aani / White Zinc",
+  },
+  {
+    id: "bc-05",
+    code: "HK-BC-105",
+    name: "L Bed Clamp (7 Aani Bolt)",
+    nameGu: "એલ બેડ ક્લેમ્પ (૭ આની બોલ્ટ)",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "L bed clamp with heavy-duty 7 Aani bolt, threaded backing plate, and golden zinc plated finish.",
+    description:
+      "Engineered heavy-duty L bed clamp featuring high-torque 7 Aani bolt, heavy-gauge reinforced construction, and rust-resistant golden zinc plated finish for hydraulic storage beds and heavy wooden furniture.",
+    descriptionGu:
+      "૭ આની મોટા બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે ખાસ બનાવેલ.",
+    finish: "Golden Zinc Plated",
+    boltSize: "7 Aani Bolt",
+    thickness: "Regular",
+    features: [
+      "Bolt size: 7 Aani bolt",
+      "Finishing: Golden Zinc Plated",
+      "Heavy threaded square backing plate",
+      "Engineered for hydraulic and storage beds",
+    ],
+    image: "/products/bed-clamp/bed-clamp-5.jpg",
+    images: ["/products/bed-clamp/bed-clamp-5.jpg"],
+    badge: "7 Aani / Golden Zinc",
+  },
+  {
+    id: "bc-03",
+    code: "HK-BC-103",
+    name: "L Bed Clamp (8 Aani Bolt)",
+    nameGu: "એલ બેડ ક્લેમ્પ (૮ આની બોલ્ટ)",
+    category: "Bed Clamp",
+    categoryName: "Bed Clamp Series",
+    note: "Heavy L bed clamp with 8 Aani industrial bolt, reinforced corner body, and premium golden zinc plated finish.",
+    description:
+      "Ultra-heavy duty L bed clamp equipped with maximum strength 8 Aani bolt and corrosion-resistant golden zinc plated finish for heavy-load hydraulic beds and commercial furniture.",
+    descriptionGu:
+      "૮ આની બોલ્ટ અને ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ વાળો હેવી એલ બેડ ક્લેમ્પ, ભારે સ્ટોરેજ બેડ અને ફર્નિચર જોઈન્ટ માટે શ્રેષ્ઠ.",
+    finish: "Golden Zinc Plated",
+    boltSize: "8 Aani Bolt",
+    thickness: "Regular",
+    features: [
+      "Bolt size: 8 Aani bolt",
+      "Golden zinc plated corrosion protection",
+      "Reinforced 90° corner body for heavy loads",
+      "High-torque vibration resistance",
+    ],
+    image: "/products/bed-clamp/bed-clamp-6.jpg",
+    images: ["/products/bed-clamp/bed-clamp-6.jpg"],
+    badge: "8 Aani / Golden Zinc",
   },
   {
     id: "bc-09",
@@ -270,7 +259,8 @@ export const products: ProductItem[] = [
     note: "4-inch heavy-duty bed clamp in white zinc plated finish.",
     description:
       "Heavy-duty 4-inch bed clamp engineered for rigid furniture and bed joint reinforcement with durable rust-resistant white zinc plating.",
-    descriptionGu: "૪-ઇંચ સાઇઝનો મજબૂત બેડ ક્લેમ્પ, ફર્નિચર અને બેડના જોઈન્ટ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "૪-ઇંચ સાઇઝનો મજબૂત બેડ ક્લેમ્પ, ફર્નિચર અને બેડના જોઈન્ટ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     size: "4 Inch",
     thickness: "Regular",
@@ -286,7 +276,7 @@ export const products: ProductItem[] = [
       "/products/bed-clamp/bed-clamp-9.jpg",
       "/products/bed-clamp/bed-clamp-9-clean.jpg",
     ],
-    badge: "4\" / White Zinc",
+    badge: '4" / White Zinc',
   },
   {
     id: "bc-10",
@@ -298,7 +288,8 @@ export const products: ProductItem[] = [
     note: "Interlocking bed connector fitting available in powder coated and zinc plated finishes for modular bed frames.",
     description:
       "Precision interlocking bed connector pair engineered for seamless, flush-mount knock-down bed frames, headboards, and modular furniture. Available in powder coated and zinc plated finishes for superior joint stability.",
-    descriptionGu: "મોડ્યુલર બેડ ફ્રેમ, હેડબોર્ડ અને ફર્નિચર માટે ઇન્ટરલોકિંગ બેડ કનેક્ટર જોડી, પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં સરળ ફીટિંગ અને અવાજ-મુક્ત જોઈન્ટ સાથે ઉપલબ્ધ.",
+    descriptionGu:
+      "મોડ્યુલર બેડ ફ્રેમ, હેડબોર્ડ અને ફર્નિચર માટે ઇન્ટરલોકિંગ બેડ કનેક્ટર જોડી, પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં સરળ ફીટિંગ અને અવાજ-મુક્ત જોઈન્ટ સાથે ઉપલબ્ધ.",
     finish: "Powder Coated, Zinc Plated",
     thickness: "Regular",
     features: [
@@ -309,9 +300,7 @@ export const products: ProductItem[] = [
       "Tool-free knock-down bed assembly",
     ],
     image: "/products/bed-clamp/bed-clamp-10.jpg",
-    images: [
-      "/products/bed-clamp/bed-clamp-10.jpg",
-    ],
+    images: ["/products/bed-clamp/bed-clamp-10.jpg"],
     badge: "Interlocking / Powder & Zinc",
   },
 
@@ -326,7 +315,8 @@ export const products: ProductItem[] = [
     note: "4-inch compact modular interlocking bed socket in golden zinc plated finish.",
     description:
       "Compact 4-inch modular bed socket engineered with precision hook engagement tabs and golden zinc plated corrosion protection.",
-    descriptionGu: "૪-ઇંચ કોમ્પેક્ટ મોડ્યુલર બેડ સોકેટ, સિંગલ બેડ અને સોફા ફર્નિચર જોઈન્ટ માટે પ્રીમિયમ ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "૪-ઇંચ કોમ્પેક્ટ મોડ્યુલર બેડ સોકેટ, સિંગલ બેડ અને સોફા ફર્નિચર જોઈન્ટ માટે પ્રીમિયમ ગોલ્ડન ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "Golden Zinc Plated",
     size: "4 Inch",
     thickness: "Regular",
@@ -339,10 +329,7 @@ export const products: ProductItem[] = [
       "High shear strength joinery",
     ],
     image: "/products/bed-soket/bed-soket-2.jpg",
-    images: [
-      "/products/bed-soket/bed-soket-2.jpg",
-      "/products/bed-soket/bed-soket-1.jpg",
-    ],
+    images: ["/products/bed-soket/bed-soket-2.jpg"],
     badge: "4” / Golden Zinc",
   },
   {
@@ -355,7 +342,8 @@ export const products: ProductItem[] = [
     note: "6-inch heavy-duty interlocking bed socket available in golden zinc plated and powder coated finishes.",
     description:
       "Precision 6-inch heavy-duty bed socket engineered for rigid, knock-down modular bed assembly. Available in golden zinc plated and powder coated finishes for superior corrosion protection.",
-    descriptionGu: "૬-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "૬-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Golden Zinc Plated, Powder Coated",
     size: "6 Inch",
     thickness: "Regular",
@@ -368,11 +356,7 @@ export const products: ProductItem[] = [
       "Effortless modular knock-down assembly",
     ],
     image: "/products/bed-soket/bed-soket-1.jpg",
-    images: [
-      "/products/bed-soket/bed-soket-1.jpg",
-      "/products/bed-soket/bed-soket-4.jpg",
-      "/products/bed-soket/bed-soket-2.jpg",
-    ],
+    images: ["/products/bed-soket/bed-soket-1.jpg"],
     badge: "6” / Golden & Powder Coated",
   },
   {
@@ -385,7 +369,8 @@ export const products: ProductItem[] = [
     note: "7-inch heavy-duty interlocking bed socket available in golden zinc plated and powder coated finishes.",
     description:
       "Heavy-gauge 7-inch modular bed socket engineered for double and king size knock-down bed frames. Available in golden zinc plated and powder coated finishes for lasting durability.",
-    descriptionGu: "૭-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "૭-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોડ્યુલર બેડ અને ફર્નિચર જોઈન્ટ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Golden Zinc Plated, Powder Coated",
     size: "7 Inch",
     thickness: "Regular",
@@ -398,11 +383,7 @@ export const products: ProductItem[] = [
       "Anti-squeak flush lockup",
     ],
     image: "/products/bed-soket/bed-soket-4.jpg",
-    images: [
-      "/products/bed-soket/bed-soket-4.jpg",
-      "/products/bed-soket/bed-soket-3.jpg",
-      "/products/bed-soket/bed-soket-1.jpg",
-    ],
+    images: ["/products/bed-soket/bed-soket-4.jpg"],
     badge: "7” / Golden & Powder Coated",
   },
   {
@@ -415,7 +396,8 @@ export const products: ProductItem[] = [
     note: "8-inch extended heavy-duty bed socket strap available in golden zinc plated and architectural powder coated finishes.",
     description:
       "Heavy-gauge 8-inch extended bed socket engineered for heavy king and queen size beds. Available in golden zinc plated and powder coated finishes for superior stability.",
-    descriptionGu: "૮-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોટા કિંગ અને ક્વીન સાઇઝ બેડ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "૮-ઇંચ હેવી-ડ્યુટી બેડ સોકેટ, મોટા કિંગ અને ક્વીન સાઇઝ બેડ માટે ગોલ્ડન ઝીંક પ્લેટેડ અને પાવડર કોટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Golden Zinc Plated, Powder Coated",
     size: "8 Inch",
     thickness: "Regular",
@@ -428,72 +410,11 @@ export const products: ProductItem[] = [
       "Anti-squeak flush lockup",
     ],
     image: "/products/bed-soket/bed-soket-3.jpg",
-    images: [
-      "/products/bed-soket/bed-soket-3.jpg",
-      "/products/bed-soket/bed-soket-4.jpg",
-      "/products/bed-soket/bed-soket-1.jpg",
-    ],
+    images: ["/products/bed-soket/bed-soket-3.jpg"],
     badge: "8” / Golden & Powder Coated",
   },
 
   // --- 03. HINGES SERIES ---
-  {
-    id: "hg-01",
-    code: "HK-HG-401",
-    name: "T Hinges",
-    nameGu: "ટી હિંગ્સ",
-    category: "Hinges",
-    categoryName: "Hinges Series",
-    note: "Heavy-duty T hinges with reinforced knuckle barrel and countersunk holes in white zinc plated finish.",
-    description:
-      "Heavy-gauge T hinges engineered to support and distribute weight evenly across wooden doors, frames, and cabinets with durable white zinc plating.",
-    descriptionGu: "મોટા લાકડાના દરવાજા, ફ્રેમ અને કેબિનેટ માટે મજબૂત ટી હિંગ્સ જે વજનને સમાન રીતે વહેંચે છે. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    finish: "White Zinc Plated",
-    thickness: "Regular",
-    features: [
-      "Heavy-gauge T strap leaf design",
-      "Finishing: White zinc plated",
-      "Precision countersunk screw mounting holes",
-      "Solid precision pivot knuckle barrel",
-      "High weight distribution and rust protection",
-    ],
-    image: "/products/hinges/hinges-1.jpg",
-    images: [
-      "/products/hinges/hinges-1.jpg",
-      "/products/hinges/hinges-1-clean.jpg",
-      "/products/hinges/hinges-2.jpg",
-    ],
-    badge: "T Hinges / White Zinc",
-  },
-  {
-    id: "hg-02",
-    code: "HK-HG-402",
-    name: "Small Butt Hinges (2 Inch)",
-    nameGu: "સ્મોલ બટ્ટ હિંગ્સ (૨ ઇંચ)",
-    category: "Hinges",
-    categoryName: "Hinges Series",
-    note: "2-inch precision stamped small butt hinges with solid knuckle pin in nickel plated finish.",
-    description:
-      "Precision 2-inch small butt hinges engineered for smooth swinging motion and durable alignment across wooden doors, frames, and furniture cabinets in corrosion-resistant nickel plated finish.",
-    descriptionGu:
-      "૨-ઇંચ સાઇઝની પ્રિસિઝન સ્મોલ બટ્ટ હિંગ્સ, કેબિનેટ અને લાકડાના દરવાજા માટે સ્મૂથ મૂવમેન્ટ અને નિકલ પ્લેટેડ ફિનિશિંગ સાથે.",
-    finish: "Nickel Plated",
-    size: "2 Inch",
-    thickness: "Regular",
-    features: [
-      "Size: 2 inch",
-      "Finishing: Nickel plated",
-      "5-knuckle solid pivot barrel",
-      "Precision countersunk screw holes",
-      "Smooth zero-sag silent door swing",
-    ],
-    image: "/products/hinges/butt-hinges.jpg",
-    images: [
-      "/products/hinges/butt-hinges.jpg",
-      "/products/hinges/hinges-1.jpg",
-    ],
-    badge: "2” / Nickel Plated",
-  },
   {
     id: "hg-03",
     code: "HK-HG-403",
@@ -517,10 +438,7 @@ export const products: ProductItem[] = [
       "High-tensile center pivot pin",
     ],
     image: "/products/hinges/table-hinges-1x1.jpg",
-    images: [
-      "/products/hinges/table-hinges-1x1.jpg",
-      "/products/hinges/table-hinges-2x2.jpg",
-    ],
+    images: ["/products/hinges/table-hinges-1x1.jpg"],
     badge: "1ll x 1ll / White Zinc",
   },
   {
@@ -546,11 +464,63 @@ export const products: ProductItem[] = [
       "Smooth 180° flush folding action",
     ],
     image: "/products/hinges/table-hinges-2x2.jpg",
-    images: [
-      "/products/hinges/table-hinges-2x2.jpg",
-      "/products/hinges/table-hinges-1x1.jpg",
-    ],
+    images: ["/products/hinges/table-hinges-2x2.jpg"],
     badge: "2” x 2” / White Zinc",
+  },
+  {
+    id: "hg-02",
+    code: "HK-HG-402",
+    name: "Small Butt Hinges (2 Inch)",
+    nameGu: "સ્મોલ બટ્ટ હિંગ્સ (૨ ઇંચ)",
+    category: "Hinges",
+    categoryName: "Hinges Series",
+    note: "2-inch precision stamped small butt hinges with solid knuckle pin in nickel plated finish.",
+    description:
+      "Precision 2-inch small butt hinges engineered for smooth swinging motion and durable alignment across wooden doors, frames, and furniture cabinets in corrosion-resistant nickel plated finish.",
+    descriptionGu:
+      "૨-ઇંચ સાઇઝની પ્રિસિઝન સ્મોલ બટ્ટ હિંગ્સ, કેબિનેટ અને લાકડાના દરવાજા માટે સ્મૂથ મૂવમેન્ટ અને નિકલ પ્લેટેડ ફિનિશિંગ સાથે.",
+    finish: "Nickel Plated",
+    size: "2 Inch",
+    thickness: "Regular",
+    features: [
+      "Size: 2 inch",
+      "Finishing: Nickel plated",
+      "5-knuckle solid pivot barrel",
+      "Precision countersunk screw holes",
+      "Smooth zero-sag silent door swing",
+    ],
+    image: "/products/hinges/butt-hinges.jpg",
+    images: ["/products/hinges/butt-hinges.jpg"],
+    badge: "2” / Nickel Plated",
+  },
+  {
+    id: "hg-01",
+    code: "HK-HG-401",
+    name: "T Hinges",
+    nameGu: "ટી હિંગ્સ",
+    category: "Hinges",
+    categoryName: "Hinges Series",
+    note: "Heavy-duty T hinges with reinforced knuckle barrel and countersunk holes in white zinc plated finish.",
+    description:
+      "Heavy-gauge T hinges engineered to support and distribute weight evenly across wooden doors, frames, and cabinets with durable white zinc plating.",
+    descriptionGu:
+      "મોટા લાકડાના દરવાજા, ફ્રેમ અને કેબિનેટ માટે મજબૂત ટી હિંગ્સ જે વજનને સમાન રીતે વહેંચે છે. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    finish: "White Zinc Plated",
+    thickness: "Regular",
+    features: [
+      "Heavy-gauge T strap leaf design",
+      "Finishing: White zinc plated",
+      "Precision countersunk screw mounting holes",
+      "Solid precision pivot knuckle barrel",
+      "High weight distribution and rust protection",
+    ],
+    image: "/products/hinges/hinges-1.jpg",
+    images: [
+      "/products/hinges/hinges-1.jpg",
+      "/products/hinges/hinges-1-clean.jpg",
+      "/products/hinges/hinges-2.jpg",
+    ],
+    badge: "T Hinges / White Zinc",
   },
   {
     id: "hg-05",
@@ -562,7 +532,8 @@ export const products: ProductItem[] = [
     note: "4-inch stone hinges with asymmetric mounting hole layout for stone, granite, and timber frames in white zinc plated finish.",
     description:
       "Heavy-duty 4” stone hinges engineered for furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
-    descriptionGu: "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "હેવી-ડ્યુટી ૪” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -576,7 +547,6 @@ export const products: ProductItem[] = [
     images: [
       "/products/hinges/hinges-3.jpg",
       "/products/hinges/hinges-3-clean.jpg",
-      "/products/hinges/hinges-4.jpg",
     ],
     badge: "4” Stone / White Zinc",
   },
@@ -590,7 +560,8 @@ export const products: ProductItem[] = [
     note: "3-inch stone hinges with asymmetric mounting hole layout for stone, granite, and timber frames in white zinc plated finish.",
     description:
       "Heavy-duty 3” stone hinges engineered for compact furniture, cabinets, and stone/marble frame installations with durable white zinc plating.",
-    descriptionGu: "હેવી-ડ્યુટી ૩” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "હેવી-ડ્યુટી ૩” સ્ટોન હિંગ્સ, સ્ટોન/માર્બલ અને લાકડાના ફર્નિચર માટે ખાસ વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -601,11 +572,7 @@ export const products: ProductItem[] = [
       "Heavy-gauge rigid structural construction",
     ],
     image: "/products/hinges/hinges-4.jpg",
-    images: [
-      "/products/hinges/hinges-4.jpg",
-      "/products/hinges/hinges-3.jpg",
-      "/products/hinges/hinges-2.jpg",
-    ],
+    images: ["/products/hinges/hinges-4.jpg"],
     badge: "3” Stone / White Zinc",
   },
 
@@ -620,7 +587,8 @@ export const products: ProductItem[] = [
     note: "1” x 1” precision stamped L-corner bracket available in powder coated and zinc plated finishes.",
     description:
       "Precision 1” x 1” 90-degree L-corner bracket engineered for modular furniture, cabinetry, and wooden framing. Available in powder coated and zinc plated finishes for durable corner joint stability.",
-    descriptionGu: "૧” x ૧” સાઇઝનો પ્રિસિઝન એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર મજબૂત રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "૧” x ૧” સાઇઝનો પ્રિસિઝન એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર મજબૂત રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Powder Coated, Zinc Plated",
     size: "1” x 1”",
     thickness: "Regular",
@@ -632,10 +600,7 @@ export const products: ProductItem[] = [
       "Smooth deburred safety edges",
     ],
     image: "/products/l-corner/l-corner-1.jpg",
-    images: [
-      "/products/l-corner/l-corner-1.jpg",
-      "/products/l-corner/l-corner-2.jpg",
-    ],
+    images: ["/products/l-corner/l-corner-1.jpg"],
     badge: "1” x 1” / Powder & Zinc",
   },
   {
@@ -648,7 +613,8 @@ export const products: ProductItem[] = [
     note: "1 x 1ll precision stamped L-corner bracket available in powder coated and zinc plated finishes.",
     description:
       "Wide 1 x 1ll 90-degree L-corner bracket engineered with wide screw spacing for solid joint bracing and load distribution across furniture joints. Available in powder coated and zinc plated finishes.",
-    descriptionGu: "1 x 1ll સાઇઝનો પહોળો એલ કોર્નર, ફર્નિચર અને કેબિનેટના મજબૂત જોઈન્ટ માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "1 x 1ll સાઇઝનો પહોળો એલ કોર્નર, ફર્નિચર અને કેબિનેટના મજબૂત જોઈન્ટ માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Powder Coated, Zinc Plated",
     size: "1 x 1ll",
     thickness: "Regular",
@@ -660,10 +626,7 @@ export const products: ProductItem[] = [
       "Corrosion-resistant protective coating",
     ],
     image: "/products/l-corner/l-corner-2.jpg",
-    images: [
-      "/products/l-corner/l-corner-2.jpg",
-      "/products/l-corner/l-corner-1.jpg",
-    ],
+    images: ["/products/l-corner/l-corner-2.jpg"],
     badge: "1 x 1ll / Powder & Zinc",
   },
   {
@@ -676,7 +639,8 @@ export const products: ProductItem[] = [
     note: "1 x 2 heavy-duty L-corner bracket available in powder coated and zinc plated finishes.",
     description:
       "Heavy-duty 1 x 2 90-degree L-corner bracket engineered with gusset reinforcement for deflection-free right angle joint bracing. Available in powder coated and zinc plated finishes.",
-    descriptionGu: "1 x 2 સાઇઝનો મજબૂત એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર અડીખમ રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "1 x 2 સાઇઝનો મજબૂત એલ કોર્નર, ફર્નિચર અને કેબિનેટના ખૂણાને ૯૦° પર અડીખમ રાખવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Powder Coated, Zinc Plated",
     size: "1 x 2",
     thickness: "Regular",
@@ -688,39 +652,8 @@ export const products: ProductItem[] = [
       "High torsional flex resistance",
     ],
     image: "/products/l-corner/l-corner-3.jpg",
-    images: [
-      "/products/l-corner/l-corner-3.jpg",
-      "/products/l-corner/l-corner-1.jpg",
-    ],
+    images: ["/products/l-corner/l-corner-3.jpg"],
     badge: "1 x 2 / Powder & Zinc",
-  },
-  {
-    id: "lc-04",
-    code: "HK-LC-304",
-    name: "Computer Table Corner (1ll Inch)",
-    nameGu: "કમ્પ્યુટર ટેબલ કોર્નર (1ll Inch)",
-    category: "L Corner",
-    categoryName: "L Corner Series",
-    note: "1ll inch heavy-duty computer table corner bracket in zinc plated finish with dual gusset ribs.",
-    description:
-      "Heavy-duty 1ll inch computer table corner bracket engineered with twin reinforcement gussets for rigid, zero-wobble desk, table, and workstation assembly with rust-resistant zinc plating.",
-    descriptionGu: "1ll inch સાઇઝનો મજબૂત કમ્પ્યુટર ટેબલ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા આપવા માટે ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
-    finish: "Zinc Plated",
-    size: "1ll Inch",
-    thickness: "Regular",
-    features: [
-      "Size: 1ll Inch",
-      "Finishing: Zinc Plated",
-      "Dual embossed reinforcement gussets",
-      "4 countersunk screw apertures",
-      "Zero-wobble table and desk joint bracing",
-    ],
-    image: "/products/l-corner/l-corner-4.jpg",
-    images: [
-      "/products/l-corner/l-corner-4.jpg",
-      "/products/l-corner/l-corner-6.jpg",
-    ],
-    badge: "1ll Inch / Zinc Plated",
   },
   {
     id: "lc-05",
@@ -732,7 +665,8 @@ export const products: ProductItem[] = [
     note: "1 x 3 extended 6-hole L-corner bracket available in powder coated and zinc plated finishes.",
     description:
       "Extended 1 x 3 6-hole L-corner bracket engineered with 3 inline mounting points per flange for tall cabinetry, partitions, and heavy wardrobe carcass bracing. Available in powder coated and zinc plated finishes.",
-    descriptionGu: "1 x 3 સાઇઝનો ૬ હોલ લાંબો એલ કોર્નર, મોટા કબાટ, વોર્ડરોબ અને પાર્ટીશનના ખૂણાને ટેકો આપવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
+    descriptionGu:
+      "1 x 3 સાઇઝનો ૬ હોલ લાંબો એલ કોર્નર, મોટા કબાટ, વોર્ડરોબ અને પાર્ટીશનના ખૂણાને ટેકો આપવા માટે પાવડર કોટેડ અને ઝીંક પ્લેટેડ બંને ફિનિશિંગમાં ઉપલબ્ધ.",
     finish: "Powder Coated, Zinc Plated",
     size: "1 x 3",
     thickness: "Regular",
@@ -744,10 +678,7 @@ export const products: ProductItem[] = [
       "Uniform load transfer along joints",
     ],
     image: "/products/l-corner/l-corner-5.jpg",
-    images: [
-      "/products/l-corner/l-corner-5.jpg",
-      "/products/l-corner/l-corner-1.jpg",
-    ],
+    images: ["/products/l-corner/l-corner-5.jpg"],
     badge: "1 x 3 / Powder & Zinc",
   },
   {
@@ -760,7 +691,8 @@ export const products: ProductItem[] = [
     note: "1ll inch heavy-duty computer table round corner bracket in zinc plated finish with reinforced dome gussets.",
     description:
       "Heavy-gauge 1ll inch computer table round corner bracket engineered with twin domed reinforcement gussets and smooth radiused safety corners for computer desks, office tables, and rigid wooden furniture.",
-    descriptionGu: "1ll inch સાઇઝનો કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા અને ગોળ ખૂણાની સલામતી આપવા માટે ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "1ll inch સાઇઝનો કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા અને ગોળ ખૂણાની સલામતી આપવા માટે ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "Zinc Plated",
     size: "1ll Inch",
     thickness: "Regular",
@@ -772,11 +704,34 @@ export const products: ProductItem[] = [
       "Countersunk 4-hole screw mounting",
     ],
     image: "/products/l-corner/l-corner-6.jpg",
-    images: [
-      "/products/l-corner/l-corner-6.jpg",
-      "/products/l-corner/l-corner-4.jpg",
-    ],
+    images: ["/products/l-corner/l-corner-6.jpg"],
     badge: "1ll Inch Round / Zinc Plated",
+  },
+  {
+    id: "lc-04",
+    code: "HK-LC-304",
+    name: "Computer Table Corner (1ll Inch)",
+    nameGu: "કમ્પ્યુટર ટેબલ કોર્નર (1ll Inch)",
+    category: "L Corner",
+    categoryName: "L Corner Series",
+    note: "1ll inch heavy-duty computer table corner bracket in zinc plated finish with dual gusset ribs.",
+    description:
+      "Heavy-duty 1ll inch computer table corner bracket engineered with twin reinforcement gussets for rigid, zero-wobble desk, table, and workstation assembly with rust-resistant zinc plating.",
+    descriptionGu:
+      "1ll inch સાઇઝનો મજબૂત કમ્પ્યુટર ટેબલ કોર્નર, ટેબલ અને ડેસ્કના સાંધાને કાયમી સ્થિરતા આપવા માટે ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    finish: "Zinc Plated",
+    size: "1ll Inch",
+    thickness: "Regular",
+    features: [
+      "Size: 1ll Inch",
+      "Finishing: Zinc Plated",
+      "Dual embossed reinforcement gussets",
+      "4 countersunk screw apertures",
+      "Zero-wobble table and desk joint bracing",
+    ],
+    image: "/products/l-corner/l-corner-4.jpg",
+    images: ["/products/l-corner/l-corner-4.jpg"],
+    badge: "1ll Inch / Zinc Plated",
   },
 
   // --- 05. BED FITTINGS SERIES ---
@@ -790,7 +745,8 @@ export const products: ProductItem[] = [
     note: "Heavy-duty bed storage spring jack mechanism with high-tension coil spring in durable powder coated finish.",
     description:
       "Precision-engineered heavy duty spring jack mechanism with high-tension tempered coil spring for smooth, effortless lifting and support of bed storage frames in powder coated finish.",
-    descriptionGu: "હાઈ-ટેન્શન કોઈલ સ્પ્રિંગ સાથેનો હેવી બેડ સ્પ્રિંગ જેક, સ્ટોરેજ બેડ સરળતાથી ઓપન કરવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "હાઈ-ટેન્શન કોઈલ સ્પ્રિંગ સાથેનો હેવી બેડ સ્પ્રિંગ જેક, સ્ટોરેજ બેડ સરળતાથી ઓપન કરવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
     finish: "Powder Coated",
     thickness: "Regular",
     features: [
@@ -817,7 +773,8 @@ export const products: ProductItem[] = [
     note: "Heavy-duty scissor mechanism sofa cum bed fitting in durable powder coated finish.",
     description:
       "Heavy-duty multi-pivot scissor frame sofa cum bed fitting engineered for smooth conversion between sofa seating and flat bed support with protective powder coated finish.",
-    descriptionGu: "સોફામાંથી બેડ બનાવવા માટેનું હેવી ડ્યુટી મલ્ટી-પિવોટ સિઝર ફિટિંગ, સરળ મૂવમેન્ટ અને ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "સોફામાંથી બેડ બનાવવા માટેનું હેવી ડ્યુટી મલ્ટી-પિવોટ સિઝર ફિટિંગ, સરળ મૂવમેન્ટ અને ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
     finish: "Powder Coated",
     thickness: "Regular",
     features: [
@@ -844,7 +801,8 @@ export const products: ProductItem[] = [
     note: "Hydraulic bed jack mechanism available in 3ft piece and 5ft piece with durable powder coated finish.",
     description:
       "Heavy-duty pneumatic hydraulic bed jack lift mechanism designed for king and queen size hydraulic storage beds. Available in 3ft piece and 5ft piece with protective powder coated finish.",
-    descriptionGu: "૩ ફૂટ અને ૫ ફૂટ પીસમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "૩ ફૂટ અને ૫ ફૂટ પીસમાં ઉપલબ્ધ હેવી હાઇડ્રોલિક બેડ જેક, ભારે સ્ટોરેજ બેડને સરળતાથી ઊંચકવા માટે ટકાઉ પાવડર કોટેડ ફિનિશિંગ સાથે.",
     finish: "Powder Coated",
     thickness: "Heavy Duty Frame",
     available: "Available in 3ft Piece and 5ft Piece",
@@ -874,7 +832,8 @@ export const products: ProductItem[] = [
     note: "IMP support angled lock bracket in corrosion-resistant white zinc plated finish.",
     description:
       "Precision angled IMP support bracket manufactured with white zinc plated finish for door and cabinet latch support.",
-    descriptionGu: "લાકડાના દરવાજા અને ફર્નિચર માટે એંગલ્ડ આઈએમપી સપોર્ટ બ્રેકેટ, વ્હાઇટ ઝીંક પ્લેટેડ રસ્ટ-પ્રૂફ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "લાકડાના દરવાજા અને ફર્નિચર માટે એંગલ્ડ આઈએમપી સપોર્ટ બ્રેકેટ, વ્હાઇટ ઝીંક પ્લેટેડ રસ્ટ-પ્રૂફ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -888,7 +847,6 @@ export const products: ProductItem[] = [
     images: [
       "/products/lockpatti/lockpatti-1.jpg",
       "/products/lockpatti/real-lockpatti-1.png",
-      "/products/lockpatti/lockpatti-4.jpg",
     ],
     badge: "IMP Support / White Zinc",
   },
@@ -902,7 +860,8 @@ export const products: ProductItem[] = [
     note: "Heavy-duty industrial spring patti with 3-hole alignment in white zinc plated finish.",
     description:
       "Precision industrial spring patti engineered with durable white zinc plating for door, cabinet, and lock mechanisms.",
-    descriptionGu: "૩ હોલ વાળી મજબૂત સ્પ્રીંગ પટ્ટી, દરવાજા અને લોક ફિટિંગ્સ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "૩ હોલ વાળી મજબૂત સ્પ્રીંગ પટ્ટી, દરવાજા અને લોક ફિટિંગ્સ માટે વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -915,7 +874,6 @@ export const products: ProductItem[] = [
     images: [
       "/products/lockpatti/lockpatti-2.jpg",
       "/products/lockpatti/real-lockpatti-2.png",
-      "/products/lockpatti/lockpatti-6.jpg",
     ],
     badge: "Spring Patti / White Zinc",
   },
@@ -929,7 +887,8 @@ export const products: ProductItem[] = [
     note: "Right-angle lock patti available in heavy and light sizes with white zinc plated finish.",
     description:
       "Precision-bent right-angle lock patti manufactured for door frames, furniture, and cabinets. Available in Heavy and Light sizes with durable rust-resistant white zinc plating.",
-    descriptionGu: "૯૦ ડિગ્રી એંગલ્ડ લોક પટ્ટી, હેવી અને લાઈટ બંને સાઈઝમાં ઉપલબ્ધ. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે દરવાજા અને કબાટના લોક માટે શ્રેષ્ઠ.",
+    descriptionGu:
+      "૯૦ ડિગ્રી એંગલ્ડ લોક પટ્ટી, હેવી અને લાઈટ બંને સાઈઝમાં ઉપલબ્ધ. વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે દરવાજા અને કબાટના લોક માટે શ્રેષ્ઠ.",
     finish: "White Zinc Plated",
     thickness: "Heavy, Light",
     features: [
@@ -943,7 +902,6 @@ export const products: ProductItem[] = [
     images: [
       "/products/lockpatti/lockpatti-4.jpg",
       "/products/lockpatti/real-lockpatti-4.png",
-      "/products/lockpatti/lockpatti-1.jpg",
     ],
     badge: "Heavy & Light / White Zinc",
   },
@@ -957,7 +915,8 @@ export const products: ProductItem[] = [
     note: "Precision SSR patti with smooth rounded capsule profile in white zinc plated finish.",
     description:
       "Heavy-duty SSR patti engineered with precision punched pivot eyelet and corrosion-resistant white zinc plating for smooth lock and cabinet action.",
-    descriptionGu: "ગોળાકાર કેપ્સ્યુલ આકાર અને પ્રિસિઝન પિવોટ હોલ વાળી એસએસઆર પટ્ટી, વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
+    descriptionGu:
+      "ગોળાકાર કેપ્સ્યુલ આકાર અને પ્રિસિઝન પિવોટ હોલ વાળી એસએસઆર પટ્ટી, વ્હાઇટ ઝીંક પ્લેટેડ ફિનિશિંગ સાથે.",
     finish: "White Zinc Plated",
     thickness: "Regular",
     features: [
@@ -968,10 +927,7 @@ export const products: ProductItem[] = [
       "High cycle endurance and rust resistance",
     ],
     image: "/products/lockpatti/lockpatti-606.jpg",
-    images: [
-      "/products/lockpatti/lockpatti-606.jpg",
-      "/products/lockpatti/lockpatti-2.jpg",
-    ],
+    images: ["/products/lockpatti/lockpatti-606.jpg"],
     badge: "SSR Patti / White Zinc",
   },
   {
@@ -984,7 +940,8 @@ export const products: ProductItem[] = [
     note: "Precision cam lock patti with central double-D cam aperture in heavy CRC finish.",
     description:
       "Heavy-duty CRC cam lock strike patti engineered for desk drawers, cabinet locks, and commercial furniture with precision cam aperture.",
-    descriptionGu: "ટેબલ ડ્રોઅર અને કબાટના કેમ લોક માટે સ્પેશિયલ સીઆરસી કેમ લોક પટ્ટી, મજબૂત પકડ અને લાંબા આયુષ્ય માટે.",
+    descriptionGu:
+      "ટેબલ ડ્રોઅર અને કબાટના કેમ લોક માટે સ્પેશિયલ સીઆરસી કેમ લોક પટ્ટી, મજબૂત પકડ અને લાંબા આયુષ્ય માટે.",
     finish: "CRC Finish",
     thickness: "Regular",
     features: [
@@ -998,11 +955,9 @@ export const products: ProductItem[] = [
     images: [
       "/products/lockpatti/lockpatti-6.jpg",
       "/products/lockpatti/real-lockpatti-6.png",
-      "/products/lockpatti/lockpatti-2.jpg",
     ],
     badge: "Cam Lock / CRC",
   },
-
 ]
 
 export const showcaseProducts: ProductItem[] = [

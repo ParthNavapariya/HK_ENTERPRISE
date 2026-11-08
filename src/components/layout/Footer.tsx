@@ -84,8 +84,8 @@ export default function Footer() {
             <em>BUILT TO LAST.</em>
           </h3>
           <p className="footer-statement-copy">
-            At HK Enterprise, we craft high-quality hardware solutions for modern
-            spaces — combining strength, precision and trust.
+            At HK Enterprise, we craft high-quality hardware solutions for
+            modern spaces — combining strength, precision and trust.
           </p>
         </div>
 
@@ -101,8 +101,8 @@ export default function Footer() {
                 {x === "about"
                   ? "About Us"
                   : x === "story"
-                  ? "Our Story"
-                  : x[0].toUpperCase() + x.slice(1)}
+                    ? "Our Story"
+                    : x[0].toUpperCase() + x.slice(1)}
               </button>
             ))}
           </div>

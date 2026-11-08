@@ -79,7 +79,9 @@ export default function Contact({ productParam }: ContactProps) {
   }
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
@@ -88,21 +90,31 @@ export default function Contact({ productParam }: ContactProps) {
         const asideBtn = layout.querySelector<HTMLElement>("aside .btn")
         const formBtn = layout.querySelector<HTMLElement>("form .btn")
 
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: layout,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(layout.querySelector("aside .eyebrow"), { opacity: 0, y: 15, duration: 0.5, ease: "power2.out" })
-          .from(layout.querySelectorAll("aside > div:not(:has(.btn))"), {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: layout,
+              start: "top 85%",
+              once: true,
+            },
+          })
+          .from(layout.querySelector("aside .eyebrow"), {
             opacity: 0,
-            y: 20,
-            stagger: 0.08,
-            duration: 0.6,
+            y: 15,
+            duration: 0.5,
             ease: "power2.out",
-          }, "-=0.3")
+          })
+          .from(
+            layout.querySelectorAll("aside > div:not(:has(.btn))"),
+            {
+              opacity: 0,
+              y: 20,
+              stagger: 0.08,
+              duration: 0.6,
+              ease: "power2.out",
+            },
+            "-=0.3",
+          )
           .from(
             asideBtn,
             {
@@ -114,12 +126,16 @@ export default function Contact({ productParam }: ContactProps) {
             },
             "-=0.35",
           )
-          .from(layout.querySelector(".form-grid, form"), {
-            opacity: 0,
-            y: 25,
-            duration: 0.6,
-            ease: "power2.out",
-          }, "-=0.5")
+          .from(
+            layout.querySelector(".form-grid, form"),
+            {
+              opacity: 0,
+              y: 25,
+              duration: 0.6,
+              ease: "power2.out",
+            },
+            "-=0.5",
+          )
           .from(
             formBtn,
             {
@@ -151,7 +167,8 @@ export default function Contact({ productParam }: ContactProps) {
             <em>reaching out.</em>
           </h1>
           <p>
-            Your enquiry has been received. Our team will get back to you promptly with product specifications and pricing.
+            Your enquiry has been received. Our team will get back to you
+            promptly with product specifications and pricing.
           </p>
           <div className="actions" style={{ marginTop: "20px" }}>
             <Button
@@ -213,7 +230,12 @@ export default function Contact({ productParam }: ContactProps) {
             <span>WORKING HOURS</span>
             <p>{COMPANY_INFO.hours}</p>
           </div>
-          <div style={{ paddingTop: "25px", borderTop: "1px solid var(--light-line)" }}>
+          <div
+            style={{
+              paddingTop: "25px",
+              borderTop: "1px solid var(--light-line)",
+            }}
+          >
             <a
               href={COMPANY_INFO.whatsappUrl}
               target="_blank"
@@ -242,7 +264,9 @@ export default function Contact({ productParam }: ContactProps) {
                 gap: "12px",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "12px" }}
+              >
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}

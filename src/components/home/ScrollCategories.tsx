@@ -15,16 +15,13 @@ export default function ScrollCategories() {
   const [active, setActive] = useState(0)
 
   // Guarantee active index is always within valid bounds [0, 5]
-  const safeActive = Math.max(
-    0,
-    Math.min(showcaseProducts.length - 1, active),
-  )
+  const safeActive = Math.max(0, Math.min(showcaseProducts.length - 1, active))
 
   const handleSelectCategory = (index: number) => {
     setActive(index)
     if (triggerRef.current) {
       const st = triggerRef.current
-      const progressCenters = [0.08, 0.24, 0.40, 0.56, 0.72, 0.90]
+      const progressCenters = [0.08, 0.24, 0.4, 0.56, 0.72, 0.9]
       const targetProgress = progressCenters[index] ?? 0.5
       const targetY = st.start + targetProgress * (st.end - st.start)
       window.scrollTo({
@@ -45,13 +42,14 @@ export default function ScrollCategories() {
 
       const head = sectionRef.current?.querySelector(".section-head")
       if (head) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: head,
-            start: "top 80%",
-            once: true,
-          },
-        })
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: head,
+              start: "top 80%",
+              once: true,
+            },
+          })
           .from(head.querySelector(".eyebrow"), {
             opacity: 0,
             y: 20,
@@ -109,7 +107,7 @@ export default function ScrollCategories() {
           else if (p < 0.32) next = 1
           else if (p < 0.48) next = 2
           else if (p < 0.64) next = 3
-          else if (p < 0.80) next = 4
+          else if (p < 0.8) next = 4
           else next = 5
           setActive((current) => (current === next ? current : next))
         },
@@ -136,7 +134,8 @@ export default function ScrollCategories() {
           </h2>
         </div>
         <p>
-          Explore our core precision hardware lines manufactured in Rajkot. Each series is engineered for structural rigidity and seamless assembly.
+          Explore our core precision hardware lines manufactured in Rajkot. Each
+          series is engineered for structural rigidity and seamless assembly.
         </p>
       </div>
       <div className="category-stage" ref={stageRef}>

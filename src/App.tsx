@@ -19,7 +19,8 @@ export default function App() {
   const [introReady, setIntroReady] = useState(() => {
     if (typeof window === "undefined") return true
     if (sessionStorage.getItem("hk_intro_shown") === "true") return true
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+      return true
     return false
   })
 
@@ -78,7 +79,9 @@ export default function App() {
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
 
     // Scroll reveal animation for all action buttons across pages
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (!reduced) {
       // Find all button groups/parents or standalone buttons outside hero and detail pages
       const allActionContainers = Array.from(
@@ -97,44 +100,32 @@ export default function App() {
           once: true,
           onEnter: () => {
             if (btns.length === 1) {
-              gsap.fromTo(
-                btns[0],
-                { opacity: 0, x: -30 },
-                {
-                  opacity: 1,
-                  x: 0,
-                  duration: 0.6,
-                  ease: "power2.out",
-                  overwrite: "auto",
-                  clearProps: "transform,opacity",
-                },
-              )
+              gsap.fromTo(btns[0], { opacity: 0, x: -30 }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "transform,opacity",
+              })
             } else {
               // 2 buttons: simultaneous fluid slide-in without delay
-              gsap.fromTo(
-                btns[0],
-                { opacity: 0, x: -30 },
-                {
-                  opacity: 1,
-                  x: 0,
-                  duration: 0.6,
-                  ease: "power2.out",
-                  overwrite: "auto",
-                  clearProps: "transform,opacity",
-                },
-              )
-              gsap.fromTo(
-                btns[1],
-                { opacity: 0, x: 30 },
-                {
-                  opacity: 1,
-                  x: 0,
-                  duration: 0.6,
-                  ease: "power2.out",
-                  overwrite: "auto",
-                  clearProps: "transform,opacity",
-                },
-              )
+              gsap.fromTo(btns[0], { opacity: 0, x: -30 }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "transform,opacity",
+              })
+              gsap.fromTo(btns[1], { opacity: 0, x: 30 }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "transform,opacity",
+              })
             }
           },
         })
@@ -154,18 +145,14 @@ export default function App() {
           onEnter: (batch) => {
             batch.forEach((btn, idx) => {
               const fromX = idx % 2 === 0 ? -30 : 30
-              gsap.fromTo(
-                btn,
-                { opacity: 0, x: fromX },
-                {
-                  opacity: 1,
-                  x: 0,
-                  duration: 0.6,
-                  ease: "power2.out",
-                  overwrite: "auto",
-                  clearProps: "transform,opacity",
-                },
-              )
+              gsap.fromTo(btn, { opacity: 0, x: fromX }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "transform,opacity",
+              })
             })
           },
           start: "top 95%",

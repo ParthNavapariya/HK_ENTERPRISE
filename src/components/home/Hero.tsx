@@ -42,8 +42,12 @@ export default function Hero() {
               "-=.55",
             )
           const heroActionBtns = desktop
-            ? heroRef.current?.querySelectorAll<HTMLElement>(".desktop-hero-actions .btn")
-            : heroRef.current?.querySelectorAll<HTMLElement>(".mobile-hero-actions .btn")
+            ? heroRef.current?.querySelectorAll<HTMLElement>(
+                ".desktop-hero-actions .btn",
+              )
+            : heroRef.current?.querySelectorAll<HTMLElement>(
+                ".mobile-hero-actions .btn",
+              )
 
           if (heroActionBtns && heroActionBtns.length === 1) {
             timeline.from(

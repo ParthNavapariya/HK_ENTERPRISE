@@ -32,8 +32,7 @@ export default function ProductDetail({ category }: { category: string }) {
   const relatedProducts = useMemo(() => {
     const sameSeries = products.filter(
       (p) =>
-        p.id !== currentProduct.id &&
-        p.category === currentProduct.category,
+        p.id !== currentProduct.id && p.category === currentProduct.category,
     )
 
     if (sameSeries.length > 0) {
@@ -58,7 +57,7 @@ export default function ProductDetail({ category }: { category: string }) {
   const itemsPerPage = isMobile ? 1 : 3
 
   const relatedPages = useMemo(() => {
-    const chunks: (typeof relatedProducts)[] = []
+    const chunks: typeof relatedProducts[] = []
     for (let i = 0; i < relatedProducts.length; i += itemsPerPage) {
       chunks.push(relatedProducts.slice(i, i + itemsPerPage))
     }
@@ -100,7 +99,9 @@ export default function ProductDetail({ category }: { category: string }) {
         setCurrentPage((prev) => (prev + 1) % relatedPages.length)
       } else if (diff < -45) {
         // Swipe right -> prev page
-        setCurrentPage((prev) => (prev - 1 + relatedPages.length) % relatedPages.length)
+        setCurrentPage(
+          (prev) => (prev - 1 + relatedPages.length) % relatedPages.length,
+        )
       }
     }
     touchStartXRef.current = null
@@ -110,7 +111,9 @@ export default function ProductDetail({ category }: { category: string }) {
   }
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
@@ -181,8 +184,13 @@ export default function ProductDetail({ category }: { category: string }) {
           },
           "-=0.6",
         )
-        .from(
-          ".detail-thumbnails button",
+      // Stagger thumbnail buttons entrance if present
+      const thumbs = containerRef.current?.querySelectorAll(
+        ".detail-thumbnails button",
+      )
+      if (thumbs && thumbs.length > 0) {
+        heroTimeline.from(
+          thumbs,
           {
             opacity: 0,
             y: 15,
@@ -191,25 +199,33 @@ export default function ProductDetail({ category }: { category: string }) {
           },
           "-=0.4",
         )
+      }
 
       // 2. Specifications scroll reveal
       const detailInfo = document.querySelector(".detail-info")
       if (detailInfo) {
-        gsap.timeline({
+        const detailTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: detailInfo,
             start: "top 82%",
             once: true,
           },
         })
-          .from(detailInfo.querySelector(".eyebrow"), {
+
+        const detailEyebrow = detailInfo.querySelector(".eyebrow")
+        if (detailEyebrow) {
+          detailTimeline.from(detailEyebrow, {
             opacity: 0,
             y: 20,
             duration: 0.6,
             ease: "power3.out",
           })
-          .from(
-            detailInfo.querySelector("h2"),
+        }
+
+        const detailH2 = detailInfo.querySelector("h2")
+        if (detailH2) {
+          detailTimeline.from(
+            detailH2,
             {
               opacity: 0,
               y: 45,
@@ -218,8 +234,12 @@ export default function ProductDetail({ category }: { category: string }) {
             },
             "-=0.35",
           )
-          .from(
-            detailInfo.querySelectorAll(".specs article"),
+        }
+
+        const specArticles = detailInfo.querySelectorAll(".specs article")
+        if (specArticles.length > 0) {
+          detailTimeline.from(
+            specArticles,
             {
               opacity: 0,
               y: 28,
@@ -229,30 +249,36 @@ export default function ProductDetail({ category }: { category: string }) {
             },
             "-=0.45",
           )
+        }
       }
 
       // 3. Related hardware scroll reveal
       const related = document.querySelector(".related")
       if (related) {
-        gsap.timeline({
+        const relatedTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: related,
             start: "top 85%",
             once: true,
           },
         })
-          .fromTo(
-            related.querySelector(".eyebrow"),
-            { opacity: 0 },
-            {
-              opacity: 1,
-              duration: 0.5,
-              ease: "power2.out",
-              clearProps: "all",
-            },
-          )
-          .fromTo(
-            related.querySelectorAll(".related-grid > button"),
+
+        const relatedEyebrow = related.querySelector(".eyebrow")
+        if (relatedEyebrow) {
+          relatedTimeline.fromTo(relatedEyebrow, { opacity: 0 }, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            clearProps: "all",
+          })
+        }
+
+        const relatedButtons = related.querySelectorAll(
+          ".related-grid > button",
+        )
+        if (relatedButtons.length > 0) {
+          relatedTimeline.fromTo(
+            relatedButtons,
             {
               opacity: 0,
               y: 25,
@@ -267,6 +293,7 @@ export default function ProductDetail({ category }: { category: string }) {
             },
             "-=0.3",
           )
+        }
       }
 
       requestAnimationFrame(() => {
@@ -279,16 +306,22 @@ export default function ProductDetail({ category }: { category: string }) {
 
   const productWhatsappUrl = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
     `*Hardware Product Enquiry - HK Enterprise*\n\n` +
-    `Hello, I would like to enquire about:\n` +
-    `• *Product Name:* ${currentProduct.name}\n` +
-    `• *Product Code:* ${currentProduct.code || currentProduct.category}\n` +
-    `• *Category:* ${currentProduct.category} Series\n` +
-    (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
-    (currentProduct.size ? `• *Size:* ${currentProduct.size}\n` : "") +
-    (currentProduct.boltSize ? `• *Bolt Size:* ${currentProduct.boltSize}\n` : "") +
-    (currentProduct.thickness ? `• *Thickness:* ${currentProduct.thickness}\n` : "") +
-    (currentProduct.available ? `• *Available:* ${currentProduct.available}\n` : "") +
-    `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`
+      `Hello, I would like to enquire about:\n` +
+      `• *Product Name:* ${currentProduct.name}\n` +
+      `• *Product Code:* ${currentProduct.code || currentProduct.category}\n` +
+      `• *Category:* ${currentProduct.category} Series\n` +
+      (currentProduct.finish ? `• *Finish:* ${currentProduct.finish}\n` : "") +
+      (currentProduct.size ? `• *Size:* ${currentProduct.size}\n` : "") +
+      (currentProduct.boltSize
+        ? `• *Bolt Size:* ${currentProduct.boltSize}\n`
+        : "") +
+      (currentProduct.thickness
+        ? `• *Thickness:* ${currentProduct.thickness}\n`
+        : "") +
+      (currentProduct.available
+        ? `• *Available:* ${currentProduct.available}\n`
+        : "") +
+      `\nPlease share pricing, minimum order quantity (MOQ), and catalog specifications.`,
   )}`
 
   const handleWhatsappEnquiry = (e: React.MouseEvent) => {
@@ -380,7 +413,8 @@ export default function ProductDetail({ category }: { category: string }) {
           <article>
             <span>FINISH & DETAILS</span>
             <p>
-              <strong>Finish:</strong> {currentProduct.finish || "Rust-Resistant Passivated"}
+              <strong>Finish:</strong>{" "}
+              {currentProduct.finish || "Rust-Resistant Passivated"}
               {currentProduct.size && (
                 <>
                   <br />
@@ -418,7 +452,10 @@ export default function ProductDetail({ category }: { category: string }) {
 
       <section className="related">
         <div className="related-head">
-          <Eyebrow>RELATED {currentProduct.category.toUpperCase()} SERIES ({relatedProducts.length})</Eyebrow>
+          <Eyebrow>
+            RELATED {currentProduct.category.toUpperCase()} SERIES (
+            {relatedProducts.length})
+          </Eyebrow>
         </div>
         <div
           className="related-viewport"
@@ -459,7 +496,11 @@ export default function ProductDetail({ category }: { category: string }) {
           </div>
         </div>
         {relatedPages.length > 1 && (
-          <div className="related-dots" role="tablist" aria-label="Related products pagination">
+          <div
+            className="related-dots"
+            role="tablist"
+            aria-label="Related products pagination"
+          >
             {relatedPages.map((_, idx) => (
               <button
                 key={idx}
@@ -556,4 +597,3 @@ export default function ProductDetail({ category }: { category: string }) {
     </main>
   )
 }
-

@@ -22,28 +22,26 @@ export default function Products() {
   )
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
       // 1. Filter bar entrance
       const filterBar = document.querySelector(".filter-bar")
       if (filterBar) {
-        gsap.fromTo(
-          filterBar,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: filterBar,
-              start: "top 90%",
-              once: true,
-            },
+        gsap.fromTo(filterBar, { opacity: 0, y: 20 }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: filterBar,
+            start: "top 90%",
+            once: true,
           },
-        )
+        })
       }
 
       // 2. Smooth batch scroll reveal for all product cards as user scrolls
@@ -116,7 +114,15 @@ export default function Products() {
                 </span>
                 <h2>{product.name}</h2>
                 <p>{product.note}</p>
-                <div style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "18px", flexWrap: "wrap" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "20px",
+                    marginTop: "18px",
+                    flexWrap: "wrap",
+                  }}
+                >
                   <button onClick={() => navigate("detail", product.id)}>
                     <span>View Specs</span>
                     <Icon name="arrow" />
@@ -124,21 +130,21 @@ export default function Products() {
                   <a
                     href={`https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
                       `*Hardware Product Enquiry - HK Enterprise*\n\n` +
-                      `Hello, I want to enquire about:\n` +
-                      `• *Product Name:* ${product.name}\n` +
-                      `• *Product Code:* ${product.code || "N/A"}\n` +
-                      `• *Category:* ${product.category} Series\n\n` +
-                      `Please share quotation, MOQ, and technical catalog.`
+                        `Hello, I want to enquire about:\n` +
+                        `• *Product Name:* ${product.name}\n` +
+                        `• *Product Code:* ${product.code || "N/A"}\n` +
+                        `• *Category:* ${product.category} Series\n\n` +
+                        `Please share quotation, MOQ, and technical catalog.`,
                     )}`}
                     onClick={(e) => {
                       e.preventDefault()
                       window.location.href = `https://api.whatsapp.com/send?phone=919723771164&text=${encodeURIComponent(
                         `*Hardware Product Enquiry - HK Enterprise*\n\n` +
-                        `Hello, I want to enquire about:\n` +
-                        `• *Product Name:* ${product.name}\n` +
-                        `• *Product Code:* ${product.code || "N/A"}\n` +
-                        `• *Category:* ${product.category} Series\n\n` +
-                        `Please share quotation, MOQ, and technical catalog.`
+                          `Hello, I want to enquire about:\n` +
+                          `• *Product Name:* ${product.name}\n` +
+                          `• *Product Code:* ${product.code || "N/A"}\n` +
+                          `• *Category:* ${product.category} Series\n\n` +
+                          `Please share quotation, MOQ, and technical catalog.`,
                       )}`
                     }}
                     className="card-whatsapp-link"

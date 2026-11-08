@@ -22,8 +22,9 @@ export default function ProductVisual({
     products.find(
       (item) =>
         category.toLowerCase().includes(item.category.toLowerCase()) ||
-        item.name.toLowerCase().includes(category.toLowerCase())
-    ) ?? products[0]
+        item.name.toLowerCase().includes(category.toLowerCase()),
+    ) ??
+    products[0]
 
   const displayImage = image || product.image
 
@@ -46,9 +47,7 @@ export default function ProductVisual({
       />
       <div className="visual-label">
         <span>HK PRECISION SERIES</span>
-        <b>
-          {productCode || product.code || product.category}
-        </b>
+        <b>{productCode || product.code || product.category}</b>
       </div>
     </div>
   )

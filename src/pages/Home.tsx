@@ -16,153 +16,161 @@ export default function Home() {
   const homeRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
     if (reduced) return
 
-    const ctx = gsap.context(() => {
-      const root = homeRef.current
-      if (!root) return
+    const ctx = gsap.context(
+      () => {
+        const root = homeRef.current
+        if (!root) return
 
-      // 1. Animate Manifesto on scroll
-      const manifesto = root.querySelector(".manifesto")
-      if (manifesto) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: manifesto,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(manifesto.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
-            manifesto.querySelector(".manifesto-copy"),
-            {
-              opacity: 0,
-              y: 55,
-              duration: 1.0,
-              ease: "power3.out",
-            },
-            "-=0.35",
-          )
-          .from(
-            manifesto.querySelector(".manifesto-meta"),
-            {
-              opacity: 0,
-              y: 30,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.55",
-          )
-      }
-
-      // 2. Animate Process Section (The HK Standard)
-      const processSec = root.querySelector(".process-section")
-      if (processSec) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: processSec,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(processSec.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
-            processSec.querySelector("h2"),
-            {
-              opacity: 0,
-              y: 40,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.35",
-          )
-          .from(
-            processSec.querySelector(".section-head > p"),
-            {
+        // 1. Animate Manifesto on scroll
+        const manifesto = root.querySelector(".manifesto")
+        if (manifesto) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: manifesto,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(manifesto.querySelector(".eyebrow"), {
               opacity: 0,
               y: 20,
               duration: 0.6,
               ease: "power3.out",
-            },
-            "-=0.5",
-          )
-          .from(
-            processSec.querySelectorAll(".principles article"),
-            {
-              opacity: 0,
-              y: 30,
-              stagger: 0.12,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.4",
-          )
-      }
+            })
+            .from(
+              manifesto.querySelector(".manifesto-copy"),
+              {
+                opacity: 0,
+                y: 55,
+                duration: 1.0,
+                ease: "power3.out",
+              },
+              "-=0.35",
+            )
+            .from(
+              manifesto.querySelector(".manifesto-meta"),
+              {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: "power3.out",
+              },
+              "-=0.55",
+            )
+        }
 
-      // 3. Animate CTA panel
-      const cta = root.querySelector(".cta-panel")
-      if (cta) {
-        const ctaBtn = cta.querySelector<HTMLElement>(".btn")
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: cta,
-            start: "top 85%",
-            once: true,
-          },
-        })
-          .from(cta.querySelector(".eyebrow"), {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power3.out",
-          })
-          .from(
-            cta.querySelector("h2"),
-            {
+        // 2. Animate Process Section (The HK Standard)
+        const processSec = root.querySelector(".process-section")
+        if (processSec) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: processSec,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(processSec.querySelector(".eyebrow"), {
               opacity: 0,
-              y: 40,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.35",
-          )
-          .fromTo(
-            ctaBtn,
-            {
-              opacity: 0,
-              x: 30,
-            },
-            {
-              opacity: 1,
-              x: 0,
+              y: 20,
               duration: 0.6,
-              ease: "power2.out",
-              overwrite: "auto",
-              clearProps: "transform,opacity",
-            },
-            "-=0.35",
-          )
-      }
+              ease: "power3.out",
+            })
+            .from(
+              processSec.querySelector("h2"),
+              {
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                ease: "power3.out",
+              },
+              "-=0.35",
+            )
+            .from(
+              processSec.querySelector(".section-head > p"),
+              {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: "power3.out",
+              },
+              "-=0.5",
+            )
+            .from(
+              processSec.querySelectorAll(".principles article"),
+              {
+                opacity: 0,
+                y: 30,
+                stagger: 0.12,
+                duration: 0.7,
+                ease: "power3.out",
+              },
+              "-=0.4",
+            )
+        }
 
-      // Refresh ScrollTrigger markers once pins and layout calculate
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh()
-      })
-      setTimeout(() => {
-        ScrollTrigger.refresh()
-      }, 250)
-    }, homeRef)
+        // 3. Animate CTA panel
+        const cta = root.querySelector(".cta-panel")
+        if (cta) {
+          const ctaBtn = cta.querySelector<HTMLElement>(".btn")
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: cta,
+                start: "top 85%",
+                once: true,
+              },
+            })
+            .from(cta.querySelector(".eyebrow"), {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              ease: "power3.out",
+            })
+            .from(
+              cta.querySelector("h2"),
+              {
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                ease: "power3.out",
+              },
+              "-=0.35",
+            )
+            .fromTo(
+              ctaBtn,
+              {
+                opacity: 0,
+                x: 30,
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                overwrite: "auto",
+                clearProps: "transform,opacity",
+              },
+              "-=0.35",
+            )
+        }
+
+        // Refresh ScrollTrigger markers once pins and layout calculate
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh()
+        })
+        setTimeout(() => {
+          ScrollTrigger.refresh()
+        }, 250)
+      },
+      homeRef,
+    )
 
     return () => ctx.revert()
   }, [])
