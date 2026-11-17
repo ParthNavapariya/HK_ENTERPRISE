@@ -89,11 +89,11 @@ export const products: ProductItem[] = [
       "Finishing: White Zinc Plated, Powder Coated",
       "Deburred smooth edges & zero-squeak fit",
     ],
-    image: "/products/bed-clamp/bed-clamp-4.jpg",
+    image: "/products/bed-clamp/bed-clamp-102.jpg",
     images: [
+      "/products/bed-clamp/bed-clamp-102.jpg",
       "/products/bed-clamp/bed-clamp-4.jpg",
       "/products/bed-clamp/bed-clamp-3.jpg",
-      "/products/bed-clamp/bed-clamp-8.jpg",
     ],
     badge: '7" / Zinc & Powder Coated',
   },
