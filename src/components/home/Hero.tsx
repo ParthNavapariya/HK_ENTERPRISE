@@ -151,7 +151,7 @@ export default function Hero() {
           </Button>
         </div>
       </div>
-      <ProductVisual category="Bed Clamp" productCode="HK-BC-104" hero />
+      <ProductVisual category="Bed Clamp" productCode="HK-BC-101" hero />
       <div className="actions mobile-hero-actions">
         <Button onClick={() => navigate("products")}>Explore Products</Button>
         <Button secondary onClick={() => navigate("contact")}>

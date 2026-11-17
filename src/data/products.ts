@@ -44,8 +44,8 @@ export const categoryImages: Record<Exclude<Category, "All">, string> = {
 export const products: ProductItem[] = [
   // --- 01. BED CLAMP SERIES ---
   {
-    id: "bc-04",
-    code: "HK-BC-104",
+    id: "bc-01",
+    code: "HK-BC-101",
     name: "7” Bed Clamp",
     nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
     category: "Bed Clamp",
@@ -69,8 +69,8 @@ export const products: ProductItem[] = [
     badge: '7" / Zinc & Powder Coated',
   },
   {
-    id: "bc-06",
-    code: "HK-BC-106",
+    id: "bc-02",
+    code: "HK-BC-102",
     name: "7” Bed Clamp",
     nameGu: "૭-ઇંચ બેડ ક્લેમ્પ",
     category: "Bed Clamp",
@@ -98,8 +98,8 @@ export const products: ProductItem[] = [
     badge: '7" / Zinc & Powder Coated',
   },
   {
-    id: "bc-07",
-    code: "HK-BC-107",
+    id: "bc-03",
+    code: "HK-BC-103",
     name: "1ll Bed Clamp",
     nameGu: "1ll બેડ ક્લેમ્પ",
     category: "Bed Clamp",
@@ -124,8 +124,8 @@ export const products: ProductItem[] = [
     badge: "1ll / 5 Aani Bolt",
   },
   {
-    id: "bc-01",
-    code: "HK-BC-101",
+    id: "bc-04",
+    code: "HK-BC-104",
     name: "1ll clamp (capsule hole)",
     nameGu: "1ll ક્લેમ્પ (કેપ્સ્યુલ હોલ)",
     category: "Bed Clamp",
@@ -153,8 +153,8 @@ export const products: ProductItem[] = [
     badge: "5 Aani / Capsule Hole",
   },
   {
-    id: "bc-08",
-    code: "HK-BC-108",
+    id: "bc-05",
+    code: "HK-BC-105",
     name: "2ll Bed Clamp",
     nameGu: "2ll બેડ ક્લેમ્પ",
     category: "Bed Clamp",
@@ -179,8 +179,8 @@ export const products: ProductItem[] = [
     badge: "2ll / 5 Aani Bolt",
   },
   {
-    id: "bc-02",
-    code: "HK-BC-102",
+    id: "bc-06",
+    code: "HK-BC-106",
     name: "L Bed Clamp (6 Aani Bolt)",
     nameGu: "એલ બેડ ક્લેમ્પ (૬ આની બોલ્ટ)",
     category: "Bed Clamp",
@@ -204,8 +204,8 @@ export const products: ProductItem[] = [
     badge: "6 Aani / White Zinc",
   },
   {
-    id: "bc-05",
-    code: "HK-BC-105",
+    id: "bc-07",
+    code: "HK-BC-107",
     name: "L Bed Clamp (7 Aani Bolt)",
     nameGu: "એલ બેડ ક્લેમ્પ (૭ આની બોલ્ટ)",
     category: "Bed Clamp",
@@ -229,8 +229,8 @@ export const products: ProductItem[] = [
     badge: "7 Aani / Golden Zinc",
   },
   {
-    id: "bc-03",
-    code: "HK-BC-103",
+    id: "bc-08",
+    code: "HK-BC-108",
     name: "L Bed Clamp (8 Aani Bolt)",
     nameGu: "એલ બેડ ક્લેમ્પ (૮ આની બોલ્ટ)",
     category: "Bed Clamp",
@@ -310,8 +310,8 @@ export const products: ProductItem[] = [
 
   // --- 02. BED SOCKET SERIES ---
   {
-    id: "bs-02",
-    code: "HK-BS-202",
+    id: "bs-01",
+    code: "HK-BS-201",
     name: "Bed Socket (4 Inch)",
     nameGu: "બેડ સોકેટ (૪ ઇંચ)",
     category: "Bed Socket",
@@ -337,8 +337,8 @@ export const products: ProductItem[] = [
     badge: "4” / Golden Zinc",
   },
   {
-    id: "bs-01",
-    code: "HK-BS-201",
+    id: "bs-02",
+    code: "HK-BS-202",
     name: "Bed Socket (6 Inch)",
     nameGu: "બેડ સોકેટ (૬ ઇંચ)",
     category: "Bed Socket",
@@ -364,8 +364,8 @@ export const products: ProductItem[] = [
     badge: "6” / Golden & Powder Coated",
   },
   {
-    id: "bs-04",
-    code: "HK-BS-204",
+    id: "bs-03",
+    code: "HK-BS-203",
     name: "Bed Socket (7 Inch)",
     nameGu: "બેડ સોકેટ (૭ ઇંચ)",
     category: "Bed Socket",
@@ -391,8 +391,8 @@ export const products: ProductItem[] = [
     badge: "7” / Golden & Powder Coated",
   },
   {
-    id: "bs-03",
-    code: "HK-BS-203",
+    id: "bs-04",
+    code: "HK-BS-204",
     name: "Bed Socket (8 Inch)",
     nameGu: "બેડ સોકેટ (૮ ઇંચ)",
     category: "Bed Socket",
@@ -420,8 +420,8 @@ export const products: ProductItem[] = [
 
   // --- 03. HINGES SERIES ---
   {
-    id: "hg-03",
-    code: "HK-HG-403",
+    id: "hg-01",
+    code: "HK-HG-401",
     name: "Table Hinges (1ll x 1ll)",
     nameGu: "ટેબલ હિંગ્સ (1ll x 1ll)",
     category: "Hinges",
@@ -446,8 +446,8 @@ export const products: ProductItem[] = [
     badge: "1ll x 1ll / White Zinc",
   },
   {
-    id: "hg-04",
-    code: "HK-HG-404",
+    id: "hg-02",
+    code: "HK-HG-402",
     name: "Table Hinges (2” x 2”)",
     nameGu: "ટેબલ હિંગ્સ (૨” x ૨”)",
     category: "Hinges",
@@ -472,8 +472,8 @@ export const products: ProductItem[] = [
     badge: "2” x 2” / White Zinc",
   },
   {
-    id: "hg-02",
-    code: "HK-HG-402",
+    id: "hg-03",
+    code: "HK-HG-403",
     name: "Small Butt Hinges (2 Inch)",
     nameGu: "સ્મોલ બટ્ટ હિંગ્સ (૨ ઇંચ)",
     category: "Hinges",
@@ -498,8 +498,8 @@ export const products: ProductItem[] = [
     badge: "2” / Nickel Plated",
   },
   {
-    id: "hg-01",
-    code: "HK-HG-401",
+    id: "hg-04",
+    code: "HK-HG-404",
     name: "T Hinges",
     nameGu: "ટી હિંગ્સ",
     category: "Hinges",
@@ -660,8 +660,8 @@ export const products: ProductItem[] = [
     badge: "1 x 2 / Powder & Zinc",
   },
   {
-    id: "lc-05",
-    code: "HK-LC-305",
+    id: "lc-04",
+    code: "HK-LC-304",
     name: "L Corner (1 x 3)",
     nameGu: "એલ કોર્નર (1 x 3)",
     category: "L Corner",
@@ -686,8 +686,8 @@ export const products: ProductItem[] = [
     badge: "1 x 3 / Powder & Zinc",
   },
   {
-    id: "lc-06",
-    code: "HK-LC-306",
+    id: "lc-05",
+    code: "HK-LC-305",
     name: "Computer Table Round Corner (1ll Inch)",
     nameGu: "કમ્પ્યુટર ટેબલ રાઉન્ડ કોર્નર (1ll Inch)",
     category: "L Corner",
@@ -712,8 +712,8 @@ export const products: ProductItem[] = [
     badge: "1ll Inch Round / Zinc Plated",
   },
   {
-    id: "lc-04",
-    code: "HK-LC-304",
+    id: "lc-06",
+    code: "HK-LC-306",
     name: "Computer Table Corner (1ll Inch)",
     nameGu: "કમ્પ્યુટર ટેબલ કોર્નર (1ll Inch)",
     category: "L Corner",
@@ -827,8 +827,8 @@ export const products: ProductItem[] = [
 
   // --- 06. LOCKPATTI SERIES ---
   {
-    id: "lp-02",
-    code: "HK-LP-602",
+    id: "lp-01",
+    code: "HK-LP-601",
     name: "IMP Support",
     nameGu: "આઈએમપી સપોર્ટ",
     category: "Lockpatti",
@@ -855,8 +855,8 @@ export const products: ProductItem[] = [
     badge: "IMP Support / White Zinc",
   },
   {
-    id: "lp-03",
-    code: "HK-LP-603",
+    id: "lp-02",
+    code: "HK-LP-602",
     name: "Spring Patti",
     nameGu: "સ્પ્રીંગ પટ્ટી",
     category: "Lockpatti",
@@ -882,8 +882,8 @@ export const products: ProductItem[] = [
     badge: "Spring Patti / White Zinc",
   },
   {
-    id: "lp-05",
-    code: "HK-LP-605",
+    id: "lp-03",
+    code: "HK-LP-603",
     name: "Lock Patti",
     nameGu: "લોક પટ્ટી",
     category: "Lockpatti",
@@ -910,8 +910,8 @@ export const products: ProductItem[] = [
     badge: "Heavy & Light / White Zinc",
   },
   {
-    id: "lp-06",
-    code: "HK-LP-606",
+    id: "lp-04",
+    code: "HK-LP-604",
     name: "SSR Patti",
     nameGu: "એસએસઆર પટ્ટી",
     category: "Lockpatti",
@@ -935,8 +935,8 @@ export const products: ProductItem[] = [
     badge: "SSR Patti / White Zinc",
   },
   {
-    id: "lp-07",
-    code: "HK-LP-607",
+    id: "lp-05",
+    code: "HK-LP-605",
     name: "Cam Lock Patti",
     nameGu: "કેમ લોક પટ્ટી",
     category: "Lockpatti",
@@ -965,10 +965,10 @@ export const products: ProductItem[] = [
 ]
 
 export const showcaseProducts: ProductItem[] = [
-  products.find((p) => p.id === "bc-04")!,
-  products.find((p) => p.id === "bs-01")!,
-  products.find((p) => p.id === "hg-02")!,
-  products.find((p) => p.id === "lc-01")!,
-  products.find((p) => p.id === "bf-01")!,
-  products.find((p) => p.id === "lp-05")!,
+  products.find((p) => p.category === "Bed Clamp")!,
+  products.find((p) => p.category === "Bed Socket")!,
+  products.find((p) => p.category === "Hinges")!,
+  products.find((p) => p.category === "L Corner")!,
+  products.find((p) => p.category === "Bed Fittings")!,
+  products.find((p) => p.category === "Lockpatti")!,
 ].filter(Boolean)

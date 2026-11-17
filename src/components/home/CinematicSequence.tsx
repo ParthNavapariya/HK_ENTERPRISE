@@ -197,7 +197,7 @@ export default function CinematicSequence() {
       <div className="sequence-top">
         <div className="sequence-tag">
           <span className="sequence-tag-dot" />
-          <span>STUDY • HK-BC-104</span>
+          <span>STUDY • HK-BC-101</span>
         </div>
 
         <span className="sequence-top-counter">0{activeChapter + 1} — 04</span>
@@ -207,7 +207,7 @@ export default function CinematicSequence() {
         <ProductVisual
           category="Bed Clamp"
           image="/products/bed-clamp/bed-clamp-3.jpg"
-          productCode="HK-BC-104"
+          productCode="HK-BC-101"
         />
       </div>
 
